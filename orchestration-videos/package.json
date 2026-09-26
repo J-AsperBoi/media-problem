@@ -1,0 +1,9 @@
+{
+  "name": "orchestration-videos",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.0",
+    "qrcode": "^1.5.4"
+  }
+}

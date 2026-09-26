@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Bottleneck Is Us</title>
+<meta name="description" content="The answer takes days. Getting it to everyone takes years. Join the people working on the speed of human coordination.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1118;--ink:#ebe5d8;--mute:#8e95a1;--line:#252b36;--green:#4fe08a;--slow:#9aa0aa;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f4f2ec;--ink:#14171d;--mute:#5d636d;--line:#d9d5cb;--green:#15803d;--slow:#6b7280}}
+:root[data-theme="light"]{--bg:#f4f2ec;--ink:#14171d;--mute:#5d636d;--line:#d9d5cb;--green:#15803d;--slow:#6b7280}
+:root[data-theme="dark"]{--bg:#0d1118;--ink:#ebe5d8;--mute:#8e95a1;--line:#252b36;--green:#4fe08a;--slow:#9aa0aa}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:56px 24px 40px}
+h1{font:400 clamp(44px,8vw,76px)/1.02 "Instrument Serif",Georgia,serif;margin:0 0 24px;letter-spacing:-.01em}
+h1 .slow{color:var(--slow);display:block}
+h2{font:400 34px/1.15 "Instrument Serif",Georgia,serif;margin:0 0 16px}
+p{margin:0 0 16px;max-width:60ch}.lede{font-size:20px;color:var(--ink)}
+.mute{color:var(--mute)}
+section{padding:40px 0;border-top:1px solid var(--line)}
+.meter{display:grid;gap:18px;margin-top:8px}
+.row{display:grid;gap:6px}
+.row .top{display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.row .val{font-variant-numeric:tabular-nums;font-weight:500}
+.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--slow)}
+.row.fast .bar i{background:var(--green)}.row.fast .val{color:var(--green)}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+.facts{display:grid;gap:0}
+.fact{display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.fact:last-child{border-bottom:0}
+.fact b{font:400 40px/1 "Instrument Serif",Georgia,serif;font-weight:400}
+.fact .fast{color:var(--green)}
+.fact small{display:block;color:var(--mute);font-size:13px;margin-top:6px}
+form{display:grid;gap:12px;margin-top:8px}
+.field{display:flex;gap:10px;flex-wrap:wrap}
+input[type=email]{flex:1 1 240px;min-width:0;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+input[type=email]:focus-visible,button:focus-visible,input[type=checkbox]:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+button{font:500 16px "Inter Tight",sans-serif;background:var(--green);color:#08130c;border:0;border-radius:10px;padding:14px 22px;cursor:pointer}
+button[disabled]{opacity:.6;cursor:default}
+label.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--mute)}
+.status{min-height:24px;font-size:15px}.status.ok{color:var(--green)}.status.err{color:#e0524a}
+.demo{font-size:13px;color:var(--mute);border:1px dashed var(--line);border-radius:10px;padding:10px 12px}
+footer{max-width:720px;margin:0 auto;padding:24px 24px 48px;font-size:13px;color:var(--mute)}
+footer a{color:inherit}
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>The bottleneck is us.</h1>
+  <p class="lede">The answer takes days. Getting it to everyone takes years. Humans aren't slow; our coordination is. The fixes to most of our problems already exist somewhere, stuck between the people who have them and the people who need them.</p>
+  <p class="mute">We're working on the speed of human coordination: faster ways for people, and the tools they choose to work with, to find each other, decide together, and act while it still matters.</p>
+
+  <section aria-labelledby="live">
+    <h2 id="live">Since you opened this page</h2>
+    <div class="meter">
+      <div class="row fast"><div class="top"><span>Cost of frontier AI at the same capability, drop so far</span><span class="val" id="m-ai">0.00000%</span></div><div class="bar"><i id="b-ai"></i></div></div>
+      <div class="row"><div class="top"><span>An average federal environmental review, share completed</span><span class="val" id="m-eis">0.00000%</span></div><div class="bar"><i id="b-eis"></i></div></div>
+      <div class="row"><div class="top"><span>Time it took to ratify the Constitution's last amendment, share elapsed</span><span class="val" id="m-amd">0.0000000%</span></div><div class="bar"><i id="b-amd"></i></div></div>
+    </div>
+    <p class="note">Live, at real rates. Bars use a log scale so all three are visible. AI cost at fixed capability has been halving about every 2 months (Epoch AI, 2026 trend; trends can change). Average environmental impact statement: 4.5 years (CEQ). The 27th Amendment: proposed 1789, ratified 1992.</p>
+  </section>
+
+  <section aria-labelledby="facts">
+    <h2 id="facts">Real speeds</h2>
+    <div class="facts">
+      <div class="fact"><b class="fast">2 days</b><div>From the virus's genetic sequence going public to a finalized vaccine design, January 2020.<small>Moderna SEC filing, 2020</small></div></div>
+      <div class="fact"><b>4.5 yrs</b><div>Average time for a US federal environmental impact statement. A quarter took over 6 years; dozens took a decade or more.<small>Council on Environmental Quality, 2018</small></div></div>
+      <div class="fact"><b class="fast">~4 mo</b><div>How often the length of task frontier AI agents can complete has been doubling since 2023.<small>METR, Time Horizon 1.1, January 2026</small></div></div>
+      <div class="fact"><b>1992</b><div>The US Constitution's last patch. That amendment was proposed in 1789, 202 years earlier.<small>US National Archives</small></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="join">
+    <h2 id="join">Help close the gap</h2>
+    <p>Get the next films first, and be part of what we build to make coordination as fast as the answers.</p>
+    <form id="signup" novalidate>
+      <div class="field">
+        <label for="email" style="position:absolute;left:-9999px">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" id="submit">Join</button>
+      </div>
+      <label class="consent"><input type="checkbox" id="consent" required> <span>Email me updates about this project. One click to unsubscribe, and your address is never sold.</span></label>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+      <p class="demo" id="demo" hidden>Preview mode: no form backend is connected yet, so signups aren't saved. Set FORM_ENDPOINT in this file to go live.</p>
+    </form>
+  </section>
+</main>
+<footer>Sources: Moderna SEC filing (2020); Council on Environmental Quality EIS Timelines (2018, 2025); METR Time Horizon 1.1 (Jan 2026); Epoch AI, Trends in AI (2026); US National Archives.</footer>
+<script>
+/* ---- Setup ----
+   FORM_ENDPOINT: where signups go. Works with any service that accepts a form POST, e.g.
+     Formspree:  https://formspree.io/f/XXXXXXX           (EMAIL_FIELD "email")
+     Kit:        https://app.kit.com/forms/XXXXXXX/subscriptions   (EMAIL_FIELD "email_address")
+     Google Sheets via Apps Script web app URL           (EMAIL_FIELD "email")
+   Every signup also sends "src" (which video's QR code brought them) and a timestamp. */
+const FORM_ENDPOINT = "";
+const EMAIL_FIELD = "email";
+
+const params = new URLSearchParams(location.search);
+const src = (params.get("src") || "direct").slice(0, 80);
+const t0 = performance.now();
+const HALF_AI = 60.9 * 86400, EIS = 4.5 * 365.25 * 86400, AMD = 202 * 365.25 * 86400;
+const $ = id => document.getElementById(id);
+function tick(){
+  const s = (performance.now() - t0) / 1000;
+  const ai = (1 - Math.pow(2, -s / HALF_AI)) * 100, eis = s / EIS * 100, amd = s / AMD * 100;
+  $("m-ai").textContent = ai.toFixed(5) + "%"; $("m-eis").textContent = eis.toFixed(5) + "%"; $("m-amd").textContent = amd.toFixed(7) + "%";
+  const scale = v => v <= 0 ? 0 : Math.max(0, Math.min(100, (Math.log10(v) + 8) * 10));
+  $("b-ai").style.width = scale(ai) + "%"; $("b-eis").style.width = scale(eis) + "%"; $("b-amd").style.width = scale(amd) + "%";
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+if (!FORM_ENDPOINT) $("demo").hidden = false;
+$("signup").addEventListener("submit", async e => {
+  e.preventDefault();
+  const email = $("email").value.trim(), st = $("status");
+  st.className = "status";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { st.textContent = "Enter a valid email address."; st.classList.add("err"); return; }
+  if (!$("consent").checked) { st.textContent = "Tick the box so we can email you."; st.classList.add("err"); return; }
+  if (!FORM_ENDPOINT) { st.textContent = "Preview mode: this signup wasn't saved."; return; }
+  const btn = $("submit"); btn.disabled = true; btn.textContent = "Joining";
+  const fd = new FormData(); fd.append(EMAIL_FIELD, email); fd.append("src", src); fd.append("consent", "yes"); fd.append("ts", new Date().toISOString());
+  try {
+    const r = await fetch(FORM_ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error(r.status);
+    st.textContent = "You're in. Watch your inbox."; st.classList.add("ok"); $("signup").reset();
+  } catch (err) {
+    st.textContent = "That didn't go through. Try again in a moment."; st.classList.add("err");
+  } finally { btn.disabled = false; btn.textContent = "Join"; }
+});
+</script>
+</body>
+</html>
