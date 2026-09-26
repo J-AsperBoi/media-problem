@@ -1,0 +1,768 @@
+<!doctype html><meta charset=utf-8><title>Overnight portfolio</title><style>body{font-family:system-ui;background:#111;color:#eee;margin:24px}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}.hero{grid-column:1/-1;display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;border:1px solid #4fe08a;border-radius:16px;padding:16px}video{width:100%;border-radius:12px;background:#000}pre{white-space:pre-wrap;font-size:12px;color:#bbb;max-height:260px;overflow:auto}</style><h1>Overnight portfolio (9)</h1><pre>Concepts: 9
+Structures used: {"based-on-a-true-story":1,"ticking-clock":1,"mockumentary":1,"wait-for-it":1,"reverse-chronology":1,"nature-documentary":1,"split-screen-race":1,"game-hud-run":1,"two-phones":1}
+Diversity (mean pairwise distance, 0-1): 0.935
+Average virality estimate: 6.4%
+Distinct values per dimension: {"structure":9,"medium":9,"family":9,"scale":6,"pace":5,"emotion":7,"protagonist":5,"camera":6,"analog":8}
+Closest pairs:
+  the-last-thirteen-days ~ fifty-nine-days: 0.78
+  day-three-hundred-five ~ the-two-feeds: 0.78
+  fifteen-hundred ~ the-two-feeds: 0.78
+  fifty-nine-days ~ the-two-feeds: 0.78
+  two-days ~ day-three-hundred-five: 0.89
+</pre><div class=g><div class=""><div><h3>the-two-feeds · 8% viral · 7/10</h3><video src="the-two-feeds/the-two-feeds.mp4" poster="the-two-feeds/poster.png" controls loop playsinline></video></div><pre># The Two Feeds
+
+Tier: animatic
+Slug: the-two-feeds
+Title: The Two Feeds
+Logline: Two phones in one family, on one couch. Nana's phone gets the claim in the first hour; Sam's phone gets the fact-check about thirteen hours in. They are an arm's length apart. The answer was in the room; the routing sent it to the wrong phone, late.
+Structure: `two-phones` (VIRAL_STRUCTURES.md #17, man-in-a-hole, stop-start beat map adapted to a sprint race)
+Analog: `false-news-2018` (Vosoughi, Roy &amp; Aral 2018; Hoaxy lag, Shao et al. 2016)
+Medium: text-only typography. Everything is type: people are silhouettes filled with their own names, the room is words ("window", "lamp", "c o u c h"), every person in the audience is a single line of text (a pill). The claim is red redaction bars (its content is never shown); the correction is green words.
+
+Difference from `fifteen-hundred` (same analog, highway race, neon arcade): this one is intimate, one family, one couch, no vehicles, no arcade; the race is between two phones an arm's length apart.
+
+## Time mapping (one mapping)
+- Race: **1 s = 1 h**, h = t - 1.5 for t in [1.5, 17.5] (hours 0 to 16). A small "hour N" readout shows the mapping.
+- Cold open (0 to 1.4 s) is a flash-forward to hour 13 of the same timeline, labeled "hour 13".
+- Snap: both panels on one shared clock, **1 s = 5 h** (playhead sweeps 0 to 20 h in 4 s). Same scale for both rows, so the comparison is proportional.
+
+## Speed math
+- **Threat (red).** Analog gives only sourced endpoints: 0 at 0 h, the whole 1,500-person audience at ~10 h (s2). No doubling time is sourced, so the path between is a stated monotone ease: extent(h) = smoothstep(h/10). The field has 1,500 homes (30 x 50); home i's claim-reader turns red at the h where smoothstep(h/10) equals its shuffled rank quantile, so the red share on screen equals extent(h) at every frame. Nana's rank is set to the quantile at h = 1 (she is early: "It finds her first"). That per-person time is illustrative; the curve is the data's.
+- **Human aggregation (green).** Hoaxy: fact-check sharing lags misinformation by ~13 h, typical range 10 to 20 h (used as p10/p90, s3). Each home's second person receives the correction at L.lognormalQuantile(q, 13, 20) h with q spread evenly, so some get it at ~8 h and some absurdly late (&gt;30 h). Sam is the median home: 13 h. By the end of the race (16 h) about 64% of homes have it; by then the red has been at 100% for 6 h.
+- **Snap panels.** Red area = extent(h) (same in both rows: AI does not stop the claim spreading). Green area = L.lognormalCDF(h, 13, 20) in the human row, L.lognormalCDF(h, 1, 20/13) in the AI row (median from ai_counterfactual.aggregation_median = 1 h, p90 scaled by the same ratio as the human spread).
+- **AI counterfactual (illustrative).** From the analog's ai_counterfactual: matching a circulating claim to an existing verified ruling and routing it to the people sharing it is a well-under-1-hour expert task, far inside the ~17.4 h 50% time horizon (RATES.md, METR), and cost at fixed capability falls ~40x/year (RATES.md, Epoch), so screening every rising claim is affordable. Assumed ~1 h vs human ~13 h. Labeled "illustrative" on screen. Honest caveat on screen: "Sooner isn't believed. People still decide." Speed of a correction does not guarantee it is accepted; the film does not claim it would be.
+
+## Numbers on screen
+- "13 h" (Hoaxy characteristic lag, verified in analog) and "~1 h" (illustrative counterfactual). The "hour N" readout is the time-mapping clock, not a data claim; it ends at 16 and passes 13 at the green arrival.
+
+## Shot list (DUR 36 s)
+| t | shot | camera | what happens |
+|---|---|---|---|
+| 0.0-1.4 | SC1 COLD OPEN | OTS WIDE, both phones (flash-forward, hour 13) | Over two typographic shoulders: Nana's phone with a big red redacted bubble, Sam's with the green "checked" card. Card: "Same couch. Different feeds." |
+| 1.4-4.5 | SC2 OTS NANA | CLOSE, over Nana's shoulder | Hour 0. Gray chat. At h1 the red forwarded bubble slides in. Nana types "sharing, just in case. love you all" and sends (h 2.8). Card: "It finds her first." |
+| 4.5-8.0 | SC3 PULL OUT | DOLLY OUT through the room to the field | Phone -&gt; the room made of words (two silhouettes, one couch) -&gt; 1,500 homes, each two lines of type. Red filling at the data's pace. |
+| 8.0-11.5 | SC4 WIDE | hold, slow drift | Red reaches the whole audience at 10 h. A few green lines begin (lognormal early tail). Card: "Faster than anything true." |
+| 11.5-14.3 | SC5 DIVE | DOLLY IN to Sam, closer than SC2 (phone scale 1.1 vs 1.0) | Back through the room to Sam's phone. Gray feed tiles. Card: "The answer is in the room." |
+| 14.3-16.2 | SC6 OTS SAM | CLOSE+ | h13: green "checked" card slides in. Sam types "that's fake", deletes it, types "Nana, sit with me?" and sends. Card: "Right answer. Wrong phone." |
+| 16.2-17.5 | SC7 PAN | whip pan across the couch | To Nana's phone: Sam's green message lands under the red bubble, 15 hours after it. |
+| 17.5-20.0 | SC8 FREEZE | locked | Dim, silence. "We slowed it down so you could see it." |
+| 20.0-26.5 | SC9 SNAP | flat, two panels 920 px wide | One hit. Same clock sped up: human row, green rises at 13 h; AI row (illustrative), green at ~1 h. Caveat line. |
+| 26.5-29.0 | SC10 OTS NANA | CLOSEST (IN++) | Red and green bubbles together; "Nana is typing..." Card: "Not her. The wiring." |
+| 29.0-31.5 | SC11 | hold | "This is the bottleneck." |
+| 31.5-36.0 | END | | L.endCard, 4.5 s. |
+
+Zoom cycles: Cycle 1: IN 1.4-4.5 (zoom 167) -&gt; OUT 4.5-8.0 (to zoom 1) -&gt; IN+ 11.5-14.3 (zoom 183, phone at 1.1x). Cycle 2: SNAP flat 20-26.5 -&gt; IN++ 26.5-29 (zoom 275).
+
+## 3D translation note
+- Key shots: the OTS on Nana (35 mm, camera just behind her left shoulder at head height, shallow focus on the screen), the dolly out (a single continuous pull back through the living room ceiling into an aerial of a thousand lit windows, 8 s, eased), the dive to Sam (faster, 50 mm at the end, closer than the first OTS), and the whip pan across the couch (half a second, motion blur).
+- Characters and props: keep the type-body idea: bodies as volumetric letterforms of their own names, a couch spelled in upholstered letters; phones are the only light sources. Red bubble is a glowing redaction bar, never legible.
+- Richer in 3D: parallax of the two phones' light on the faces of the letters, the field of homes as windows in apartment blocks, each window a line of text turning red.
+
+## Copy variants
+- "Same couch. Different feeds." (used) / "One couch. Two feeds." / "An arm's length. Thirteen hours."
+- "It finds her first." / "Faster than anything true." / "The answer is in the room." / "Right answer. Wrong phone." / "Not her. The wiring."
+- Snap: "Same clock, sped up." / "Sooner isn't believed. People still decide."
+
+## Tags
+{"structure":"two-phones","medium":"text-only typography","family":"language","scale":"family","pace":"sprint","emotion":"tenderness","protagonist":"one person","camera":"over-the-shoulder","analog":"false-news-2018"}
+Diversity check: OK (nearest day-three-hundred-five 0.78, fifteen-hundred 0.78).
+
+## Build log
+- Preview 1: hour readout collided with Sam's "CHECKED" card; Sam's typed draft fell below the safe zone; snap "13 h" label sat inside the red area and snap labels were 38 px. Fixed: Sam's view reframed (phone 1.1x), DM compose moved up the phone, snap marks moved to 76 px green in each row's header, labels 44 px. Preview 2 clean. Final render 36.0 s.
+- Known weaknesses: the dolly-out passes through a moment (t ~6.5-7.5) where the room is small and the field has not yet faded in, so the frame reads nearly empty; the cold-open phones are small, so the red in frame 1 is legible but not huge; card over Sam's phone partly covers the compose area.
+
+## Scores
+- Hook: 6 (red and green both in frame 1 with "Same couch. Different feeds.", but the phones are small in the thumbnail)
+- Speed accuracy: 8 (red share = smoothstep between sourced endpoints, stated; green per home lognormal median 13 / p90 20; one mapping 1 s = 1 h, snap 1 s = 5 h on a shared clock)
+- Snap impact: 6 (freeze, silence, one hit, two full-width rows; the charts are clear but calm)
+- Emotion: 7 (Sam deleting "that's fake" and sending "Nana, sit with me?" is the tender beat; Nana's "sharing, just in case. love you all" keeps her sympathetic)
+- Originality: 7 (people as silhouettes filled with their names, a room made of words, 1,500 homes as lines of type)
+- Craft: 6 (clean typographic look; one near-empty transitional beat in the pull-out; small type in the wide frames)
+- Honesty: 9 (claim never legible or named, caveat "Sooner isn't believed. People still decide." on screen, AI row labeled illustrative, per-person times noted as illustrative)
+- Overall: 7.0
+- Virality: 8% — the unsent-then-rewritten message to a grandparent is instantly relatable and shareable, but it is a quiet, text-heavy piece with a chart in the middle, which usually caps reach from a small account.
+</pre></div><div class=""><div><h3>the-mold-strikes-back · 7% viral · 7/10</h3><video src="the-mold-strikes-back/the-mold-strikes-back.mp4" poster="the-mold-strikes-back/poster.png" controls loop playsinline></video></div><pre># The Mold Strikes Back
+
+Tier: animatic
+Slug: the-mold-strikes-back
+Structure: nature-documentary (research/VIRAL_STRUCTURES.md #14)
+Analog: penicillin-resistance-1946
+Tags: medium x-ray · family ecology · scale body · pace accelerating · camera locked-off close-up with a single pull-out · emotion awe · protagonist the red itself
+
+## Logline
+Hushed nature-documentary captions over an x-ray petri world. A gloved hand (seen as bones through a translucent glove) holds one green-lit dish. The red is the animal being observed: in one hospital its colonies go from 1 in 8 to more than half in under two years. The camera pulls out once: the dish becomes one lab in one hospital, and far away a room of biochemists and a room of chemists each hold a piece of the answer. The links between them form on a lognormal clock; the pieces meet after 13 years, and within two more the red adapts again. The snap: the same record at true proportional speed, and beside it routed coordination (illustrative, coordination only) meeting at about 2.5 years.
+
+The red is never named. No "bacteria", "antibiotic", "penicillin" or "resistance" on screen; it is only "the red".
+
+## Time mapping (one stated mapping for the race)
+Race runs film t = 1.4 s to 16.0 s over analog years 0 to 15 (Apr 1946 to the 1961 counter-move), on a **log time scale**: film_t = 1.4 + L.mapTime(year, 15, 14.6, 'log'), i.e. 14.6 * log10(1 + year) / log10(16). This is why the pace is "accelerating": early months crawl, later years fly. Stated on screen by a small hand-lettered axis note "log time" in the wide shot; stated fully here.
+Key placements: year 1.17 (Jun 1947) at t 5.5; year 1.5 (the hospital warning) at t 6.2; year 2.5 (AI counterfactual) at t 8.0; year 13 (new drug, 1959) at t 15.3; year 15 (the red adapts, 1961) at t 16.0.
+Cold open (t 0 to 1.3) is a flash-forward to year 1.75 on the same curve, labeled "later"; then an exposure flash cuts back to year 0.
+
+Snap: both lanes at **true proportional (linear) speed**, 0 to 15 years in 3.0 s (1 s = 5 years), side by side.
+
+## Speed math
+**Threat (red).** L.logistic(year, doubling_time 0.56, s0 = 0.125) from the analog. The 0.56-year doubling time is **derived, not published**: the analog fits a logistic through 12.5% (Apr 1946) and 38% (Jun 1947), r = 1.245/yr, ln2/r = 0.56 yr. Check: the fit gives 0.378 at year 1.17 (data 0.38) and 0.555 at year 1.75 (reported 59%, month unverified). The dish and the wards hold the same 40 samples, each with a fixed threshold q_i = (i + 0.5)/40 (shuffled by L.rng at setup); a sample is red when the logistic share exceeds its threshold, so the count of red colonies is the share: 5 of 40 (= 1 in 8) at year 0, 15 at year 1.17, 22 at year 1.75. One hospital's isolates, not the world. The logistic runs toward 100%; real hospital shares plateaued below that, so after about year 3 the red count is model extrapolation (noted, not labeled on screen). After year 13 the red colonies go gray (the new drug works on them), and at year 15 two colonies return red: a qualitative "first reports" staging of the 1961 counter-move, not a measured share.
+
+**Human aggregation (green).** 10 links between the fragment holders (Oxford biochemists f1, lit from before frame 1 since the enzyme was known in 1940; the hospital lab f2, brightening at year 1.5 when the warning is ready; pharmaceutical chemists f3, lit at year 13; three other hospitals' surveillance labs). Link i connects at L.lognormalQuantile((i + 0.5)/10, median 13, p90 69) years: 1.4, 3.5, 5.6, 8.0, 10.9, 15.5, 22, 30, 48, 120. Before connecting, each link shows a flickering dashed reach that breaks (attention elsewhere). By year 13 half the links are in, as the analog's median says; the rest are still out when the race ends. The analog's aggregation distribution is derived from dated events (p10 1.5, median 13, p90 69), not measured; the fitted lognormal's p10 is 2.4 vs the documented 1.5. The pieces "meet" (the three main rooms flash together) at the median, year 13 (methicillin 1959, s5).
+
+**AI counterfactual (illustrative, coordination only).** From analog ai_counterfactual: aggregation median 2.5 years instead of 13, same lognormal spread (sigma = ln(69/13)/1.2816 = 1.30, so p90 = 13.3). Basis: turning many hospitals' surveillance into a routed prescribing / infection-control response is analysis and communication work well inside the ~17.4 h 50% task horizon (RATES.md, METR), repeatable cheaply (RATES.md, Epoch cost trend). It does NOT assume faster drug discovery: trials, manufacturing and the red's own evolution still take years. On screen: bottom lane labeled "routed coordination" + "illustrative" + "coordination only". The red curve is identical in both lanes; AI does not slow the red.
+
+**Numbers on screen (two):** "1 in 8" (12.5% in April 1946, s1) and "13 years" (methicillin in clinical use 1959, s5, 13 years after t0). All other quantities are shown as counts of colonies, positions on axes, or tick marks without numerals.
+
+## Shot list (DUR 37 s)
+| t | slate | camera | beat |
+|---|---|---|---|
+| 0.0-1.3 | SC1 CLOSE · COLD OPEN | locked zoom 13 on the dish in the gloved x-ray hand | flash-forward ("later"): 22 of 40 colonies red, green rim lit. "Watch the red." |
+| 1.3-6.4 | SC1 CLOSE · LOCKED-OFF | locked | exposure flash, back to spring: "Spring. One in eight." Colonies turn red one by one; "It does not hurry." |
+| 6.4-9.4 | SC2 THE PULL-OUT | single pull-out, zoom 13 to 1, log-eased, 3 s | dish -&gt; lab -&gt; hospital wards (same 40 samples as beds) -&gt; distant rooms. "Its habitat: every ward." |
+| 9.4-12.8 | SC3 WIDE | hold | links reach and break; "Three rooms hold the answer." "They rarely hear each other." |
+| 12.8-15.3 | SC4 DOLLY IN | zoom 1 to 16, onto the dish, closer than frame 1 | pieces meet at year 13: green rim closes; red goes gray. "At last, the pieces meet." |
+| 15.3-17.0 | SC4 CLOSER | hold | year 15: two colonies turn red again. "The red adapts." Dead stop at 16.2, silence |
+| 17.0-19.4 | SC5 CARD | hold | "We slowed it down so you could see it." |
+| 19.4-26.2 | SC6 THE SNAP | full-frame x-ray film, two lanes 940 px wide | freeze, silence, one hit; both lanes sweep 0-15 years in 3 s; "13 years." over the top lane; bottom lane green at 2.5, "illustrative", "coordination only" |
+| 26.2-29.2 | SC7 CLOSEST | full-frame fade back into the dish, zoom 20 | green rim whole, the hand. "The pieces were already here." |
+| 29.2-32.0 | SC7 | hold | "This is the bottleneck." |
+| 32.0-37.0 | END | — | L.endCard, 5 s |
+
+Zoom cycle: IN (13, 0-6.4) -&gt; OUT (1, 6.4-12.8) -&gt; IN+ (16, 12.8-19.4) -&gt; [snap insert] -&gt; IN++ (20, 26.2-32). One pull-out only, per the assigned camera.
+
+## 3D translation note
+Shot as a real x-ray/fluoroscope world: a locked-off 100 mm macro on the gloved hand under a light box, the glove a faint cyan shell, bones glowing, the dish's agar a pale disk with colonies as small luminous domes, red ones softly pulsing. The single pull-out is a 3 s continuous dolly back and crane up through the lab ceiling (a cutaway x-ray of the hospital: beds as bright rectangles, 40 of them each a tiny red or gray point), holding high above as green filaments stretch between distant lit rooms and snap. Return is a slow drop straight down to the dish on a 135 mm macro, closer than the opening. Snap: two lanes on a real light box as x-ray film strips. Richer in 3D: volumetric glow, the depth between glove and agar, dust in the light.
+
+## Copy variants
+- Watch the red.
+- Spring. One in eight.
+- It does not hurry.
+- Its habitat: every ward.
+- Three rooms hold the answer.
+- They rarely hear each other.
+- At last, the pieces meet.
+- The red adapts.
+- The pieces were already here.
+- (unused) Here, the red feeds in silence.
+- (unused) A rare specimen: someone who shares.
+
+## Diversity check
+`node tools/diversity.js` -&gt; OK: distinct enough (nearest two-days and the-last-thirteen-days, distance 0.89). No changes needed.
+
+## Build log
+- Preview 1: at macro zoom the world-space link lines and the ward red haze became giant green/red beams across the close-ups; snap red area was scaled by 0.55 (misleading); "13 years." collided with the "pieces meet" label. Fixed: links and haze fade by zoom (visible only below zoom ~4), red area drawn at true share, labels moved. Preview 2 clean.
+- Render: 37.0 s (ffprobe), matches DUR.
+- Known weaknesses: the stick-figure lab worker is tiny in the wide, so the only emotional face is barely legible; the colonies turning red is a count, which is subtle on a phone; the snap's lower half of frame is empty; the returned-red at year 15 is qualitative staging (noted above).
+
+## Scores
+- Hook: 7 (frame 1: glowing x-ray hand, big red colonies, green rim, "Watch the red." — striking thumbnail)
+- Speed accuracy: 8 (logistic with the analog's derived 0.56 y doubling, 40 fixed samples so count = share, lognormal link times, one stated log mapping; logistic extrapolates past ~year 3)
+- Snap impact: 6 (clean two-lane true-speed sweep, "13 years." lands; honest coordination-only framing limits the punch)
+- Emotion: 6 (awe from the x-ray macro and the single pull-out; little character emotion)
+- Originality: 7 (x-ray nature-doc petri world is fresh in the portfolio)
+- Craft: 6 (readable, consistent zooms; animatic-level hand and figures)
+- Honesty: 9 (threat never named, verified numbers only, illustrative and coordination-only labels, derived doubling time disclosed)
+- Overall: 7.0
+- Virality: 7% — the x-ray hand thumbnail and nature-doc captions are distinctive, but the petri-dish subject is quiet and the payoff is abstract charts, so from a small account it most likely stays well under 100k.
+</pre></div><div class=""><div><h3>the-department-of-later · 7% viral · 6.9/10</h3><video src="the-department-of-later/the-department-of-later.mp4" poster="the-department-of-later/poster.png" controls loop playsinline></video></div><pre># The Department of Later
+
+Tier: animatic
+Slug: the-department-of-later
+Structure: mockumentary (research/VIRAL_STRUCTURES.md #8)
+Analog: gfc-2008 (research/analogs/gfc-2008.json)
+DUR: 40 s, 1080x1920, 30 fps
+
+## Logline
+A mockumentary crew films over one bean's shoulder in a ministry meeting room: it holds a green sticky note, the red on the wall TV creeps up, and everyone around the table holds a green note too. Nobody reads anyone else's. Deadpan talking heads ("I did send the memo.") give way to a dead stop when the red jumps. The camera cranes out of the window to a whole city of ministries, each with a green light, then drops back in closer to the first bean, now angry at the routing, not at anyone. Snap: the same days at true proportions, then the same pieces found sooner (illustrative).
+
+## On-screen numbers
+None. The concept's "Day 426 vs 220" is not shown: in the analog file the Oct 8 2008 date (f5) is marked verified: false, and the 220 is a counterfactual. Time is shown as tear-off calendar pages and progress bars only.
+
+## Time mapping (one mapping)
+Race: **1 film second = 30 days, linear, from t = 0 = Aug 9 2007 (analog t0)**. day(t) = 30 t. The clock runs to day 584 (Mar 2009 trough) at t = 19.47 s, then freezes. The clock never stops during the race; the stop-start pace is the data's own (18 months of drift, then one month's jump) plus the characters freezing.
+Snap: the same days 0-584 replayed at true proportions in 2.0 s per panel (292 days/s), both panels identical.
+
+## Speed math
+**Threat (red).** extent(day) = piecewise-linear interpolation of `threat.points` (share of the eventual peak-to-trough fall in the monthly-average S&amp;P 500; (0,0) and (67,0) from the file). Drawn as a red area chart on every TV (room, interviews, snap panels) and as the share of ministry windows turned red in the city wide (window i goes red when extent &gt;= rank_i, ranks from distance to one corner plus noise; timing is all data). Key film times: the drift reaches 0.41 at day 403 (t = 13.43, Lehman month), then 0.73 at day 433 (t = 14.43): the one-second jump the film is built around.
+
+**Human aggregation (green).** Seven fragments from `solution.fragments`. Per-fragment connection day = max(ready_at, Q_h(q)), Q_h = L.lognormalQuantile(q, median 426, p90 1077) (sigma = ln(1077/426)/1.2816 = 0.724), q = (i+0.5)/7:
+| fragment | holder in film | q | Q_h | ready_at | connects day | film t |
+|---|---|---|---|---|---|---|
+| f2 liquidity (TAF) | bean across table (interview 1) | 0.071 | 148 | 125 | 148 | 4.93 |
+| f3 ad-hoc rescue | remote ministry (interview 2) | 0.214 | 240 | 220 | 240 | 8.0 |
+| f4 capital fund law | remote ministry | 0.357 | 327 | 421 | 421 | 14.03 |
+| f5 coordinated cut | bean across table | 0.500 | 426 | 426 | 426 | 14.2 |
+| f6 leaders' summit | bean across table | 0.643 | 555 | 464 | 555 | 18.5 |
+| f1 diagnosis ("who owes whom") | the protagonist | 0.786 | 755 | -730 | 755 | never in window |
+| f7 reform law | remote ministry (interview 3) | 0.929 | 1230 | 1077 | 1230 | never in window |
+The max() floor almost never binds, i.e. the lognormal reproduces the real response dates (TAF 125, rescue 220, TARP 421, rate cut 426). Five of seven notes reach the board by the trough; the protagonist's note never does. Its label reflects the analog's counterfactual basis: the missing piece was a shared map of who was exposed to whom.
+
+**AI counterfactual (illustrative, labeled on screen).** From `ai_counterfactual`: the coordinated response (f5) is assembled at day 220 instead of 426. Same lognormal shape, median 220: Q_ai(q) = Q_h(q) x 220/426. The two laws (f4, f7) keep their human dates because the file says political decisions still take human time. AI connects (days): f2 76, f3 124, f5 220, f6 287, protagonist 390, f4 421, f7 1077 (not in window). Red is identical in both panels: the counterfactual does not claim the crisis is avoided. On screen: "Same pieces. Found sooner." + "illustrative". Basis: RATES.md METR time horizon (~17.4 h tasks) per institution's books + ~40x/yr cost fall (see analog file).
+
+## Shot list and camera
+One world camera: the meeting room is drawn inside one tall window of the central ministry (room scale k = 0.06 of the city), so every zoom is continuous (log-zoom, center interpolated in 1/zoom so the focus point stays locked). No crossfades between scales.
+| t | shot | camera | slate |
+|---|---|---|---|
+| 0.0-5.2 | SC1 over the shoulder: foreground bean's back, green note in hand, three beans across the table with their notes, TV with red top right, empty board top left. Card "Everyone here has a piece." Lower third "Office of Later". f2 note reaches the board at 4.93 | CLOSE OTS, slow push-in (z 16.7 -&gt; 18) | SC1 CLOSE OTS |
+| 5.2-10.0 | SC2 three talking heads (1.6 s each): "I did send the memo." / "It's on the agenda. Next quarter." / "We're scheduling the pre-meeting." Red TV behind each at the current day | CLOSE interview, locked-off | SC2 INTERVIEW |
+| 10.0-13.43 | SC3 back to the room, invites and blah bubbles volleying; card "Agenda item one: the agenda." | MEDIUM OTS, slow drift | SC3 MEDIUM OTS |
+| 13.43-14.9 | Red jumps (Lehman month). Everyone freezes. Card: "Did anyone read the others' notes?" Silence. | HOLD | SC3 HOLD |
+| 14.9-18.3 | SC4 crane out through the window: the ministry, then a city of ministries, red spreading through windows, green lights scattered, lines trying to reach the room | CRANE UP / PULL OUT x17 | SC4 CRANE UP |
+| 18.3-20.0 | wide hold. "Every office had a piece." / "No one had the map." | WIDE | SC4 WIDE |
+| 20.0-21.8 | SC5 drop back into the same window, closer than SC1: note and hand fill the frame, room lights dimming, the bean turns in profile, angry | DROP DOWN x30 | SC5 DOLLY IN |
+| 21.8-24.2 | "We slowed it down / so you could see it." | CLOSE hold | SC5 CLOSE |
+| 24.2-31.2 | SC6 snap: black, one hit. Left panel "As it happened" replays days 0-584 in 2 s; right panel "Found sooner" (illustrative) replays the same in 2 s, thin green routing lines, protagonist's note lands | FLAT SPLIT | SC6 SNAP |
+| 31.2-35.0 | SC7 extreme close on the protagonist's note, "who owes whom", trembling; "This is the bottleneck." | EXTREME CLOSE, push in | SC7 EXTREME CLOSE |
+| 35.0-40.0 | end card (5 s), line "The bottleneck is us." | - | - |
+Zoom cycles: IN (0-14.9) -&gt; OUT (14.9-18.3) -&gt; IN+ (20.0-24.2, closer than SC1); snap wide -&gt; IN++ (31.2-35, closest).
+
+## 3D translation note
+- SC1: 35 mm over-the-shoulder at seated eye height, shoulder soft in the foreground, focus on the green note; the TV's red light is the only warm light in the room.
+- SC2: 50 mm locked-off interview frames, flat office light, documentary handheld drift of a few pixels.
+- SC4: the camera backs out through the window glass and cranes up a slow 4 s, 90 m, to a dusk city of identical stone ministries; red windows ripple across facades; green glints connected by thin light threads that fail mid-air.
+- SC5: faster drop straight back into the same window, landing at 85 mm tighter than SC1; room practicals switching off one by one.
+- SC7: 100 mm macro on the note and hand, rack focus from the red reflection on the note's edge to the handwriting.
+Richer in 3D: soft sticky-note paper, felt table, the red chart light spilling across faces, parallax of the ministry rows.
+
+## Copy
+Used: "Everyone here has a piece." / "Office of Later" / "I did send the memo." / "It's on the agenda. Next quarter." / "We're scheduling the pre-meeting." / "Agenda item one: the agenda." / "Did anyone read the others' notes?" / "Every office had a piece." / "No one had the map." / "We slowed it down / so you could see it." / "As it happened" / "Found sooner" + "illustrative" / "Same pieces. Found sooner." / "This is the bottleneck." / end "The bottleneck is us."
+Variants: "Reply-all is not a routing protocol." / "The patch was in someone's hand." / "Civilization has lag. Here is the meeting room." / "Out of office. Until the next crisis."
+
+## Tags
+{"slug":"the-department-of-later","structure":"mockumentary","medium":"bean cartoon","family":"theater","scale":"organization","pace":"stop-start","camera":"over-the-shoulder","emotion":"anger","protagonist":"an institution","analog":"gfc-2008"}
+
+## Build notes
+- Diversity check: OK, distinct enough (nearest two-days, distance 1.00).
+- Preview 1 fixes: red on frame 1 was too faint (chart at day 0 is flat), so the live red point on every chart got a larger dot and halo; flying invites moved off the title area onto the table; lower third softened to "holds a piece nobody has read"; wide framing tightened; remote green windows enlarged so the scattered fragments read in the wide.
+- Final render: 40.0 s (ffprobe).
+- Known weak spots: the thumbnail's red is only a small dot (the data is flat at day 0); the wide is almost all red by the time the crane finishes (the data really is at 0.85 by then), so the gradual spread is best seen on the TVs; snap panels are small and the "illustrative" label is small type.
+
+## Scores
+Hook: 6
+Speed accuracy: 8
+Snap impact: 6
+Emotion: 6
+Originality: 7
+Craft: 6
+Honesty: 9
+Overall: 6.9
+Virality: 7% - the mockumentary talking-head format and the "meeting about the meeting" joke are relatable and shareable, but the thumbnail's red is weak, the grave turn needs sound to land, and the snap panels are small on a phone.
+</pre></div><div class=""><div><h3>fifty-nine-days · 7% viral · 6.6/10</h3><video src="fifty-nine-days/fifty-nine-days.mp4" poster="fifty-nine-days/poster.png" controls loop playsinline></video></div><pre># Fifty-Nine Days
+
+Tier: animatic
+Slug: fifty-nine-days
+Structure: `game-hud-run` (research/VIRAL_STRUCTURES.md #10)
+Analog: `wannacry-2017`
+Medium: 8-bit (chunky grid-aligned pixels, gray palette; only red and green are saturated)
+
+## Logline
+A speedrun HUD rides one hospital IT worker's walk down a corridor to a terminal. The red SPREAD meter fills to 230,000 in a day. Every green item slot is already there: the patch shipped 59 days ago, the alert is sitting unread in an inbox, and the off switch is one registration away. The run is lost to routing, not to skill.
+
+## Time mapping (one mapping for the race)
+- Race: film t = 2.0 s to 14.0 s ↔ hours 0 to 24 after outbreak. **1 s = 2 h, linear.** hours(t) = 2·(t − 2).
+- Hook (0 to 2 s) is a cold open flash-forward to hour 24 (meter full, labeled "230,000"), then a REWIND glitch back to hour 0.
+- Snap: a separate, labeled "true proportions" axis, 0 to 168 h across the full panel width; drawn in 2.4 s (1 s = 70 h). Both panels share this axis.
+
+## Speed math
+**Threat (red).** Analog gives only endpoints: extent 0 at 0 h, 1.0 (= &gt;230,000 systems, &gt;150 countries) at 24 h (s2). No hourly series is sourced and the file says not to show a pre/post kill-switch split, so the SPREAD meter interpolates **linearly** between the two endpoints and is labeled "REPORTED". The linear shape is a placeholder, not data; the only numeral it ever shows is the endpoint 230,000, at t = 14.0 s. On the world map, land cells turn red in a distance-plus-jitter order so that the red share of cells equals the meter at every zoom level. The worker's hospital cell turns red when the meter crosses 0.85 (hour 20.4, t = 12.2 s); its exact hour is not sourced, it is a rank on the linear curve.
+
+**Green fragments (from the analog).**
+| fragment | ready_at | on screen |
+|---|---|---|
+| f1 patch (vendor) | −1,416 h (59 days, s5) | green item slot "PATCH" from frame 1; green vendor cell on the map; "59 days" is one of the two numbers |
+| f2 alerts (national health IT) | ~−1,440 h (unverified) | slot "ALERT: UNREAD", no number |
+| f3 kill switch (one researcher) | 7.3 h → t = 5.65 s | slot "OFF SWITCH" lights, map pixel lights far away; card says one person, partly luck |
+| f4 emergency patch for old systems | ~20 h (hour unverified) → t = 12.0 s | second pulse at the vendor cell, no number |
+| f5 the unpatched machines | clear by ~168 h | the worker's hospital; clears off screen in the race, shown on the snap axis |
+
+**Human aggregation.** 36 organisation nodes on the map. Each gets a quantile q (stratified, shuffled with L.rng) and an arrival time `max(7.3, L.lognormalQuantile(q, 20, 168))` hours (median 20 h, p90 168 h from the analog; floored at the 7.3 h kill switch, the earliest documented stop). sigma = ln(168/20)/1.2816 = 1.66. Within the 24 h race 20 of 36 (56%) have connected; the rest arrive days later. The worker's hospital is assigned the quantile nearest 0.82 (arrival ~91 h, day four; highlighted "HIS" on both snap panels, AI ~5 h), so inside the race its green line never lands.
+
+**AI-speed counterfactual (illustrative).** aggregation_median = 1 h (analog `ai_counterfactual`). Same quantiles, same sigma: AI p90 = 1 × 168/20 = 8.4 h. On the shared 168 h axis the AI pips land inside the first day (latest ~39 h, the 36th stratified quantile); the human pips spread across the whole week. Basis (from the analog): spotting a hard-coded domain in a sample is a few-hour expert task, inside the ~17.4 h METR 50% time horizon (RATES.md); matching unpatched machines to a 59-day-old critical patch and routing the alert is inventory work made cheap by ~40x/year cost decline (Epoch, RATES.md). Humans still approve and apply the patch (the IN++ shot shows the worker's own hand doing it). Labeled "ILLUSTRATIVE" on screen at 48 px. Not a claim the event would have been prevented; the kill switch was found by one person, partly by luck, and the film says so.
+
+**Numbers on screen:** 59 (days) and 230,000. Everything else in the HUD is bars, icons, and words.
+
+## Shot list and camera
+| t (s) | shot | camera | beat |
+|---|---|---|---|
+| 0.0–2.0 | SC1 POV CLOSE | locked POV, slight bob | Cold open, hour 24: pixel hand holds green PATCH disk, corridor monitors red, meter full "230,000". Card: "The patch shipped 59 days ago." REWIND glitch at 1.7–2.0 |
+| 2.0–7.0 | SC2 POV WALK | walking dolly down the corridor (depth scroll, head bob) | Run start, hour 0. Meter climbs. Item slots: PATCH (in inbox), ALERT (unread), OFF SWITCH (dark). t = 5.65 OFF SWITCH lights: "One stranger. Partly luck." |
+| 7.0–11.5 | SC3 SPECTATOR CAM, CRANE UP | top-down on the worker sprite, log zoom out ×45 → ×0.9 | Hospital floor, then the whole pixel world: red cells across nations, 36 organisations, green lines connecting at lognormal times, many not yet |
+| 11.5–15.0 | SC4 POV DOLLY IN (closer) | cut back into POV and push to the terminal, then onto his face reflected in the screen | Red arrives down the corridor (t = 12.2), inbox shows ALERT UNREAD, meter hits 230,000 at t = 14.0, lights go out to gray |
+| 15.0–17.4 | SC5 FREEZE | locked | Frozen gray frame, silence, "We slowed it down so you could see it." |
+| 17.4–25.5 | SC6 SNAP, FLAT | locked split, two 920 px panels | Hit. True proportions: AS IT HAPPENED (pips across a week, off switch pip marked) vs ROUTED, ILLUSTRATIVE (pips inside the first hours) |
+| 25.5–28.5 | SC7 POV EXTREME CLOSE, DOLLY IN | closest yet | The same hand slots the green disk into the terminal; screen shows PATCH APPLIED; his reflected face, resolved. "ILLUSTRATIVE" stays up |
+| 28.5–31.0 | SC7 hold | | "This is the bottleneck." |
+| 31.0–35.0 | END | | L.endCard, 4.0 s |
+
+Zoom cycles: Cycle 1: IN (POV) 0–7 → OUT (crane up to world) 7–11.5 → IN+ (terminal/face) 11.5–15. Cycle 2: OUT (snap, flat axis over a whole week) 17.4–25.5 → IN++ (hand in the slot, face) 25.5–31.
+
+## 3D translation note
+- SC2/SC4/SC7 are a true first-person walk: 24 mm lens at 1.65 m eye height, gentle head bob, 1.2 m/s, rendered as voxel geometry with a nearest-neighbour upscale so the 8-bit read survives in 3D. The HUD stays a flat screen-space overlay.
+- SC3 is one continuous vertical crane: start 2 m above the worker, rise through the ceiling (floor plan cut-away) to orbit height over a voxel globe, 5 s, ease-in-out, log speed. The hospital stays centered.
+- Props: green 3.5-inch-disk style cartridge (the patch), CRT terminal with inbox, corridor of monitors that flip to red. Characters: one voxel IT worker with a readable pixel face (tired → alarmed → resolved).
+- Richer in 3D: red bleeding along real cable runs in the ceiling; the green lines on the globe as arcs; the terminal glow on his face in the final close-up.
+
+## Copy
+- Hook: "The patch shipped 59 days ago."
+- "Friday morning. Run start." / "The fix is in an inbox." / "One stranger. Partly luck." / "Every piece already existed." / "Nobody routed them." / "We slowed it down so you could see it." / "At true proportions." / "Same pieces. Faster routing." / "This is the bottleneck."
+- Variants (not used): "Speedrun: any percent, 59 days late." / "The patch was the easy part." / "Latency kills runs." / "Ping: one week."
+
+## Tags
+{"structure":"game-hud-run","medium":"8-bit","family":"game","scale":"between nations","pace":"sprint","camera":"POV walk","emotion":"resolve","protagonist":"one person","analog":"wannacry-2017"}
+Diversity check: OK: distinct enough (nearest the-last-thirteen-days 0.78).
+
+## Build notes
+- Rendered 35.0 s (ffprobe 35.000000), 1080x1920, 30 fps. POV and terminal drawn into a 180x320 buffer and upscaled x6 nearest-neighbour; world map and HUD drawn as grid-aligned rects.
+- Snap staging: freeze on the dead terminal (15.0–17.4), 0.5 s of black silence, one "hit" at 17.9 with a flash, then both panels sweep a shared 168 h axis in 2.4 s.
+- Known weaknesses: the human-vs-AI difference on the true-proportion axis is honest but modest (both clusters start near hour 0; the human tail runs the whole week); pixel text at 45 px is chunky but on the small side; the world-map mid-zoom is busy.
+
+## Scores
+- Hook: 7 (red hallway, green disk in hand, "59 days" in frame 1)
+- Speed accuracy: 7 (endpoints, 7.3 h, lognormal per org are real; linear meter shape is a labeled placeholder)
+- Snap impact: 6
+- Emotion: 5
+- Originality: 7
+- Craft: 6
+- Honesty: 8
+Overall: 6.6
+Virality: 7% — the 8-bit HUD and "patch shipped 59 days ago" are native to gaming feeds and legible sound-off, but the snap is abstract and the film has no strong character payoff to drive shares.
+</pre></div><div class=""><div><h3>fifteen-hundred · 6% viral · 7/10</h3><video src="fifteen-hundred/fifteen-hundred.mp4" poster="fifteen-hundred/poster.png" controls loop playsinline></video></div><pre># Fifteen Hundred
+
+Tier: animatic
+Slug: fifteen-hundred
+Structure: split-screen-race (research/VIRAL_STRUCTURES.md #2)
+Analog: false-news-2018 (Vosoughi, Roy &amp; Aral, Science 2018; Hoaxy lag, Shao et al. 2016)
+DUR: 38 s, 1080x1920, 30 fps
+
+## Logline
+Two neon highway lanes, one above the other, run over the same map of 1,500 people. Top: a red car (a claim) weaves through all of them in 10 hours. Bottom: the green cars (fact-checks, and the people who already know the true version) sit behind on-ramp gates for ~13 hours. By the time the ramps open, the road is already red. Snap: the whole 60 h replayed at one speed, beside an AI-routed version (illustrative) where the correction trails the claim by about an hour. Caveat on screen: speed is not belief.
+
+## Time mapping (one mapping per section, both linear, both stated here)
+- Race (t 3.0 to 19.0 s): **1 second = 1 hour** (h = t - 3). Covers h 0 to 16.
+- Snap (t 21.6 to 24.6 s): **1 second = 20 hours** (h = 20 (t - 21.6)). Covers the full 0 to 60 h. Same mapping for both snap lanes.
+- Freeze at h = 16 between 19.0 and 21.6 s ("We slowed it down so you could see it.").
+
+## Speed math
+The world: one serpentine highway with 1,500 people (dots) placed along it, each with a route position s in [0,1] (stratified, so the share reached equals the route share passed).
+
+**Threat (red).** Analog gives only endpoints: 0 at t=0, 1,500 people (extent 1.0) at ~10 h (s2). The analog notes say no doubling time was found and to use a stated monotone ease. Stated ease: extent(h) = smoothstep(h/10). The red car's route position is extent(h); a person turns red at hRed(s) = 10 * smoothstep^-1(s). Red reaches everyone at h=10 -&gt; t=13.0 s in the race, t=22.1 s in the snap.
+
+**Human aggregation (green).** 7 green cars, one per on-ramp, one per 1/7 of the route. Gate release times are per-car lognormal quantiles, L.lognormalQuantile((i+0.5)/7, median 13 h, p90 20 h) (Hoaxy: fact-check sharing lags by 10-20 h, ~13 h characteristic; p10/p90 treated as the authors' typical range):
+7.9, 10.0, 11.5, 13.0, 14.7, 17.0, 21.3 h (shuffled across ramps with a seeded permutation; the hero ramp is the median, 13.0 h, so its gate lifts at t = 16.0 s).
+After release, each car covers its 1/7 of the route in D = 60 - 21.3 = 38.7 h, so the last person gets the true version at 60 h, matching the sourced true-news time to reach 1,500 people (s2, used as the analog's deploy proxy). A person turns green-ringed at r_i + D * (s - s0_i)/(1/7).
+During the race (h &lt;= 16) only 4 of 7 gates have opened and they have barely moved; red has been everywhere since h = 10.
+
+**AI counterfactual (illustrative).** ai_counterfactual.aggregation_median = 1 h (basis: matching a circulating claim to an existing ruling is a well-under-1-hour task, inside the ~17.4 h METR 50% horizon in RATES.md; cost ~40x/yr cheaper makes screening affordable). Same spread as human: r_ai_i = L.lognormalQuantile(q_i, 1, 20/13) = 0.61 to 1.64 h. Illustrative assumption (stated here, labeled on screen): the correction is routed along the claim's own path, so each person gets it r_ai_i hours after the claim: hGreenAI(s) = hRed(s) + r_ai_i. Last person reached at ~11.6 h -&gt; t = 22.2 s in the snap, vs 60 h -&gt; t = 24.6 s human.
+Caveat on screen: "Speed is not belief." Reaching someone with a correction does not mean they accept it; people still decide (analog basis text).
+
+## Numbers on screen (two, both verified in the analog)
+- "10 hours" (false story to 1,500 people, s2/s1)
+- "60 hours" (true story to 1,500 people, s2/s1)
+"1,500" is shown only as 1,500 drawn dots, not as a numeral.
+
+## Shot list and camera (two lanes, synchronized cameras, handheld shake from L.noise)
+| t | shot | top lane (red) | bottom lane (green) |
+|---|---|---|---|
+| 0.0-1.3 | SC0 COLD OPEN (flash-forward, same timeline, labeled "10 hours from now") / CLOSE | z 4.6 on the last person reached at h=10: red car, red dots, face lit red | green car behind a gate, driver's face |
+| 1.3-3.0 | SC1 CLOSE / CLOSE (labeled "now", h=0) | thumb on a phone; the red car on the screen | green car behind a gate, driver's face |
+| 3.0-8.0 | SC2 DOLLY IN (into the phone) / CLOSE | phone screen grows to full lane; handheld chase on the red car (z 3.2) | driver waits; at ~7.7 s the red car blasts past the ramp |
+| 8.0-11.0 | SC3 CRANE UP both | out to z 1: whole map, red sweeping | out to z 1: seven green cars at seven gates |
+| 11.0-13.2 | SC3 WIDE hold | red reaches the last dot at 13.0 | gates mostly closed |
+| 13.2-19.0 | SC4 DOLLY IN both, closer | z 6.5 on the last person reached, phone lit red | z 8 on the driver, angry; gate lifts at 16.0, car pulls out into a red road |
+| 19.0-21.6 | freeze, silence | "We slowed it down so you could see it." | |
+| 21.6-29.4 | SC5 SNAP, locked-off WIDE | as it happened, 0-60 h | AI-routed, illustrative |
+| 29.4-32.6 | SC6 EXTREME CLOSE, full frame, DOLLY IN | the closed gate: "This is the bottleneck." | |
+| 32.6-38.0 | END | L.endCard, 5.4 s | |
+Zoom cycle: IN 0-8 -&gt; OUT 8-11 -&gt; IN+ 13.2-16 (closer than start) -&gt; (snap wide) -&gt; IN++ 29.4-32.6 on the gate.
+
+## 3D translation note
+Two stacked vertical frames, each a real camera over a night highway model lit only by emissive road edges and house lights. SC1: 50 mm macro on a thumb over a phone (top) and a long-lens eye-level on the driver behind a boom barrier (bottom). SC2: the top camera flies through the phone glass into a low chase drone 3 m above the red car, handheld jitter, 24 mm. SC3: both cameras crane to ~800 m over 3 s with ease, synchronized. SC4: fast drop to 1.5 m, 85 mm on the driver's face lit by the red car's taillights; boom lifts. SNAP: orthographic top-down, locked. SC6: slow push on the boom barrier's hinge. Richer in 3D: rain on the windshield, the red car's light trail painting 1,500 windows, the barrier's mechanical slowness.
+
+## Copy variants
+- "Two lanes. One race." (used) / "Same road. Different on-ramps."
+- "The answer is already here." (used)
+- "Red: everyone in 10 hours." (used)
+- "Then the ramp opens." (used) / "Green light. Empty road." 
+- "Truth: 60 hours." (used)
+- "Speed is not belief." (used)
+- "Your correction has 13 hours of lag." / "Truth is stuck on the ramp."
+
+## Tags
+{"structure":"split-screen-race","medium":"neon arcade","family":"traffic","scale":"nation","pace":"sprint","camera":"handheld chase","emotion":"anger","protagonist":"the red itself","analog":"false-news-2018"}
+Diversity check: OK (nearest two-days, distance 1.00).
+
+## Resume log (after container restart)
+- Frame 1 hook: added a 1.3 s cold open (flash-forward to h = 10 on the same timeline, labeled "10 hours from now"), then a white-flash cut back to "now" (h = 0) and the phone. Red is big in frame 1; green driver's face below. Frame 1 has red + green + a face + one line of text.
+- Cards now auto-fit inside x 80-900 (centered at x 490, max width 780 px).
+- Snap legibility: people reached by the correction now show a green ring with a small red core (the claim is still there; speed is not belief) instead of a thin green ring over a full red dot, which read as olive at phone size.
+- Labels already 44 px; snap lanes full 1080 px wide.
+
+## Render
+output/fifteen-hundred/fifteen-hundred.mp4, ffprobe duration 38.000 s (DUR 38), 1080x1920, 30 fps, with audio.
+
+## Scores
+- Hook: 7 (cold open puts a big red car, a red-lit face and red dots in frame 1 over a green driver; still an abstract "two lanes" premise)
+- Speed accuracy: 8 (sourced 10 h / 60 h endpoints, Hoaxy lognormal gate releases, one linear mapping per section; the path between endpoints is a stated ease, not data)
+- Snap impact: 6 (freeze, flash, locked-off side by side is clean, but the snap's 3 s top lane and the AI lane both end all-green, so the difference is mostly in timing, not image)
+- Emotion: 6 (angry driver behind the gate works; the crowd is dots)
+- Originality: 7 (split-screen highway with on-ramp gates is a fresh traffic metaphor for correction lag)
+- Craft: 6 (neon look reads at phone size; SC4/SC6 camera centering and the gate close-up are functional rather than beautiful)
+- Honesty: 9 (both on-screen numbers verified; AI lane labeled illustrative with a stated routing assumption; "Speed is not belief." caveat on screen)
+Overall: 7.0
+Virality: 6% + the "false news is 6x faster" fact is shareable and the split-screen race is easy to track, but an abstract highway of dots from a small account rarely clears 100k.
+</pre></div><div class=""><div><h3>day-three-hundred-five · 6% viral · 6.9/10</h3><video src="day-three-hundred-five/day-three-hundred-five.mp4" poster="day-three-hundred-five/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+
+# Day 305
+
+**Logline.** It opens on day 305, when the national plan finally exists, and rewinds to one lit apartment window on the first morning. With every step back the answer is in more pieces: the forecasters, the doctors, the hospital and the neighbors each hold one, and no one connects them.
+
+- Structure template: `reverse-chronology` (VIRAL_STRUCTURES.md #13). The template's "stop-start" pace is played as a slow build with two holds (day 12 and the first morning).
+- Analog: `heatwave-2003` (France, August 2003). The threat is never named on screen. It is only the red.
+- Medium: children's-book flat. Soft rounded flat shapes, warm grays, no outlines, soft offset shadows. Only red and green are saturated.
+- DUR 40 s, 1080x1920, 30 fps. Scene: `scenes/day-three-hundred-five.js`.
+
+## Time mapping (one stated mapping per segment)
+- **Rewind (t = 3.0 to 16.5 s): log time, played backward at a constant 0.204 decades per second.** Day 305 falls to day 12 over t = 3.0 to 9.9. A labeled hold on day 12 runs from 9.9 to 11.2. Day 12 falls to day 1 over 11.2 to 16.5, then day 1 holds to 22.6. Equal screen time covers an equal *ratio* of days, so the last ten months pass in seconds and the first two weeks get half the rewind. A strip at the bottom of the frame (log scale, no numbers except its two labeled ends) shows the playhead moving.
+- **Snap A (t = 23.3 to 25.3 s): true proportional speed.** The full 305 days play linearly in 2.0 s (1 s = 152 days). All of the red fits in the first 56 px of a 900 px axis.
+- **Snap B (t = 25.8 to 29.4 s): linear, days 0 to 19 in 3.6 s (1 s = 5.3 days), identical in both lanes.**
+
+## Speed math
+**Threat (red).** The analog provides only endpoints, with no daily death series: extent 0 on day 0 and 1.0 on day 19 (s1, s2). Its sourced shape: the heat begins on day 1, peaks on day 11 (Aug 12), and ends on day 14 (Aug 15). Excess deaths exceeded 1,000 a day on days 11 and 12 and stopped by day 19. **My interpolation, not data:** heat intensity h(d) is piecewise linear, 0 at d = 0, 0.55 at d = 2, 1.0 at d = 11, 0 at d = 14.5, then smoothed. The daily loss rate is h(d - 0.5)^2, and the cumulative extent E(d) is its running integral normalized to 1 at day 19. E(d) therefore follows the temperature shape and peaks around days 11 to 12, as the sources say. The red on screen is a sun and haze whose strength is h(d), plus the red humps in the snap panels (also h(d)). The windows that go dark are driven by E(d).
+- The dark windows are **symbolic, not to scale**. Six of about 230 windows (2.6 %) go dark, at thresholds E = (i + 0.5)/6, all between roughly day 8 and day 14. The real toll was about 14,800 excess deaths in a country of about 60 million (about 0.025 %). The notes say so, and the film shows no count.
+- Loss is shown only as absence: a window goes from cream to dark and a chair is empty. There are no bodies.
+
+**Human aggregation (green).** From the analog: median 12 (Plan Blanc, Aug 13, s4), p10 9.5 (ER doctors' public alarm, *unverified day*, s7) and p90 305 (Plan canicule, June 1 2004, s6). The distribution is heavily skewed, so `L.lognormalQuantile` (one sigma) would put the p10 at 0.5 days, which is wrong. I use a two-sided lognormal: sigma_lo = ln(12/9.5)/1.2816 = 0.182 below the median and sigma_hi = ln(305/12)/1.2816 = 2.524 above it. Quantiles: q = .1: 9.5 d, .3: 10.9, .5: 12.0, .6: 22.7, .7: 45.1, .8: 100, .9: 305.
+- The wide shot has 12 neighbor and holder links whose join days are these quantiles at q = (i + 0.5)/12. Links later than day 305 are never drawn. Two links are fixed: hospital to doctors on day 12 (Plan Blanc, verified) and forecasters to hospital on day 305 (the national plan, verified). As the rewind passes each link's join day the link disappears. By day 9 nothing is connected, and every fragment sits alone.
+- Snap B, human lane: fragments join at q = .1, .3 and .5 (9.5, 10.9 and 12.0 d). The fourth, at q = .8, joins at 100 d and never arrives within the panel. The assembled piece appears at day 12, labeled "Day 12".
+
+**AI counterfactual (illustrative).** From the analog `ai_counterfactual.aggregation_median` = 3. I keep the same distribution shape scaled by 3/12, so the lane's joins fall at 2.4, 2.7 and 3.0 d and the fourth at 25 d (outside the panel). Basis (from the analog): join a temperature forecast with a known heat-mortality relationship and route a warning to hospitals and home-care. That is a short expert analysis task, well inside the ~17.4 h 50 % task horizon (RATES.md, METR). People still decide and activate. The lane shows **only when the pieces assemble relative to the red**, never an outcome. No windows are shown staying lit, and there is no claim that deaths would have been prevented. It is labeled "frontier AI routing · illustrative" (44 px) and says "before the peak", with no day number.
+
+**Numbers on screen (verified only): "Day 305" (s6) and "Day 12" (s4).** Day 1, the peak day and the doctors' date stay off screen as numbers: "the first morning" and "peak" are words. The forecaster (f1), cities abroad (f2) and ER doctors (f3) have `verified:false` dates. They appear as holders of pieces, never with a date.
+
+## Honesty notes
+- Frame 1 is a cold-open double exposure. The red sun of that summer sits over the day-305 window, with the text "Day 305." It fades by t = 2 s and the day-305 street is cool gray. The red therefore belongs to the same timeline and is not claimed to be present on day 305.
+- The dark-window count is symbolic (see above). The per-link join times apply the analog's documented response distribution to a neighborhood. That is an interpretation, not a measured neighborhood dataset.
+
+## Shot list and camera (L.camera keyframes, eased)
+| t | shot | camera |
+|---|---|---|
+| 0.0-3.0 | SC1 CLOSE. POV from the sidewalk: her hand holds the whole green plan in front of a ground-floor window that is dark, with an empty chair. "Day 305." / "The plan arrived." Red double exposure fades. | locked, zoom 3.0 |
+| 3.0-8.9 | SC2 REWIND, DOLLY OUT. The plan splits into pieces and two fly away. Snow and leaves rise (reverse seasons). Links vanish. "Rewind." / "Each step back, more pieces." | zoom 3.0 to 1.3 |
+| 8.9-10.2 | SC3 CRANE UP. The whole block appears, the red sun rises (in reverse the heat returns), dark windows relight in reverse order. | zoom 1.3 to 0.5, y rises |
+| 10.2-13.5 | SC3 WIDE hold. Day 12 hold: "Day 12. After the peak." Then "The pieces were all here." Labels: forecasters, doctors, hospital, neighbors. | hold 0.5 |
+| 13.5-16.5 | SC4 DROP DOWN. Down to the one window on the first morning. "Before anyone connected them." | zoom 0.5 to 4.2, closer than SC1 |
+| 16.5-22.6 | SC5 CLOSE+. Man in his chair, window lit, her hand with one piece, red at the top edge. "The first morning." then "We slowed it down / so you could see it." | slow push 4.2 to 4.5 |
+| 22.6-23.3 | Dead stop. Silence, then one hit. | cut to black |
+| 23.3-25.4 | SC6 SNAP A. True speed, 305 days on one axis. "As it happened." | locked |
+| 25.4-31.0 | SC6 SNAP B. Two 900 px lanes, days 0 to 19, same clock: human (Day 12, after the peak) vs frontier AI routing (illustrative, before the peak). "Same pieces. Two speeds." | locked |
+| 31.0-33.5 | SC7 EXTREME CLOSE. His hand and hers, the green piece passing through the window. "illustrative" | push in |
+| 33.5-36.0 | SC8 NECK. "This is the bottleneck." over the lit window. | hold |
+| 36.0-40.0 | END. L.endCard("The bottleneck is us."), 4.0 s | hold |
+
+**Zoom cycles.** Cycle 1: IN 0-3, OUT 3-10.2 (dolly then crane up), hold, IN+ 13.5-16.5 (zoom 4.2 &gt; 3.0). Cycle 2: OUT to the snap panels 23.3-31, IN++ 31-33.5 (hands, the closest framing of the film).
+
+## 3D translation note
+- SC1/SC5: a 50 mm lens at the eye height of a person standing on the sidewalk, looking slightly up at a ground-floor window. Her forearm enters from lower left in soft focus. The windows get real glass: a faint double reflection of the red sun in SC1.
+- SC2 to SC3: a crane on a long arm, slow ease-in, rising about 40 m over about 7 s. Reverse particles (snow, leaves) drift upward in volumetric light. At the top, a 24 mm lens looks down across a whole block of rooftops, with the red sun low and huge.
+- SC4: the drop is faster than the rise (about 3 s) and ends closer than SC1, at 85 mm on the lit window, so the room behind the glass has depth (a chair, a fan, a lamp).
+- Characters: flat children's-book people as soft clay-like figures (bean bodies, dot eyes). The fragments are glowing green puzzle pieces with real emissive light. In 3D, the lit and dark windows could cast real light onto the street.
+- The snap panels become a physical paper timeline on a table, with a playhead sliding along it.
+
+## Copy variants
+- Openers: "Day 305. The plan arrived." / "The plan came ten months late." / "Rewind to the first morning."
+- Middle: "Each step back, more pieces." / "The pieces were all here." / "Before anyone connected them."
+- Snap: "Same pieces. Two speeds." / "Routed before the peak. Illustrative."
+- Closer: "This is the bottleneck." / "The bottleneck is us." / "The answer was on the street."
+
+## Tags
+{"structure":"reverse-chronology","medium":"children's-book flat","family":"weather/fluids","scale":"family","pace":"slow build","emotion":"grief","protagonist":"one person","camera":"crane up and drop down","analog":"heatwave-2003"}
+
+Diversity check: OK: distinct enough (nearest two-days 0.89, the-last-thirteen-days 0.89).
+
+## Build notes (resumed after container restart)
+- Scene built from this plan: `scenes/day-three-hundred-five.js`. Deviations: the wide shot uses the 12 quantile links **plus** the two fixed dated links (hospital-doctors day 12, forecasters-hospital day 305), not 12 including them. Three of the plan's four pieces fly back to their holders (forecasters, doctors, hospital); she keeps the neighbors' piece. The rewind strip hides during the wide hold so it doesn't collide with holder labels. Link lines fade to 15 % in close framings so the thumbnail isn't a web of lines. The frame-1 red double exposure sits lower right over the window, clear of the "Day 305." card.
+- Snap B shows lane result labels under the axis: "Day 12, after the peak" (human) and "assembled before the peak" (AI, illustrative lane). Numbers on screen: Day 305, Day 12 only.
+- Rendered: output/day-three-hundred-five/day-three-hundred-five.mp4, 40.0 s (ffprobe).
+
+## Scores
+- Hook: 6 (big red sun, green plan in a hand, "Day 305." read on frame 1; but "day 305" alone is an abstract opener)
+- Speed accuracy: 7 (log rewind and snap lanes are data-driven; the heat curve between endpoints is a stated interpolation)
+- Snap impact: 6 (the two lanes read clearly; the AI lane beats the peak but the gap is small, as it should be)
+- Emotion: 7 (empty chair in the dark window vs. the man in the lit window is the strongest grief image so far)
+- Originality: 7 (reverse chronology + reverse seasons + children's-book flat)
+- Craft: 6 (clean flat look; hands and the extreme-close shot are still crude, wide labels small)
+- Honesty: 9 (symbolic dark-window count stated, unverified dates off screen, no survival claim)
+Overall: 6.9
+Virality: 6% + the empty-chair reversal is a genuine emotional hook, but a slow log-time rewind and an abstract "Day 305" opener will lose most scrollers before the payoff.
+</pre></div><div class=""><div><h3>ninety-seconds · 6% viral · 6.7/10</h3><video src="ninety-seconds/ninety-seconds.mp4" poster="ninety-seconds/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+
+# Ninety Seconds
+
+**Logline.** One long take on a snowy street under a gray aurora. A woman at a window holds a green page. The screen says "Wait for it." The camera cranes up until the street is a dot on a topographic map of a province. A red pulse runs along the contour lines and the province goes dark in ninety seconds. Then a log-time clock starts to run: the lights come back within hours, and five green fragments close into one ring over years. At the end the camera drops back down, closer than before.
+
+- **Structure:** `wait-for-it` (research/VIRAL_STRUCTURES.md #4)
+- **Analog:** `quebec-1989` (research/analogs/quebec-1989.json). The file is marked `verified: false` at the top level, so on screen I use only the two individually sourced endpoints listed below.
+- **Medium / family / scale / pace / camera / emotion / protagonist:** topographic map / cosmos / nation / one long take / crane up and drop down / vertigo / a crowd
+
+## Time mapping (one mapping, stated on screen as "log time")
+Race (film t = 3.0 s to about 20.3 s): event time E, in seconds after 02:44, equals 10^((t - 3) / 2). **Every 2 film seconds, 10 times more real time passes.** The ruler at the bottom of the screen is labeled "log time" and uses only word ticks: second, minute, hour, day, month, year, decade. The clock freezes at t = 20.3.
+
+Before t = 3 the scene is pre-event (calm; the hook).
+
+## Speed math
+**Threat (red).** `threat.points` from the analog: extent 0 at t0 and 1.0 at 0.025 h (90 s). I interpolate linearly in event time: collapse(E) = clamp(E / 90 s). On the log clock that is film t = 3.0 to 6.91 s, and most of the darkening happens in the last second (E between 10 s and 90 s). Each contour segment and town light has a normalized distance d from the origin point in the north. It turns red or dark when d &lt; collapse(E).
+
+**Restoration.** `threat.events` from the analog: "more than 9 h to restore 83%" (s3, sourced). restored(E) = 0.83 × (E − 90) / (32400 − 90) from 90 s to 9 h. After that, the remaining 17% is assumed restored linearly by 24 h. **That last part is my assumption and is not in the data.** It only affects the small red remnant, and no number is shown for it. A region is dark while d &lt; collapse and d &lt; 1 − restored, so the red recedes from south to north. On the log clock the lights come back at t ≈ 12.0 s.
+
+**Human aggregation (green).** There are 5 fragments, from the analog's `solution.fragments`: forecasters (f1), scientists (f2), engineers (f3), line crews (f4) and planners (f5, the lasting fix). They sit at points around the province and are all lit from frame 1, because they already existed. They connect as a loop of 5 edges. Edge arrival times are `L.lognormalQuantile(q, 759 h, 64000 h)` at q = 0.1, 0.3, 0.5, 0.7, 0.9:
+
+| edge | q | arrival | film t |
+|---|---|---|---|
+| engineers–line crews | 0.1 | 9.0 h (= p10, sourced: 83% restored) | 12.02 |
+| line crews–scientists | 0.3 | 124 h (modelled) | 14.30 |
+| scientists–forecasters | 0.5 | 759 h (modelled median, NOT shown) | 15.87 |
+| forecasters–planners | 0.7 | 4659 h (modelled) | 17.45 |
+| planners–engineers | 0.9 | 64000 h (= p90, sourced: series compensation done 1996, ~7 yr) | 19.72 |
+
+The analog notes that its median (759 h) is the geometric mean of p10 and p90, a modelling assumption. It therefore appears only as the spacing of the middle arrivals. No number for it is ever on screen. The ring closes when the last edge lands (the lasting fix, ~7 years).
+
+**AI counterfactual (illustrative).** From `ai_counterfactual`: about 1 h to route an existing forecast plus the known vulnerability into one control room's operating posture. That is a short synthesis task, well inside METR's ~17.4 h 50% time horizon (RATES.md). The warning fragment's own time (f1 ready at −24 h) is `verified: false`, so the snap shows the routed warning only as "before" the red, with no number. The snap does not claim the collapse would have been prevented: the red is drawn unchanged, with the caption "Operators still decide." The physical fix still sits at "years" ("Steel still takes years."). The AI counterfactual here is small, so I did not inflate it. The snap works through staging instead: a freeze, silence, a hit, then the two log rulers side by side.
+
+**True-speed panel.** On a linear bar spanning the ~7 years to the lasting fix, the 90-second red is 90 / (7.3 × 365 × 86400) of the bar. At 760 px wide that is about 0.0003 px, so it is drawn as a 2 px hairline and labeled "the dark: too thin to see".
+
+## Numbers on screen (two, both sourced)
+1. "90 seconds": s2 (Wikipedia) and s5 (Scientific American); s1 says "less than a minute". Used as "in 90 seconds".
+2. "7 years": 1989 to 1996, when series compensation was completed (s4). The month is unsourced, but the span is about 7 years whatever the month.
+
+"9 hours" (sourced) is shown only as a position on the log ruler (the "hour" tick) and as the lights coming back. It never appears as a digit, to keep to two numbers.
+
+## Shot list (one long take plus a snap insert)
+| t | slate | camera | beat |
+|---|---|---|---|
+| 0–1.6 | SC1 CLOSE | hold, slow push | Woman at window, green page, gray aurora, red glint on far pylon. "Wait for it." |
+| 1.6–5.6 | SC1 CRANE UP | lev 0→1 (map zoom 40× → 1×, exponential) | Street shrinks into a town dot on the topo map. "Watch the green." |
+| 5.6–12.5 | SC1 WIDE HOLD | hold | The log clock runs: red floods the contours (t 5–6.9) and the lights go out. "A province went dark / in 90 seconds." Lights back at ~12. |
+| 12.5–21.5 | SC1 CRANE HIGHER | lev 1→1.35 (vertigo: planet limb, aurora oval) | Days to years; green edges close; "The lasting fix took / 7 years." |
+| 21.5–24.6 | SC1 HOLD | | "We slowed it down / so you could see it." |
+| 24.6–31.4 | SC2 SNAP | flat | Freeze + hit. True proportions bar, then side-by-side log rulers: as it happened vs AI-routed warning (illustrative). |
+| 31.4–33.6 | SC3 DROP DOWN | lev 1 → −0.45 (closer than the opening) | Fall from the map back to the window. |
+| 33.6–36 | SC3 EXTREME CLOSE | slow push | Face and hands; the green page now carries the closed ring. "This is the bottleneck." |
+| 36–40 | END | | L.endCard, 4 s |
+
+**Zoom cycles:** OUT 1.6–5.6 (and further out 12.5–21.5), IN 31.4–33.6, ending closer (−0.45) than the start (0).
+
+## 3D translation note
+- **SC1 close:** 50 mm at eye level, across a snowy street, looking at a lit third-floor window. Slow snowfall, a volumetric gray aurora with real parallax behind the power lines. A figure with a readable face holds a single green-lit page.
+- **Crane up:** one continuous rise with no cut. It starts as a real crane (2 m/s), becomes a drone climb, then an orbital pull-back. The lens stays wide (24 mm) so the street curves into the map. The terrain becomes a relief model whose contour lines are real elevation bands. The red pulse travels as emissive light along the transmission lines laid on the contours.
+- **Higher (vertigo):** the pull continues to the planet's limb. The aurora oval is a gray volumetric ring. Time-lapse cues (snow melting and returning, seasons) are the 3D way to sell the log clock.
+- **Drop down:** a fast, eased fall (about 2 s) back through the aurora to an extreme close-up of the face. The page in her hands now shows the closed green ring. In 3D the fall should feel like a gentle zero-g dive, not a crash.
+- **Richer in 3D:** real relief shading, emissive red on the grid lines, windows as a crowd of lit rooms that go dark as a wave.
+
+## Copy variants
+- "Wait for it." / "Watch the green."
+- "A province went dark / in 90 seconds."
+- "The fix already existed. / In pieces."
+- "The lasting fix took / 7 years."
+- "We slowed it down / so you could see it."
+- "Same pieces, routed first." / "Operators still decide." / "Steel still takes years."
+- "This is the bottleneck."
+- Alternates (unused): "Ninety seconds of lag. Seven years of patch." / "The ping was already sent."
+
+## Tags
+{"slug":"ninety-seconds","structure":"wait-for-it","medium":"topographic map","family":"cosmos","scale":"nation","pace":"one long take","emotion":"vertigo","protagonist":"a crowd","camera":"crane up and drop down","analog":"quebec-1989"}
+
+Diversity check: OK (nearest two-days and the-last-thirteen-days, distance 1.00). No changes needed.
+
+## Resume fixes (after a container restart)
+- Hook: the red at the pylon is now large and legible in frame 1 (r 24 core, pulsing halo ring). Before, it was a tiny glint.
+- Labels are all at least 44px: map fragment labels, log-ruler ticks and title, and every snap label ("illustrative" is 48px). The "decade" tick is kept with no word, so the last label ends at x ≤ 900.
+- Snap panels and the true-proportions bar are 900px wide. The "before" and "second" labels in the snap rows no longer overlap.
+- Checked: the aurora is gray only; the modelled median (759 h) never appears as a number; only "90 seconds" and "7 years" are on screen; all text is within x 80–900.
+
+## Scores
+- Hook: 6
+- Speed accuracy: 8
+- Snap impact: 5
+- Emotion: 6
+- Originality: 7
+- Craft: 6
+- Honesty: 9
+- Overall: 6.7
+- Virality: 6% (The crane from one window to a province going dark in 90 seconds is a strong, loopable image. But the log-time ruler and a snap that is honestly small ask a lot of a cold viewer in a feed.)
+</pre></div><div class=""><div><h3>two-days · 6% viral · 6.7/10</h3><video src="two-days/two-days.mp4" poster="two-days/poster.png" controls loop playsinline></video></div><pre># Two Days
+
+Tier: animatic
+Slug: two-days
+Structure: based-on-a-true-story (research/VIRAL_STRUCTURES.md #12)
+Analog: covid-2020 (research/analogs/covid-2020.json)
+DUR: 40 s, 1080x1920, 30 fps
+
+## Logline
+Close on one researcher's hands as a tiny green fragment (a shared genetic sequence) lights up on a screen. The camera pulls out through a lab, a city, the whole map: red spreading at its real speed, green fragments (sequencers, platform makers, designers, trial sites, regulators, clinics) scattered and connecting on the real lognormal spread of delays. We come back in, closer, to one face in a late country. Snap: the same timeline at true proportions, then an AI-assisted routing version beside it (illustrative). Ending turn: "Based on a true story."
+
+## On-screen numbers (max two, both verified)
+1. "2 days": genome shared Jan 11 2020 -&gt; vaccine sequence finalized Jan 13 2020 (analog f3/f4, src s4 = RATES.md Science example, Moderna SEC filing).
+2. "2020": the analog year (template rule: the year counts as a number). No threat name.
+No other digits appear on screen (no axis numbers, no day counter).
+
+## Time mapping (one mapping)
+- SC1 (0-4 s) is the day-13 moment held (the design is done; not a timed interval).
+- From t = 4 s: **1 film second = 30 days, linear**. day(t) = 13 + 30 (t - 4). The clock runs to t = 21 s (day 523), then freezes.
+- Snap replay: the same days 0-560 at true proportions (linear) compressed into 2.0 s (280 days/s), both panels identical mapping.
+
+## Speed math
+**Threat (red).** extent(day) = piecewise-linear interpolation of the analog's `threat.points` (share of 234 countries with &gt;= 1 confirmed case; (0,0) prepended). The map has N = 60 country nodes; node with red-rank r turns red when extent(day) &gt;= (r + 0.5)/60. Ranks = distance from the origin node + noise (geography only; timing is all from the data). Key film times: 26% of nodes at day 61 (t = 5.6 s), 64% at day 75 (t = 6.07 s), 88% at day 96 (t = 6.77 s); the curve tops out at ~94%, so ~4 nodes never go red in the window, as in the data.
+Inside one city (the lab's and the face's), blocks turn red with L.logistic(day - d_node, 7.4 days, s0 = 1/blocks), the analog's early Wuhan doubling time (s3, Li et al. NEJM), which the file says to use only for within-city growth.
+
+**Solution fragments (green), from `solution.fragments`:**
+| fragment | ready day | film t |
+|---|---|---|
+| f2 platform makers | 0 | lit from start |
+| f3 sequencers (genome shared) | 11 | lit at open |
+| f4 designers (vaccine sequence) | 13 | 4.0 (end of SC1) |
+| f5 trial sites (first dose) | 76 | 6.43 |
+| f6 regulators (first authorization) | 337 | 14.8 |
+| f7 clinics / health systems (first dose outside trials) | 343 | 15.0 |
+Chain lines f3-&gt;f4, f2-&gt;f4, f4-&gt;f5, f5-&gt;f6, f6-&gt;f7 draw at those times (0.25 s ink-bleed growth, cosmetic). f1 (spike design, unverified) is not shown. The logline's "manufacturers" and "funders" have no dated entry in the analog file, so they are not shown as separate fragments (platform makers stand in for makers; funders dropped) to keep every timing sourced.
+
+**Human aggregation (per-country first dose).** From f7 (clinics) a green line travels to each node. Node i arrives at day_i = L.lognormalQuantile(q_i, 421, 490) with q_i = (i+0.5)/60 shuffled by L.rng; sigma = ln(490/421)/1.2816 = 0.1185, which gives p10 = 362 (data: 363). Clamped to &gt;= day 343 (no country can dose before the first dose outside trials). Film: p10 -&gt; t 15.7 s, median -&gt; t 17.6 s, p90 -&gt; t 19.9 s; the last node (q = 0.992, day 559) never arrives before the clock stops at 21 s.
+The face we zoom into lives in the q = 0.9 node: green reaches it at day ~490, t ~ 19.9 s.
+
+**AI counterfactual (illustrative, labeled on screen).** From `ai_counterfactual`: median country gets first doses as early as the real fastest tenth (median 363 instead of 421, ~58 days sooner); no extra vaccine is made; design, trials and authorization are unchanged. Same lognormal shape (same sigma), so p90 = 363 x 490/421 = 422.5; same clamp at day 343 (32% of nodes bunch at 343: the counterfactual cannot beat the first authorization). Red is identical in both panels. Honest upshot on screen: red still wins the first months either way; faster routing narrows the delivery tail. Basis: RATES.md Science example (design already took 2 days, so AI claims nothing there) + distribution inequity entry (advocacy analysis, not shown on screen).
+
+## Shot list and camera (zoom cycles)
+World is a nest of four ink-wash layers, each 10x the one inside it: HANDS (1) in LAB (10) in CITY (100) in MAP (1000). A second chain CLINIC/FACE sits in a late country. Camera = (center, visible width F) in map units; center is interpolated linearly in F so the focal point stays locked while scale changes exponentially.
+| t | shot | camera | slate |
+|---|---|---|---|
+| 0.0-4.0 | SC1 hands on keyboard, green sequence row lit, red at the window | CLOSE, slow push-in (F 1.08 -&gt; 0.98) | SC1 CLOSE |
+| 4.0-11.0 | SC2 continuous zoom through scales: hands -&gt; lab -&gt; city -&gt; whole map; red sweeps the map | ZOOM OUT x1000, ease in-out | SC2 CONTINUOUS ZOOM OUT |
+| 11.0-15.0 | SC3 wide hold, fragments waiting, regulators/clinics connect | WIDE, slow drift | SC3 WIDE HOLD |
+| 15.0-19.4 | SC4 zoom into a late country, city, clinic, one face (closer than SC1) | ZOOM IN x1400 | SC4 ZOOM IN |
+| 19.4-23.4 | green reaches the face (19.9); "We slowed it down..." | CLOSE hold | SC4 CLOSE HOLD |
+| 23.4-29.2 | SC5 snap: true-proportion replay, then AI-assisted beside it (illustrative) | FLAT GRAPHIC | SC5 SNAP |
+| 29.2-35.8 | SC6 back to the first hands, closest yet; "Based on a true story." / "Every timing came from real data." 2020 / "This is the bottleneck." | EXTREME CLOSE, push-in | SC6 DOLLY IN |
+| 35.8-40.0 | end card (4.2 s) | - | - |
+Cycles: IN (0-4) -&gt; OUT (4-11) -&gt; IN+ (15-19.4); snap wide -&gt; IN++ (29.2-35.8).
+
+## 3D translation note
+- SC1: 85 mm macro, eye height just above the desk, shallow focus on the green row; the red is a smear of light on a window, out of focus.
+- SC2: one unbroken Powers-of-Ten pull, 10x per ~1.75 s, camera rising straight up; ink-wash rendered as volumetric fog layers (sumi-e shader) so each scale dissolves into the next like wet ink.
+- SC3: orbital height, slight tilt; red blooms as ink dropped in water, green as thin glowing threads.
+- SC4: descent into a different country, faster than the pull-out, landing at 50 mm on a profile face; green light arrives across the room and reflects in the eye.
+- SC6: 100 mm macro closer than SC1, rack focus from the hands to the green row.
+Richer in 3D: real paper grain and ink bleed simulation, rain-like ink drops for red, parallax between scales.
+
+## Copy
+- "The design took / 2 days."
+- "Then it had to reach everyone."
+- "Every piece already existed."
+- "Some waited far longer."
+- "We slowed it down / so you could see it."
+- "At true proportions." / "Same pieces. Faster routing." (panel label "AI-assisted routing - illustrative")
+- "Based on a true story." / "Every timing came from real data." + "2020"
+- "This is the bottleneck."
+- End card line: "The bottleneck is us." + "Scan. Help close the gap."
+Variants (unused): "The answer was written in two days. It shipped in a year." / "Design at lab speed. Delivery at legacy speed." / "The patch was ready. The rollout wasn't."
+
+## Tags
+{"slug":"two-days","structure":"based-on-a-true-story","medium":"ink wash","family":"body/biology","scale":"multi-scale zoom","pace":"slow build","emotion":"awe","protagonist":"a green fragment","camera":"continuous zoom through scales","analog":"covid-2020"}
+
+## Build notes
+- Diversity check: OK, distinct enough (no ledger rows yet at check time).
+- Preview critique: the scales read, and so do the red sweep, the green chain and the lognormal delivery tail. The SC2 crossfades between scales show some rectangular paper patches mid-zoom. The hands are simple ink strokes. In SC6 the cards sat on the keyboard, so I added a paper wash behind them. The snap is honest but modest: the AI panel's green median tick lands about 58 days earlier and the red is identical.
+- Final render: 40.0 s (ffprobe), matches DUR.
+
+## Scores
+- Hook: 6
+- Speed accuracy: 9
+- Snap impact: 5
+- Emotion: 6
+- Originality: 7
+- Craft: 5
+- Honesty: 9
+Overall: 6.7
+Virality: 6% (the ink-wash Powers-of-Ten zoom and the true-story reveal are distinctive, but the snap is deliberately small, the hook opens on a keyboard rather than a face, and the animatic drawing is rough. That makes it a thoughtful watch more than a share trigger.)
+</pre></div><div class=""><div><h3>the-last-thirteen-days · 5% viral · 6.7/10</h3><video src="the-last-thirteen-days/the-last-thirteen-days.mp4" poster="the-last-thirteen-days/poster.png" controls loop playsinline></video></div><pre># The Last Thirteen Days
+
+Tier: animatic
+Slug: the-last-thirteen-days
+Structure: ticking-clock (research/VIRAL_STRUCTURES.md #1)
+Analog: cuban-missile-1962
+Tags: medium blueprint · family machine · scale between nations · pace stop-start · camera locked-off close-up with a single pull-out · emotion dread · protagonist one person
+
+## Logline
+A translator at a gray desk. Her desk clock spins; alert lamps on the blueprint wall step up in red. The pieces of a settlement already exist, but each one has to crawl through a slow machine (encode, wire, decode, translate) before it reaches her hands. It lands after the closest day. Then the snap: frontier AI translating would have saved hours per letter (about a day, illustrative), and the direct line that fixed the pipe took 247 days.
+
+Two sides are two identical gray desks. No leaders, no countries, no flags, no party cues. The red is never named.
+
+## Time mapping (one stated mapping for the race)
+Race, t = 1 s to 17 s: **1 film second = 6 hours**, linear. day(t) = 8 + (t - 1) / 4, so day 8 at t = 1 and day 12 at t = 17 (days after Oct 16, 1962 = t0 of the analog). Frame 0 is day 7.75.
+- Desk clock: 12-hour face; the hour hand turns once every 2 film seconds (12 h). The minute hand is a blur (6 turns a second) and is drawn as a faint disc.
+- Wall calendar: 13 gray day boxes, crossed off as each day passes (tally, no numerals).
+
+Snap: (a) two clocks at the SAME mapping (1 s = 6 h); (b) the whole record, day 0 to day 260, replayed at a uniform 1 s ~ 100 days so the 12-day crisis is a sliver next to the 247-day fix. Stated here; on screen it reads as "the whole record, to scale".
+
+## Speed math
+**Threat (red = alert level, ordinal).** From analog threat.points: extent 0.5 at day 6, 0.75 at day 8, still 0.75 at day 11 (closest point). Alert levels are discrete steps, so the wall meter lights 4 segments by extent (0.25 each) as a step function, not a ramp: 2 lit before day 8, 3 lit from day 8 (t = 1.0, the hook's first action). The day-11 U-2 event (t = 13) is a red flash with no level change, as in the data. These dates are standard record but flagged `verified: false` in the analog, so they drive motion only; no alert numbers appear on screen. De-escalation date is unconfirmed, so the meter never steps down on screen; in the full-record strip the red fades out gradually after day 12 without a date.
+
+**Human aggregation (green).** Documented fragments (analog solution.fragments), with the documented latency (message_latency_hours, s4: typical ~6 h, the ~3,000-word settlement letter nearly 12 h):
+| fragment | ready (day) | film t | how it travels | arrives t |
+|---|---|---|---|---|
+| f1 obsolete missiles that could be traded (folder on her desk) | 0 | before frame 1 | already there, unconnected | — |
+| f2 first settlement letter | 10 | 9.0 | through the machine, 12 h | 11.0 |
+| f3 second, public offer | 11 | 13.0 | through the machine, typical 6 h | 14.0 |
+| f4 back channel assurance | 11.5 | 15.0 | slid across the desk in person (bypasses the machine) | 15.0 |
+| deal assembles (aggregation median) | 12 | 17.0 | four pieces click into one | 17.0 |
+| f5 direct link agreed (aggregation p90) | 247 | snap strip | — | — |
+
+Variance: in the full-record strip the green "assembled" curve is L.lognormalCDF(day, median 12, p90 247) from the analog aggregation block: half assembled by day 12, the structural fix at the far tail (247). The p10 (day 10) matches the first letter. The analog notes that this distribution is derived from dated events, not measured; it is used only as the curve's shape.
+
+**AI counterfactual (illustrative, deliberately modest).** From ai_counterfactual: only transport and translation speed up. Translating and summarizing a ~3,000-word letter is a minutes-scale task, far inside the ~17.4 h 50% task horizon (RATES.md, METR). Same exchanges, ~12 h less latency per round, so the deal assembles on day 11 instead of day 12. On screen: the left clock turns a full 12 h while the letter decodes; the right clock (labeled illustrative) moves a sliver (taken as ~10 min = 0.03 film s at the same mapping). In the full-record strip the illustrative lane's deal dot sits one day-tick earlier, shown in a loupe because at true scale it is barely visible. The 247-day fix is drawn as a shared line across both lanes: the counterfactual does not claim AI would have built it sooner. AI never touches a decision; people still read, decide and sign.
+
+**Numbers on screen (two, both from sources without a `verified:false` flag):** "12 hours" (s4, nearly 12 hours to receive and decode the settlement letter) and "247 days" (s5, direct-link agreement June 20, 1963 = day 247). Day 11 vs 12 is shown as tick positions, not numerals.
+
+## Shot list (DUR 38 s)
+| t | shot / slate | camera | beat |
+|---|---|---|---|
+| 0.0-5.6 | SC1 CLOSE LOCKED-OFF | locked at zoom 2.6 on her desk: face, clock, green folder, red meter above | HOOK: "The answer is in the mail." Meter steps up at t 1.0 (hit). "Alarms are instant. Letters aren't." |
+| 5.6-8.6 | SC2 PULL-OUT | the single pull-out: zoom 2.6 -&gt; 1.0, ease in-out, 3 s | reveal the wall: the other gray desk far up top, the long machine between (encode, wire, decode, translate), calendar |
+| 8.6-13.4 | SC3 WIDE | hold | "Two desks. One slow machine." f2 leaves at t 9 and crawls 2 s. "Nearly 12 hours to decode." Red flash t 13 (closest day). |
+| 13.4-16.0 | SC4 DOLLY IN | 1.0 -&gt; 3.4 onto her hands, closer than frame 1 | "The closest day came first." f3 drops at 14, f4 slides in at 15 |
+| 16.0-18.6 | SC4 CLOSER | hold 3.4 | deal clicks at t 17 (green whole). Dead stop 17.2-18.6: frozen clock, silence |
+| 18.6-21.2 | SC5 CARD | hold | "We slowed it down so you could see it." |
+| 21.2-24.6 | SC6 INSERT: TWO CLOCKS | full-frame sheet, locked | the snap: freeze, silence, one hit. Left: "as it was" hand turns 12 h. Right: "frontier AI translating" hand barely moves; labeled illustrative |
+| 24.6-29.2 | SC7 THE WHOLE RECORD | full-frame sheet, slow push in on the loupe | two lanes, playhead day 0 to 260 in 2.5 s; red sliver; deal dots; loupe shows one tick sooner; "The direct line took 247 days." |
+| 29.2-31.4 | SC8 CLOSEST | full-frame fade back into world at zoom 4.2 on her face + green in her hands | return, closer than ever |
+| 31.4-33.8 | SC8 | hold | "This is the bottleneck." |
+| 33.8-38.0 | END | — | L.endCard, 4.2 s |
+
+Zoom cycle: IN (2.6, 0-5.6) -&gt; OUT (1.0, 5.6-13.4) -&gt; IN+ (3.4, 13.4-18.6) -&gt; [snap inserts] -&gt; IN++ (4.2, 29.2-33.8). One pull-out only, per the assigned camera.
+
+## 3D translation note
+Locked-off 85 mm at seated eye height across the desk, shallow depth of field on her face with the clock in the foreground; the red lamps are practical lights on the wall behind her. The single pull-out is a slow dolly back and crane up (about 3 s, no shake) through the office wall into a cutaway "blueprint" set: two identical gray desks in one tall, dim room, joined by a huge brass-and-paper machine of rollers, cipher wheels and pneumatic tubes, with the letter a small green capsule crawling through it. Dolly in on a 100 mm lens to her hands; last shot a 135 mm macro of the green piece and her eyes. Snap inserts are drafting-table overlays, top-down, with a real clock hand. Richer in 3D: the physical weight of the machine, dust in the lamp light, the silence of the freeze.
+
+## Copy variants
+- The answer is in the mail.
+- Alarms are instant. Letters aren't.
+- Two desks. One slow machine.
+- Nearly 12 hours to decode.
+- The closest day came first.
+- Ping: twelve hours. (unused, too gamey)
+- The fix for the pipe took longer than the crisis.
+
+## Diversity check
+`node tools/diversity.js` -&gt; OK: distinct enough (nearest two-days, distance 1.00). No changes needed.
+
+## Build log
+- Preview 1: stick legs showed through the thin desk, red wall wash overwhelmed the close-up, green pieces too small for the thumbnail. Fixed: desk modesty panels, wash cut to 0.05 + 0.13 x extent (meter stays the main red), pieces 18 -&gt; 24 world px. Preview 2 clean.
+- Render: 38.0 s (ffprobe), matches DUR.
+- Known weaknesses: the snap's full-record strip is small type on a phone; the day-11 vs day-12 difference only reads in the loupe (honest, but low impact); "The closest day came first." briefly overlaps a station label during the dolly.
+
+## Scores
+- Hook: 6 (face, green piece, red meter and a clear line at frame 1, but a stick figure at a desk is a quiet thumbnail)
+- Speed accuracy: 8 (one linear race mapping, documented dates and latencies, alert as a step function; alert dates are flagged unverified in the analog and drive motion only)
+- Snap impact: 5 (deliberately modest counterfactual; the clock contrast lands, the 247-day line carries the weight)
+- Emotion: 6
+- Originality: 7 (blueprint message machine between two gray desks)
+- Craft: 6
+- Honesty: 9 (no leaders, countries, or flags; AI only carries and translates; the 247-day fix not credited to AI; two numbers, both sourced)
+- Overall: 6.7
+- Virality: 5% — historically grounded and restrained, but the modest snap and small-type record strip give little shareable payoff for a cold audience.
+</pre></div></div>

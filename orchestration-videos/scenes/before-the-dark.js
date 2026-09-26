@@ -108,12 +108,13 @@ function makeScene(SERIF, HAND) {
       c.fillStyle = col; poly(c, b.poly); c.fill();
       c.strokeStyle = 'rgba(235,228,210,0.10)'; c.lineWidth = 2.2; b.grain.forEach(pl => { c.beginPath(); pl.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.stroke(); });
       c.strokeStyle = INK; c.lineWidth = 3; poly(c, b.poly); c.stroke(); });
-    const lit = new Path2D(), dark = new Path2D(), shed = new Path2D();
+    const lit = [], dark = [], shed = [];
     list.forEach(b => b.win.forEach(w => { if (w.frag) return;
-      if (S.ext > 0 && w.x < S.xf - 20 + w.n * 40) dark.rect(w.x, w.y, w.w, w.h);
-      else if (b.shed && S.shed > w.n) shed.rect(w.x, w.y, w.w, w.h);
-      else lit.rect(w.x, w.y, w.w, w.h); }));
-    c.fillStyle = LIT; c.fill(lit); c.fillStyle = SHED; c.fill(shed); c.fillStyle = DARKW; c.fill(dark);
+      if (S.ext > 0 && w.x < S.xf - 20 + w.n * 40) dark.push(w);
+      else if (b.shed && S.shed > w.n) shed.push(w);
+      else lit.push(w); }));
+    const fillR = (arr, col) => { c.fillStyle = col; c.beginPath(); arr.forEach(w => c.rect(w.x, w.y, w.w, w.h)); c.fill(); };
+    fillR(lit, LIT); fillR(shed, SHED); fillR(dark, DARKW);
     // red at the front: rooftops just swept, and the carved crack
     if (S.ext > 0 && S.ext < 1) { const a = S.redFade;
       c.strokeStyle = rgbaR(a); c.lineWidth = 6; c.lineCap = 'round';
