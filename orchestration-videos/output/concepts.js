@@ -67,7 +67,7 @@ const C = [
 ['play-by-play-at-the-desk','sports-play-by-play','false-news-2018','chalkboard','sport','nation','sprint','handheld chase','anger','the red itself',12,
  'Coach at a chalkboard breaks down the play: the red claim goes long, 1,500 people in 10 h. The green team is on the field but still in the locker room: 13 h lag.',
  'Correction routed ~1 h (illustrative).'],
-['the-relay','sports-play-by-play','wannacry-2017','neon arcade','sport','between nations','sprint','crane up and drop down','resolve','one person',11,
+['the-relay','sports-play-by-play','wannacry-2017','constructivist poster','sport','between nations','sprint','crane up and drop down','resolve','one person',11,
  'Commentators call the kill-switch sprint like an Olympic relay: one person grabs the baton at 7.3 h. The rest of the team was 59 days late to the stadium.',
  'Routed ~1 h (illustrative).'],
 ['the-flare','game-hud-run','quebec-1989','8-bit','game','nation','sprint','POV walk','dread','AI',9,

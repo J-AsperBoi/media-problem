@@ -142,7 +142,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** sports-play-by-play · **Analog:** wannacry-2017 · **First-guess virality:** 11%
 - **Logline (red / green):** Commentators call the kill-switch sprint like an Olympic relay: one person grabs the baton at 7.3 h. The rest of the team was 59 days late to the stadium.
 - **Snap:** Routed ~1 h (illustrative).
-- **Tags:** medium neon arcade; family sport; scale between nations; pace sprint; camera crane up and drop down; emotion resolve; protagonist one person
+- **Tags:** medium constructivist poster; family sport; scale between nations; pace sprint; camera crane up and drop down; emotion resolve; protagonist one person
 
 ## 24. the-flare
 - **Structure:** game-hud-run · **Analog:** quebec-1989 · **First-guess virality:** 9%
