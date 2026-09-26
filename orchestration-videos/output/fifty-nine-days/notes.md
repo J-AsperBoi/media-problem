@@ -26,9 +26,9 @@ A speedrun HUD rides one hospital IT worker's walk down a corridor to a terminal
 | f4 emergency patch for old systems | ~20 h (hour unverified) → t = 12.0 s | second pulse at the vendor cell, no number |
 | f5 the unpatched machines | clear by ~168 h | the worker's hospital; clears off screen in the race, shown on the snap axis |
 
-**Human aggregation.** 36 organisation nodes on the map. Each gets a quantile q (stratified, shuffled with L.rng) and an arrival time `max(7.3, L.lognormalQuantile(q, 20, 168))` hours (median 20 h, p90 168 h from the analog; floored at the 7.3 h kill switch, the earliest documented stop). sigma = ln(168/20)/1.2816 = 1.66. Within the 24 h race about 53% have connected; the rest arrive days later. The worker's hospital is assigned q = 0.82 (arrival ~ 120 h, i.e. day five), so inside the race its green line never lands.
+**Human aggregation.** 36 organisation nodes on the map. Each gets a quantile q (stratified, shuffled with L.rng) and an arrival time `max(7.3, L.lognormalQuantile(q, 20, 168))` hours (median 20 h, p90 168 h from the analog; floored at the 7.3 h kill switch, the earliest documented stop). sigma = ln(168/20)/1.2816 = 1.66. Within the 24 h race 20 of 36 (56%) have connected; the rest arrive days later. The worker's hospital is assigned the quantile nearest 0.82 (arrival ~91 h, day four; highlighted "HIS" on both snap panels, AI ~5 h), so inside the race its green line never lands.
 
-**AI-speed counterfactual (illustrative).** aggregation_median = 1 h (analog `ai_counterfactual`). Same quantiles, same sigma: AI p90 = 1 × 168/20 = 8.4 h. On the shared 168 h axis the AI pips all land inside the first twentieth of the bar; the human pips spread across the whole week. Basis (from the analog): spotting a hard-coded domain in a sample is a few-hour expert task, inside the ~17.4 h METR 50% time horizon (RATES.md); matching unpatched machines to a 59-day-old critical patch and routing the alert is inventory work made cheap by ~40x/year cost decline (Epoch, RATES.md). Humans still approve and apply the patch (the IN++ shot shows the worker's own hand doing it). Labeled "ILLUSTRATIVE" on screen at 48 px. Not a claim the event would have been prevented; the kill switch was found by one person, partly by luck, and the film says so.
+**AI-speed counterfactual (illustrative).** aggregation_median = 1 h (analog `ai_counterfactual`). Same quantiles, same sigma: AI p90 = 1 × 168/20 = 8.4 h. On the shared 168 h axis the AI pips land inside the first day (latest ~39 h, the 36th stratified quantile); the human pips spread across the whole week. Basis (from the analog): spotting a hard-coded domain in a sample is a few-hour expert task, inside the ~17.4 h METR 50% time horizon (RATES.md); matching unpatched machines to a 59-day-old critical patch and routing the alert is inventory work made cheap by ~40x/year cost decline (Epoch, RATES.md). Humans still approve and apply the patch (the IN++ shot shows the worker's own hand doing it). Labeled "ILLUSTRATIVE" on screen at 48 px. Not a claim the event would have been prevented; the kill switch was found by one person, partly by luck, and the film says so.
 
 **Numbers on screen:** 59 (days) and 230,000. Everything else in the HUD is bars, icons, and words.
 
@@ -61,3 +61,19 @@ Zoom cycles: Cycle 1: IN (POV) 0–7 → OUT (crane up to world) 7–11.5 → IN
 ## Tags
 {"structure":"game-hud-run","medium":"8-bit","family":"game","scale":"between nations","pace":"sprint","camera":"POV walk","emotion":"resolve","protagonist":"one person","analog":"wannacry-2017"}
 Diversity check: OK: distinct enough (nearest the-last-thirteen-days 0.78).
+
+## Build notes
+- Rendered 35.0 s (ffprobe 35.000000), 1080x1920, 30 fps. POV and terminal drawn into a 180x320 buffer and upscaled x6 nearest-neighbour; world map and HUD drawn as grid-aligned rects.
+- Snap staging: freeze on the dead terminal (15.0–17.4), 0.5 s of black silence, one "hit" at 17.9 with a flash, then both panels sweep a shared 168 h axis in 2.4 s.
+- Known weaknesses: the human-vs-AI difference on the true-proportion axis is honest but modest (both clusters start near hour 0; the human tail runs the whole week); pixel text at 45 px is chunky but on the small side; the world-map mid-zoom is busy.
+
+## Scores
+- Hook: 7 (red hallway, green disk in hand, "59 days" in frame 1)
+- Speed accuracy: 7 (endpoints, 7.3 h, lognormal per org are real; linear meter shape is a labeled placeholder)
+- Snap impact: 6
+- Emotion: 5
+- Originality: 7
+- Craft: 6
+- Honesty: 8
+Overall: 6.6
+Virality: 7% — the 8-bit HUD and "patch shipped 59 days ago" are native to gaming feeds and legible sound-off, but the snap is abstract and the film has no strong character payoff to drive shares.
