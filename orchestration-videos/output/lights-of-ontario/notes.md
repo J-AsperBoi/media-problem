@@ -45,9 +45,9 @@ None completes: the analog says the pieces never assembled into the load-shed de
 |---|---|---|---|
 | 0–2.4 | SC1 CLOSE | platform, locked | HOOK / loop frame: person with a green phone, wall map behind with one red station. Card "Four stations. / No line between." |
 | 2.4–6.2 | SC1 PULL OUT | continuous zoom, log-zoom 6 → 0 | out of the platform, through the lit station dot, to the whole network. First red trip at 4.5 s. Card "Every station, a lit window." |
-| 6.2–10.2 | SC1 WIDE | hold, slow drift | green stations light, try to draw lines, fail. Card "The answer was here. / In pieces." |
-| 10.2–11.5 | SC1 FALL IN | log-zoom 0.15 → 7, ease-in (accelerating) | the cascade sweeps the network while the camera falls into f2's platform; its lights go out as we land. |
-| 11.5–12.4 | SC2 CLOSE+ | locked | dead stop. Silence. Only her green phone is lit. |
+| 6.2–10.85 | SC1 WIDE | hold, slow drift | green stations light, try to draw lines, fail. Card "The answer was here. / In pieces." The cascade starts at 10.62 s in the wide. |
+| 10.85–11.6 | SC1 FALL IN | log-zoom 0.15 → 7, accelerating | the cascade finishes sweeping the network (11.28 s) while the camera falls into f2's platform, already dark when we land. |
+| 11.6–12.4 | SC2 CLOSE+ | locked | dead stop. Silence. Only her green phone is lit. |
 | 12.4–15.0 | SC2 | slow push | "We slowed it down / so you could see it." |
 | 15.0–15.3 | — | black | freeze, silence |
 | 15.3–21.0 | SC3 SNAP | flat | hit. Two 920 px panels, same 2 h, same sweep: as it happened (~1.5 h to notice, map goes dark) / routed · illustrative (15 min, lines drawn, map stays lit). |
@@ -55,7 +55,7 @@ None completes: the analog says the pieces never assembled into the load-shed de
 | 24.6–28.6 | END | — | end card (full for 3.6 s) "Help close the gap." + QR |
 | 28.6–31.0 | LOOP | map re-lights under the card fade; zoom in 2.5 → 6 onto the first platform | last frame = frame 1 |
 
-**Zoom cycles:** OUT 2.4–6.2 (platform → nation), IN 10.2–11.5 (nation → a different platform, closer), IN++ 21.0–24.6 (closer again). Loop tail 28.6–31.0 re-enters the first platform to meet frame 1.
+**Zoom cycles:** OUT 2.4–6.2 (platform → nation), IN 10.85–11.6 (nation → a different platform, closer), IN++ 21.0–24.6 (closer again). Loop tail 28.6–31.0 re-enters the first platform to meet frame 1.
 
 ## 3D translation note
 One unbroken camera. Start at eye height on a tiled platform, 35 mm, the person's green phone lighting her face, the backlit network map on the wall behind. Pull out slowly and straight back through the tunnel mouth and up through the street, the station becoming a lit window among thousands of windows, then an abstract glowing dot on a continental transit map floating in black (the map is the landscape: extruded gray lines, stations as windows with warm interior light). Hold high and still. Then fall: a long accelerating drop with a slight lens-breathing toward a second station while the windows go dark in a wave around it, landing at 50 mm on a second face as the ceiling lights click off. The end card sits over the black; behind it the windows re-light one by one and the camera glides down into the first platform, matching frame 1 exactly. Richer in 3D: real interior light spilling from windows, crowd silhouettes on each platform, depth in the map layers (vertigo from parallax on the fall).
@@ -68,3 +68,20 @@ One unbroken camera. Start at eye height on a tiled platform, 35 mm, the person'
 - "This is the bottleneck."
 - End: "Help close the gap."
 - Variants: "Every line was one call away." / "The map was lit. The lines weren't drawn." / "Nobody drew the line." / "Same map. Different routing."
+
+## Build notes
+- Loop check: frame t=0 and the last frame (t = 30.967) compared pixel by pixel in a scratch script, mean abs diff 0.000. The replay is continuous.
+- At deep zoom the green fragment rings fade out (log-zoom 2.6–4.2), so the station reads as a plain lit window before the platform fades in (full-frame layer, no rectangles).
+- The "Every station, a lit window." card moved to the bottom (y 1330) so it doesn't collide with the green ring during the pull-out.
+- Known weaknesses: the fall-in frames (11.0–11.4) are a blur of huge rings (vertigo, but noisy). Frame 1's red is the seed station on the wall poster (about 45 px glow), which reads but isn't big. Snap panels are legible but the mini maps are small.
+
+## Scores
+- Hook: 6
+- Speed accuracy: 8
+- Snap impact: 6
+- Emotion: 6
+- Originality: 7
+- Craft: 6
+- Honesty: 9
+Overall: 6.9
+Virality: 7% (the seamless loop and the subway-map look are shareable, but the hook's red is small and the cascade flashes by in under a second, so a cold feed scroll probably doesn't stop.)
