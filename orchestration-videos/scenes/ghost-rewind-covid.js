@@ -243,8 +243,8 @@ function makeScene(SERIF, HAND) {
     ctx.fillStyle = '#0d0e11'; ctx.fillRect(0, 0, 1080, 1920);
     const a = L.sm(19.8, 20.2, t);
     ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = '#17191e'; ctx.beginPath(); ctx.roundRect(60, 430, 960, 1070, 26); ctx.fill(); ctx.restore();
-    const dA = t < 22.6 ? SNAPD * L.clamp((t - 20.3) / 2.2, 0, 1) : SNAPD * L.clamp((t - 22.9) / 2.2, 0, 1);
-    const dB = SNAPD * L.clamp((t - 22.9) / 2.2, 0, 1);
+    const dA = t < 22.6 ? SNAPD * L.clamp((t - 20.3) / 2.2, 0, 1) : 421 * L.clamp((t - 22.9) / 2.2, 0, 1);
+    const dB = 421 * L.clamp((t - 22.9) / 2.2, 0, 1); // second run stops on the real median day
     ctx.save(); ctx.globalAlpha = a;
     miniWindow(ctx, 300, 470, dA, 'human');
     ctx.globalAlpha = a * (t < 22.6 ? 0.35 : 1); miniWindow(ctx, 780, 470, dB, 'ai'); ctx.restore();

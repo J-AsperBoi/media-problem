@@ -68,3 +68,19 @@ Interior of a tall Gothic nave at dusk, one lancet window ~12 m tall, backlit so
 ## Tags
 {"slug":"ghost-rewind-covid","structure":"ghost-rewind","medium":"stained glass","family":"myth/ritual","scale":"history","pace":"stop-start","emotion":"grief","protagonist":"a crowd","camera":"crane up and drop down","analog":"covid-2020"}
 Diversity check: OK, distinct enough (nearest before-the-dark 0.67).
+
+## Build notes
+- Snap staging: panel A runs days 0-560 alone at true (uniformly compressed) speed; then A and the ghost panel B re-run side by side and both stop on day 421, the real median, so the left window is half lit and the ghost window is ~90% lit. Then "day 421" / "day 363" and "The ghost was faster routing."
+- Protagonist pane is the median pane: ghost pane at day 362 (t 13.65 s, pop cue), real green at day 420 (t 15.31 s, ding cue). 78 panes total.
+- Rendered 37.0 s (ffprobe), matches DUR.
+
+## Scores
+- Hook: 7 (red window, face lit red, green shard, ghost; the flash-forward reads, but the rewind is fast)
+- Speed accuracy: 8 (red from sourced points, per-pane lognormal 421/363/490, one mapping with honest holds; pane dimming rate is a chosen constant)
+- Snap impact: 6 (a modest 58-day gain; the freeze + stop-on-median staging helps but it's still a quiet snap)
+- Emotion: 7 (panes dimming while waiting, the ghost's gentle presence, crowd faces turning sad)
+- Originality: 8 (stained glass window as the world, ghost timeline as dashed ghost panes)
+- Craft: 6 (clean read, but beans are simple and the ghost's rewind gesture is small)
+- Honesty: 9 (illustrative label, routing-only counterfactual, same floor day, loss only as dimming)
+Overall: 7.3
+Virality: 6% - beautiful and legible as a thumbnail, but grave, slow, and the payoff is a modest gap, so a small account likely stalls well below 100k.
