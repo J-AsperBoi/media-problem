@@ -111,15 +111,17 @@ function makeScene(SERIF, HAND) {
     });
     // people
     const pr = z > 3 ? 2.6 : 3.2;
-    const gray = new Path2DLike(), red = new Path2DLike(), grn = new Path2DLike();
+    const gray = new Path2DLike(), red = new Path2DLike(), grn = new Path2DLike(), core = new Path2DLike();
     dots.forEach(d => {
       const isR = h >= d.hR, gh = mode === 'ai' ? d.hA : d.hG, isG = showGreen && h >= gh;
-      (isR ? red : gray).add(d.x, d.y); if (isG) grn.add(d.x, d.y);
+      // reached by the correction: green ring, the claim stays as a small red core (speed is not belief)
+      if (isG) { grn.add(d.x, d.y); (isR ? core : gray).add(d.x, d.y); } else (isR ? red : gray).add(d.x, d.y);
     });
     const redA = mode === 'green' ? 0.45 : 1;
     gray.fill(ctx, pr, 'rgba(170,176,188,0.55)');
     red.fill(ctx, pr * 3, `rgba(255,59,48,${0.13 * redA})`); red.fill(ctx, pr, `rgba(255,59,48,${redA})`);
-    grn.ring(ctx, pr * 1.7, GREEN, pr * 0.45);
+    core.fill(ctx, pr * 0.55, `rgba(255,59,48,${0.7 * redA})`);
+    grn.fill(ctx, pr * 2.6, 'rgba(52,210,123,0.12)'); grn.ring(ctx, pr * 1.5, GREEN, pr * 0.75);
     // gray traffic
     traffic.forEach((c, i) => { const s = (c.s0 + h * c.v) % 1, p = at(s); car(ctx, p.x + p.nx * c.lane, p.y + p.ny * c.lane, p.ang, '#8d939e', { a: 0.55 }); });
     // green cars
@@ -174,8 +176,11 @@ function makeScene(SERIF, HAND) {
     if (a <= 0) return; ctx.save(); ctx.globalAlpha = a;
     if (band) { const hh = size * (lines.length * 1.1 + 0.6); ctx.fillStyle = 'rgba(7,8,12,0.78)'; ctx.fillRect(0, y - size * 1.05, 1080, hh); }
     ctx.restore();
+    // fit inside the safe column x 80..900: center at 490, max width 780
+    ctx.save(); ctx.font = `${size}px "${SERIF}"`; const mw = Math.max(...lines.map(l => ctx.measureText(typeof l === 'string' ? l : l.text).width)); ctx.restore();
+    const fs = mw * 1.06 > 780 ? size * 780 / (mw * 1.06) : size;
     const fitted = lines.map(l => { const o = typeof l === 'string' ? { text: l } : { ...l }; return o; });
-    L.title(ctx, fitted, y, size, { alpha: a });
+    ctx.save(); ctx.translate(-50, 0); L.title(ctx, fitted, y, fs, { alpha: a }); ctx.restore();
   }
   function laneLabel(ctx, text, y, a, col = '#c9ced8') { if (a <= 0) return; ctx.save(); ctx.globalAlpha = a; ctx.font = `44px "${HAND}"`; ctx.textAlign = 'left';
     const w = ctx.measureText(text).width; ctx.fillStyle = 'rgba(7,8,12,0.8)'; ctx.fillRect(80, y - 42, w + 36, 58); ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.strokeRect(80, y - 42, w + 36, 58);
@@ -218,13 +223,18 @@ function makeScene(SERIF, HAND) {
     const u = (h - g.r) / D, k = L.clamp(u / 0.03, 0, 1), s = L.lerp(g.s0 + 0.02, g.s1, L.clamp(u, 0, 1)), p = at(s);
     return { x: L.lerp(L.lerp(g.gx, g.jx, 0.5), p.x - p.nx * 8, k), y: L.lerp(L.lerp(g.gy, g.jy, 0.5), p.y - p.ny * 8, k) }; }
 
-  const TOP = { y: 0, h: 960 }, BOT = { y: 960, h: 960 }, FULL = { y: 0, h: 1920 };
+  const T_COLD = 1.3; const TOP = { y: 0, h: 960 }, BOT = { y: 960, h: 960 }, FULL = { y: 0, h: 1920 };
 
   function race(ctx, t) {
     const h = hRace(t);
     const shake = L.key([[0, 8], [3, 8], [5, 22], [8, 22], [11, 6], [13.2, 6], [16, 26], [19, 18]], t);
-    lane(ctx, TOP, camTop(t, h), h, 'red', t, shake, 3);
-    phone(ctx, TOP, L.key([[0, 1], [3.2, 1], [5.2, 5]], t, L.ease.in));
+    if (t < T_COLD) {
+      // cold open: flash-forward to hour 10 on the same timeline, close on the last person reached
+      lane(ctx, TOP, { x: heroP.x - 20, y: heroP.y - 10, z: L.lerp(4.6, 5.0, t / T_COLD) }, RED_H, 'red', t, shake, 3);
+    } else {
+      lane(ctx, TOP, camTop(t, h), h, 'red', t, shake, 3);
+      phone(ctx, TOP, L.key([[0, 1], [3.2, 1], [5.2, 5]], t, L.ease.in));
+    }
     const hp = heroPos(h); HERO.cx = hp.x; HERO.cy = hp.y;
     lane(ctx, BOT, camBot(t, h), h, 'green', t, shake * 0.8, 11);
     divider(ctx, 960);
@@ -234,7 +244,10 @@ function makeScene(SERIF, HAND) {
     ctx.fillStyle = BG; ctx.fillRect(0, 0, 1080, 1920);
     if (t < T_FREEZE) {
       race(ctx, t);
-      L.slate(ctx, t < 3 ? 'SC1  CLOSE / CLOSE' : t < 8 ? 'SC2  DOLLY IN, HANDHELD CHASE' : t < 13.2 ? 'SC3  CRANE UP, WIDE' : 'SC4  DOLLY IN, CLOSER');
+      L.slate(ctx, t < T_COLD ? 'SC0  COLD OPEN (FLASH-FORWARD)  CLOSE' : t < 3 ? 'SC1  CLOSE / CLOSE' : t < 8 ? 'SC2  DOLLY IN, HANDHELD CHASE' : t < 13.2 ? 'SC3  CRANE UP, WIDE' : 'SC4  DOLLY IN, CLOSER');
+      laneLabel(ctx, '10 hours from now', 280, t < T_COLD ? 1 : 0);
+      if (t >= T_COLD && t < T_COLD + 0.15) { ctx.fillStyle = `rgba(255,255,255,${0.3 * (1 - L.sm(T_COLD, T_COLD + 0.15, t))})`; ctx.fillRect(0, 0, 1080, 1920); }
+      laneLabel(ctx, 'now', 280, fade(t, T_COLD, 3.0, 0.1));
       card(ctx, ['Two lanes. One race.'], 990, 100, t < 0.1 ? 1 : fade(t, 0, 2.8));
       laneLabel(ctx, 'the claim', 280, fade(t, 3.4, 7.6));
       laneLabel(ctx, 'the correction', 1240, fade(t, 3.4, 7.6), '#c9ced8');
@@ -274,7 +287,7 @@ function makeScene(SERIF, HAND) {
 
   return { draw, DUR,
     acts: [{ start: 0, end: 3, bpm: 0, drone: true }, { start: 3, end: 19, bpm: 132, drone: true }, { start: 21.6, end: 29.4, bpm: 0, drone: true }, { start: 29.4, end: 38, bpm: 0, drone: true }],
-    cues: [{ t: 3, type: 'whoosh' }, { t: T_RACE + HERO.hRed0, type: 'whoosh' }, { t: 13, type: 'bonk' }, { t: T_RACE + HERO.r, type: 'pop' }, { t: T_SNAP, type: 'hit' }, { t: T_SNAP + Math.max(...dots.map(d => d.hA)) / SNAP_RATE, type: 'ding' }, { t: T_SNAP + TRUE_H / SNAP_RATE, type: 'ding' }, { t: 29.6, type: 'hit' }],
+    cues: [{ t: 1.3, type: 'stamp' }, { t: 3, type: 'whoosh' }, { t: T_RACE + HERO.hRed0, type: 'whoosh' }, { t: 13, type: 'bonk' }, { t: T_RACE + HERO.r, type: 'pop' }, { t: T_SNAP, type: 'hit' }, { t: T_SNAP + Math.max(...dots.map(d => d.hA)) / SNAP_RATE, type: 'ding' }, { t: T_SNAP + TRUE_H / SNAP_RATE, type: 'ding' }, { t: 29.6, type: 'hit' }],
     _debug: { segs: segs.map(g => [g.r.toFixed(2), g.rai.toFixed(2), g.hRed0.toFixed(2)]), D, heroR: HERO.r, lastRed: lastDot.hR, maxAI: Math.max(...dots.map(d => d.hA)) } };
 }
 module.exports = makeScene;

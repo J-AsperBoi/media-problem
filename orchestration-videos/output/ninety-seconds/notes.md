@@ -76,3 +76,20 @@ The analog notes that its median (759 h) is the geometric mean of p10 and p90, a
 {"slug":"ninety-seconds","structure":"wait-for-it","medium":"topographic map","family":"cosmos","scale":"nation","pace":"one long take","emotion":"vertigo","protagonist":"a crowd","camera":"crane up and drop down","analog":"quebec-1989"}
 
 Diversity check: OK (nearest two-days and the-last-thirteen-days, distance 1.00). No changes needed.
+
+## Resume fixes (after a container restart)
+- Hook: the red at the pylon is now large and legible in frame 1 (r 24 core, pulsing halo ring). Before, it was a tiny glint.
+- Labels are all at least 44px: map fragment labels, log-ruler ticks and title, and every snap label ("illustrative" is 48px). The "decade" tick is kept with no word, so the last label ends at x ≤ 900.
+- Snap panels and the true-proportions bar are 900px wide. The "before" and "second" labels in the snap rows no longer overlap.
+- Checked: the aurora is gray only; the modelled median (759 h) never appears as a number; only "90 seconds" and "7 years" are on screen; all text is within x 80–900.
+
+## Scores
+- Hook: 6
+- Speed accuracy: 8
+- Snap impact: 5
+- Emotion: 6
+- Originality: 7
+- Craft: 6
+- Honesty: 9
+- Overall: 6.7
+- Virality: 6% (The crane from one window to a province going dark in 90 seconds is a strong, loopable image. But the log-time ruler and a snap that is honestly small ask a lot of a cold viewer in a feed.)

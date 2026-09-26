@@ -120,8 +120,8 @@ function makeScene(SERIF, HAND) {
     ctx.strokeStyle = '#5a606a'; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(pylon.x - 40, 720); ctx.lineTo(pylon.x, pylon.y); ctx.lineTo(pylon.x + 40, 720); ctx.moveTo(pylon.x - 30, 560); ctx.lineTo(pylon.x + 30, 560); ctx.stroke();
     ctx.strokeStyle = '#6a707a'; ctx.lineWidth = 3; ctx.beginPath(); for (let i = 0; i <= 30; i++) { const [x, y] = wirePt(i / 30); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
     // red at the edge: glint on the pylon, then a pulse running down the wire as the collapse starts
-    const glint = 0.55 + 0.45 * Math.sin(t * 5);
-    glowDot(ctx, pylon.x, pylon.y, 11, RC, glint);
+    const glint = 0.75 + 0.25 * Math.sin(t * 5);
+    glowDot(ctx, pylon.x, pylon.y, 24, RC, glint); ctx.strokeStyle = rgbaR(0.55 * glint); ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(pylon.x, pylon.y, 62 + 8 * Math.sin(t * 5), 0, 7); ctx.stroke();
     const c = collapse(e); if (c > 0) { const f = L.clamp(c * 1.4, 0, 1); ctx.strokeStyle = RED; ctx.lineWidth = 5; ctx.beginPath(); for (let i = 0; i <= 30 * f; i++) { const [x, y] = wirePt(i / 30); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke(); }
     // far buildings row
     ctx.fillStyle = '#171c24'; ctx.fillRect(-2000, 720, 5080, 1300);
@@ -217,8 +217,8 @@ function makeScene(SERIF, HAND) {
       });
       loop.forEach((n, i) => { const p = toS(cam, n); const pulse = 0.8 + 0.2 * Math.sin(t * 2.2 + i * 1.3);
         glowDot(ctx, p.x, p.y, 11 * pulse, GC, 1);
-        const lx = L.clamp(p.x, 170, 810), ly = p.y + (n.y < C.y ? -26 : 48);
-        ctx.save(); ctx.font = `36px "${HAND}"`; ctx.textAlign = 'center'; ctx.lineWidth = 7; ctx.strokeStyle = BG; ctx.lineJoin = 'round'; ctx.strokeText(n.lbl, lx, ly); ctx.fillStyle = PALE; ctx.fillText(n.lbl, lx, ly); ctx.restore(); });
+        const lx = L.clamp(p.x, 185, 795), ly = p.y + (n.y < C.y ? -28 : 56);
+        ctx.save(); ctx.font = `44px "${HAND}"`; ctx.textAlign = 'center'; ctx.lineWidth = 7; ctx.strokeStyle = BG; ctx.lineJoin = 'round'; ctx.strokeText(n.lbl, lx, ly); ctx.fillStyle = PALE; ctx.fillText(n.lbl, lx, ly); ctx.restore(); });
       // ring closed: full green contour pulse
       const rc = L.sm(RING_T, RING_T + 0.5, t) * (1 - L.sm(24.2, 24.6, t) * 0);
       if (rc > 0) { ctx.globalAlpha = ga * rc * (0.5 + 0.5 * Math.sin((t - RING_T) * 4) ** 2); ctx.strokeStyle = GREEN; ctx.lineWidth = 3; ctx.beginPath();
@@ -231,16 +231,16 @@ function makeScene(SERIF, HAND) {
   }
 
   // ---------------- log ruler (screen space) ----------------
-  const RX0 = 110, RW = 740, RDEC = 8.6, RY_ = 1450;
+  const RX0 = 100, RW = 780, RDEC = 8.6, RY_ = 1420;
   const rpos = s => RX0 + RW * L.clamp(Math.log10(Math.max(1, s)) / RDEC, 0, 1);
   const TICKS = [['second', 1], ['minute', 60], ['hour', 3600], ['day', 86400], ['month', 2.63e6], ['year', 3.156e7], ['decade', 3.156e8]];
   function ruler(ctx, t, a, { y = RY_, e = E(t), title = 'log time', pre = false, ai = false, animGreen = true } = {}) {
     if (a <= 0) return; ctx.save(); ctx.globalAlpha = a;
-    ctx.fillStyle = 'rgba(13,17,24,0.72)'; ctx.fillRect(RX0 - 40, y - 78, RW + 80, 140);
+    ctx.fillStyle = 'rgba(13,17,24,0.72)'; ctx.fillRect(80, y - 100, 900, 180);
     ctx.strokeStyle = rgbaW(0.6); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(RX0, y); ctx.lineTo(RX0 + RW, y); ctx.stroke();
-    ctx.font = `28px "${HAND}"`; ctx.textAlign = 'center';
-    TICKS.forEach(([w, s], i) => { const x = rpos(s); ctx.strokeStyle = rgbaW(0.6); ctx.beginPath(); ctx.moveTo(x, y - 10); ctx.lineTo(x, y + 10); ctx.stroke(); ctx.fillStyle = rgbaW(0.75); ctx.fillText(w, x, y + 44 + (i % 2) * 0); });
-    ctx.textAlign = 'left'; ctx.fillStyle = rgbaW(0.8); ctx.font = `30px "${HAND}"`; ctx.fillText(title, RX0 - 20, y - 44);
+    ctx.font = `44px "${HAND}"`; ctx.textAlign = 'center';
+    TICKS.forEach(([w, s], i) => { const x = rpos(s); ctx.strokeStyle = rgbaW(0.6); ctx.beginPath(); ctx.moveTo(x, y - 10); ctx.lineTo(x, y + 10); ctx.stroke(); if (w !== 'decade') { ctx.fillStyle = rgbaW(0.8); ctx.fillText(w, x, y + 54); } });
+    ctx.textAlign = 'left'; ctx.fillStyle = rgbaW(0.85); ctx.font = `44px "${HAND}"`; ctx.fillText(title, RX0 - 10, y - 50);
     // red span
     if (e > 0) { const x1 = rpos(Math.min(e, COL_S)); ctx.fillStyle = RED; ctx.fillRect(RX0, y - 7, x1 - RX0, 14); }
     // green: restoration tick and edge ticks
@@ -259,45 +259,46 @@ function makeScene(SERIF, HAND) {
     if (lt < 2.8) {
       // true proportions: linear bar over the ~7 years to the lasting fix
       card(ctx, ['At true proportions.'], 380, 92, fade(t, 24.7, 27.4, 0.25));
-      const y = 820, x0 = 110, w = 760, f = L.ease.inOut(L.clamp((lt - 0.4) / 1.6, 0, 1));
+      const y = 820, x0 = 90, w = 900, f = L.ease.inOut(L.clamp((lt - 0.4) / 1.6, 0, 1));
       ctx.fillStyle = rgbaW(0.12); ctx.fillRect(x0, y - 16, w, 32);
       ctx.fillStyle = rgbaW(0.45); ctx.fillRect(x0, y - 16, w * f, 32);
       // the dark: 90 s of ~7 yr = 0.0003 px -> drawn as a 2 px hairline
       ctx.fillStyle = RED; ctx.fillRect(x0, y - 60, 2, 120);
-      L.label(ctx, 'the dark: too thin to see', x0 - 4, y - 80, 36, { col: rgbaW(0.85), align: 'left' });
-      if (f >= 1) { glowDot(ctx, x0 + w, y, 14, GC, 1); L.label(ctx, 'the lasting fix', x0 + w - 10, y + 80, 36, { col: rgbaW(0.85), align: 'right' }); }
-      L.label(ctx, 'linear time', x0, y + 80, 30, { col: rgbaW(0.6), align: 'left' });
+      L.label(ctx, 'the dark: too thin to see', x0 - 4, y - 84, 48, { col: rgbaW(0.85), align: 'left' });
+      if (f >= 1) { glowDot(ctx, x0 + w, y, 14, GC, 1); L.label(ctx, 'the lasting fix', 900, y + 90, 48, { col: rgbaW(0.85), align: 'right' }); }
+      L.label(ctx, 'linear time', x0, y + 90, 44, { col: rgbaW(0.6), align: 'left' });
       return;
     }
     // side by side (stacked): as it happened vs AI-routed warning (illustrative)
     const k = lt - 2.8, a2 = L.sm(0, 0.3, k), aB = L.sm(0.9, 1.3, k);
     card(ctx, ['Same pieces, routed first.'], 330, 84, fade(t, 27.6, 31.4, 0.3));
     const row = (y, label, sub, ai, a) => { if (a <= 0) return; ctx.save(); ctx.globalAlpha = a;
-      L.label(ctx, label, 490, y - 150, 50, { col: '#fffdf7', font: SERIF }); if (sub) L.label(ctx, sub, 490, y - 108, 34, { col: GREEN });
+      ctx.fillStyle = 'rgba(232,228,218,0.05)'; ctx.fillRect(80, y - 250, 900, 340); ctx.strokeStyle = rgbaW(0.18); ctx.lineWidth = 2; ctx.strokeRect(80, y - 250, 900, 340);
+      L.label(ctx, label, 490, y - 190, 58, { col: '#fffdf7', font: SERIF }); if (sub) L.label(ctx, sub, 490, y - 136, 48, { col: GREEN });
       // pre-zone ("before")
-      ctx.strokeStyle = rgbaW(0.35); ctx.setLineDash([8, 10]); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(RX0 - 20, y); ctx.lineTo(RX0 + 110, y); ctx.stroke(); ctx.setLineDash([]);
-      L.label(ctx, 'before', RX0 + 45, y + 44, 28, { col: rgbaW(0.75) });
-      const rx = RX0 + 150, rw = RW - 150; const pos = s => rx + rw * L.clamp(Math.log10(Math.max(1, s)) / RDEC, 0, 1);
+      ctx.strokeStyle = rgbaW(0.35); ctx.setLineDash([8, 10]); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(RX0 - 20, y); ctx.lineTo(RX0 + 140, y); ctx.stroke(); ctx.setLineDash([]);
+      L.label(ctx, 'before', RX0 + 50, y + 54, 44, { col: rgbaW(0.75) });
+      const rx = RX0 + 185, rw = RW - 185; const pos = s => rx + rw * L.clamp(Math.log10(Math.max(1, s)) / RDEC, 0, 1);
       ctx.strokeStyle = rgbaW(0.6); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(rx, y); ctx.lineTo(rx + rw, y); ctx.stroke();
-      ctx.font = `28px "${HAND}"`; ctx.textAlign = 'center';
-      [['second', 1], ['hour', 3600], ['year', 3.156e7]].forEach(([w, s]) => { const x = pos(s); ctx.beginPath(); ctx.moveTo(x, y - 10); ctx.lineTo(x, y + 10); ctx.stroke(); ctx.fillStyle = rgbaW(0.75); ctx.fillText(w, x, y + 44); });
+      ctx.font = `44px "${HAND}"`; ctx.textAlign = 'center';
+      [['second', 1], ['hour', 3600], ['year', 3.156e7]].forEach(([w, s]) => { const x = pos(s); ctx.beginPath(); ctx.moveTo(x, y - 10); ctx.lineTo(x, y + 10); ctx.stroke(); ctx.fillStyle = rgbaW(0.75); ctx.fillText(w, x, y + 54); });
       ctx.fillStyle = RED; ctx.fillRect(rx, y - 8, pos(COL_S) - rx, 16);
       const gOn = s => { const x = pos(s); ctx.fillStyle = GREEN; ctx.fillRect(x - 4, y - 26, 8, 38); };
       gOn(edges[0].hrs * 3600); gOn(edges[4].hrs * 3600);
       // warning fragment: in pre-zone. Human: sits unconnected. AI: routed to the control room before the red.
       const wx = RX0 + 10;
       if (!ai) { glowDot(ctx, wx, y - 50, 9, GC, 1); ctx.setLineDash([5, 10]); ctx.strokeStyle = rgbaW(0.35); ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(wx + 14, y - 50); ctx.lineTo(rx - 6, y - 50); ctx.stroke(); ctx.setLineDash([]);
-        L.label(ctx, 'warning, unrouted', wx - 10, y - 66, 28, { col: rgbaW(0.7), align: 'left' }); }
+        L.label(ctx, 'warning, unrouted', wx - 10, y - 70, 44, { col: rgbaW(0.7), align: 'left' }); }
       else { const f = L.ease.out(L.clamp((k - 1.3) / 0.5, 0, 1)); glowDot(ctx, wx, y - 50, 9, GC, 1);
         ctx.strokeStyle = GREEN; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(wx, y - 50); ctx.lineTo(L.lerp(wx, rx - 6, f), y - 50); ctx.stroke();
         if (f >= 1) glowDot(ctx, rx - 6, y - 50, 12, GC, 1);
-        L.label(ctx, 'warning reaches operators', wx - 10, y - 66, 28, { col: rgbaW(0.85), align: 'left' }); }
+        L.label(ctx, 'warning reaches operators', wx - 10, y - 70, 44, { col: rgbaW(0.85), align: 'left' }); }
       ctx.restore(); };
     row(760, 'As it happened', null, false, a2);
-    row(1170, 'AI-routed warning', 'illustrative', true, aB);
+    row(1180, 'AI-routed warning', 'illustrative', true, aB);
     const nA = L.sm(1.9, 2.2, k); if (nA > 0) {
-      L.label(ctx, 'Operators still decide.', 490, 1320, 40, { col: rgbaW(0.85), alpha: nA, font: SERIF });
-      L.label(ctx, 'Steel still takes years.', 490, 1372, 40, { col: rgbaW(0.85), alpha: L.sm(2.5, 2.8, k), font: SERIF }); }
+      L.label(ctx, 'Operators still decide.', 490, 1340, 48, { col: rgbaW(0.85), alpha: nA, font: SERIF });
+      L.label(ctx, 'Steel still takes years.', 490, 1400, 48, { col: rgbaW(0.85), alpha: L.sm(2.5, 2.8, k), font: SERIF }); }
   }
 
   // ---------------- main ----------------
