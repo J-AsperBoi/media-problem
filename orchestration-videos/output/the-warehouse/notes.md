@@ -60,3 +60,17 @@ Tier: animatic
 
 ## Tags
 {"structure":"man-in-a-hole","medium":"paper cutout","family":"cooking","scale":"economy","pace":"slow build","camera":"crane up and drop down","emotion":"tenderness","protagonist":"one person","analog":"rice-2008"}
+
+## Build log
+- Preview 1: structure worked. Fixes: calendar leaves fell behind the counter and read as a stray dark shape (fall shortened); the green warehouse glow in the window was too small for the thumbnail (enlarged); the "deal" label overlapped the red curve in the snap panels (moved above the dot).
+
+## Scores
+- Hook: 6 (frame 1 has a worried face, a wall of red and a green warehouse in the window, with "There was enough rice." The green is still small.)
+- Speed accuracy: 8 (logistic fit through the sourced points, 1 s = 1 week, sourced decay, lognormal thread quantiles, AI lane from the analog)
+- Snap impact: 5 (the honest gap is only ~3 weeks. Staging carries it, but the panels look alike at a glance.)
+- Emotion: 6 (the face changes from calm to worried, sad and then a small smile. The rice scoop is a tender anchor.)
+- Originality: 7 (a paper-cutout kitchen as an economy film, and a man-in-a-hole rise built on real data)
+- Craft: 6 (the paper layers and shadows read well. The mother's body and arm are stiff, and the crane is a crossfade, not a continuous move.)
+- Honesty: 9 (no countries or officials, unverified items off screen, the modest counterfactual labeled illustrative)
+- Overall: 6.7
+- Virality: 6% (a quiet, warm film with a real twist that says "the rice existed", but the slow build and the small snap will lose most swipers in the first 3 s.)
