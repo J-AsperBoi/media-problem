@@ -11,7 +11,8 @@ const inProgress = all.filter(c => busy.has(c.slug) && !done.has(c.slug));
 const dist = (a, b) => DIMS.filter(d => String(a[d]).toLowerCase() !== String(b[d]).toLowerCase()).length / DIMS.length;
 const N = +process.argv[2] || 3, chosen = [], ref = [...built, ...inProgress];
 for (let k = 0; k < N && pool.length; k++) {
-  let best = -1, bs = -1; pool.forEach((c, i) => { const m = ref.length ? Math.min(...ref.map(r => dist(c, r))) : 1; const s = m * 100 + c.vir; if (s > bs) { bs = s; best = i; } });
+  let best = -1, bs = -1; pool.forEach((c, i) => { const m = ref.length ? Math.min(...ref.map(r => dist(c, r))) : 1; const newStruct = !ref.some(r => r.structure === c.structure) ? 30 : 0, newAnalog = !ref.some(r => r.analog === c.analog) ? 15 : 0;
+    const s = m * 100 + newStruct + newAnalog + c.vir; if (s > bs) { bs = s; best = i; } });
   const c = pool.splice(best, 1)[0]; chosen.push(c); ref.push(c);
 }
 console.log(JSON.stringify(chosen, null, 1));

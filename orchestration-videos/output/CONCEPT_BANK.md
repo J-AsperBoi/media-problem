@@ -34,7 +34,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** man-in-a-hole · **Analog:** rice-2008 · **First-guess virality:** 8%
 - **Logline (red / green):** A mother measures rice into a pot; the scoop gets smaller as red price ink seeps up the page. Crane up: 1.5 million idle tonnes sit in a warehouse across the sea, green, unconnected. Drop back into the kitchen.
 - **Snap:** Deal lands at week 31 (at the peak) vs week 28 routed (illustrative); prices fell >25% within 4 weeks once connected.
-- **Tags:** medium woodblock; family cooking; scale economy; pace slow build; camera crane up and drop down; emotion tenderness; protagonist one person
+- **Tags:** medium paper cutout; family cooking; scale economy; pace slow build; camera crane up and drop down; emotion tenderness; protagonist one person
 
 ## 6. six-to-twelve-hours
 - **Structure:** two-phones · **Analog:** cuban-missile-1962 · **First-guess virality:** 9%
@@ -202,7 +202,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** wait-for-it · **Analog:** rice-2008 · **First-guess virality:** 8%
 - **Logline (red / green):** A paper price tag on a sack creeps upward. Wait for it: the crane reveals the warehouse.
 - **Snap:** Week 31 vs 28 (illustrative).
-- **Tags:** medium paper cutout; family market; scale economy; pace accelerating; camera crane up and drop down; emotion awe; protagonist one person
+- **Tags:** medium woodblock; family market; scale economy; pace accelerating; camera crane up and drop down; emotion awe; protagonist one person
 
 ## 34. the-small-thing
 - **Structure:** powers-of-ten-zoom · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 9%
