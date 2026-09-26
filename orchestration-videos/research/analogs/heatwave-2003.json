@@ -1,0 +1,58 @@
+{
+  "id": "heatwave-2003",
+  "threat_internal_label": "extreme heat (never shown on screen)",
+  "analog": "August 2003 European heat wave, France",
+  "time_unit": "days",
+  "t0": "2003-08-01",
+  "sources": [
+    {"key": "s1", "title": "Fouillet A. et al., Excess mortality related to the August 2003 heat wave in France, Int Arch Occup Environ Health (2006)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1950160/", "accessed": "2026-09-26"},
+    {"key": "s2", "title": "Eurosurveillance: Summary of the mortality impact assessment of the 2003 heat wave in France (2005)", "url": "https://www.eurosurveillance.org/content/10.2807/esm.10.07.00554-en", "accessed": "2026-09-26"},
+    {"key": "s3", "title": "Robine J-M. et al., Death toll exceeded 70,000 in Europe during the summer of 2003, C R Biol (2008)", "url": "https://www.sciencedirect.com/science/article/pii/S1631069107003770", "accessed": "2026-09-26"},
+    {"key": "s4", "title": "World Socialist Web Site, France: More than 10,000 dead in record heat wave (Aug 2003): Plan Blanc only on Aug 13; Aug 11 cabinet focused on energy", "url": "https://www.wsws.org/en/articles/2003/08/heat-a22.html", "accessed": "2026-09-26", "notes": "partisan outlet; used only for dated events also in Wikipedia"},
+    {"key": "s5", "title": "2003 European heatwave (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2003_European_heatwave", "accessed": "2026-09-26"},
+    {"key": "s6", "title": "Canicule en France (Wikipedia FR): Plan canicule in place from June 1, 2004", "url": "https://fr.wikipedia.org/wiki/Canicule_en_France", "accessed": "2026-09-26"},
+    {"key": "s7", "title": "Patrick Pelloux (Wikipedia): first to point out that thousands were dying while authorities denied it", "url": "https://en.wikipedia.org/wiki/Patrick_Pelloux", "accessed": "2026-09-26"},
+    {"key": "s8", "title": "Santé publique France: Système d'alerte canicule et santé (SACS) 2004, rapport opérationnel", "url": "https://www.santepubliquefrance.fr/climat/fortes-chaleurs-canicule/rapportsynthese/systeme-dalerte-canicule-et-sante-sacs-2004-rapport-operationnel", "accessed": "2026-09-26"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0,  "extent": 0,   "src": "s1", "event": "Aug 1: excess-death count window starts"},
+      {"t": 19, "extent": 1.0, "src": "s2", "event": "Aug 20: ~14,800 excess deaths in France Aug 1-20; no excess in the last third of August"}
+    ],
+    "events": [
+      {"t": 1,    "src": "s2", "event": "heat wave begins (Aug 2); max temperatures 11-12 C above seasonal norm for 9 consecutive days (s1)"},
+      {"t": 11,   "src": "s2", "event": "Aug 12: national daily-mean temperature peak 28.6 C; daily excess deaths above 1,000 on Aug 12 and 13"},
+      {"t": 14,   "src": "s2", "event": "Aug 15: heat wave ends"}
+    ],
+    "notes": "extent = share of the ~14,800 French excess deaths (Aug 1-20) that had occurred. No sourced daily series was retrieved, so only endpoints are given; the sourced shape is: deaths rose with temperature, peaked Aug 12-13 (>1,000 excess per day), and stopped by Aug 20. Europe-wide the summer toll exceeded 70,000 (s3). If you need an intermediate curve, follow the temperature shape and label it as such, or fetch the daily series from s1 (figure 1) later."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "forecasters (Meteo-France)", "had": "the heat forecast", "ready_at": 1, "src": "s5", "verified": false, "notes": "heat was forecast; no heat-HEALTH warning system existed to route it"},
+      {"id": "f2", "who": "cities abroad (e.g. Philadelphia, since 1995)", "had": "working heat-health warning systems", "ready_at": -3000, "src": "s8", "verified": false, "notes": "existence of earlier systems not confirmed in this pass; date approximate"},
+      {"id": "f3", "who": "emergency-room doctors (Dr Patrick Pelloux)", "had": "the first signal that thousands were dying", "ready_at": 9.5, "src": "s7", "verified": false, "notes": "public alarm around Aug 10-11; day not confirmed"},
+      {"id": "f4", "who": "hospital system", "had": "Plan Blanc (extra staff, beds, transport)", "ready_at": 12, "src": "s4", "notes": "activated Aug 13, after the mortality peak"},
+      {"id": "f5", "who": "national government + Meteo-France + InVS", "had": "national heat plan with health alert system", "ready_at": 305, "src": "s6", "notes": "Plan canicule in place June 1, 2004"}
+    ],
+    "aggregation": {
+      "median": 12, "p10": 9.5, "p90": 305, "src": "s4",
+      "notes": "Derived from documented response dates (days after Aug 1, 2003), not a measured distribution: p10 ~ ER doctors' public alarm (~Aug 10-11, day unverified, s7), median = Plan Blanc Aug 13 (t=12, s4), p90 = national heat plan June 1 2004 (t=305, s6). Very skewed: the emergency response came after the peak; the lasting fix took ten months."
+    },
+    "deploy": {
+      "median": 305, "src": "s6",
+      "notes": "Time until a standing heat-health warning plan existed (June 1, 2004)."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 3,
+    "basis": "Illustrative. The fragments were a forecast (available at the start) plus health signals (ER admissions, funeral-home load) that humans connected ~9-12 days in. Joining a temperature forecast with a known heat-mortality relationship and routing a warning to hospitals and home-care services is a short expert analysis task, inside the ~17.4 h 50% task horizon in RATES.md (METR entry). Assumed: warning routed by day 3 (Aug 4), i.e. before the Aug 12-13 peak, with humans still deciding to activate plans. Not a claim that deaths would have been prevented; heat plans reduce but do not eliminate heat mortality.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "~14,800 excess deaths accumulated in 19 days, peaking on days 11-12; the hospital emergency plan came on day 12, after the peak, and the standing fix on day 305."
+}

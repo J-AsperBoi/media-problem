@@ -1,0 +1,55 @@
+{
+  "id": "penicillin-resistance-1946",
+  "threat_internal_label": "antibiotic resistance (never shown on screen)",
+  "analog": "Penicillin-resistant Staphylococcus aureus in hospitals after penicillin's introduction (Hammersmith Hospital, London, 1946-1948), to methicillin (1959) and MRSA (1961)",
+  "time_unit": "years",
+  "t0": "April 1946 (first Hammersmith measurement)",
+  "sources": [
+    {"key": "s1", "title": "Mary Barber (bacteriologist), Wikipedia: resistant strains 12.5% -> 38% (Apr 1946-Jun 1947), 59% reported in 1948", "url": "https://en.wikipedia.org/wiki/Mary_Barber_(bacteriologist)", "accessed": "2026-09-26"},
+    {"key": "s2", "title": "What is Biotechnology: Mary Barber, Champion of AMR surveillance", "url": "https://www.whatisbiotechnology.org/index.php/exhibitions/antimicrobial/index/barber", "accessed": "2026-09-26"},
+    {"key": "s3", "title": "Barber M., Rozwadowska-Dowzenko M., Infection by penicillin-resistant staphylococci, Lancet (1948)", "url": "https://pubmed.ncbi.nlm.nih.gov/18890505/", "accessed": "2026-09-26"},
+    {"key": "s4", "title": "Enright M.C. et al., The evolutionary history of methicillin-resistant Staphylococcus aureus (MRSA), PNAS (2002)", "url": "https://www.pnas.org/doi/10.1073/pnas.122108599", "accessed": "2026-09-26"},
+    {"key": "s5", "title": "Five decades of MRSA: controversy and uncertainty continues, The Lancet (2011): methicillin introduced 1959, MRSA reported in UK 1961", "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(11)61566-3/fulltext", "accessed": "2026-09-26"},
+    {"key": "s6", "title": "WHO Global Action Plan on Antimicrobial Resistance (adopted by the World Health Assembly, May 2015)", "url": "https://www.who.int/publications/i/item/9789241509763", "accessed": "2026-09-26", "verified": false}
+  ],
+
+  "threat": {
+    "model": "logistic",
+    "doubling_time": 0.56,
+    "doubling_time_src": "s1",
+    "doubling_time_notes": "Derived here, not published: fitting a logistic through 12.5% (Apr 1946) and 38% (Jun 1947) gives growth rate r = 1.245/yr, so ln2/r = 0.56 years (the early-phase doubling used by L.logistic). The fit predicts ~56% at Jan 1948 vs 59% reported, a good check. Use L.logistic(t, 0.56, s0) with s0 chosen so the curve passes 0.125 at t=0 (equivalent to starting the clock earlier).",
+    "points": [
+      {"t": 0,    "extent": 0.125, "src": "s1", "date": "1946-04"},
+      {"t": 1.17, "extent": 0.38,  "src": "s1", "date": "1947-06"},
+      {"t": 1.75, "extent": 0.59,  "src": "s3", "date": "1948 (month assumed Jan)", "verified": false}
+    ],
+    "notes": "extent = share of S. aureus isolates from hospital patients at Hammersmith that were penicillin-resistant. One hospital, not the world; label accordingly. The month of the 59% figure is assumed from the 1948 publication; value itself is sourced."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "Oxford biochemists", "had": "knowledge that bacteria make an enzyme that destroys penicillin (penicillinase, 1940)", "ready_at": -5.3, "src": "s2", "verified": false, "notes": "Abraham & Chain 1940; not confirmed in a snippet this pass"},
+      {"id": "f2", "who": "a hospital bacteriologist (Mary Barber)", "had": "surveillance data showing resistant hospital strains spreading, and a warning", "ready_at": 1.5, "src": "s1"},
+      {"id": "f3", "who": "pharmaceutical chemists", "had": "a penicillinase-resistant penicillin (methicillin)", "ready_at": 13, "src": "s5", "notes": "introduced 1959"},
+      {"id": "f4", "who": "the bacteria (counter-move)", "had": "methicillin resistance (MRSA) reported in the UK", "ready_at": 15, "src": "s5", "notes": "1961; this is red, not green: shown for pacing"},
+      {"id": "f5", "who": "WHO member states", "had": "Global Action Plan on antimicrobial resistance", "ready_at": 69, "src": "s6", "verified": false, "notes": "May 2015"}
+    ],
+    "aggregation": {
+      "median": 13, "p10": 1.5, "p90": 69, "src": "s5",
+      "notes": "Derived from documented dates (years after Apr 1946), not a measured distribution: p10 = Barber's warning (~1947-48, s1), median = new drug in clinical use (methicillin 1959, s5), p90 = global coordinated plan (2015, s6, unverified). Resistance to the new drug followed within ~2 years (1961)."
+    },
+    "deploy": {
+      "median": 2, "src": "s5",
+      "notes": "Methicillin 1959 to first MRSA reports 1961: how long the deployed fix held before red caught up."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 2.5,
+    "basis": "Illustrative, and only for the coordination fragment. Barber's hospital data were ready by ~1947-48; turning surveillance from many hospitals into a routed prescribing/infection-control policy is analysis and communication work well inside the ~17.4 h 50% task horizon in RATES.md (METR entry), repeated cheaply across hospitals per RATES.md 'Cost of AI at fixed capability'. Assumed: a stewardship response assembled ~1 year after the warning (t=2.5) instead of the ~13-year median. This does NOT assume faster drug development: RATES.md's 'Science example' shows design can be days, but trials and manufacturing still take years, and bacteria keep evolving.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "Resistant hospital staph went from 1 in 8 to nearly 6 in 10 in under two years (odds doubling ~every 7 months); the new drug took ~13 years and was itself beaten in 2."
+}

@@ -1,0 +1,263 @@
+{
+  "id": "gfc-2008",
+  "threat_internal_label": "financial contagion (never shown on screen)",
+  "analog": "2007-2009 global financial crisis",
+  "time_unit": "days",
+  "t0": "2007-08-09 (BNP Paribas freezes three funds exposed to US subprime)",
+  "sources": [
+    {
+      "key": "s1",
+      "title": "BNP Paribas (Wikipedia): Aug 9 2007 fund freeze 'generally seen as the start of the 2008 financial crisis'",
+      "url": "https://en.wikipedia.org/wiki/BNP_Paribas",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s2",
+      "title": "datasets/s-and-p-500 (Shiller data, monthly average S&P 500 level)",
+      "url": "https://raw.githubusercontent.com/datasets/s-and-p-500/main/data/data.csv",
+      "accessed": "2026-09-26",
+      "notes": "downloaded and computed directly"
+    },
+    {
+      "key": "s3",
+      "title": "Term Auction Facility (Wikipedia): launched Dec 2007 with coordinated moves by Bank of Canada, BoE, ECB, SNB",
+      "url": "https://en.wikipedia.org/wiki/Term_Auction_Facility",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s4",
+      "title": "Council on Foreign Relations: The U.S. Financial Crisis timeline",
+      "url": "https://www.cfr.org/timelines/us-financial-crisis",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s5",
+      "title": "Guillen M.F., The Global Economic & Financial Crisis: A Timeline (Wharton Lauder Institute)",
+      "url": "https://lauder.wharton.upenn.edu/wp-content/uploads/2015/06/Chronology_Economic_Financial_Crisis.pdf",
+      "accessed": "2026-09-26"
+    }
+  ],
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {
+        "t": 0,
+        "extent": 0,
+        "src": "s1",
+        "event": "Aug 9 2007: BNP Paribas freezes three funds; widely taken as the start"
+      },
+      {
+        "t": 67,
+        "extent": 0,
+        "src": "s2",
+        "month": "2007-10",
+        "sp500_monthly_avg": 1539.66
+      },
+      {
+        "t": 98,
+        "extent": 0.097,
+        "src": "s2",
+        "month": "2007-11",
+        "sp500_monthly_avg": 1463.39
+      },
+      {
+        "t": 128,
+        "extent": 0.077,
+        "src": "s2",
+        "month": "2007-12",
+        "sp500_monthly_avg": 1479.22
+      },
+      {
+        "t": 159,
+        "extent": 0.206,
+        "src": "s2",
+        "month": "2008-01",
+        "sp500_monthly_avg": 1378.76
+      },
+      {
+        "t": 190,
+        "extent": 0.236,
+        "src": "s2",
+        "month": "2008-02",
+        "sp500_monthly_avg": 1354.87
+      },
+      {
+        "t": 219,
+        "extent": 0.285,
+        "src": "s2",
+        "month": "2008-03",
+        "sp500_monthly_avg": 1316.94
+      },
+      {
+        "t": 250,
+        "extent": 0.216,
+        "src": "s2",
+        "month": "2008-04",
+        "sp500_monthly_avg": 1370.47
+      },
+      {
+        "t": 280,
+        "extent": 0.174,
+        "src": "s2",
+        "month": "2008-05",
+        "sp500_monthly_avg": 1403.22
+      },
+      {
+        "t": 311,
+        "extent": 0.254,
+        "src": "s2",
+        "month": "2008-06",
+        "sp500_monthly_avg": 1341.25
+      },
+      {
+        "t": 341,
+        "extent": 0.361,
+        "src": "s2",
+        "month": "2008-07",
+        "sp500_monthly_avg": 1257.33
+      },
+      {
+        "t": 372,
+        "extent": 0.33,
+        "src": "s2",
+        "month": "2008-08",
+        "sp500_monthly_avg": 1281.47
+      },
+      {
+        "t": 403,
+        "extent": 0.412,
+        "src": "s2",
+        "month": "2008-09",
+        "sp500_monthly_avg": 1216.95
+      },
+      {
+        "t": 433,
+        "extent": 0.73,
+        "src": "s2",
+        "month": "2008-10",
+        "sp500_monthly_avg": 968.8
+      },
+      {
+        "t": 464,
+        "extent": 0.839,
+        "src": "s2",
+        "month": "2008-11",
+        "sp500_monthly_avg": 883.04
+      },
+      {
+        "t": 494,
+        "extent": 0.846,
+        "src": "s2",
+        "month": "2008-12",
+        "sp500_monthly_avg": 877.56
+      },
+      {
+        "t": 525,
+        "extent": 0.861,
+        "src": "s2",
+        "month": "2009-01",
+        "sp500_monthly_avg": 865.58
+      },
+      {
+        "t": 556,
+        "extent": 0.939,
+        "src": "s2",
+        "month": "2009-02",
+        "sp500_monthly_avg": 805.23
+      },
+      {
+        "t": 584,
+        "extent": 1.0,
+        "src": "s2",
+        "month": "2009-03",
+        "sp500_monthly_avg": 757.13
+      }
+    ],
+    "notes": "extent = share of the eventual peak-to-trough fall in the monthly-average S&P 500 (peak Oct 2007 avg 1539.66, trough Mar 2009 avg 757.13, a 51% fall), plotted at mid-month. A market-value proxy for how far the contagion had spread through the financial system; not a count of people. Note the shape: ~18 months of slow drift to 0.41, then 0.41 -> 0.73 in one month after Lehman (Sep 15 2008, t=403). Daily closes would show a sharper crash; monthly averages smooth it."
+  },
+  "solution": {
+    "fragments": [
+      {
+        "id": "f1",
+        "who": "economists who warned in public (e.g. a 2005 Jackson Hole paper on hidden tail risk)",
+        "had": "the diagnosis",
+        "ready_at": -730,
+        "src": "s5",
+        "verified": false,
+        "notes": "Rajan, Aug 2005; date approximate, not confirmed in this pass"
+      },
+      {
+        "id": "f2",
+        "who": "central banks (Fed with BoC, BoE, ECB, SNB)",
+        "had": "coordinated liquidity (Term Auction Facility, swap lines)",
+        "ready_at": 125,
+        "src": "s3",
+        "notes": "Dec 12 2007"
+      },
+      {
+        "id": "f3",
+        "who": "US Treasury/Fed",
+        "had": "ad-hoc rescue of a failing bank (Bear Stearns)",
+        "ready_at": 220,
+        "src": "s4",
+        "verified": false,
+        "notes": "Mar 16 2008"
+      },
+      {
+        "id": "f4",
+        "who": "legislature",
+        "had": "bank capital fund (TARP)",
+        "ready_at": 421,
+        "src": "s4",
+        "verified": false,
+        "notes": "signed Oct 3 2008, after a first failed House vote"
+      },
+      {
+        "id": "f5",
+        "who": "six central banks",
+        "had": "coordinated rate cut; UK/EU bank recapitalisations the same week",
+        "ready_at": 426,
+        "src": "s5",
+        "verified": false,
+        "notes": "Oct 8 2008"
+      },
+      {
+        "id": "f6",
+        "who": "G20 leaders",
+        "had": "first leaders' summit on the crisis",
+        "ready_at": 464,
+        "src": "s5",
+        "verified": false,
+        "notes": "Washington, Nov 14-15 2008"
+      },
+      {
+        "id": "f7",
+        "who": "legislature",
+        "had": "structural reform law (Dodd-Frank)",
+        "ready_at": 1077,
+        "src": "s4",
+        "verified": false,
+        "notes": "Jul 21 2010"
+      }
+    ],
+    "aggregation": {
+      "median": 426,
+      "p10": 125,
+      "p90": 1077,
+      "src": "s4",
+      "notes": "Derived from documented response dates (days after Aug 9 2007), not a measured distribution: p10 = first coordinated central-bank liquidity (TAF, Dec 12 2007), median = coordinated global rate cut and bank recapitalisations (Oct 8 2008, 23 days after Lehman), p90 = structural reform law (Jul 21 2010). Dates other than TAF and t0 are well-established but were not seen verbatim in a snippet this pass; confirm against s4/s5 before on-screen use."
+    },
+    "deploy": {
+      "median": 152,
+      "src": "s2",
+      "notes": "Proxy: days from the Oct 8 2008 coordinated response to the market's monthly-average trough (Mar 2009; daily low Mar 9 2009). Timing only; this does not establish causation."
+    }
+  },
+  "ai_counterfactual": {
+    "aggregation_median": 220,
+    "basis": "Illustrative. The missing fragment was a shared map of who was exposed to whom; the pieces sat in separate institutions' books. Assembling exposure data across institutions is document-heavy expert work of the kind inside the ~17.4 h 50% task horizon in RATES.md (METR entry) per institution, and RATES.md's ~40x/year fall in AI cost at fixed capability makes running it across thousands of books cheap. Assumed: the Oct 2008 coordinated response is assembled at the first large failure (Bear Stearns, day 220) instead of day 426. Political decisions (e.g. passing a rescue law) still take human time, and the counterfactual does not assume the crisis is avoided.",
+    "label": "illustrative"
+  },
+  "verified": false,
+  "gap_summary": "The last 59% of the market fall happened in ~6 months after Lehman, with 32% of it in a single month; the coordinated response took 426 days from the first freeze, and structural reform 1,077."
+}

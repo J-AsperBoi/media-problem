@@ -1,0 +1,54 @@
+{
+  "id": "quebec-1989",
+  "threat_internal_label": "solar storm / grid (never shown on screen)",
+  "analog": "March 13, 1989 geomagnetic storm and Hydro-Quebec blackout",
+  "time_unit": "hours",
+  "t0": "1989-03-13 02:44 EST (grid protection starts tripping)",
+  "sources": [
+    {"key": "s1", "title": "Hydro-Quebec: Understanding Electricity, March 1989 Blackout", "url": "https://www.hydroquebec.com/learning/notions-de-base/tempete-mars-1989.html", "accessed": "2026-09-26"},
+    {"key": "s2", "title": "March 1989 geomagnetic storm (Wikipedia)", "url": "https://en.wikipedia.org/wiki/March_1989_geomagnetic_storm", "accessed": "2026-09-26"},
+    {"key": "s3", "title": "Boteler D.H., A 21st Century View of the March 1989 Magnetic Storm, Space Weather 17 (2019)", "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019SW002278", "accessed": "2026-09-26"},
+    {"key": "s4", "title": "Spaceweather.com archive: The Great Quebec Blackout (2021), incl. series compensation completed 1996, $1.2B per NOAA", "url": "https://spaceweatherarchive.com/2021/03/12/the-great-quebec-blackout/", "accessed": "2026-09-26"},
+    {"key": "s5", "title": "Scientific American: A Scary 13th: 20 Years Ago, Earth Was Blasted with a Massive Plume of Solar Plasma (2009)", "url": "https://www.scientificamerican.com/article/geomagnetic-storm-march-13-1989-extreme-space-weather/", "accessed": "2026-09-26"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0,     "extent": 0,   "src": "s1", "event": "02:44: magnetic field fluctuating violently; protection trips"},
+      {"t": 0.025, "extent": 1.0, "src": "s2", "event": "~90 seconds later the whole Hydro-Quebec grid is down; ~6 million people without power"}
+    ],
+    "events": [
+      {"t": -80, "src": "s2", "event": "X4.5 flare on March 10 launches the CME", "verified": false, "notes": "flare hour not confirmed; -80 h is approximate (Mar 10 evening UT)"},
+      {"t": 9,   "src": "s3", "event": "more than 9 h to restore 83% of full power"}
+    ],
+    "notes": "extent = share of Hydro-Quebec's grid/customers without power. Collapse in about 90 s ('less than a minute' per s1, '90 seconds' per s2/s5). Use a log time mapping: the threat takes 0.025 h, the fixes take 9 h to ~64,000 h."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "space-weather forecast centres", "had": "warnings of a possible magnetic storm as the active region faced Earth", "ready_at": -24, "src": "s3", "verified": false, "notes": "warnings issued as Region 5395 approached central meridian (crossing Mar 12); exact issue time not confirmed; -24 h approximate"},
+      {"id": "f2", "who": "geophysicists and power engineers", "had": "knowledge that geomagnetically induced currents can trip long high-voltage lines (earlier storms, e.g. 1972)", "ready_at": -145000, "src": "s3", "verified": false, "notes": "1972 storm ~16.6 years earlier; approximate"},
+      {"id": "f3", "who": "Hydro-Quebec engineers", "had": "protection settings that could be recalibrated (trip levels raised)", "ready_at": 0, "src": "s1", "notes": "change made after the storm; date not sourced"},
+      {"id": "f4", "who": "restoration crews", "had": "the ability to re-energize the grid", "ready_at": 9, "src": "s3", "notes": "83% of full power after >9 h"},
+      {"id": "f5", "who": "Hydro-Quebec", "had": "series compensation on transmission lines (the lasting fix, ~$1.2B per NOAA)", "ready_at": 64000, "src": "s4", "notes": "completed in 1996; month not sourced, mid-1996 assumed (~7.3 years)"}
+    ],
+    "aggregation": {
+      "median": 759, "p10": 9, "p90": 64000, "src": "s3",
+      "notes": "Derived, low confidence. p10 = >9 h to restore 83% of power (s3, documented); p90 = series compensation completed in 1996 (s4; ~64,000 h assuming mid-1996). No documented midpoint exists: the median 759 h (~1 month) is the geometric mean of p10 and p90, a modelling ASSUMPTION, not data. Do not show the median on screen; show the two documented endpoints."
+    },
+    "deploy": {
+      "median": 9, "src": "s3",
+      "notes": "Restoring 83% of power took more than 9 hours."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 1,
+    "basis": "Illustrative. The warning fragment existed before t0 (forecast centres warned as the region faced Earth). The missing step was routing it, together with the known vulnerability of long lines on the Canadian Shield, into a pre-planned operating posture for one utility's control room. That is a short expert synthesis task, inside the ~17.4 h 50% task horizon in RATES.md (METR entry). Assumed ~1 h to route a specific, actionable alert once the forecast exists; operators still decide. The physical fix (series compensation) still takes years of construction; AI does not shorten concrete and steel in this counterfactual.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "The grid fell in ~90 seconds; power took 9+ hours to come mostly back, and the lasting fix took ~7 years: a ratio of roughly 360x to 2.5 million x."
+}

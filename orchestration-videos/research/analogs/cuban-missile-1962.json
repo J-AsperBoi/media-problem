@@ -1,0 +1,153 @@
+{
+  "id": "cuban-missile-1962",
+  "threat_internal_label": "nuclear escalation (never shown on screen)",
+  "analog": "Cuban Missile Crisis, October 1962 (with message-latency data)",
+  "time_unit": "days",
+  "t0": "1962-10-16 (US President briefed on missile photos; ExComm convened)",
+  "sources": [
+    {
+      "key": "s1",
+      "title": "Office of the Historian, US Dept of State: The Cuban Missile Crisis, October 1962",
+      "url": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s2",
+      "title": "Atomic Archive: Timeline of the Cuban Missile Crisis",
+      "url": "https://www.atomicarchive.com/history/cuban-missile-crisis/timeline.html",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s3",
+      "title": "Cuban Missile Crisis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cuban_Missile_Crisis",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s4",
+      "title": "HISTORY: Hotline established between Washington and Moscow (Aug 30, 1963): messages could take six hours; nearly 12 hours to receive and decode Khrushchev's ~3,000-word settlement message",
+      "url": "https://www.history.com/this-day-in-history/august-30/hotline-established-between-washington-and-moscow",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s5",
+      "title": "Electrospaces.net: The Washington-Moscow Hotline (agreement signed June 20, 1963 in Geneva)",
+      "url": "https://www.electrospaces.net/2012/10/the-washington-moscow-hot-line.html",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s6",
+      "title": "JFK Library: Letter from Chairman Khrushchev to President Kennedy, October 27, 1962",
+      "url": "https://microsites.jfklibrary.org/cmc/oct27/doc4.html",
+      "accessed": "2026-09-26"
+    }
+  ],
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {
+        "t": 0,
+        "extent": 0,
+        "src": "s1",
+        "event": "Oct 16: briefing; forces at normal readiness"
+      },
+      {
+        "t": 6,
+        "extent": 0.5,
+        "src": "s3",
+        "event": "Oct 22: public address, quarantine announced; US forces to DEFCON 3",
+        "verified": false
+      },
+      {
+        "t": 8,
+        "extent": 0.75,
+        "src": "s3",
+        "event": "Oct 24: quarantine in effect; Strategic Air Command to DEFCON 2 (highest US level ever reached)",
+        "verified": false
+      },
+      {
+        "t": 11,
+        "extent": 0.75,
+        "src": "s3",
+        "event": "Oct 27 'Black Saturday': U-2 shot down over Cuba; closest point",
+        "verified": false
+      }
+    ],
+    "notes": "extent = US alert level on a stated ordinal map: DEFCON 5 = 0, 4 = 0.25, 3 = 0.5, 2 = 0.75, 1 = 1 (never reached). It is escalation, not spread through a population. The DEFCON dates and U-2 shoot-down are standard record (s3) but were not seen verbatim in a snippet this pass. De-escalation after Oct 28 (event list) is not given a number because the date SAC left DEFCON 2 was not confirmed.",
+    "events": [
+      {
+        "t": 12,
+        "src": "s1",
+        "event": "Oct 28: Soviet leader publicly announces the sites will be dismantled"
+      }
+    ]
+  },
+  "solution": {
+    "message_latency_hours": {
+      "typical": 6,
+      "worst": 12,
+      "src": "s4",
+      "notes": "official messages could take ~6 h; the ~3,000-word settlement letter took nearly 12 h to receive and decode; both sides also used TV/radio broadcasts because they were faster"
+    },
+    "fragments": [
+      {
+        "id": "f1",
+        "who": "US planners",
+        "had": "obsolete Jupiter missiles in Turkey that could be traded away",
+        "ready_at": 0,
+        "src": "s3",
+        "verified": false
+      },
+      {
+        "id": "f2",
+        "who": "Soviet leader",
+        "had": "first settlement offer: withdraw missiles for a no-invasion pledge (letter of Oct 26)",
+        "ready_at": 10,
+        "src": "s2"
+      },
+      {
+        "id": "f3",
+        "who": "Soviet leader",
+        "had": "second, public offer adding the Turkey missiles (Oct 27)",
+        "ready_at": 11,
+        "src": "s6"
+      },
+      {
+        "id": "f4",
+        "who": "a back channel (the Attorney General and the Soviet ambassador)",
+        "had": "private assurance on Turkey",
+        "ready_at": 11.5,
+        "src": "s3",
+        "verified": false,
+        "notes": "evening of Oct 27"
+      },
+      {
+        "id": "f5",
+        "who": "both governments",
+        "had": "a direct teletype link (the hotline)",
+        "ready_at": 247,
+        "src": "s5",
+        "notes": "agreement signed June 20, 1963; operational Aug 30, 1963 (t=318, s4)"
+      }
+    ],
+    "aggregation": {
+      "median": 12,
+      "p10": 10,
+      "p90": 247,
+      "src": "s1",
+      "notes": "Derived from documented dates (days after Oct 16 1962), not a measured distribution: p10 = first settlement letter Oct 26 (t=10), median = public resolution Oct 28 (t=12), p90 = hotline agreement June 20 1963 (t=247), the structural fix for the communication gap. Within the 12 days each message still took ~6-12 h in transit and decoding (s4)."
+    },
+    "deploy": {
+      "median": 23,
+      "src": "s1",
+      "notes": "Oct 28 announcement to formal end of the naval quarantine on Nov 20, 1962 (23 days)."
+    }
+  },
+  "ai_counterfactual": {
+    "aggregation_median": 11,
+    "basis": "Illustrative and deliberately modest. The part AI plausibly speeds up is transport and translation: the settlement letter took ~12 h to receive and decode (s4); machine translation and summarization of a 3,000-word letter is a minutes-scale task, far inside the ~17.4 h 50% task horizon in RATES.md (METR entry). The decisions themselves were human deliberation and should stay human. Assumed: the same exchanges with ~12 h less latency per round, so the deal assembles ~1 day sooner (day 11 instead of 12). This film must not imply AI should be near nuclear decisions; AI here only carries and clarifies messages between people.",
+    "label": "illustrative"
+  },
+  "verified": false,
+  "gap_summary": "Alert levels jumped two steps in 8 days while each message between the two leaders took 6-12 hours to cross and decode; the fix for that latency (a direct link) took 247 days to agree."
+}

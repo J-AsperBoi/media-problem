@@ -1,0 +1,53 @@
+{
+  "id": "rice-2008",
+  "threat_internal_label": "food price shock (never shown on screen)",
+  "analog": "2008 global rice price crisis (export bans and panic buying amid record harvests)",
+  "time_unit": "weeks",
+  "t0": "2007-10-09 (India stops non-basmati rice exports; month from s1, day assumed)",
+  "sources": [
+    {"key": "s1", "title": "Slayton T., Rice Crisis Forensics: How Asian Governments Carelessly Set the World Rice Market on Fire, Center for Global Development Working Paper 163 (2009)", "url": "https://www.files.ethz.ch/isn/121375/2009_03_No163_Slayton_Rice_Crisis_Forensics_FINAL.pdf", "accessed": "2026-09-26"},
+    {"key": "s2", "title": "2008 global rice crisis (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2008_global_rice_crisis", "accessed": "2026-09-26"},
+    {"key": "s3", "title": "Timmer C.P., Japan and a Solution to the World Rice Crisis, Asia-Pacific Journal: Japan Focus (2008)", "url": "https://apjjf.org/c-peter-timmer/2819/article", "accessed": "2026-09-26"},
+    {"key": "s4", "title": "Slayton T., Timmer C.P., Japan, China and Thailand Can Solve the Rice Crisis, but U.S. Leadership is Needed, CGD Notes (May 2008)", "url": "https://www.files.ethz.ch/isn/55927/file_Solve_the_Rice_Crisis_UPDATED.pdf", "accessed": "2026-09-26"},
+    {"key": "s5", "title": "IRRI Rice Today: The 2008 rice crisis: fluke or warning bell?", "url": "https://ricetoday.irri.org/the-2008-rice-crisis-fluke-or-warning-bell/", "accessed": "2026-09-26"},
+    {"key": "s6", "title": "USDA ERS: Factors Behind the Rise in Global Rice Prices in 2008 (RCS-09D-01)", "url": "https://ers.usda.gov/sites/default/files/_laserfiche/outlooks/38489/13518_rcs09d01_1_.pdf", "accessed": "2026-09-26"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 5.3,  "extent": 0,     "src": "s2", "event": "Nov 2007: export price ~ $300/t", "verified": false, "notes": "'around $300 in November 2007' is from a secondary summary; confirm against s6"},
+      {"t": 29.1, "extent": 0.875, "src": "s2", "event": "Apr 2008: over $1,000/t (tripled)"},
+      {"t": 30.6, "extent": 1.0,   "src": "s3", "event": "early-mid May 2008 peak: more than $1,100/t (Thai quote cited by s3; 5% white peaked $1,022 per s2)"},
+      {"t": 35.7, "extent": 0.625, "src": "s3", "event": "June 2008: ~ $800/t after Japan's offer"}
+    ],
+    "notes": "extent = share of the price climb from ~$300/t to the ~$1,100/t peak ((price-300)/800). Prices are export quotes for Thai rice; grades differ slightly between sources (5% vs 100%B), so treat mid-points as +/- a few percent. Key context (s2, s1): global production was at record highs and stocks were adequate: the shock was driven by export restrictions and panic buying, not a harvest failure."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "Japan's government warehouses", "had": ">1.5 million tonnes of unwanted imported (WTO minimum-access) rice", "ready_at": 0, "src": "s1", "notes": "existed before t0"},
+      {"id": "f2", "who": "an importing country's buyers (the Philippines)", "had": "the unmet need; a tender withdrawn for lack of supply at high prices", "ready_at": 27.3, "src": "s1", "notes": "April 2008 (day 17 per query, unconfirmed)"},
+      {"id": "f3", "who": "two economists", "had": "the idea: release Japan's stock to calm the market", "ready_at": 30, "src": "s4", "verified": false, "notes": "published May 2008; week approximate"},
+      {"id": "f4", "who": "Japan + Philippines (+ US consent under WTO rules)", "had": "the deal to export the stored rice", "ready_at": 31.3, "src": "s1", "notes": "mid-May 2008"},
+      {"id": "f5", "who": "G20 governments", "had": "a standing market-transparency system (AMIS)", "ready_at": 205.3, "src": "s5", "verified": false, "notes": "launched Sep 2011; not confirmed in a snippet this pass"}
+    ],
+    "aggregation": {
+      "median": 31.3, "p10": 27.3, "p90": 205.3, "src": "s1",
+      "notes": "Derived from documented dates (weeks after India's Oct 2007 ban), not a measured distribution: p10 = importer's need becomes public (failed tender, April 2008), median = Japan-Philippines deal (mid-May 2008), p90 = standing G20 transparency system (Sep 2011, unverified). The stock that fixed it sat in warehouses the whole time."
+    },
+    "deploy": {
+      "median": 4.4, "src": "s3",
+      "notes": "Mid-May deal to ~$800/t by June (~4.4 weeks). The announcement itself moved prices; little of the rice needed to ship (per s3's argument; volumes shipped not confirmed)."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 28.3,
+    "basis": "Illustrative and modest. Matching a public, stated shortage (the withdrawn tender) with a known, idle stock and drafting the terms is a short analysis-and-routing task inside the ~17.4 h 50% task horizon in RATES.md (METR entry). Assumed: the match is surfaced within 1 week of the need becoming public (week 28.3) instead of ~4 weeks later, with governments still negotiating and deciding. We do not assume AI would have spotted the crisis earlier, which would need data not in RATES.md.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "Prices went from ~$300 to over $1,000 a tonne in about 6 months while 1.5 million idle tonnes sat in warehouses; connecting stock to need took ~31 weeks, and once connected prices fell by more than a quarter within ~4 weeks."
+}
