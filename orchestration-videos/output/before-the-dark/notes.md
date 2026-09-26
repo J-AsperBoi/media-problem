@@ -80,3 +80,19 @@ Earlier attempts break: f1's call at ~0.2 h (the IT staff never told operators, 
 ## Tags
 {"structure":"before-after","medium":"woodblock","family":"city","scale":"city","pace":"stop-start","camera":"crane up and drop down","emotion":"awe","protagonist":"a crowd","analog":"blackout-2003"}
 Diversity check: OK (nearest ninety-seconds 0.78).
+
+## Build log (resumed)
+- Resumed after a cutoff: the scene was complete but used `Path2D`, which node-canvas lacks. Replaced it with batched `rect` paths.
+- Preview critique: the "Same pieces. Faster routing." title collided with the AFTER panel border (panels moved up 60–80 px), and the BEFORE/AFTER tag started at y 196, above the safe zone (moved to y 226). Nothing else was broken. The hook frame shows the red crack plus red lines, the green phone, and a face, and both zoom cycles read on the contact sheet.
+- Render: 38.4 s (ffprobe 38.400000) = DUR.
+
+## Scores
+- Hook: 7
+- Speed accuracy: 7 (the analog's shape, including unverified points, drives motion only; the links follow the lognormal; the flat-then-instant cascade is true to the data)
+- Snap impact: 6
+- Emotion: 6
+- Originality: 7
+- Craft: 6
+- Honesty: 8
+- Overall: 6.7
+- Virality: 7% (the woodblock city and the before/after flip are distinctive and sound-off legible, but a gray, busy wide shot and a 38 s runtime from a small account rarely clear 100k)
