@@ -37,16 +37,16 @@ Before the break (day 403): human 6 of 12, routed 10 of 12. Basis (from the anal
 | 0.0-1.8 | SC1 CLOSE (flash-forward) | zoom 10 on the hero, handheld shake | day 433 held. Hero's face (angry), green ball at feet, red tiles filling the top of frame. "AND WE'RE LIVE." tag "LATER THIS SEASON" |
 | 1.8-2.2 | wipe | full-frame slab | "REWIND" |
 | 2.2-7.0 | SC2 HANDHELD CHASE | zoom 7 -> 5.5, follows the hero dribbling toward his glass wall | days 0-192. "Opening whistle. Green has the ball." / "Looks for the pass..." / kick, glass bonk, ball returns / "Off the glass. Nobody there." |
-| 7.0-10.5 | SC3 CRANE UP | zoom 5.5 -> 0.95, rotate eases out | days 192-332. The grid: twelve pitches, twelve games; red drifting from one corner; early passes light the hub. "Every pitch has a ball." / "Nobody passes across the lines." |
+| 7.0-10.5 | SC3 CRANE UP | zoom 6 -> 1.05, rotate eases out | days 192-332. The grid: twelve pitches, twelve games; red drifting from one corner; early passes light the hub. "Every pitch has a ball." / "Nobody passes across the lines." |
 | 10.5-13.4 | SC3 WIDE | locked wide, shake grows with the red's slope | days 332-448. "Red's been drifting all season." / break at 12.28: "RED BREAKS THROUGH!" |
-| 13.4-15.2 | SC4 DROP DOWN | zoom 0.95 -> 13 onto the hero | "32% of the whole fall." / "In one month." |
+| 13.4-15.2 | SC4 DROP DOWN | zoom 1.05 -> 13 onto the hero | big stat card 13.5-16.0: "32% / of the whole fall / in one month." |
 | 15.2-17.9 | SC4 CLOSE+ | zoom 13, closer than SC1 | hero surrounded by red, kicks into the glass again. "Still holding the ball." Day 584 (t 16.8): lights go gray, only the green ball keeps color; commentary stops: "...and that's the season." |
 | 17.9-20.4 | SC5 REPLAY | frozen gray wide | "INSTANT REPLAY" bug. "We slowed it down / so you could see it." |
 | 20.4-28.0 | SC6 SNAP | locked, two 920 px panels | 0.5 s silence, hit. AS IT HAPPENED vs ROUTED - ILLUSTRATIVE; same red; pips. "Same players. Faster passes." / "Illustrative. Not a promise." |
 | 28.0-31.4 | SC7 EXTREME CLOSE | zoom 16 at the glass between two pitches | the glass drops, the ball crosses to the other player. "AI finds the open player. People pass." / "This is the bottleneck." |
 | 31.4-36.0 | END | | L.endCard, 4.6 s |
 
-Zoom cycles: Cycle 1: IN (zoom 10 -> 7) 0-7 -> OUT (crane to 0.95) 7-13.4 -> IN+ (zoom 13) 13.4-17.9. Cycle 2: OUT (snap axis, three years) 20.4-28 -> IN++ (zoom 16, hands/feet at the glass) 28-31.4.
+Zoom cycles: Cycle 1: IN (zoom 10 -> 7) 0-7 -> OUT (crane to 1.05) 7-13.4 -> IN+ (zoom 13) 13.4-17.9. Cycle 2: OUT (snap axis, three years) 20.4-28 -> IN++ (zoom 16, hands/feet at the glass) 28-31.4.
 
 ## 3D translation note
 - SC1/SC4: 50 mm handheld at eye level of a small figure on a tabletop-scale grid (tilt-shift miniature look), the red tiles a rising glossy flood behind the face; SC4 is tighter, slower, with more breathing shake.
@@ -66,3 +66,19 @@ Zoom cycles: Cycle 1: IN (zoom 10 -> 7) 0-7 -> OUT (crane to 0.95) 7-13.4 -> IN+
 ## Tags
 {"slug":"the-crash-call","structure":"sports-play-by-play","medium":"isometric","family":"sport","scale":"economy","pace":"accelerating","emotion":"anger","protagonist":"an institution","camera":"handheld chase","analog":"gfc-2008"}
 Diversity check: OK (nearest the-department-of-later 0.67).
+
+## Build log
+- Timeline shifted +0.2 s after SC4 so "...and that's the season." holds 1.25 s: replay 18.1-20.6, snap 20.6-28.2 (hit 21.1), IN++ 28.2-31.6, end card 31.6-36.0 (4.4 s). DUR 36, ffprobe 36.0 s.
+- Preview fixes: wide zoom 0.95 -> 1.05 (grid read too small); stat card raised and shortened to clear the hero's face on the drop-in.
+- Handheld shake amplitude = 7 + 2200 x (red slope per day), capped: the camera shakes hardest in the Lehman month because the data does.
+
+## Scores
+- Hook: 7 (frame 1 is a big red flood over a worried face with a green ball and "AND WE'RE LIVE."; legible, but bean + isometric reads cute before it reads grave)
+- Speed accuracy: 8 (red is the monthly data verbatim, including the rallies; one linear mapping; lognormal passes from the analog; only the 32% is on screen)
+- Snap impact: 6 (0.5 s silence, hit, two 920 px panels with the same red; the AI shift is ~2x, honestly small, and the panel graph is quieter than the pitch world)
+- Emotion: 6 (anger at the glass walls lands in the kick-bonk beats; lights-out with only the ball colored is the strongest image)
+- Originality: 7 (institutions as separate sports pitches behind glass, each playing a different game, is a fresh satire of silos)
+- Craft: 7 (clean isometric world, continuous camera through scales with data-driven shake; wide shot players tiny, replay frame dark)
+- Honesty: 9 (no unverified number on screen, day 426 only as a pip position, same red in both panels, "Illustrative. Not a promise.")
+Overall: 7.1
+Virality: 8% - the sports-caption hook and the red flood are thumbnail-legible and the glass-wall bonk is a shareable joke about silos, but finance plus a quiet snap chart will lose most casual viewers before the payoff.
