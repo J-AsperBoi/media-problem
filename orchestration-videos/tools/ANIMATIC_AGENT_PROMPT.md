@@ -22,3 +22,10 @@ Loop:
 6. Append ONE JSON line to output/LEDGER.jsonl: {"slug","structure","medium","family","scale","pace","emotion","protagonist","camera","analog","overall","virality":<number>}. Use `>>` so you never overwrite others' lines.
 
 Do not git commit (the coordinator does). Do not edit tools/, CLAUDE.md, config.json, or other films. Save work as you go (a usage limit may cut you off). Report: output path, duration, Overall, Virality, and anything that failed.
+
+## Director's notes from earlier films (apply these)
+- Your concept comes from output/concepts.json (via tools/pick.js). Treat the logline as a starting point; the analog file wins on facts.
+- Characters: use L.stick or the bean from scenes/example_follow_the_green.js for faces with emotion; avoid blobby freehand hands.
+- Crossfades between zoom levels must not show rectangular patches; fade full-frame layers.
+- Where the analog's AI counterfactual is small, don't inflate it. Make the snap land through staging instead: freeze, silence, one sharp cue, then the two timelines side by side.
+- Frame 1 is the thumbnail: red and green both visible, one face or hand, one short line of text.
