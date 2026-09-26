@@ -236,30 +236,30 @@ function makeScene(SERIF, HAND) {
 
   // ---------- snap panels ----------
   const SNAPD = 560;
-  function miniWindow(ctx, cx, top, d, mode) { const sc = 0.4; ctx.save(); ctx.translate(cx, top); ctx.scale(sc, sc); ctx.translate(-540, -WTOP);
+  function miniWindow(ctx, cx, top, d, mode) { const sc = 0.48; ctx.save(); ctx.translate(cx, top); ctx.scale(sc, sc); ctx.translate(-540, -WTOP);
     ctx.fillStyle = STONE; ctx.fillRect(WX0 - 40, WTOP - 40, WX1 - WX0 + 80, WBOT - WTOP + 80); drawWindow(ctx, d, { mode, ghost: false, links: true }); ctx.restore(); }
   function share(d, key) { return panes.filter(p => d >= p[key]).length / N; }
   function snap(ctx, t) {
     ctx.fillStyle = '#0d0e11'; ctx.fillRect(0, 0, 1080, 1920);
     const a = L.sm(19.8, 20.2, t);
-    ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = '#17191e'; ctx.beginPath(); ctx.roundRect(60, 420, 960, 1060, 26); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = '#17191e'; ctx.beginPath(); ctx.roundRect(60, 430, 960, 1070, 26); ctx.fill(); ctx.restore();
     const dA = t < 22.6 ? SNAPD * L.clamp((t - 20.3) / 2.2, 0, 1) : SNAPD * L.clamp((t - 22.9) / 2.2, 0, 1);
     const dB = SNAPD * L.clamp((t - 22.9) / 2.2, 0, 1);
     ctx.save(); ctx.globalAlpha = a;
     miniWindow(ctx, 300, 470, dA, 'human');
     ctx.globalAlpha = a * (t < 22.6 ? 0.35 : 1); miniWindow(ctx, 780, 470, dB, 'ai'); ctx.restore();
     // labels
-    L.label(ctx, 'as it happened', 300, 1080, 46, { alpha: a, col: '#e8e4da' });
-    L.label(ctx, 'the ghost:', 770, 1060, 44, { alpha: a, col: '#c9d4cd' });
-    L.label(ctx, 'faster routing', 770, 1108, 44, { alpha: a, col: '#c9d4cd' });
-    L.label(ctx, 'illustrative', 770, 1156, 46, { alpha: a, col: '#e8e4da' });
+    L.label(ctx, 'as it happened', 300, 1190, 46, { alpha: a, col: '#e8e4da' });
+    L.label(ctx, 'the ghost:', 770, 1175, 44, { alpha: a, col: '#c9d4cd' });
+    L.label(ctx, 'faster routing', 770, 1222, 44, { alpha: a, col: '#c9d4cd' });
+    L.label(ctx, 'illustrative', 770, 1269, 46, { alpha: a, col: '#e8e4da' });
     // lit-share bars
     [[300, dA, 'gDay', 1], [770, dB, 'aiDay', t < 22.6 ? 0.35 : 1]].forEach(([x, d, key, al]) => { ctx.save(); ctx.globalAlpha = a * al;
-      ctx.fillStyle = '#2b2e35'; ctx.fillRect(x - 170, 1200, 340, 22); ctx.fillStyle = GREEN; ctx.fillRect(x - 170, 1200, 340 * share(d, key), 22);
-      ctx.fillStyle = '#e8e4da'; ctx.fillRect(x - 1, 1192, 3, 38); ctx.restore(); });
+      ctx.fillStyle = '#2b2e35'; ctx.fillRect(x - 170, 1300, 340, 22); ctx.fillStyle = GREEN; ctx.fillRect(x - 170, 1300, 340 * share(d, key), 22);
+      ctx.fillStyle = '#e8e4da'; ctx.fillRect(x - 1, 1292, 3, 38); ctx.restore(); });
     const na = L.sm(25.1, 25.5, t);
-    L.label(ctx, 'half the window lit by', 540, 1290, 46, { alpha: na, col: '#b9bec8' });
-    ctx.save(); ctx.globalAlpha = na; ctx.textAlign = 'center'; ctx.font = `92px "${SERIF}"`; ctx.fillStyle = '#f4f1ea'; ctx.fillText('day 421', 300, 1400); ctx.fillStyle = '#dfe8e2'; ctx.fillText('day 363', 770, 1400); ctx.restore();
+    L.label(ctx, 'half the window lit by', 540, 1378, 46, { alpha: na, col: '#b9bec8' });
+    ctx.save(); ctx.globalAlpha = na; ctx.textAlign = 'center'; ctx.font = `92px "${SERIF}"`; ctx.fillStyle = '#f4f1ea'; ctx.fillText('day 421', 300, 1470); ctx.fillStyle = '#dfe8e2'; ctx.fillText('day 363', 770, 1470); ctx.restore();
     card(ctx, ['True speed.'], 330, 96, fade(t, 20.3, 22.5));
     card(ctx, ['Now beside the ghost.'], 330, 86, fade(t, 22.7, 24.9));
     card(ctx, ['The ghost was', 'faster routing.'], 270, 92, L.sm(25.0, 25.4, t));
