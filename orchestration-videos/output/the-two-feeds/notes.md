@@ -31,7 +31,7 @@ Difference from `fifteen-hundred` (same analog, highway race, neon arcade): this
 | 1.4-4.5 | SC2 OTS NANA | CLOSE, over Nana's shoulder | Hour 0. Gray chat. At h1 the red forwarded bubble slides in. Nana types "sharing, just in case. love you all" and sends (h 2.8). Card: "It finds her first." |
 | 4.5-8.0 | SC3 PULL OUT | DOLLY OUT through the room to the field | Phone -> the room made of words (two silhouettes, one couch) -> 1,500 homes, each two lines of type. Red filling at the data's pace. |
 | 8.0-11.5 | SC4 WIDE | hold, slow drift | Red reaches the whole audience at 10 h. A few green lines begin (lognormal early tail). Card: "Faster than anything true." |
-| 11.5-14.3 | SC5 DIVE | DOLLY IN to Sam, closer than SC2 | Back through the room to Sam's phone. Gray feed tiles. Card: "The answer is in the room." |
+| 11.5-14.3 | SC5 DIVE | DOLLY IN to Sam, closer than SC2 (phone scale 1.1 vs 1.0) | Back through the room to Sam's phone. Gray feed tiles. Card: "The answer is in the room." |
 | 14.3-16.2 | SC6 OTS SAM | CLOSE+ | h13: green "checked" card slides in. Sam types "that's fake", deletes it, types "Nana, sit with me?" and sends. Card: "Right answer. Wrong phone." |
 | 16.2-17.5 | SC7 PAN | whip pan across the couch | To Nana's phone: Sam's green message lands under the red bubble, 15 hours after it. |
 | 17.5-20.0 | SC8 FREEZE | locked | Dim, silence. "We slowed it down so you could see it." |
@@ -40,7 +40,7 @@ Difference from `fifteen-hundred` (same analog, highway race, neon arcade): this
 | 29.0-31.5 | SC11 | hold | "This is the bottleneck." |
 | 31.5-36.0 | END | | L.endCard, 4.5 s. |
 
-Zoom cycles: Cycle 1: IN 1.4-4.5 (zoom 167) -> OUT 4.5-8.0 (to zoom 1) -> IN+ 11.5-14.3 (zoom 200). Cycle 2: SNAP flat 20-26.5 -> IN++ 26.5-29 (zoom 275).
+Zoom cycles: Cycle 1: IN 1.4-4.5 (zoom 167) -> OUT 4.5-8.0 (to zoom 1) -> IN+ 11.5-14.3 (zoom 183, phone at 1.1x). Cycle 2: SNAP flat 20-26.5 -> IN++ 26.5-29 (zoom 275).
 
 ## 3D translation note
 - Key shots: the OTS on Nana (35 mm, camera just behind her left shoulder at head height, shallow focus on the screen), the dolly out (a single continuous pull back through the living room ceiling into an aerial of a thousand lit windows, 8 s, eased), the dive to Sam (faster, 50 mm at the end, closer than the first OTS), and the whip pan across the couch (half a second, motion blur).
@@ -55,3 +55,18 @@ Zoom cycles: Cycle 1: IN 1.4-4.5 (zoom 167) -> OUT 4.5-8.0 (to zoom 1) -> IN+ 11
 ## Tags
 {"structure":"two-phones","medium":"text-only typography","family":"language","scale":"family","pace":"sprint","emotion":"tenderness","protagonist":"one person","camera":"over-the-shoulder","analog":"false-news-2018"}
 Diversity check: OK (nearest day-three-hundred-five 0.78, fifteen-hundred 0.78).
+
+## Build log
+- Preview 1: hour readout collided with Sam's "CHECKED" card; Sam's typed draft fell below the safe zone; snap "13 h" label sat inside the red area and snap labels were 38 px. Fixed: Sam's view reframed (phone 1.1x), DM compose moved up the phone, snap marks moved to 76 px green in each row's header, labels 44 px. Preview 2 clean. Final render 36.0 s.
+- Known weaknesses: the dolly-out passes through a moment (t ~6.5-7.5) where the room is small and the field has not yet faded in, so the frame reads nearly empty; the cold-open phones are small, so the red in frame 1 is legible but not huge; card over Sam's phone partly covers the compose area.
+
+## Scores
+- Hook: 6 (red and green both in frame 1 with "Same couch. Different feeds.", but the phones are small in the thumbnail)
+- Speed accuracy: 8 (red share = smoothstep between sourced endpoints, stated; green per home lognormal median 13 / p90 20; one mapping 1 s = 1 h, snap 1 s = 5 h on a shared clock)
+- Snap impact: 6 (freeze, silence, one hit, two full-width rows; the charts are clear but calm)
+- Emotion: 7 (Sam deleting "that's fake" and sending "Nana, sit with me?" is the tender beat; Nana's "sharing, just in case. love you all" keeps her sympathetic)
+- Originality: 7 (people as silhouettes filled with their names, a room made of words, 1,500 homes as lines of type)
+- Craft: 6 (clean typographic look; one near-empty transitional beat in the pull-out; small type in the wide frames)
+- Honesty: 9 (claim never legible or named, caveat "Sooner isn't believed. People still decide." on screen, AI row labeled illustrative, per-person times noted as illustrative)
+- Overall: 7.0
+- Virality: 8% — the unsent-then-rewritten message to a grandparent is instantly relatable and shareable, but it is a quiet, text-heavy piece with a chart in the middle, which usually caps reach from a small account.

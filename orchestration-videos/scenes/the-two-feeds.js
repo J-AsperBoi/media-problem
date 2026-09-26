@@ -53,8 +53,8 @@ function makeScene(SERIF, HAND) {
     field: view([540, 960], 1, 540, 960),
     field2: view([530, 950], 1.06, 540, 960),
     room2: view(roomW(620, 980), 32, 540, 960),
-    sam: view(phoneW(SP, 0, -60), ZP * 1.2, 480, 800),
-    sam2: view(phoneW(SP, 0, -60), ZP * 1.26, 480, 800),
+    sam: view(phoneW(SP, 0, -60), ZP * 1.1, 480, 880),
+    sam2: view(phoneW(SP, 0, -60), ZP * 1.16, 480, 880),
     nanaMid: view(phoneW(NP, 0, 60), ZP * 1.0, 560, 880),
     close: view(phoneW(NP, 0, 150), ZP * 1.45, 500, 900),
     close2: view(phoneW(NP, 0, 150), ZP * 1.55, 500, 900),
@@ -140,16 +140,16 @@ function makeScene(SERIF, HAND) {
       c.restore(); }
     // DM compose to Nana
     if (h >= 13.35) { const a = L.clamp((h - 13.35) / 0.2, 0, 1); c.save(); c.globalAlpha *= a;
-      c.fillStyle = '#171b22'; rr(c, -332, 250, 664, 380, 40); c.fill();
-      text(c, 'To: Nana', -290, 310, 36, GRAY);
+      c.fillStyle = '#171b22'; rr(c, -332, 40, 664, 400, 40); c.fill();
+      text(c, 'To: Nana', -290, 100, 38, GRAY);
       const D1 = "that's fake", D2 = 'Nana, sit with me?';
       let draft = '';
       if (h < 13.9) draft = typed(D1, (h - 13.4) / 0.4); else if (h < 14.05) draft = D1; else if (h < 14.3) draft = D1.slice(0, Math.max(0, Math.round(D1.length * (1 - (h - 14.05) / 0.2))));
       else if (h < 14.9) draft = typed(D2, (h - 14.3) / 0.5);
-      if (h >= 14.9) { bubble(c, -30, 350, 330, 86, GREEN, 'rgba(52,210,123,0.10)'); text(c, 'Nana, sit with me?', 280, 405, 36, GREEN, { align: 'right' }); }
-      c.fillStyle = '#20252e'; rr(c, -310, 520, 620, 80, 40); c.fill();
-      if (draft) { text(c, draft + ((h * 4) % 1 < 0.5 ? '|' : ''), -280, 573, 34, INK); } else text(c, 'Message', -280, 573, 32, DGRAY);
-      if (h >= 13.4 && h < 14.9) text(c, 'Sam is typing...', -290, 480, 30, GRAY, { alpha: 0.8 });
+      if (h >= 14.9) { bubble(c, -30, 130, 330, 86, GREEN, 'rgba(52,210,123,0.10)'); text(c, 'Nana, sit with me?', 280, 185, 36, GREEN, { align: 'right' }); }
+      c.fillStyle = '#20252e'; rr(c, -310, 330, 620, 84, 40); c.fill();
+      if (draft) { text(c, draft + ((h * 4) % 1 < 0.5 ? '|' : ''), -280, 386, 40, INK); } else text(c, 'Message', -280, 386, 34, DGRAY);
+      if (h >= 13.4 && h < 14.9) text(c, 'Sam is typing...', -290, 290, 32, GRAY, { alpha: 0.8 });
       c.restore(); }
   }
 
@@ -219,15 +219,15 @@ function makeScene(SERIF, HAND) {
     c.strokeStyle = '#3a3f48'; c.lineWidth = 3; rr(c, 80, y0, 920, 470, 26); c.stroke();
     text(c, title, 120, y0 + 66, 52, INK);
     if (sub) text(c, sub, 120, y0 + 122, 46, GRAY);
-    const X0 = 130, X1 = 890, mid = y0 + 320, HH = 110, xs = hh => X0 + (X1 - X0) * hh / SNAP_H;
+    const X0 = 130, X1 = 890, mid = y0 + 290, HH = 110, xs = hh => X0 + (X1 - X0) * hh / SNAP_H;
     c.strokeStyle = '#5d636d'; c.lineWidth = 2; c.beginPath(); c.moveTo(X0, mid); c.lineTo(X1, mid); c.stroke();
     // red area (claim reach) above, green area (correction reach) below
     const area = (fn, dir, col) => { c.beginPath(); c.moveTo(X0, mid); const n = 120; for (let i = 0; i <= n; i++) { const hh = hp * i / n; c.lineTo(xs(hh), mid - dir * HH * fn(hh)); } c.lineTo(xs(hp), mid); c.closePath(); c.fillStyle = col; c.fill(); };
     area(extent, 1, RED); area(hh => L.lognormalCDF(hh, med, p90), -1, GREEN);
-    text(c, 'the claim', X0 + 4, mid - HH - 16, 38, RED, { alpha: L.clamp(hp / 1.5, 0, 1) });
-    text(c, 'the correction', X0 + 4, mid + HH + 46, 38, GREEN, { alpha: hp >= med ? 1 : 0.35 });
+    text(c, 'the claim', X0 + 4, mid - HH - 16, 44, RED, { alpha: L.clamp(hp / 1.5, 0, 1) });
+    text(c, 'the correction', X0 + 4, mid + HH + 50, 44, GREEN, { alpha: hp >= med ? 1 : 0.35 });
     if (hp >= med) { const x = xs(med), k = L.clamp((hp - med) / 1.5, 0, 1); c.strokeStyle = GREEN; c.lineWidth = 4; c.beginPath(); c.moveTo(x, mid - HH - 10); c.lineTo(x, mid + HH * 0.6); c.stroke();
-      text(c, mark, Math.max(x + 14, X0 + 330), mid - 30, 60, GREEN, { font: SERIF, alpha: k }); }
+      text(c, mark, 890, y0 + 80, 76, GREEN, { font: SERIF, alpha: k, align: 'right' }); }
     c.strokeStyle = INK; c.lineWidth = 3; c.beginPath(); c.moveTo(xs(hp), mid - HH - 20); c.lineTo(xs(hp), mid + HH + 10); c.stroke();
     c.restore();
   }
