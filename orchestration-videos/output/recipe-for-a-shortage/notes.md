@@ -61,3 +61,18 @@ Tier: animatic
 ## Tags
 {"structure":"recipe-parody","medium":"chalkboard","family":"cooking","scale":"economy","pace":"stop-start","camera":"over-the-shoulder","emotion":"anger","protagonist":"one person","analog":"rice-2008"}
 Diversity check: OK (nearest the-warehouse 0.56, same analog/family/scale by assignment).
+
+## Build log
+- Preview 1: structure worked. Fixes: serif cards collided with the chalk "TODAY'S RECIPE" title (camera raised; a soft dark band now sits behind every card); threads were 3 px wide at the widest shot (width now scales with 1/zoom); the AI panel's labels showed before the panel faded in (label alpha fixed); the "Week 31" label was clipped by the green line (moved left).
+- Camera keys changed after writing the shot list: race centre y 3120-3150 (was 3290-3310). Timings unchanged.
+
+## Scores
+- Hook: 6 (frame 1 has a deadpan chef face, a nearly full red dial, green chalk and a green step, plus "Step one: have enough rice." The face sits low in the frame.)
+- Speed accuracy: 8 (logistic fit through the sourced anchors, 1 s = 2 weeks with one marked freeze, sourced decay, lognormal thread quantiles, AI lane from the analog)
+- Snap impact: 5 (the honest gain is ~3 weeks. Freeze, stamp and stacked panels help, but the two curves look alike.)
+- Emotion: 6 (the deadpan, wry, stunned, angry and tired faces carry the turn; the anger reads, the ending is quieter than sublime)
+- Originality: 7 (a cooking-show parody whose recipe turns out to be a real timeline, and a chalkboard that becomes a map of kitchens)
+- Craft: 6 (the chalk board and dials read well; the arm bends behind the toque, the chalk text is large and crowded in the IN+ and IN++ shots, and the chef is flat vector rather than chalk)
+- Honesty: 9 (no countries or officials, unverified items off screen, two numbers, the counterfactual labeled illustrative and modest)
+- Overall: 6.7
+- Virality: 8% (the familiar recipe-video frame and a deadpan joke in the first 2 s give it a better hook than most, but the payoff is a small 3-week gap that a scroller may not feel.)
