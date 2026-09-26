@@ -16,7 +16,7 @@ function makeScene(SERIF, HAND) {
 
   // ---------- time mapping ----------
   const T0 = 1.5, H_END = 16, T_FREEZE = T0 + H_END;         // race: 1 s = 1 h, ends 17.5
-  const hAt = t => t < 1.4 ? 13 : L.clamp(t - T0, 0, H_END);   // cold open = flash-forward to hour 13
+  const hAt = t => t < 1.4 ? 13.5 : L.clamp(t - T0, 0, H_END);   // cold open = flash-forward to hour 13
   const T_SNAP = 20, T_SWEEP = 20.8, SNAP_RATE = 5, SNAP_H = 20;  // snap: 1 s = 5 h
   const T_IN2 = 26.5, T_NECK = 29, T_END = 31.5;
 
