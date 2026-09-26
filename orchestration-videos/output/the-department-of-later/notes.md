@@ -67,3 +67,17 @@ Variants: "Reply-all is not a routing protocol." / "The patch was in someone's h
 
 ## Build notes
 - Diversity check: OK, distinct enough (nearest two-days, distance 1.00).
+- Preview 1 fixes: red on frame 1 was too faint (chart at day 0 is flat), so the live red point on every chart got a larger dot and halo; flying invites moved off the title area onto the table; lower third softened to "holds a piece nobody has read"; wide framing tightened; remote green windows enlarged so the scattered fragments read in the wide.
+- Final render: 40.0 s (ffprobe).
+- Known weak spots: the thumbnail's red is only a small dot (the data is flat at day 0); the wide is almost all red by the time the crane finishes (the data really is at 0.85 by then), so the gradual spread is best seen on the TVs; snap panels are small and the "illustrative" label is small type.
+
+## Scores
+Hook: 6
+Speed accuracy: 8
+Snap impact: 6
+Emotion: 6
+Originality: 7
+Craft: 6
+Honesty: 9
+Overall: 6.9
+Virality: 7% - the mockumentary talking-head format and the "meeting about the meeting" joke are relatable and shareable, but the thumbnail's red is weak, the grave turn needs sound to land, and the snap panels are small on a phone.

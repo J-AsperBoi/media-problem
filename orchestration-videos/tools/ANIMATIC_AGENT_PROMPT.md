@@ -29,3 +29,5 @@ Do not git commit (the coordinator does). Do not edit tools/, CLAUDE.md, config.
 - Crossfades between zoom levels must not show rectangular patches; fade full-frame layers.
 - Where the analog's AI counterfactual is small, don't inflate it. Make the snap land through staging instead: freeze, silence, one sharp cue, then the two timelines side by side.
 - Frame 1 is the thumbnail: red and green both visible, one face or hand, one short line of text.
+- Hooks keep coming out weak because the data starts at zero red. Frame 1 may be a cold open: a flash-forward to the peak (clearly the same timeline, e.g. a labeled "day 96" or the red at the edge of frame about to arrive), then cut back to t0. Red must be big and legible in frame 1.
+- Snap panels and "illustrative" labels have been too small for a phone: minimum 44px for labels, panels at least 900px wide.
