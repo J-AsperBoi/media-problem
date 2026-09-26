@@ -68,3 +68,14 @@ One continuous camera, no cuts inside the move. Start as a macro lens (100 mm, f
 ## Tags
 {"structure":"powers-of-ten-zoom","medium":"particle/data","family":"language","scale":"multi-scale zoom","pace":"accelerating","emotion":"vertigo","protagonist":"a green fragment","camera":"continuous zoom through scales","analog":"false-news-2018"}
 Diversity check: OK (nearest two-days 0.67).
+
+## Scores
+- Hook: 7 (a green-lit face in a red haze, "She already knew."; strong image but abstract for a cold scroll)
+- Speed accuracy: 8 (logistic fit through the sourced endpoints, truth at 6x, Hoaxy lognormal lags, AI from the analog; cascade offsets and layout are stated staging)
+- Snap impact: 6 (the first two seconds of the replay separate red from green clearly; after ~30 h both panels converge to green and the contrast fades)
+- Emotion: 7 (the seven-decade pull-out lands as vertigo; the fall back onto her sad, green-lit face is the most intimate close in the analog's three films)
+- Originality: 8 (a true Powers of Ten through a reshare tree: the camera rides the red front)
+- Craft: 7 (continuous LOD zoom with no cuts or patches; the snap panels are small-particle and busy on a phone; the zoom-in passes quickly through near-empty street frames)
+- Honesty: 9 (threat never named, AI labeled illustrative, "Speed is not belief." on screen, red cores kept inside green rings)
+Overall: 7.4
+Virality: 8% - the zoom is genuinely shareable eye candy and the "she already knew" twist is sticky, but abstract particles with no clear stakes and a data-dense snap rarely break out from a small account.
