@@ -286,7 +286,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** ghost-rewind · **Analog:** covid-2020 · **First-guess virality:** 9%
 - **Logline (red / green):** Shadow puppets rewind the year to show where the pieces already sat.
 - **Snap:** 421 vs 363 (illustrative).
-- **Tags:** medium shadow puppet; family myth/ritual; scale history; pace stop-start; camera crane up and drop down; emotion grief; protagonist a crowd
+- **Tags:** medium stained glass; family myth/ritual; scale history; pace stop-start; camera crane up and drop down; emotion grief; protagonist a crowd
 
 ## 48. ghost-rewind-penicillin
 - **Structure:** ghost-rewind · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 8%

@@ -139,7 +139,7 @@ const C = [
 ['ghost-hotline','ghost-rewind','cuban-missile-1962','ink wash','myth/ritual','history','stop-start','crane up and drop down','awe','an institution',9,
  'Ghosts rewind the crisis to install the hotline 247 days early.',
  'Day 12 vs 11 (illustrative).'],
-['ghost-rewind-covid','ghost-rewind','covid-2020','shadow puppet','myth/ritual','history','stop-start','crane up and drop down','grief','a crowd',9,
+['ghost-rewind-covid','ghost-rewind','covid-2020','stained glass','myth/ritual','history','stop-start','crane up and drop down','grief','a crowd',9,
  'Shadow puppets rewind the year to show where the pieces already sat.',
  '421 vs 363 (illustrative).'],
 ['ghost-rewind-penicillin','ghost-rewind','penicillin-resistance-1946','woodblock','myth/ritual','history','slow build','continuous zoom through scales','tenderness','a green fragment',8,
