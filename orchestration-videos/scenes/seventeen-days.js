@@ -111,7 +111,7 @@ function makeScene(SERIF, HAND) {
         ctx.fillStyle = '#12151b'; ctx.beginPath(); ctx.arc(px, py, pr, 0, 7); ctx.fill();
         // reflections: the red sky, and (if lit) their green star
         if (red > 0.02) { ctx.globalAlpha = Math.min(1, red * 1.2); ctx.strokeStyle = RED; ctx.lineWidth = pr * 0.16; ctx.beginPath(); ctx.arc(px, py, pr * 0.72, Math.PI * 1.15, Math.PI * 1.75); ctx.stroke(); ctx.globalAlpha = 1; }
-        if (c.me && meLit) { const fl = 1 - L.sm(ME.gDay, ME.gDay + 20, day); glowDot(ctx, px + pr * 0.28, py - pr * 0.3, pr * 0.2, GREEN, 1, fl); }
+        if (c.me && meLit) { const fl = 1 - L.sm(ME.gDay, ME.gDay + 20, day); glowDot(ctx, px + pr * 0.28, py - pr * 0.3, pr * 0.3, GREEN, 1, fl); }
         else { dot(ctx, px + pr * 0.3, py - pr * 0.32, pr * 0.12, '#cfd3da', 0.7); }
       });
       // mouth: a small "o" of awe
@@ -213,10 +213,10 @@ function makeScene(SERIF, HAND) {
       ctx.fillStyle = '#050608'; ctx.fillRect(0, 0, 1080, 1920);
       const rd = L.clamp((t - 24.6) * 132, 0, 660), a = L.sm(24.3, 24.5, t) * (1 - L.sm(31.0, 31.4, t) * 0.75);
       panel(ctx, 70, 330, 940, 560, rd, false, 'as it happened', a);
-      panel(ctx, 70, 1040, 940, 560, rd, true, 'faster routing (illustrative)', a);
+      panel(ctx, 70, 1110, 940, 560, rd, true, 'faster routing (illustrative)', a);
       // one clock across both panels
-      const cxk = 70 + (rd / 660) * 940; ctx.globalAlpha = 0.55 * a; ctx.fillStyle = '#c9ccd2'; ctx.fillRect(cxk - 1.5, 330, 3, 1270); ctx.globalAlpha = 1;
-      card(ctx, ['Same supply. Better routing.'], 975, 60, fade(t, 29.8, 31.3, 0.25));
+      const cxk = 70 + (rd / 660) * 940; ctx.globalAlpha = 0.55 * a; ctx.fillStyle = '#c9ccd2'; ctx.fillRect(cxk - 1.5, 330, 3, 1340); ctx.globalAlpha = 1;
+      card(ctx, ['Same supply. Better routing.'], 990, 64, fade(t, 29.8, 31.3, 0.25));
       card(ctx, ['This is the bottleneck.'], 900, 104, fade(t, 31.3, 33.4, 0.3));
       L.slate(ctx, t < 31.2 ? 'SC9 SNAP  LOCKED  two clocks, true proportion' : 'SC10 NECK');
     } else {
