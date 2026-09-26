@@ -1,0 +1,213 @@
+{
+  "id": "covid-2020",
+  "threat_internal_label": "pandemic (never shown on screen)",
+  "analog": "COVID-19, from first WHO notification to vaccines reaching each country",
+  "time_unit": "days",
+  "t0": "2019-12-31 (WHO China office informed of a pneumonia cluster in Wuhan)",
+  "sources": [
+    {
+      "key": "s1",
+      "title": "Our World in Data COVID-19 dataset: total_cases.csv (WHO-reported confirmed cases by country)",
+      "url": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/total_cases.csv",
+      "accessed": "2026-09-26",
+      "notes": "downloaded and computed directly"
+    },
+    {
+      "key": "s2",
+      "title": "Our World in Data COVID-19 dataset: vaccinations.csv",
+      "url": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+      "accessed": "2026-09-26",
+      "notes": "downloaded and computed directly"
+    },
+    {
+      "key": "s3",
+      "title": "Li Q. et al., Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus-Infected Pneumonia, NEJM 382:1199-1207 (2020)",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2001316",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s4",
+      "title": "RATES.md 'Science example' (Moderna SEC filing 2020): sequence shared Jan 11 2020, vaccine sequence finalized Jan 13, first trial dose Mar 16",
+      "url": "https://www.sec.gov/ (Moderna 2020 filings, as cited in RATES.md)",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s5",
+      "title": "COVID-19 vaccine (Wikipedia): UK MHRA authorization of Pfizer-BioNTech Dec 2 2020, first dose outside trials Dec 8 2020",
+      "url": "https://en.wikipedia.org/wiki/COVID-19_vaccine",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s6",
+      "title": "RATES.md 'Vaccine distribution inequity' (People's Vaccine Alliance analysis, May 20 2021): low-income countries 0.2% of doses",
+      "url": "see RATES.md (People's Vaccine Alliance analysis of Forbes data, May 20 2021); original URL not retrieved in this pass",
+      "accessed": "2026-09-26",
+      "verified": false
+    }
+  ],
+  "threat": {
+    "model": "timeline",
+    "doubling_time": 7.4,
+    "doubling_time_src": "s3",
+    "doubling_time_notes": "Early Wuhan case doubling time 7.4 days (95% CI 4.2-14) up to Jan 4 2020. Use with L.logistic only for case growth inside one city; the points below are the better on-screen curve.",
+    "points": [
+      {
+        "t": 5,
+        "extent": 0.009,
+        "src": "s1",
+        "date": "2020-01-05",
+        "countries": 2
+      },
+      {
+        "t": 19,
+        "extent": 0.03,
+        "src": "s1",
+        "date": "2020-01-19",
+        "countries": 7
+      },
+      {
+        "t": 33,
+        "extent": 0.103,
+        "src": "s1",
+        "date": "2020-02-02",
+        "countries": 24
+      },
+      {
+        "t": 47,
+        "extent": 0.124,
+        "src": "s1",
+        "date": "2020-02-16",
+        "countries": 29
+      },
+      {
+        "t": 61,
+        "extent": 0.256,
+        "src": "s1",
+        "date": "2020-03-01",
+        "countries": 60
+      },
+      {
+        "t": 68,
+        "extent": 0.436,
+        "src": "s1",
+        "date": "2020-03-08",
+        "countries": 102
+      },
+      {
+        "t": 75,
+        "extent": 0.641,
+        "src": "s1",
+        "date": "2020-03-15",
+        "countries": 150
+      },
+      {
+        "t": 82,
+        "extent": 0.782,
+        "src": "s1",
+        "date": "2020-03-22",
+        "countries": 183
+      },
+      {
+        "t": 96,
+        "extent": 0.876,
+        "src": "s1",
+        "date": "2020-04-05",
+        "countries": 205
+      },
+      {
+        "t": 124,
+        "extent": 0.906,
+        "src": "s1",
+        "date": "2020-05-03",
+        "countries": 212
+      },
+      {
+        "t": 369,
+        "extent": 0.936,
+        "src": "s1",
+        "date": "2021-01-03",
+        "countries": 219
+      }
+    ],
+    "notes": "extent = share of the 234 non-aggregate countries/territories in the OWID/WHO file with at least one confirmed case (a proxy for geographic spread; reporting dates lag real introductions). Aggregates (World, continents, income groups, EU) excluded. The 2 'countries' at Jan 5 are as the WHO-derived file reports them."
+  },
+  "solution": {
+    "fragments": [
+      {
+        "id": "f1",
+        "who": "vaccine researchers (NIH VRC and academic structural biologists)",
+        "had": "prefusion-stabilized spike design ('2P'), developed for MERS/SARS years earlier",
+        "ready_at": -900,
+        "src": "s5",
+        "verified": false,
+        "notes": "published 2017 (Pallesen et al., PNAS); date approximate, not checked in this pass"
+      },
+      {
+        "id": "f2",
+        "who": "mRNA platform companies",
+        "had": "mRNA vaccine platform",
+        "ready_at": 0,
+        "src": "s4",
+        "notes": "existed before t0"
+      },
+      {
+        "id": "f3",
+        "who": "Chinese scientists who posted the genome",
+        "had": "SARS-CoV-2 genome sequence",
+        "ready_at": 11,
+        "src": "s4"
+      },
+      {
+        "id": "f4",
+        "who": "NIH + Moderna",
+        "had": "finalized vaccine sequence",
+        "ready_at": 13,
+        "src": "s4"
+      },
+      {
+        "id": "f5",
+        "who": "trial sites and volunteers",
+        "had": "first human trial dose",
+        "ready_at": 76,
+        "src": "s4"
+      },
+      {
+        "id": "f6",
+        "who": "regulators (UK MHRA first)",
+        "had": "first emergency authorization",
+        "ready_at": 337,
+        "src": "s5",
+        "notes": "Dec 2 2020"
+      },
+      {
+        "id": "f7",
+        "who": "national health systems",
+        "had": "first dose given outside trials (UK)",
+        "ready_at": 343,
+        "src": "s5",
+        "notes": "Dec 8 2020"
+      }
+    ],
+    "aggregation": {
+      "median": 421,
+      "p10": 363,
+      "p90": 490,
+      "src": "s2",
+      "notes": "Days from t0 until the assembled solution (a vaccine dose) first reached each country: computed from OWID vaccinations.csv as the first date with total_vaccinations > 0, across 217 countries/territories (OWID aggregates excluded). p10 = Dec 28 2020, median = Feb 24 2021, p90 = May 4 2021; earliest Dec 4 2020 (Latvia, likely a trial/reporting artifact), latest day 658 (Oct 2021)."
+    },
+    "deploy": {
+      "median": 95,
+      "p10": 1,
+      "p90": 290,
+      "src": "s2",
+      "notes": "Days from a country's first dose to 10% of its population having at least one dose (people_vaccinated_per_hundred >= 10), median across 212 countries; 5 countries with first doses never reached 10% in the data."
+    }
+  },
+  "ai_counterfactual": {
+    "aggregation_median": 363,
+    "basis": "Illustrative. Design was already fast: RATES.md 'Science example' shows the vaccine sequence finalized 2 days after the genome was shared, so AI cannot claim much there, and clinical trials and manufacturing are bounded by biology and factories, not routing. The large spread is in distribution: RATES.md 'Vaccine distribution inequity' (0.2% of doses to low-income countries by May 2021, advocacy analysis). The counterfactual assumes only that better coordination lets the median country get first doses as early as the fastest 10% actually did (p10 = day 363), i.e. ~58 days sooner for the median country. It does not assume more vaccine was made.",
+    "label": "illustrative"
+  },
+  "verified": true,
+  "gap_summary": "The threat reached 64% of countries by day 75 and ~88% by day 96; the assembled answer reached the median country on day 421, about 4.4x slower, with an 18-week spread between the fastest and slowest tenth."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "false-news-2018",
+  "threat_internal_label": "misinformation cascade (never shown on screen)",
+  "analog": "Spread of true vs false news on Twitter 2006-2017 (Vosoughi, Roy & Aral, Science 2018), with fact-check lag from Hoaxy (Shao et al., WWW 2016)",
+  "time_unit": "hours",
+  "t0": "first tweet of a story",
+  "sources": [
+    {"key": "s1", "title": "Vosoughi S., Roy D., Aral S., The spread of true and false news online, Science 359:1146-1151 (2018)", "url": "https://www.science.org/doi/10.1126/science.aap9559", "accessed": "2026-09-26"},
+    {"key": "s2", "title": "VOA Learning English: Study: False News Spreads Faster and Farther than Truth (2018), reporting ~10 h vs ~60 h to reach 1,500 users", "url": "https://learningenglish.voanews.com/a/study-finds-fake-news-spreads-faster-and-farther-than-truth/4298347.html", "accessed": "2026-09-26"},
+    {"key": "s3", "title": "Shao C., Ciampaglia G.L., Flammini A., Menczer F., Hoaxy: A Platform for Tracking Online Misinformation, WWW '16 Companion (2016)", "url": "https://doi.org/10.1145/2872518.2890098", "accessed": "2026-09-26"},
+    {"key": "s4", "title": "Science news: Fake news spreads faster than true news on Twitter, thanks to people, not bots (2018)", "url": "https://www.science.org/content/article/fake-news-spreads-faster-true-news-twitter-thanks-people-not-bots", "accessed": "2026-09-26"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0,  "extent": 0,   "src": "s1"},
+      {"t": 10, "extent": 1.0, "src": "s2", "notes": "average false story reaches 1,500 users in ~10 h"}
+    ],
+    "comparison_true_news": [
+      {"t": 0,  "extent": 0,   "src": "s1"},
+      {"t": 60, "extent": 1.0, "src": "s2", "notes": "average true story reaches 1,500 users in ~60 h (six times longer, s1)"}
+    ],
+    "notes": "extent = share of a 1,500-person audience reached (the paper's own benchmark). Only endpoints are sourced; no doubling time was found, so draw the path between with a stated monotone ease, or use the paper's figure. Other sourced ratios (s1): truth takes ~20x longer than falsehood to reach cascade depth 10; falsehoods are 70% more likely to be retweeted; top 1% of false cascades reached 1,000-100,000 people while true ones rarely exceeded 1,000. Dataset: ~126,000 cascades, ~3 million people, >4.5 million tweets."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "independent fact-checking organizations (six used in the study)", "had": "the verified true/false ruling", "ready_at": 13, "src": "s3", "notes": "fact-check sharing lags misinformation by ~13 h in aggregate"},
+      {"id": "f2", "who": "people who already knew the true version", "had": "the accurate story", "ready_at": 0, "src": "s1", "notes": "true stories exist in the same network; they just travel slower"},
+      {"id": "f3", "who": "the people in the cascade", "had": "the choice to share or not", "ready_at": 0, "src": "s4", "notes": "study found humans, not bots, drove the difference"}
+    ],
+    "aggregation": {
+      "median": 13, "p10": 10, "p90": 20, "src": "s3",
+      "notes": "Hoaxy: sharing of fact-checking content 'typically lags that of misinformation by 10-20 hours', characteristic lag ~13 h by lagged cross-correlation of aggregate tweet volumes. The 10-20 h range is the authors' typical range, used here as p10/p90; it is not a formally computed percentile."
+    },
+    "deploy": {
+      "median": 60, "src": "s2",
+      "notes": "Proxy: time for accurate information to reach 1,500 people (true-news average). Not a direct measure of a fact-check's reach."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 1,
+    "basis": "Illustrative. Matching a circulating claim to an existing verified ruling and routing it to the people sharing it is a short (well under 1 hour) expert task, far inside the ~17.4 h 50% task horizon in RATES.md (METR time horizon entry), and RATES.md's 'Cost of AI at fixed capability' (~40x/year cheaper) makes screening every rising claim affordable. Assumed ~1 h from first tweet to a routed correction vs the human ~13 h lag. Speed of a correction does not guarantee people accept or share it; humans still decide.",
+    "label": "illustrative"
+  },
+
+  "verified": true,
+  "gap_summary": "A false story fills a 1,500-person audience in ~10 h; the fact-check starts moving ~13 h later (10-20 h), after the audience is already reached, and truth itself needs ~60 h."
+}

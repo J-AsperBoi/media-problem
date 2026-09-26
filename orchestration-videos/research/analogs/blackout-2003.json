@@ -1,0 +1,156 @@
+{
+  "id": "blackout-2003",
+  "threat_internal_label": "grid cascade (never shown on screen)",
+  "analog": "2003 Northeast blackout (US/Canada), August 14, 2003",
+  "time_unit": "hours",
+  "t0": "2003-08-14 14:14 EDT (FirstEnergy control-room alarms begin failing silently)",
+  "sources": [
+    {
+      "key": "s1",
+      "title": "U.S.-Canada Power System Outage Task Force, Final Report on the August 14, 2003 Blackout in the United States and Canada (April 2004)",
+      "url": "https://www.nerc.com/globalassets/our-work/reports/event-reports/august_2003_blackout_final_report.pdf",
+      "accessed": "2026-09-26",
+      "via": "search snippets; direct fetch blocked"
+    },
+    {
+      "key": "s2",
+      "title": "What Really Happened During the 2003 Blackout? (Practical Engineering, 2022), summarizing the Task Force report",
+      "url": "https://practical.engineering/blog/2022/2/9/what-really-happened-during-the-2003-blackout",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s3",
+      "title": "Northeast blackout of 2003 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Northeast_blackout_of_2003",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s4",
+      "title": "The 2003 Northeast Blackout--Five Years Later (Scientific American, 2008)",
+      "url": "https://www.scientificamerican.com/article/2003-blackout-five-years-later/",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s5",
+      "title": "New York City Blackout of 2003 (NYCdata, Baruch College CUNY)",
+      "url": "https://www.baruch.cuny.edu/nycdata/disasters/blackouts-2003.html",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s6",
+      "title": "MIT OCW 6.691 Seminar in Electric Power Systems: The August 2003 Blackout (lecture notes citing Task Force analysis of 1,500 MW load shed)",
+      "url": "https://ocw.mit.edu/courses/6-691-seminar-in-electric-power-systems-spring-2006/5a75120955cfe89195ab495247368229_blackout_2003.pdf",
+      "accessed": "2026-09-26"
+    }
+  ],
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {
+        "t": 0,
+        "extent": 0,
+        "src": "s2",
+        "event": "14:14 FE EMS alarms begin failing; operators unaware"
+      },
+      {
+        "t": 0.85,
+        "extent": 0,
+        "src": "s6",
+        "event": "15:05 Harding-Chamberlin 345 kV line trips (tree contact); first contingency violation"
+      },
+      {
+        "t": 1.3,
+        "extent": 0,
+        "src": "s1",
+        "event": "15:32 Hanna-Juniper 345 kV trips",
+        "verified": false
+      },
+      {
+        "t": 1.45,
+        "extent": 0,
+        "src": "s1",
+        "event": "15:41 Star-South Canton trips (time from report; snippet not seen)",
+        "verified": false
+      },
+      {
+        "t": 1.87,
+        "extent": 0.01,
+        "src": "s6",
+        "event": "16:05:57 Sammis-Star trips; point of no return per Task Force",
+        "verified": false
+      },
+      {
+        "t": 1.98,
+        "extent": 1.0,
+        "src": "s3",
+        "event": "cascade completes across 8 states + Ontario, about 50-55 million people; commonly dated 16:10-16:13",
+        "verified": false
+      }
+    ],
+    "notes": "extent = share of the eventual ~50 million affected people who have lost power. The threat is flat for ~1.9 h, then goes 1% -> 100% in roughly 7 minutes. The 16:10-16:13 end-of-cascade time and the 16:06 1% value are from memory of the Task Force report and Wikipedia, not seen verbatim in a snippet; the 15:32 and 15:41 line-trip times are also unconfirmed. Confirmed by snippets: 14:14 alarm loss, 15:05 Harding-Chamberlin, cascade after ~16:05, ~50 million people."
+  },
+  "solution": {
+    "fragments": [
+      {
+        "id": "f1",
+        "who": "FirstEnergy IT support staff",
+        "had": "knowledge that the EMS/alarm servers were failing",
+        "ready_at": 0.1,
+        "src": "s2",
+        "notes": "14:20 EMS remote sites then core servers fail; IT worked on it but did not tell operators"
+      },
+      {
+        "id": "f2",
+        "who": "FirstEnergy control-room operators",
+        "had": "authority to shed Cleveland-Akron load",
+        "ready_at": 1.5,
+        "src": "s2",
+        "notes": "realized ~15:42-15:45 that alarms/EMS were not working"
+      },
+      {
+        "id": "f3",
+        "who": "MISO reliability coordinators",
+        "had": "state estimator: the tool that would show the contingency picture",
+        "ready_at": 1.83,
+        "src": "s2",
+        "notes": "state estimator faulty from 12:15, back to full function 16:04"
+      },
+      {
+        "id": "f4",
+        "who": "neighboring utilities (AEP, PJM) operators",
+        "had": "observations of line trips and flows at the FE boundary; called FE",
+        "ready_at": 0.85,
+        "src": "s3",
+        "verified": false,
+        "notes": "calls documented in the report; exact times not confirmed"
+      },
+      {
+        "id": "f5",
+        "who": "the fix itself (Task Force post-hoc analysis)",
+        "had": "shed ~1,500 MW of Cleveland-Akron load before 16:06",
+        "ready_at": 0.85,
+        "src": "s6",
+        "notes": "applicable after 15:05, window closed at 16:06: about 1 hour"
+      }
+    ],
+    "aggregation": {
+      "median": 1.5,
+      "p10": 0.1,
+      "p90": 1.83,
+      "src": "s2",
+      "notes": "Derived from documented fragment-awareness times (hours after 14:14): FE IT aware 0.1 h (p10), FE operators aware ~1.5 h (median), MISO state estimator restored 1.83 h (p90). These are LOWER BOUNDS: the pieces never actually assembled into the 1,500 MW load-shed decision before the 16:06 point of no return (t=1.87). The window to act was ~1 hour (15:05-16:06)."
+    },
+    "deploy": {
+      "median": 29,
+      "src": "s5",
+      "notes": "Not prevention: time from cascade to full restoration of New York City (9:03 pm Aug 15, ~29 h). Most areas were back within ~7 h, some places took up to 4 days (s3). The preventive load shed itself would have taken minutes (unsourced, not used)."
+    }
+  },
+  "ai_counterfactual": {
+    "aggregation_median": 0.25,
+    "basis": "Illustrative assumption. The fragments were all machine-readable signals already inside control rooms (EMS server health, line-trip telemetry, neighbor calls). Joining them into 'alarms are dead + lines are tripping + shed load' is a sub-1-hour human-expert reading task, well inside the ~17.4-hour 50%-success task horizon in RATES.md (METR time horizon, May-Aug 2026 entry). We assume ~15 min from the 14:14 alarm loss to a flagged, routed warning to FE operators; humans still decide and shed load. This would sit ~50 min before the first contingency (15:05) rather than after the point of no return. No claim that this would certainly have prevented the blackout.",
+    "label": "illustrative"
+  },
+  "verified": false,
+  "gap_summary": "The pieces needed ~1.5 h just to notice each other and never assembled; the cascade went from 1% to 100% of 50 million people in about 7 minutes once the 1-hour window closed."
+}

@@ -1,0 +1,135 @@
+{
+  "id": "wannacry-2017",
+  "threat_internal_label": "cyberattack on infrastructure (never shown on screen)",
+  "analog": "WannaCry ransomware worm, May 12, 2017",
+  "time_unit": "hours",
+  "t0": "2017-05-12 07:44-07:45 UTC (outbreak begins)",
+  "sources": [
+    {
+      "key": "s1",
+      "title": "WannaCry ransomware attack (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/WannaCry_ransomware_attack",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s2",
+      "title": "Kaspersky Daily: The chronicle of WannaCry worm",
+      "url": "https://www.kaspersky.com/blog/wannacry-history-lessons/45234/",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s3",
+      "title": "Kryptos Logic: WannaCry: Two Weeks and 16 Million Averted Ransoms Later (sinkhole data)",
+      "url": "https://www.kryptoslogic.com/blog/2017/05/wannacry-two-weeks-and-16-million-averted-ransoms-later/",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s4",
+      "title": "National Audit Office: Investigation: WannaCry cyber attack and the NHS (Oct 2017)",
+      "url": "https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s5",
+      "title": "Microsoft Security Blog: WannaCrypt ransomware worm targets out-of-date systems (May 12, 2017)",
+      "url": "https://www.microsoft.com/en-us/security/blog/2017/05/12/wannacrypt-ransomware-worm-targets-out-of-date-systems/",
+      "accessed": "2026-09-26"
+    },
+    {
+      "key": "s6",
+      "title": "BankInfoSecurity: WannaCry Outbreak: Microsoft Issues Emergency XP Patch",
+      "url": "https://www.bankinfosecurity.com/wannacry-cyber-attack-microsoft-issues-emergency-xp-patch-a-9913",
+      "accessed": "2026-09-26"
+    }
+  ],
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {
+        "t": 0,
+        "extent": 0,
+        "src": "s1",
+        "event": "07:45 UTC outbreak begins"
+      },
+      {
+        "t": 24,
+        "extent": 1.0,
+        "src": "s2",
+        "event": ">230,000 infected systems in >150 countries within the first 24 hours (Europol/Kaspersky)"
+      }
+    ],
+    "notes": "extent = share of the ~230,000 systems reported infected in the first 24 h. Only endpoints are sourced; Kryptos Logic describes 'tens of thousands of infected systems per hour' at the peak (s3) but no sourced hourly series was found, so no doubling time is given. Sinkhole data (s3/MalwareTech) saw ~100,000 unique IPs in the first two days and >160,000 over May 12-15; MalwareTech warns the sinkhole graph is noisy. Most of the 24 h total accrued before the 7.3 h kill switch is plausible but NOT sourced; don't show a split.",
+    "events": [
+      {
+        "t": 7.3,
+        "src": "s1",
+        "event": "15:03 UTC kill-switch domain registered; the initial variant stops encrypting new machines",
+        "notes": "infection count at this moment not sourced"
+      }
+    ]
+  },
+  "solution": {
+    "fragments": [
+      {
+        "id": "f1",
+        "who": "Microsoft",
+        "had": "the patch (MS17-010) for the exploited SMB flaw",
+        "ready_at": -1416,
+        "src": "s5",
+        "notes": "released March 14, 2017: 59 days (1,416 h) before the outbreak"
+      },
+      {
+        "id": "f2",
+        "who": "NHS Digital (CareCERT)",
+        "had": "critical alerts telling organisations to patch",
+        "ready_at": -1440,
+        "src": "s4",
+        "verified": false,
+        "notes": "NAO: critical alerts issued in March and April 2017, 'two months earlier'; -1440 h (~60 days) is that approximate phrase, not an exact date"
+      },
+      {
+        "id": "f3",
+        "who": "one independent security researcher (Marcus Hutchins)",
+        "had": "the kill-switch domain hard-coded in the worm",
+        "ready_at": 7.3,
+        "src": "s1"
+      },
+      {
+        "id": "f4",
+        "who": "Microsoft",
+        "had": "emergency patches for unsupported Windows XP/2003/8",
+        "ready_at": 20,
+        "src": "s6",
+        "verified": false,
+        "notes": "published May 12, 2017 (Pacific time); exact hour not confirmed, 20 h is an estimate within May 12 PT"
+      },
+      {
+        "id": "f5",
+        "who": "the ~1 in 5 NHS trusts that had not applied the update, and 603 primary-care organisations",
+        "had": "the machines that needed the patch",
+        "ready_at": 168,
+        "src": "s4",
+        "notes": "NHS affected May 12-19; at least 81 of 236 trusts affected, 34 infected"
+      }
+    ],
+    "aggregation": {
+      "median": 20,
+      "p10": 7.3,
+      "p90": 168,
+      "src": "s4",
+      "notes": "Derived from documented response dates after t0, not a measured distribution: p10 = kill switch registered 7.3 h (s1), median ~ Microsoft's same-day emergency patch for unsupported systems (May 12 PT, ~20 h; hour unverified, s6), p90 = end of NHS disruption week May 19 (~168 h, s4). The deeper gap: the patch existed 1,416 h (59 days) before t0 and was not applied everywhere."
+    },
+    "deploy": {
+      "median": 168,
+      "src": "s4",
+      "notes": "NHS services affected for the week May 12-19, 2017."
+    }
+  },
+  "ai_counterfactual": {
+    "aggregation_median": 1,
+    "basis": "Illustrative. Two steps: (1) reading a malware sample and spotting a hard-coded unregistered domain is a few-hour expert task (one researcher did it in ~7 h while also doing other work), inside the ~17.4 h 50% task horizon in RATES.md (METR entry); (2) matching an organisation's unpatched machines to a 59-day-old critical patch and routing the alert to the person who can apply it is inventory work that RATES.md's falling cost at fixed capability (~40x/year, Epoch) makes cheap to run continuously. Assumed ~1 h to the first working stop, and the patch fragment routed before t0. Humans still approve and apply patches. Not a claim the attack would certainly have been prevented.",
+    "label": "illustrative"
+  },
+  "verified": false,
+  "gap_summary": "The worm hit >150 countries within a day; the stop came at 7.3 h by one person's luck, the institutional fix took ~1 week to clear, and the patch had been sitting there for 59 days."
+}
