@@ -66,3 +66,14 @@ Variants (not used): "Dropped baton. Fifty-nine days." / "The exchange zone is e
 Assigned tags were TOO SIMILAR to fifty-nine-days (distance 0.44; same analog, scale, pace, emotion, protagonist). Changed **pace: sprint -> stop-start** (the race sprints but is cut by the hour-7.3 freeze frame, the lights-out stop, and the instant replay). Kept structure and analog as assigned.
 
 Tags: {"slug":"the-relay","structure":"sports-play-by-play","medium":"constructivist poster","family":"sport","scale":"between nations","pace":"stop-start","emotion":"resolve","protagonist":"one person","camera":"crane up and drop down","analog":"wannacry-2017"}
+
+## Scores
+- Hook: 7 (frame 1: resolved face, lit green baton, wall of red seats, "AND WE'RE LIVE."; strong poster read, but the sports frame isn't obvious until the stands register)
+- Speed accuracy: 7 (logistic fit through sourced endpoints, cross-checked against the "tens of thousands per hour" peak; lognormal lanes from the analog; the fit's before/after-kill-switch split is unsourced and stated as such)
+- Snap impact: 6 (freeze, silence, hit, then two 940 px panels on one axis; but the human stack at 7.3 h looks a lot like the AI stack at a glance)
+- Emotion: 6 (the search face at the empty exchange line works; the hands shot is abstract)
+- Originality: 7 (stadium as world, fan-on-the-track as the lone researcher, constructivist poster look)
+- Craft: 6 (clean flat blocks and diagonals; figures are simple, the crane's midpoint is busy, caption slabs a bit small in the top view)
+- Honesty: 9 (fan framed as one person, partly luck; "Illustrative. Not a promise."; no threat or company names; two numbers, both sourced)
+Overall: 6.9
+Virality: 6% — distinctive poster look and a legible sports-commentary hook, but the story needs two viewings to decode (two kinds of baton, a snap chart), which caps shares from a small account.
