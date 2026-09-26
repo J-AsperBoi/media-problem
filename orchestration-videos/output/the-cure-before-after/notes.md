@@ -64,3 +64,21 @@ A real storyboard wall: two columns of lit panels, each a miniature stage set. O
 
 ## Diversity check
 `node tools/diversity.js` -> OK: distinct enough (nearest two-days 0.67, the-mold-strikes-back 0.67). No changes needed.
+
+## Preview critique and fixes
+- Preview 1: world-space headers ("BEFORE"/"AFTER", "log time"), row labels, and the green link lines were magnified 4.6x in the close shots, colliding with the cards and slashing through the face. Fixed by fading world text and links with zoom (visible only below zoom ~2). Preview 2 clean.
+- Known weak spots: the two re-red stones at year 15 are mostly off-frame in the closest shot; row labels on the wide are small (30 px) for a phone; the snap reuses the-mold-strikes-back's two-lane grammar.
+
+## Render
+output/the-cure-before-after/the-cure-before-after.mp4, ffprobe duration 39.5 s (DUR 39.5).
+
+## Scores
+- Hook: 7 (frame 1: a sad face, a dimming green vial, a ring of red stones, "Watch the red learn.")
+- Speed accuracy: 8 (logistic with the derived 0.56-yr doubling time, stone count = share, lognormal links, one stated log mapping; post-data red labeled "fit")
+- Snap impact: 6 (freeze + hit + two lanes; small counterfactual not inflated, but the grammar is familiar)
+- Emotion: 7 (the ritual that keeps dancing while the vial dims reads as awe turning to unease)
+- Originality: 7 (BEFORE/AFTER as a literal storyboard sheet with a frozen column beside a live one)
+- Craft: 6 (rough animatic, legible; wide-shot labels small)
+- Honesty: 9 (threat never named, two sourced numbers, illustrative + coordination-only labels, fit marked)
+Overall: 7.1
+Virality: 6% - a grave, slow-build stick-figure piece with a clever before/after sheet but no trending hook or outrage; small-account odds sit in single digits.
