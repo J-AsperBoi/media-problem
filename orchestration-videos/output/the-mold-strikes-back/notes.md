@@ -62,3 +62,19 @@ Shot as a real x-ray/fluoroscope world: a locked-off 100 mm macro on the gloved 
 
 ## Diversity check
 `node tools/diversity.js` -> OK: distinct enough (nearest two-days and the-last-thirteen-days, distance 0.89). No changes needed.
+
+## Build log
+- Preview 1: at macro zoom the world-space link lines and the ward red haze became giant green/red beams across the close-ups; snap red area was scaled by 0.55 (misleading); "13 years." collided with the "pieces meet" label. Fixed: links and haze fade by zoom (visible only below zoom ~4), red area drawn at true share, labels moved. Preview 2 clean.
+- Render: 37.0 s (ffprobe), matches DUR.
+- Known weaknesses: the stick-figure lab worker is tiny in the wide, so the only emotional face is barely legible; the colonies turning red is a count, which is subtle on a phone; the snap's lower half of frame is empty; the returned-red at year 15 is qualitative staging (noted above).
+
+## Scores
+- Hook: 7 (frame 1: glowing x-ray hand, big red colonies, green rim, "Watch the red." — striking thumbnail)
+- Speed accuracy: 8 (logistic with the analog's derived 0.56 y doubling, 40 fixed samples so count = share, lognormal link times, one stated log mapping; logistic extrapolates past ~year 3)
+- Snap impact: 6 (clean two-lane true-speed sweep, "13 years." lands; honest coordination-only framing limits the punch)
+- Emotion: 6 (awe from the x-ray macro and the single pull-out; little character emotion)
+- Originality: 7 (x-ray nature-doc petri world is fresh in the portfolio)
+- Craft: 6 (readable, consistent zooms; animatic-level hand and figures)
+- Honesty: 9 (threat never named, verified numbers only, illustrative and coordination-only labels, derived doubling time disclosed)
+- Overall: 7.0
+- Virality: 7% — the x-ray hand thumbnail and nature-doc captions are distinctive, but the petri-dish subject is quiet and the payoff is abstract charts, so from a small account it most likely stays well under 100k.
