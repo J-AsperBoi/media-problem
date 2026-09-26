@@ -66,3 +66,19 @@ Tier: animatic
 {"structure":"reverse-chronology","medium":"children's-book flat","family":"weather/fluids","scale":"family","pace":"slow build","emotion":"grief","protagonist":"one person","camera":"crane up and drop down","analog":"heatwave-2003"}
 
 Diversity check: OK: distinct enough (nearest two-days 0.89, the-last-thirteen-days 0.89).
+
+## Build notes (resumed after container restart)
+- Scene built from this plan: `scenes/day-three-hundred-five.js`. Deviations: the wide shot uses the 12 quantile links **plus** the two fixed dated links (hospital-doctors day 12, forecasters-hospital day 305), not 12 including them. Three of the plan's four pieces fly back to their holders (forecasters, doctors, hospital); she keeps the neighbors' piece. The rewind strip hides during the wide hold so it doesn't collide with holder labels. Link lines fade to 15 % in close framings so the thumbnail isn't a web of lines. The frame-1 red double exposure sits lower right over the window, clear of the "Day 305." card.
+- Snap B shows lane result labels under the axis: "Day 12, after the peak" (human) and "assembled before the peak" (AI, illustrative lane). Numbers on screen: Day 305, Day 12 only.
+- Rendered: output/day-three-hundred-five/day-three-hundred-five.mp4, 40.0 s (ffprobe).
+
+## Scores
+- Hook: 6 (big red sun, green plan in a hand, "Day 305." read on frame 1; but "day 305" alone is an abstract opener)
+- Speed accuracy: 7 (log rewind and snap lanes are data-driven; the heat curve between endpoints is a stated interpolation)
+- Snap impact: 6 (the two lanes read clearly; the AI lane beats the peak but the gap is small, as it should be)
+- Emotion: 7 (empty chair in the dark window vs. the man in the lit window is the strongest grief image so far)
+- Originality: 7 (reverse chronology + reverse seasons + children's-book flat)
+- Craft: 6 (clean flat look; hands and the extreme-close shot are still crude, wide labels small)
+- Honesty: 9 (symbolic dark-window count stated, unverified dates off screen, no survival claim)
+Overall: 6.9
+Virality: 6% + the empty-chair reversal is a genuine emotional hook, but a slow log-time rewind and an abstract "Day 305" opener will lose most scrollers before the payoff.
