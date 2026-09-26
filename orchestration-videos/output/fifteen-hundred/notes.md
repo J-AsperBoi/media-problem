@@ -35,7 +35,8 @@ Caveat on screen: "Speed is not belief." Reaching someone with a correction does
 ## Shot list and camera (two lanes, synchronized cameras, handheld shake from L.noise)
 | t | shot | top lane (red) | bottom lane (green) |
 |---|---|---|---|
-| 0.0-3.0 | SC1 CLOSE / CLOSE | thumb on a phone; the red car on the screen | green car behind a gate, driver's face |
+| 0.0-1.3 | SC0 COLD OPEN (flash-forward, same timeline, labeled "10 hours from now") / CLOSE | z 4.6 on the last person reached at h=10: red car, red dots, face lit red | green car behind a gate, driver's face |
+| 1.3-3.0 | SC1 CLOSE / CLOSE (labeled "now", h=0) | thumb on a phone; the red car on the screen | green car behind a gate, driver's face |
 | 3.0-8.0 | SC2 DOLLY IN (into the phone) / CLOSE | phone screen grows to full lane; handheld chase on the red car (z 3.2) | driver waits; at ~7.7 s the red car blasts past the ramp |
 | 8.0-11.0 | SC3 CRANE UP both | out to z 1: whole map, red sweeping | out to z 1: seven green cars at seven gates |
 | 11.0-13.2 | SC3 WIDE hold | red reaches the last dot at 13.0 | gates mostly closed |
@@ -61,3 +62,9 @@ Two stacked vertical frames, each a real camera over a night highway model lit o
 ## Tags
 {"structure":"split-screen-race","medium":"neon arcade","family":"traffic","scale":"nation","pace":"sprint","camera":"handheld chase","emotion":"anger","protagonist":"the red itself","analog":"false-news-2018"}
 Diversity check: OK (nearest two-days, distance 1.00).
+
+## Resume log (after container restart)
+- Frame 1 hook: added a 1.3 s cold open (flash-forward to h = 10 on the same timeline, labeled "10 hours from now"), then a white-flash cut back to "now" (h = 0) and the phone. Red is big in frame 1; green driver's face below. Frame 1 has red + green + a face + one line of text.
+- Cards now auto-fit inside x 80-900 (centered at x 490, max width 780 px).
+- Snap legibility: people reached by the correction now show a green ring with a small red core (the claim is still there; speed is not belief) instead of a thin green ring over a full red dot, which read as olive at phone size.
+- Labels already 44 px; snap lanes full 1080 px wide.
