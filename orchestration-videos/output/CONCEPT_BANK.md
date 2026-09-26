@@ -160,7 +160,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** before-after · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 8%
 - **Logline (red / green):** A stained-glass window of the miracle drug (before) cracks into red panes (after). Green panes are the fragments of the next answer, in separate windows of the same cathedral.
 - **Snap:** 13 vs 2.5 yr (illustrative).
-- **Tags:** medium stained glass; family myth/ritual; scale history; pace slow build; camera locked-off close-up with a single pull-out; emotion awe; protagonist a green fragment
+- **Tags:** medium stick-figure animatic; family myth/ritual; scale history; pace slow build; camera locked-off close-up with a single pull-out; emotion awe; protagonist a green fragment
 
 ## 27. before-the-price
 - **Structure:** before-after · **Analog:** rice-2008 · **First-guess virality:** 9%

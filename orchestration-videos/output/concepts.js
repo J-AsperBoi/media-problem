@@ -76,7 +76,7 @@ const C = [
 ['vaccine-speedrun','game-hud-run','covid-2020','8-bit','game','multi-scale zoom','accelerating','crane up and drop down','resolve','a crowd',11,
  'Any% speedrun: the design is done at day 2. Then the level becomes an escort mission across 217 countries. Real splits on the HUD.',
  'Median country 421 vs 363 routed (illustrative).'],
-['the-cure-before-after','before-after','penicillin-resistance-1946','stained glass','myth/ritual','history','slow build','locked-off close-up with a single pull-out','awe','a green fragment',8,
+['the-cure-before-after','before-after','penicillin-resistance-1946','stick-figure animatic','myth/ritual','history','slow build','locked-off close-up with a single pull-out','awe','a green fragment',8,
  'A stained-glass window of the miracle drug (before) cracks into red panes (after). Green panes are the fragments of the next answer, in separate windows of the same cathedral.',
  '13 vs 2.5 yr (illustrative).'],
 ['before-the-price','before-after','rice-2008','children\'s-book flat','cooking','family','stop-start','locked-off close-up with a single pull-out','tenderness','one person',9,
