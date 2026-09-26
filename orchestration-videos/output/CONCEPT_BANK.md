@@ -250,7 +250,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** recipe-parody · **Analog:** rice-2008 · **First-guess virality:** 11%
 - **Logline (red / green):** Cooking-show parody: "Step one: have enough rice in the world. Step two: don't tell anyone where it is."
 - **Snap:** Week 31 vs 28 (illustrative).
-- **Tags:** medium children's-book flat; family cooking; scale economy; pace stop-start; camera over-the-shoulder; emotion anger; protagonist one person
+- **Tags:** medium chalkboard; family cooking; scale economy; pace stop-start; camera over-the-shoulder; emotion anger; protagonist one person
 
 ## 42. recipe-for-a-crash
 - **Structure:** recipe-parody · **Analog:** gfc-2008 · **First-guess virality:** 10%

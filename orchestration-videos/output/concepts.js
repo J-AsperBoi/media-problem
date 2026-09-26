@@ -121,7 +121,7 @@ const C = [
 ['quebec-loop','seamless-loop','quebec-1989','neon arcade','cosmos','nation','one long take','locked-off close-up with a single pull-out','awe','the red itself',9,
  'An aurora dances over a neon power line; the line goes out in 90 seconds; it loops back.',
  '9 h vs 1 h (illustrative).'],
-['recipe-for-a-shortage','recipe-parody','rice-2008','children\'s-book flat','cooking','economy','stop-start','over-the-shoulder','anger','one person',11,
+['recipe-for-a-shortage','recipe-parody','rice-2008','chalkboard','cooking','economy','stop-start','over-the-shoulder','anger','one person',11,
  'Cooking-show parody: "Step one: have enough rice in the world. Step two: don\'t tell anyone where it is."',
  'Week 31 vs 28 (illustrative).'],
 ['recipe-for-a-crash','recipe-parody','gfc-2008','paper cutout','cooking','economy','stop-start','over-the-shoulder','anger','an institution',10,

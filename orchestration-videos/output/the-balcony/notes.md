@@ -59,3 +59,19 @@ Real shadow theater staged in 3D: a translucent screen lit from behind by one wa
 ## Tags
 {"structure":"pov","medium":"shadow puppet","family":"family","scale":"family","pace":"slow build","emotion":"loneliness","protagonist":"one person","camera":"POV walk","analog":"heatwave-2003"}
 Diversity check: OK (nearest day-three-hundred-five 0.56).
+
+## Preview fixes
+- First preview: the hands vanished against the black door. I added a warm backlit halo (a shadow-puppet rim) to your arms.
+- The snap's "before the peak" label sat at y 1560, below the text zone. I shrank the panels to 920x520 so every label now falls inside y 220-1500.
+- In the IN++ shot, the green knot drifted off the right edge. It is now re-centred on your palm.
+
+## Scores
+- Hook: 6 (a red window, a closed door, green-lit rooms and "POV: she still hasn't answered." read at once; the fist is still small)
+- Speed accuracy: 8 (a logistic fitted through the sourced endpoints and peak, a two-sided lognormal fitted to p10/median/p90, one 1 s = 1 day mapping, and the same red curve in both snap lanes)
+- Snap impact: 6 (freeze, black and a hit, then two lanes of 920 px; the contrast between after and before the peak is clear but the chart reads as small)
+- Emotion: 7 (the dark strip under the door and green threads arriving at your palm too late carry the loneliness without showing anything)
+- Originality: 7 (a shadow-puppet stairwell is fresh; POV walk and the knock-and-wait are familiar)
+- Craft: 6 (the silhouettes are clean and the pull-out through the wall works; the climbing shot is simple and the holders are tiny in the wide)
+- Honesty: 9 (loss only as absence, AI lane labeled illustrative, only 12 and 3 on screen, no unverified dates)
+Overall: 7.0
+Virality: 7% - quiet, dignified and well-hooked for a POV, but a slow build with a data chart in the middle loses most scrollers before the payoff.
