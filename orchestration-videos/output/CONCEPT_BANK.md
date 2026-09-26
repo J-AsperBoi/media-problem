@@ -154,7 +154,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** game-hud-run · **Analog:** covid-2020 · **First-guess virality:** 11%
 - **Logline (red / green):** Any% speedrun: the design is done at day 2. Then the level becomes an escort mission across 217 countries. Real splits on the HUD.
 - **Snap:** Median country 421 vs 363 routed (illustrative).
-- **Tags:** medium 8-bit; family game; scale multi-scale zoom; pace accelerating; camera crane up and drop down; emotion resolve; protagonist a crowd
+- **Tags:** medium neon arcade; family game; scale multi-scale zoom; pace accelerating; camera crane up and drop down; emotion resolve; protagonist a crowd
 
 ## 26. the-cure-before-after
 - **Structure:** before-after · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 8%

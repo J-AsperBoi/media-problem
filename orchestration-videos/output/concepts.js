@@ -73,7 +73,7 @@ const C = [
 ['the-flare','game-hud-run','quebec-1989','8-bit','game','nation','sprint','POV walk','dread','AI',9,
  'An 8-bit level: a lineman sprite runs the grid with a 90-second timer. Green power-ups scattered across the map: warnings, spare capacity, a manual procedure. AI appears only as the minimap connecting them.',
  '9 h / 7 yr vs ~1 h (illustrative).'],
-['vaccine-speedrun','game-hud-run','covid-2020','8-bit','game','multi-scale zoom','accelerating','crane up and drop down','resolve','a crowd',11,
+['vaccine-speedrun','game-hud-run','covid-2020','neon arcade','game','multi-scale zoom','accelerating','crane up and drop down','resolve','a crowd',11,
  'Any% speedrun: the design is done at day 2. Then the level becomes an escort mission across 217 countries. Real splits on the HUD.',
  'Median country 421 vs 363 routed (illustrative).'],
 ['the-cure-before-after','before-after','penicillin-resistance-1946','stick-figure animatic','myth/ritual','history','slow build','locked-off close-up with a single pull-out','awe','a green fragment',8,
