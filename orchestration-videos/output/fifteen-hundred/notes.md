@@ -68,3 +68,17 @@ Diversity check: OK (nearest two-days, distance 1.00).
 - Cards now auto-fit inside x 80-900 (centered at x 490, max width 780 px).
 - Snap legibility: people reached by the correction now show a green ring with a small red core (the claim is still there; speed is not belief) instead of a thin green ring over a full red dot, which read as olive at phone size.
 - Labels already 44 px; snap lanes full 1080 px wide.
+
+## Render
+output/fifteen-hundred/fifteen-hundred.mp4, ffprobe duration 38.000 s (DUR 38), 1080x1920, 30 fps, with audio.
+
+## Scores
+- Hook: 7 (cold open puts a big red car, a red-lit face and red dots in frame 1 over a green driver; still an abstract "two lanes" premise)
+- Speed accuracy: 8 (sourced 10 h / 60 h endpoints, Hoaxy lognormal gate releases, one linear mapping per section; the path between endpoints is a stated ease, not data)
+- Snap impact: 6 (freeze, flash, locked-off side by side is clean, but the snap's 3 s top lane and the AI lane both end all-green, so the difference is mostly in timing, not image)
+- Emotion: 6 (angry driver behind the gate works; the crowd is dots)
+- Originality: 7 (split-screen highway with on-ramp gates is a fresh traffic metaphor for correction lag)
+- Craft: 6 (neon look reads at phone size; SC4/SC6 camera centering and the gate close-up are functional rather than beautiful)
+- Honesty: 9 (both on-screen numbers verified; AI lane labeled illustrative with a stated routing assumption; "Speed is not belief." caveat on screen)
+Overall: 7.0
+Virality: 6% + the "false news is 6x faster" fact is shareable and the split-screen race is easy to track, but an abstract highway of dots from a small account rarely clears 100k.
