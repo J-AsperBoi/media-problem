@@ -56,3 +56,18 @@ Richer in 3D: real thread sheen, fabric puckering where the red pulls tight, the
 ## Tags
 {"structure":"countdown-list","medium":"embroidery","family":"market","scale":"economy","pace":"stop-start","emotion":"tenderness","protagonist":"a green fragment","camera":"locked-off close-up with a single pull-out","analog":"gfc-2008"}
 Diversity check: OK: distinct enough (nearest the-last-thirteen-days and the-department-of-later at 0.78).
+
+## Build log
+- Resumed after a usage-limit cutoff; scene was complete on disk. Preview contact sheet checked: frame 1 has red, green, hand, one line; pull-out and dolly-in read; snap panels 920 px wide, labels 46/52 px; end card held 4 s. No fixes needed. Full render 36.0 s (ffprobe).
+- Honesty check: no numerals besides countdown indices 3/2/1/0; day 426 not shown as a number (only the median link's month position on the stitched calendar, which is the speed math itself); no institution names; only f2 wording on screen.
+
+## Scores
+Hook: 6
+Speed accuracy: 8
+Snap impact: 5
+Emotion: 6
+Originality: 8
+Craft: 6
+Honesty: 9
+Overall: 6.9
+Virality: 4% — a lovely, quiet embroidery idea but the "3 things" countdown resolves to abstract finance words and the snap panels are small and busy on a phone, so it is unlikely to hold a scrolling audience.

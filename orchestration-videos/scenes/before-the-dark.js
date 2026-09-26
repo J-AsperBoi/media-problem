@@ -161,8 +161,8 @@ function makeScene(SERIF, HAND) {
   function text(c, s, x, y, size, o = {}) { c.save(); c.globalAlpha = o.alpha ?? 1; c.font = `${size}px "${o.font || HAND}"`; c.textAlign = o.align || 'center';
     c.lineJoin = 'round'; c.lineWidth = size * 0.22; c.strokeStyle = o.stroke || 'rgba(225,219,205,0.95)'; c.strokeText(s, x, y); c.fillStyle = o.col || INK; c.fillText(s, x, y); c.restore(); }
   function tag(c, s, sub, a) { c.save(); c.globalAlpha = a; c.font = `64px "${SERIF}"`; const w = c.measureText(s).width;
-    c.fillStyle = INK; c.fillRect(84, 196, w + 36, 82); c.fillStyle = '#ece6d6'; c.textAlign = 'left'; c.fillText(s, 102, 258);
-    if (sub) { c.font = `48px "${HAND}"`; c.fillStyle = INK; c.lineWidth = 9; c.strokeStyle = 'rgba(225,219,205,0.95)'; c.strokeText(sub, 102 + w + 34, 256); c.fillText(sub, 102 + w + 34, 256); }
+    c.fillStyle = INK; c.fillRect(84, 226, w + 36, 82); c.fillStyle = '#ece6d6'; c.textAlign = 'left'; c.fillText(s, 102, 288);
+    if (sub) { c.font = `48px "${HAND}"`; c.fillStyle = INK; c.lineWidth = 9; c.strokeStyle = 'rgba(225,219,205,0.95)'; c.strokeText(sub, 102 + w + 34, 286); c.fillText(sub, 102 + w + 34, 286); }
     c.restore(); }
   function paperTexture(c, dark) {
     c.save(); c.lineWidth = 2; grain.forEach(g => { c.strokeStyle = `rgba(40,36,30,${0.05 * g.w})`; c.beginPath();
@@ -265,14 +265,14 @@ function makeScene(SERIF, HAND) {
     const pa = L.sm(16.8, 17.0, t);
     c.save(); c.globalAlpha = pa;
     // BEFORE panel
-    const yb = 500; box(yb, 'BEFORE');
+    const yb = 440; box(yb, 'BEFORE');
     const cur = xh(hNow);
     c.fillStyle = RED; const nr = xh(NORETURN); c.fillRect(nr, yb + 150, Math.max(0, Math.min(cur, X1) - nr), 100 * (hNow >= NORETURN ? 1 : 0));
     ['f1', 'f4', 'f2', 'f3'].forEach(id => { const x = xh(FR[id].ready_at); if (hNow < FR[id].ready_at) return; c.fillStyle = GREEN; c.beginPath(); c.arc(x, yb + 200, 16, 0, 7); c.fill(); c.strokeStyle = INK; c.lineWidth = 3; c.stroke(); });
     if (hNow >= MED) { c.strokeStyle = GREEN; c.lineWidth = 6; c.beginPath(); c.moveTo(X0, yb + 262); c.lineTo(xh(MED), yb + 262); c.stroke(); text(c, '~1.5 h to notice', 150, yb + 320, 50, { align: 'left' }); }
     if (hNow >= LINKS[3].h) { const x = xh(LINKS[3].h); c.strokeStyle = GREEN; c.lineWidth = 8; c.beginPath(); c.arc(x, yb + 200, 28, 0, 7); c.stroke(); text(c, 'too late', 895, yb + 130, 50, { align: 'right' }); }
     // AFTER panel
-    const ya = 960; box(ya, 'AFTER', 'illustrative');
+    const ya = 880; box(ya, 'AFTER', 'illustrative');
     if (hNow >= TRIPS[0]) { c.fillStyle = RED; c.fillRect(xh(TRIPS[0]), ya + 170, 14, 60); }
     if (hNow >= FR.f1.ready_at) { c.fillStyle = GREEN; c.beginPath(); c.arc(xh(FR.f1.ready_at), ya + 200, 16, 0, 7); c.fill(); }
     if (hNow >= AIH) { const x = xh(AIH); c.strokeStyle = GREEN; c.lineWidth = 8; c.beginPath(); c.arc(x, ya + 200, 28, 0, 7); c.stroke(); c.fillStyle = GREEN; c.beginPath(); c.arc(x, ya + 200, 16, 0, 7); c.fill();
@@ -280,7 +280,7 @@ function makeScene(SERIF, HAND) {
     // cursor
     c.strokeStyle = INK; c.lineWidth = 3; c.setLineDash([10, 10]); c.beginPath(); c.moveTo(cur, yb + 110); c.lineTo(cur, ya + 300); c.stroke(); c.setLineDash([]);
     c.restore();
-    L.title(c, [{ text: 'Same pieces.' }, { text: 'Faster routing.', col: GREEN }], 1480 - 110, 84, { alpha: L.sm(19.0, 19.3, t) });
+    L.title(c, [{ text: 'Same pieces.' }, { text: 'Faster routing.', col: GREEN }], 1340, 84, { alpha: L.sm(19.0, 19.3, t) });
     paperTexture(c, 0);
   }
 
