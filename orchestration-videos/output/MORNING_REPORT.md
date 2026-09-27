@@ -1,18 +1,18 @@
 # Morning report
 
-_Updated 2026-09-27 ~14:30 UTC._
+_Final: 2026-09-27 ~20:00 UTC. The run is complete at 60 films; the resume routine has been deleted._
 
 Open `output/index.html` to see every film, sorted by virality. All 62 concepts, built or not, are in `output/CONCEPT_BANK.md`. The research is in `research/`.
 
 ## Numbers
-- **Finished films: 56.** All pass `tools/verify.js`, which checks the duration against DUR, that red and green are the only saturated colours, and that a QR code appears in the last 6 s.
-- **Unrendered: 1.** `the-green-screen` needs your decision; see "Needs your decision" below. **In progress: 2** (`the-long-season`, `half-a-lifeline`).
+- **Finished films: 60.** All 60 pass `tools/verify.js`, which checks three things: the duration matches DUR, no colour other than red and green is saturated, and a QR code appears in the last 6 s.
+- **Unrendered: 1** (`the-green-screen`; see "Needs your decision" below).
 - **Diversity: 0.883** (mean pairwise distance).
   - Every one of the 18 structures and 10 analogs has at least 2 films. So does every medium.
   - 18 metaphor families are used, including dance and library.
   - The "mind" scale has two films, and so does AI as protagonist.
   - After the first 18 films, I wrote the late films as new concepts aimed at gaps. They were not repeats from the bank.
-- **Average virality estimate: 7.1%** (range 4–10%).
+- **Average virality estimate: 7.1%** (range 4–10%). **Average overall score: 7.03 out of 10.**
 
 ## Top 5 by virality
 Ties are broken by overall score.
@@ -22,10 +22,10 @@ Ties are broken by overall score.
 | `nine-people-forty-messages` | **10%** | 7.0 | "POV: the family group chat" during a heat wave. Nine people, forty messages, no plan. You hold Gran's spare key and never send it. It is instantly familiar and tender, and it satirises the routing, not the family. | Phones as the only light sources in a dark flat. One dolly pulls back to nine lit windows across a city, then pushes in to Gran's door. |
 | `eight-billion-heads` | 9% | 7.4 | The campaign line "One body. Eight billion heads." made literal. The planet is one x-ray body whose organs are countries. The red falls across it, then the long, uneven green rise follows real per-country dates. | A glass-body render with organs made of tiny people. The crane goes from one skull at eye level up to the whole planet-body. |
 | `the-storm-doc` | 9% | 7.3 | A hushed particle nature documentary where the red is "observed" like an animal. One zoom runs from a kitchen fridge out to a gray sun and back. | One continuous volumetric zoom, with a single practical light in the kitchen. |
-| `recipe-for-a-worm` | 9% | 6.9 | An 8-bit cooking show: "Take one unpatched machine. Leave out for 59 days." It turns grave at the kill switch ("One stranger. Partly luck."). | Voxel kitchen-server room with a CRT glow. The crane goes from the chef's counter to a city grid of kitchens. |
+| `the-truth-loop` | 9% | 7.1 | A seamless ink-wash loop inside one mind. The correction arrives exactly as the loop restarts, so it never lands, and the replay itself is the point. | Painted-light fog around one face lit by a phone, in one locked-off take with a single pull-out. |
 | `keep-the-lights` | 8% | **7.6** | A shadow-puppet theater. The lamp behind the screen is the grid, and the puppeteers' strings tangle backstage. It has the best overall score. | A real puppet stage with one practical lamp. One dolly back from an audience face to reveal backstage. |
 
-Also at 8%: `the-fact-check` (7.4), `the-heat-map` (7.4), `six-to-twelve-hours`, `the-committee-in-my-head`, `the-numb-hand`, `the-crash-call`, `the-ballroom`, `the-two-feeds`, `the-migration` and `recipe-for-a-shortage`.
+Also at 9%: `recipe-for-a-worm` (6.9). At 8%: `the-hum` (7.3), `half-a-lifeline` (7.1), `the-arms-race`, `the-warning-memo`, `the-fact-check` (7.4), `the-heat-map` (7.4), `six-to-twelve-hours`, `the-committee-in-my-head`, `the-numb-hand`, `the-crash-call`, `the-ballroom`, `the-two-feeds`, `the-migration` and `recipe-for-a-shortage`.
 
 ## Top 5 by Jiji's taste (CLAUDE.md §10)
 1. **`the-mind-grid`** (7.1). An x-ray of one engineer's neurons over the grid, drawn as the same network: signals that don't reach the part that can act. It combines neuroscience with networks visibly connecting and breaking. In 3D: a split frame of a glass-brain render over a glowing grid model that share one graph.
@@ -53,6 +53,8 @@ Honourable mentions: `keep-the-lights` (7.6, the best overall; strings between p
 - **Human response spread:** only `covid-2020` has a measured spread of human response times. The other nine analogs derive their p10, median and p90 from documented response dates, and each file says how. Eight analog files have fields marked `verified: false`, and those values are kept off screen.
 - **Fitted curves:** where an analog sources only the endpoints, the red is a logistic curve fitted through them, and the film's notes say so. This applies to blackout, Quebec, heat, false news and WannaCry. The penicillin doubling time (0.56 yr) is derived from two data points, not published.
 - **Worth a second look:**
+  - `the-last-crate` shows a running DAY clock, the same borderline third number as `the-two-feeds`.
+  - `the-reference-desk` passed the colour check at 0.42% stray pixels. The limit is 0.5%; this is probably anti-aliasing, but take a look.
   - `nine-people-forty-messages` shows "Nine people. Forty messages." as counts of what is on screen. The only data numbers are "day 12" and "day 3". If you count the words as numbers, it goes past the two-number limit.
   - `the-crash-call` shows "32%". It is sourced at the data-point level, but the analog file's top-level flag is unverified.
   - `the-two-feeds` shows an "hour N" clock as part of the time mapping. Strictly, that is a third number on screen.
@@ -69,4 +71,5 @@ Honourable mentions: `keep-the-lights` (7.6, the best overall; strings between p
 - **Interruptions:** three usage-limit stops (09:20–11:20, ~15:00–17:10 and ~22:00–23:10 UTC) and one container restart.
 - **No finished work lost:** partial scenes are committed as work in progress, and agents resume from them.
 - **Resume routine:** a routine wakes the session every 2 h to resume, and deletes itself once 60 films are built.
+- **Totals:** six usage-limit stops and two container restarts over about 35 hours. There are 60 films and 78 concepts in `output/concepts.js` / `CONCEPT_BANK.md`.
 - **Throughput:** at about 130–150k tokens per film, one usage window yields roughly 8–10 films.

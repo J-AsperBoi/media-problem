@@ -73,3 +73,25 @@ The race runs from film t = 1.0 to 17.0 s. **Event hours h = (t - 1) x 0.125, so
 - "The window: one hour."
 - "50 million people. In minutes."
 - Alternates: "The grid has a hum." / "Everyone heard a piece." / "Nobody had the chord." / "Out of tune, out of time."
+
+## Build notes
+- Rendered at 36.0 s (ffprobe), 1080x1920, 30 fps. `node tools/verify.js the-hum` gives PASS (stray saturation 0%, QR found).
+- **The camera is a real 3D projection.** The camera state is (x, log height, z, pitch), and roughly 8,000 light particles sit on a ground plane. The crane up and the drop down are therefore true parallax moves in one continuous take, not 2D zooms. The listener, the window and the facade are billboards placed at the listener's depth. The only full-frame dips are into and out of the snap insert.
+- **Loop:** the cold open and the tail share one camera and one timeline (h = 0.85 at the join). The motion clock runs continuously across the join (t - DUR in the tail), so the last frame is the frame before frame 1. The only change at the join is the wire tripping red, which is the wrong note.
+- **Fixes after the first test frames:**
+  - The window and wall billboards covered half the city, so I shrank them.
+  - The particles were too sparse and small at altitude, so I doubled the building count and raised the minimum point size.
+  - The frame-1 red wire was a hairline, so I thickened it near the camera and added a glow.
+  - SC6 was framed too tight (the face spilled out of frame), so I pulled it back and gave the routed link a visible endpoint.
+  - The snap string had a zigzag frequency, so I slowed it.
+
+## Scores
+- Hook: 7. Frame 1 shows one face, a green glint in the ear, a thick red wire and "One wrong note." It is legible, but the image is dark and quiet for a feed.
+- Speed accuracy: 8. Only the verified trip is drawn. The cascade is a logistic fit through the endpoints and is never timed on screen. The links use lognormal quantiles (1.5 / 1.83). The AI time is 0.25 h, labeled illustrative, and the routed outcome shows as "?".
+- Snap impact: 6. The two panels are clear and the labels are at least 44 px, but the snap is an abstract timeline after a strong 3D world.
+- Emotion: 7. The drop back to the sad face in a dark city lands, and the loneliness of the listener at the window reads.
+- Originality: 7. This is the first particle-city choir with a standing-wave string, but it is the ninth blackout film.
+- Craft: 7. The real crane parallax in one take works. The listeners in the wide are small, and the SC6 routed link could be more beautiful.
+- Honesty: 9.
+Overall: 7.3
+Virality: 8%. The seamless loop and the sublime crane are real retention assets, but a dark, quiet, abstract grid story from a small account rarely crosses 100k.
