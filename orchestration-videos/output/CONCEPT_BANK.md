@@ -1,10 +1,10 @@
-# Concept bank (76)
+# Concept bank (78)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":4,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":5,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":4,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":4,"wait-for-it":6,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":5,"countdown-list":4,"seamless-loop":6,"powers-of-ten-zoom":4,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":7,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":8,"heatwave-2003":9,"gfc-2008":9}
+Analogs: {"covid-2020":7,"blackout-2003":8,"wannacry-2017":6,"false-news-2018":9,"rice-2008":7,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":8,"heatwave-2003":9,"gfc-2008":9}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -461,4 +461,16 @@ Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** Two phones in two dark offices on two continents, each held by an unnamed shadow figure holding half of the same lifeline. The red crosses the ocean on the real monthly market points; the call that joins the halves waits in a queue for months.
 - **Snap:** Coordinated response median 426 vs 220 days routed (illustrative, position only); red identical in both.
 - **Tags:** medium shadow puppet; family market; scale between nations; pace stop-start; camera over-the-shoulder; emotion loneliness; protagonist an institution
+
+## 77. the-reference-desk
+- **Structure:** wait-for-it · **Analog:** false-news-2018 · **First-guess virality:** 9%
+- **Logline (red / green):** One long take at a library reference desk: the librarian already has the right book open (green) while, through the window, 1,500 people pass the red pamphlet hand to hand in 10 hours. Wait for it: the correction card reaches the notice board 13 hours in.
+- **Snap:** Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief.
+- **Tags:** medium children's-book flat; family library; scale organization; pace one long take; camera locked-off close-up with a single pull-out; emotion tenderness; protagonist one person
+
+## 78. the-hum
+- **Structure:** seamless-loop · **Analog:** blackout-2003 · **First-guess virality:** 9%
+- **Logline (red / green):** A city's hum as a choir of particles singing one note (the grid). One voice drops out, then the chord collapses across the city in minutes. Four listeners each heard one wrong note and had no one to tell. The loop returns to the hum.
+- **Snap:** 1.5 h to notice vs 0.25 h routed (illustrative); outcome uncertain.
+- **Tags:** medium particle/data; family music; scale city; pace one long take; camera crane up and drop down; emotion awe; protagonist a crowd
 

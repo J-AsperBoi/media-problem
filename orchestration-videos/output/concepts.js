@@ -229,6 +229,12 @@ const C = [
 ['half-a-lifeline','two-phones','gfc-2008','shadow puppet','market','between nations','stop-start','over-the-shoulder','loneliness','an institution',9,
  'Two phones in two dark offices on two continents, each held by an unnamed shadow figure holding half of the same lifeline. The red crosses the ocean on the real monthly market points; the call that joins the halves waits in a queue for months.',
  'Coordinated response median 426 vs 220 days routed (illustrative, position only); red identical in both.'],
+['the-reference-desk','wait-for-it','false-news-2018','children\'s-book flat','library','organization','one long take','locked-off close-up with a single pull-out','tenderness','one person',9,
+ 'One long take at a library reference desk: the librarian already has the right book open (green) while, through the window, 1,500 people pass the red pamphlet hand to hand in 10 hours. Wait for it: the correction card reaches the notice board 13 hours in.',
+ 'Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief.'],
+['the-hum','seamless-loop','blackout-2003','particle/data','music','city','one long take','crane up and drop down','awe','a crowd',9,
+ 'A city\'s hum as a choir of particles singing one note (the grid). One voice drops out, then the chord collapses across the city in minutes. Four listeners each heard one wrong note and had no one to tell. The loop returns to the hum.',
+ '1.5 h to notice vs 0.25 h routed (illustrative); outcome uncertain.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

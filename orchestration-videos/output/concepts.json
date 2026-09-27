@@ -1138,5 +1138,35 @@
   "vir": 9,
   "log": "Two phones in two dark offices on two continents, each held by an unnamed shadow figure holding half of the same lifeline. The red crosses the ocean on the real monthly market points; the call that joins the halves waits in a queue for months.",
   "snap": "Coordinated response median 426 vs 220 days routed (illustrative, position only); red identical in both."
+ },
+ {
+  "slug": "the-reference-desk",
+  "structure": "wait-for-it",
+  "analog": "false-news-2018",
+  "medium": "children's-book flat",
+  "family": "library",
+  "scale": "organization",
+  "pace": "one long take",
+  "camera": "locked-off close-up with a single pull-out",
+  "emotion": "tenderness",
+  "protagonist": "one person",
+  "vir": 9,
+  "log": "One long take at a library reference desk: the librarian already has the right book open (green) while, through the window, 1,500 people pass the red pamphlet hand to hand in 10 hours. Wait for it: the correction card reaches the notice board 13 hours in.",
+  "snap": "Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief."
+ },
+ {
+  "slug": "the-hum",
+  "structure": "seamless-loop",
+  "analog": "blackout-2003",
+  "medium": "particle/data",
+  "family": "music",
+  "scale": "city",
+  "pace": "one long take",
+  "camera": "crane up and drop down",
+  "emotion": "awe",
+  "protagonist": "a crowd",
+  "vir": 9,
+  "log": "A city's hum as a choir of particles singing one note (the grid). One voice drops out, then the chord collapses across the city in minutes. Four listeners each heard one wrong note and had no one to tell. The loop returns to the hum.",
+  "snap": "1.5 h to notice vs 0.25 h routed (illustrative); outcome uncertain."
  }
 ]
