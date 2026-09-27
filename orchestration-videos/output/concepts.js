@@ -187,6 +187,12 @@ const C = [
 ['the-stacks','based-on-a-true-story','penicillin-resistance-1946','woodblock','library','organization','slow build','over-the-shoulder','loneliness','a green fragment',8,
  'Over a librarian\'s shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.',
  '13 vs 2.5 yr (illustrative, coordination only).'],
+['the-committee-in-my-head','countdown-list','false-news-2018','bean cartoon','theater','mind','stop-start','over-the-shoulder','anger','one person',11,
+ 'Inside one skull, a committee of tiny selves votes on a red claim that just arrived. Three of them already hold pieces of the truth (a memory, a friend who knows, a doubt), but the meeting runs on the wrong agenda. Countdown: three pieces I already had.',
+ 'Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief.'],
+['the-switchboard','pov','blackout-2003','stick-figure animatic','machine','organization','sprint','POV walk','resolve','AI',9,
+ 'POV of a quiet switchboard (frontier AI as an operator's board, never a face): four control rooms each hold one piece; the board sees the lines that should connect and lights them, and the people on each end decide whether to pick up. First we see the real night, where no board existed.',
+ '1.5 h to notice vs 0.25 h routed (illustrative); people still decide.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

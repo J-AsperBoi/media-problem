@@ -116,9 +116,10 @@ function makeScene(SERIF, HAND) {
   const hRed = []; for (let i = 0; i < 300; i++) hRed.push({ x: -45 + hr_() * 35, y: -26 + hr_() * 12, ph: hr_() * 6.28, r: 0.08 + hr_() * 0.12 });
   const snow = []; for (let i = 0; i < 160; i++) snow.push({ x: (hr_() * 2 - 1) * 30, y: -30 + hr_() * 32, v: 0.6 + hr_() * 0.8, ph: hr_() * 6.28 });
   const town = [];
-  for (let i = 0; i < 1100; i++) { const street = Math.round((hr_() * 2 - 1) * 22), vertical = hr_() < 0.5; const along = (hr_() * 2 - 1) * 2800, side = (hr_() < 0.5 ? -1 : 1) * 22;
-    const x = vertical ? street * 130 + side : along, y = vertical ? along * 0.9 - 1000 : street * 110 - 1000 + side;
-    if (Math.hypot(x, y + 1000) > 2900) continue; town.push({ x, y, fr: L.clamp(FR0 + (hr_() - 0.5) * 0.03, 0, 0.984), rr: hr_(), s: 1.3 + hr_() * 1.4 }); }
+  for (let k = -22; k <= 22; k++) for (let m = -100; m <= 100; m++) for (const vertical of [true, false]) for (const side of [-1, 1]) {
+    const along = m * 28 + (hr_() - 0.5) * 8, x = vertical ? k * 130 + side * 18 : along, y = vertical ? along - 1000 + 1000 : k * 110 + side * 16;
+    const rad = Math.hypot(x, y); if (rad > 2900 || (rad > 60 && hr_() > Math.exp(-rad / 900))) continue; if (Math.abs(x) < 12 && Math.abs(y) < 12) continue;
+    town.push({ x, y, fr: L.clamp(FR0 + (hr_() - 0.5) * 0.03, 0, 0.984), rr: hr_(), s: 1.6 + hr_() * 1.6 }); }
   const tRed = []; for (let i = 0; i < 300; i++) tRed.push({ x: (hr_() * 2 - 1) * 3500, y: -4400 + hr_() * 900, ph: hr_() * 6.28, s: 1.5 + hr_() * 2 });
 
   // ---------------- PLANET / FAR ----------------
