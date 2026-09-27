@@ -62,7 +62,7 @@ function makeScene(SERIF, HAND) {
   const keyR = ST.map(s => s.i === ORIGIN ? -1 : dist(s, ST[ORIGIN]) * (HUBS.has(s.i) ? 0.4 : 1) * (0.7 + 0.6 * R()));
   let order = ST.map(s => s.i).sort((a, b) => keyR[a] - keyR[b]);
   const place = (idx, pos) => { order = order.filter(i => i !== idx); order.splice(pos, 0, idx); };
-  place(HERO, 26); place(21, 29); place(23, 32); place(25, 35);
+  place(25, 35); place(23, 32); place(21, 29); place(HERO, 26);   // hero last so it lands exactly at k = 26
   order.forEach((i, k) => { ST[i].rk = k; ST[i].rday = k === 0 ? 0 : extentInv(k / N); });
   ST.forEach(s => { if (s.rday === 0) return; if (!isFinite(s.rday)) return;
     const earlier = ST.filter(o => o.rday < s.rday);
@@ -80,7 +80,7 @@ function makeScene(SERIF, HAND) {
   ST.forEach(s => { if (s.q === undefined) s.q = qs.pop(); s.gday = Math.max(FLOOR, L.lognormalQuantile(s.q, MED, P90)); });
   const byG = ST.slice().sort((a, b) => a.gday - b.gday || (a.i === UKI ? -1 : b.i === UKI ? 1 : a.i - b.i));
   byG.forEach((s, k) => { if (k === 0) return; let p = null; for (let m = 0; m < k; m++) { const o = byG[m]; if (!p || dist(o, s) < dist(p, s)) p = o; }
-    s.gpar = p; s.gstart = Math.max(p.gday, s.gday - 28); });
+    s.gpar = p; s.gstart = Math.min(Math.max(p.gday, s.gday - 28), s.gday - 0.5); });
   ST.forEach(s => { s.tagOn = 200 + 60 * R(); s.sway = R() * 6.28; });
   // early fragments: unconnected green cross-stitches
   const FRAG = [[12, 0], [26, 0], [ORIGIN, 11], [27, 13], [28, 76], [UKI, 337]].map(([i, d]) => ({ s: ST[i], d }));
@@ -229,7 +229,7 @@ function makeScene(SERIF, HAND) {
       // green thread from the needle's eye: loose (a fragment) until the knot, then joined to it
       ctx.save(); ctx.lineCap = 'round'; ctx.shadowColor = rgbaG(0.6); ctx.shadowBlur = 12; ctx.strokeStyle = GREEN; ctx.lineWidth = Math.max(0.3, 3 / z); ctx.beginPath(); ctx.moveTo(eye[0], eye[1]);
       if (day >= H.gday) ctx.bezierCurveTo(eye[0] - 1.5, eye[1] + 3.5, SX + 1.5, SY + 2.2, SX, SY);
-      else ctx.bezierCurveTo(eye[0] - 2.5, eye[1] - 6, eye[0] + 4.5, eye[1] - 8.5, eye[0] + 7.5, eye[1] - 12.5 + 0.4 * Math.sin((hero.lt || 0) * 2));
+      else ctx.bezierCurveTo(eye[0] - 2.5, eye[1] - 5, eye[0] + 4, eye[1] - 7.5, eye[0] + 6.5, eye[1] - 10 + 0.4 * Math.sin((hero.lt || 0) * 2));
       ctx.stroke(); ctx.restore();
       // needle
       ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#5a5852'; ctx.lineWidth = 0.42; ctx.beginPath(); ctx.moveTo(eye[0] + 0.1, eye[1] + 0.12); ctx.lineTo(tip[0] + 0.1, tip[1] + 0.12); ctx.stroke();
@@ -273,7 +273,7 @@ function makeScene(SERIF, HAND) {
   }
   function snap(ctx, t) {
     ctx.fillStyle = '#0c0c0b'; ctx.fillRect(0, 0, 1080, 1920);
-    L.title(ctx, ['Real speed.'], 290, 84, { alpha: L.sm(20.1, 20.4, t) });
+    L.title(ctx, ['Real speed.'], 290, 84, { alpha: win(t, 20.1, 22.4) });
     // panel A: as it happened, the whole timeline in 1.2 s
     const aA = L.sm(20.1, 20.4, t), yA = 380, ybA = yA + 430, HA = 200;
     ctx.save(); ctx.globalAlpha = aA;
@@ -299,7 +299,7 @@ function makeScene(SERIF, HAND) {
       ctx.restore();
       marker(ctx, ybB, HB, AIMED, 'day ' + AIMED, L.sm(23.45, 23.7, t));
     }
-    L.title(ctx, ['Same thread. Fewer stops.'], 1480, 70, { alpha: win(t, 24.9, 26.45, 0.25) });
+    L.title(ctx, ['Same thread. Fewer stops.'], 1480, 64,{ alpha: win(t, 24.9, 26.45, 0.25) });
     L.slate(ctx, t < 22.4 ? 'SC2  SNAP: REAL SPEED' : 'SC2  SNAP: SIDE BY SIDE');
   }
 
@@ -307,7 +307,7 @@ function makeScene(SERIF, HAND) {
   function draw(ctx, t) {
     if (t < 1.8) {                                                  // SC1 hook (flash-forward) == loop target
       hookShot(ctx, t);
-      card(ctx, HOOK_CARD, 330, 1 - L.sm(1.5, 1.8, t), 100);
+      card(ctx, HOOK_CARD, 330, 1 - L.sm(1.5, 1.8, t), 92);
       L.slate(ctx, 'SC1  CLOSE (eye level)'); L.grain(ctx, t, { alpha: 0.05 }); return;
     }
     if (t < 2.0) {                                                  // unstitch back to day 0
@@ -319,14 +319,14 @@ function makeScene(SERIF, HAND) {
       const tt = Math.min(t, TFREEZE), day = dayAt(tt);
       const dip = L.sm(15.3, 15.6, tt) * (1 - L.sm(15.8, 16.2, tt));
       world(ctx, day, camAt(tt), { mood: heroMood(tt), look: heroLook(tt), lt: tt, dip });
-      card(ctx, ['Rewind.', 'Watch it travel.'], 330, win(t, 2.1, 3.9), 96);
-      card(ctx, [{ text: 'The answer', col: GREEN }, 'was stitched early.'], 300, win(t, 5.2, 7.4), 92);
-      card(ctx, ['Then it stopped', 'at every border.'], 300, win(t, 7.8, 10.2), 92);
-      card(ctx, ['Forms. Stamps.', 'Waiting rooms.'], 300, win(t, 10.5, 12.7), 92);
-      card(ctx, ['One knot', 'at a time.'], 300, win(t, 13.0, 14.9), 92);
-      card(ctx, ['It arrived.', 'Long after red.'], 300, win(t, 15.9, 17.6, 0.25), 96);
+      card(ctx, ['Rewind.', 'Watch it travel.'], 330, win(t, 2.1, 3.9), 92);
+      card(ctx, [{ text: 'The answer', col: GREEN }, 'was stitched early.'], 300, win(t, 5.2, 7.4), 86);
+      card(ctx, ['Then it stopped', 'at every border.'], 300, win(t, 7.8, 10.2), 88);
+      card(ctx, ['Forms. Stamps.', 'Waiting rooms.'], 300, win(t, 10.5, 12.7), 88);
+      card(ctx, ['One knot', 'at a time.'], 300, win(t, 13.0, 14.9), 88);
+      card(ctx, ['It arrived.', 'Long after red.'], 300, win(t, 15.9, 17.6, 0.25), 92);
       const lg = win(t, 8.4, 12.6, 0.4);
-      if (lg > 0) { L.label(ctx, 'red thread: reached', 90, 1486, 44, { col: '#ff6f66', alpha: lg, align: 'left' }); L.label(ctx, 'green knot: arrived', 560, 1486, 44, { col: '#8fe8b4', alpha: lg, align: 'left' }); }
+      if (lg > 0) { L.label(ctx, 'red thread: reached', 90, 1486, 44, { col: '#ff6f66', alpha: lg, align: 'left' }); L.label(ctx, 'green knot: arrived', 515, 1486, 44, { col: '#8fe8b4', alpha: lg, align: 'left' }); }
       if (t >= TFREEZE) { ctx.fillStyle = `rgba(8,8,7,${0.55 * L.sm(TFREEZE, 17.9, t)})`; ctx.fillRect(0, 0, 1080, 1920);
         card(ctx, ['We slowed it down', 'so you could see it.'], 300, win(t, 17.8, 19.75, 0.25), 84); }
       L.slate(ctx, t < 3.2 ? 'SC1  CLOSE (day zero)' : t < 8.2 ? 'SC1  CONTINUOUS ZOOM OUT' : t < 12.8 ? 'SC1  WIDE (the hoop is the world)' : t < 15.0 ? 'SC1  ZOOM IN' : t < TFREEZE ? 'SC1  CLOSE+' : 'SC1  FREEZE');
