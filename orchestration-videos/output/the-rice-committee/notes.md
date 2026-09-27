@@ -67,3 +67,18 @@ Tier: animatic
 ## Tags
 {"structure":"mockumentary","medium":"stick-figure animatic","family":"cooking","scale":"between nations","pace":"stop-start","emotion":"anger","protagonist":"an institution","camera":"handheld chase","analog":"rice-2008"}
 Diversity check: OK (nearest the-department-of-later 0.56, recipe-for-a-shortage 0.56).
+
+## Build log
+- Preview 1: structure, continuous map-world pull-out and push-in all worked. Fixes: B's desk nameplate sat under the lower-third (moved down); "Week 31 vs 28." lacked an adjacent illustrative tag (added "28 is illustrative", 46 px); snap red lines ran past the panels' left edge (clipped to panel).
+- Final: 42.0 s (ffprobe).
+
+## Scores
+- Hook: 6 (frame 1: deadpan face, glowing green key, a red line spiking high on the wall, "Everyone had a key." Clear, but a stick figure is not a scroll-stopper.)
+- Speed accuracy: 8 (shared logistic fit with the-warehouse, 1 s = 1 week, sourced decay, lognormal thread quantiles, need key lights at week 27.3, AI lane from the analog)
+- Snap impact: 5 (a ~3-week honest gap; freeze, black, stamp and two synced panels carry it, but the two curves look alike at a glance)
+- Emotion: 6 (the deadpan quotes are funny; B's angry "Still waiting." and the lights dimming with price turn it, but anger stays mild)
+- Originality: 7 (mockumentary interviews inside rooms that turn out to be dollhouse boxes on one map under one red line)
+- Craft: 6 (true continuous zoom through one world, handheld noise and whip-pans read well; stick-figure keys cluster into a blob at the deal; map shot is busy)
+- Honesty: 9 (no countries or people, unverified items off screen, sign-off key's timing flagged as a staging assumption, modest counterfactual labeled illustrative)
+- Overall: 6.7
+- Virality: 7% (the "Nobody asked" / "There is no committee" beats are shareable and native to the interview format, but the payoff is a subtle 3-week gap and the look is plain.)
