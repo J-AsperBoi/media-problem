@@ -81,3 +81,18 @@ Two real phones on two plain gray desks, set impossibly far apart on a dark gray
 
 ## Diversity
 `node tools/diversity.js` on the assigned tags: OK, distinct enough (nearest: the-last-thirteen-days, the-two-feeds, the-hold-music, each at distance 0.56). No changes were needed.
+
+## Build log
+- Preview 1: the deal bubble drew as a solid blurred green bar (its shadow sat under a translucent fill), and the deal's alpha was 0 because the clock stopped exactly at H 96. Fixes: the bubble now has a dark fill with a glow on the stroke only, and the last run extends to H 97.2 at the same rate (dead stop from 20.8). The closest shot was reframed to 6.6-7.1 so the green sent bubble and "Sent" sit inside the safe zone. The neck of the silhouette was joined, and the cold-open card was moved off the letter.
+- Final: 39.0 s (ffprobe), 1080x1920, 30 fps.
+
+## Scores
+- Hook: 8 (frame 1 is a red-lit chat with "Them is typing" and the green draft in the box; "Still typing. For hours." reads instantly)
+- Speed accuracy: 8 (one mapping, 1 s = 6 h, with stops stated; the 12 h and 6 h latencies and the fragment days come from the analog; the alert steps are unverified and used for motion only; the lognormal lanes are derived, not measured)
+- Snap impact: 6 (the counterfactual is honestly small; the staging (freeze, a bar that takes 2 s vs one that is instantly done, then 247 days) carries it, but the sheets are flat)
+- Emotion: 7 (the symmetry of "Them"/"We both step back." on both screens lands; the dread comes from the red strip and the stops)
+- Originality: 7 (the anachronism of a 1962 chat with 12-hour read receipts is fresh, though it shares the two-phone and typography grammar with the-two-feeds)
+- Craft: 6 (the UI is legible, but the wide shot's phones are small, the snap sheets are plain, and the silhouettes are simple)
+- Honesty: 9 (no leaders, countries or flags; the threat is never named; only "12 hours" and "247 days" are on screen; the AI helps only with translation and is labeled illustrative; "People decide.")
+- Overall: 7.3
+- Virality: 8% (the chat-UI anachronism is instantly recognizable and share-worthy, but the history-plus-typography format and its subtle payoff limit reach from a small account)
