@@ -1,10 +1,10 @@
-# Concept bank (71)
+# Concept bank (72)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":7,"quebec-1989":7,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
+Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":7,"quebec-1989":7,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -431,4 +431,10 @@ Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.
 - **Snap:** 13 vs 2.5 years routed coordination (illustrative; chemistry still takes years).
 - **Tags:** medium neon arcade; family game; scale history; pace accelerating; camera handheld chase; emotion anger; protagonist the red itself
+
+## 72. the-last-crate
+- **Structure:** ticking-clock · **Analog:** covid-2020 · **First-guess virality:** 9%
+- **Logline (red / green):** Handheld chase behind one courier carrying a green crate to the last village on the list. A ticking clock counts the days since the answer was designed in two. The crate is real, the road is real; the paperwork at every border is the clock.
+- **Snap:** This village: real arrival late on the tail (p90 ~day 490) vs routed ~day 422 (illustrative); supply unchanged.
+- **Tags:** medium woodblock; family traffic; scale between nations; pace sprint; camera handheld chase; emotion grief; protagonist one person
 

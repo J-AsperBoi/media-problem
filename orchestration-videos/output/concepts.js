@@ -214,6 +214,9 @@ const C = [
 ['the-arms-race','split-screen-race','penicillin-resistance-1946','neon arcade','game','history','accelerating','handheld chase','anger','the red itself',9,
  'Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.',
  '13 vs 2.5 years routed coordination (illustrative; chemistry still takes years).'],
+['the-last-crate','ticking-clock','covid-2020','woodblock','traffic','between nations','sprint','handheld chase','grief','one person',9,
+ 'Handheld chase behind one courier carrying a green crate to the last village on the list. A ticking clock counts the days since the answer was designed in two. The crate is real, the road is real; the paperwork at every border is the clock.',
+ 'This village: real arrival late on the tail (p90 ~day 490) vs routed ~day 422 (illustrative); supply unchanged.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

@@ -1063,5 +1063,20 @@
   "vir": 9,
   "log": "Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.",
   "snap": "13 vs 2.5 years routed coordination (illustrative; chemistry still takes years)."
+ },
+ {
+  "slug": "the-last-crate",
+  "structure": "ticking-clock",
+  "analog": "covid-2020",
+  "medium": "woodblock",
+  "family": "traffic",
+  "scale": "between nations",
+  "pace": "sprint",
+  "camera": "handheld chase",
+  "emotion": "grief",
+  "protagonist": "one person",
+  "vir": 9,
+  "log": "Handheld chase behind one courier carrying a green crate to the last village on the list. A ticking clock counts the days since the answer was designed in two. The crate is real, the road is real; the paperwork at every border is the clock.",
+  "snap": "This village: real arrival late on the tail (p90 ~day 490) vs routed ~day 422 (illustrative); supply unchanged."
  }
 ]
