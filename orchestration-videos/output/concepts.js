@@ -199,6 +199,9 @@ const C = [
 ['nine-people-forty-messages','pov','heatwave-2003','text-only typography','family','family','sprint','over-the-shoulder','loneliness','a crowd',11,
  'POV scrolling a family group chat through a heat wave: nine people, forty messages, no plan. Each relative holds one green piece (a spare key, a doctor friend, a cooler flat, the forecast) and none of them lands on grandma\'s door. Red is the heat in the chat header, rising.',
  'Day 12 (after the peak) vs day 3 routed (illustrative); people still decide who goes.'],
+['the-numb-hand','reverse-chronology','blackout-2003','bean cartoon','body/biology','body','accelerating','continuous zoom through scales','dread','one person',10,
+ 'A hand on a hot stove while the head scrolls: the grid as one body whose pain nerve (the alarm) went numb. Run backward from the burn to the moment the nerve failed, 1.9 hours earlier, while four other nerves each carried a piece of the warning to the wrong place.',
+ '1.5 h to notice vs 0.25 h routed (illustrative); outcome uncertain.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
