@@ -41,15 +41,15 @@ Tier: animatic
 | 10.4-12.2 | SC3 WIDE HOLD | p 3 | country, days 9-10.8, red climbing to the peak; neighbor connects (day 10.3). "No one holds the whole map." Legend. |
 | 12.2-13.2 | SC4 DIP IN | p 3 to 2 | into his city at the peak. |
 | 13.2-15.2 | SC4 CITY HOLD | p 2 | hospital plan connects day 12.0; windows go dark. "The plan came after the peak." |
-| 15.2-17.6 | SC5 FALL IN | p 2 to -0.35 | back through block to his face, closer than SC2. |
-| 17.6-20.4 | SC5 CLOSE+ | p -0.35 to -0.45 | heat receding. "Across the street, a window went dark." |
+| 15.2-17.6 | SC5 FALL IN | p 2 to -0.2 | back through block to his face, closer than SC2. |
+| 17.6-20.4 | SC5 CLOSE+ | p -0.2 to -0.26 | heat receding. "Across the street, a window went dark." |
 | 20.4-23.0 | SLOW | hold, darken | "We slowed it down so you could see it." |
 | 23.0-23.6 | freeze, black, silence | | |
 | 23.6-31.5 | SC6 SNAP | two stacked 920 px panels | 19 days in 4.5 s, same isotherms; People: hospital plan day 12 (after the peak) / Frontier AI: day 3, illustrative (before the peak). |
 | 31.5-35.8 | SC7 CLOSE++ | p 1.3 to -1.0 | fall from his block into his eye; the green pins close into a ring. "This is the bottleneck." |
 | 35.8-40.0 | END | | end card, 4.2 s. |
 
-Zoom cycles: IN 0-4.6 -> OUT 4.6-12.2 (country) -> half IN 12.2-13.2 (city) -> IN+ 15.2-17.6 (p -0.35, closer than start); cycle 2: snap wide 23.6-31.5 -> IN++ 31.5-35.2 (p -1.0, his eye).
+Zoom cycles: IN 0-4.6 -> OUT 4.6-12.2 (country) -> half IN 12.2-13.2 (city) -> IN+ 15.2-17.6 (p -0.2, 1.6x closer than start); cycle 2: snap wide 23.6-31.5 -> IN++ 31.5-35.2 (p -1.0, his eye).
 
 ## 3D translation note
 Build it as a real relief model: a physical-looking topographic map (laser-cut layered gray card) at country, city and block scale, nested, with his room as a practical set at the center. The red isotherms are emissive red lines lying on the terrain that rise off it as a translucent heat dome (height = h(d)), so at the peak the dome swallows the city. Green pins are glowing map pins with long thin light threads. SC1-SC2: 85 mm, eye level, 50 cm from his face, the fan's blades soft with motion blur, red lines crawling across the wall and his glasses. The zoom-out is a single vertical crane on an exponential curve (constant perceived speed, ~2 s per power of ten), lens widening from 50 to 24 mm, with the roof dissolving into map. Holds are locked-off top-down. The fall back in is faster and ends at 100 mm on his face; SC7 ends macro on his eye with the green ring reflected in the cornea. Richer in 3D: parallax between terrain layers, the heat dome's volume, real light from lit windows going out.
@@ -62,3 +62,16 @@ Build it as a real relief model: a physical-looking topographic map (laser-cut l
 {"structure":"powers-of-ten-zoom","medium":"topographic map","family":"weather/fluids","scale":"multi-scale zoom","pace":"slow build","camera":"continuous zoom through scales","emotion":"dread","protagonist":"one person","analog":"heatwave-2003"}
 
 Diversity check: OK (nearest day-three-hundred-five 0.56, two-days 0.67, the-balcony 0.67).
+
+## Scores (after render; 40.0 s confirmed by ffprobe)
+- Hook: 7 (frame 1: a worried old man's face and fan crawling with red isotherms, green pins glowing in the window, "He can't see the map.")
+- Speed accuracy: 8 (one heat field, T = h(d) G, contoured by marching squares at every scale, so the red agrees across the zoom; logistic fit through sourced endpoints plus peak; lognormal arrivals; 1 s = 1 day throughout the race)
+- Snap impact: 6 (black freeze, hit, stacked 920 px panels with the same isotherms and curve; the gap is 9 days, staged rather than inflated)
+- Emotion: 7 (the face is readable and the zoom out gives real vertigo; the dark window next to him lands quietly)
+- Originality: 8 (a topographic map where the heat is the relief; Powers-of-Ten through nested map scales)
+- Craft: 7 (clean crossfades with full-frame layers; the block level is busy and the city grid reads a little mechanical)
+- Honesty: 9 (two numbers, 12 verified and 3 illustrative; unverified fragments off screen; heat curve stated as a fit; window share symbolic)
+- Overall: 7.4
+- Virality: 8% (a face melting into red contour lines, then a Powers-of-Ten pull-out, is a real scroll-stopper, but the middle is map abstraction and the payoff is a chart, which caps sharing).
+
+Fix pass: country layer got the wrong scale argument (no lines drawn); pins moved below the title band; extended isotherm levels past 1.0 so the peak shows lines at close range; moved the darkening window and eased the CLOSE+ zoom so the "window went dark" card shows what it says.
