@@ -28,9 +28,9 @@ Also at 8%: `the-committee-in-my-head`, `the-crash-call`, `the-ballroom`, `the-t
 2. **`the-ballroom`** (7.1). The irony of perfect synchronisation, in a loop that directs attention to one idea at a time.
 3. **`the-fact-check`** (7.4). Micro to macro and back again, on real data (Vosoughi 2018 and the Hoaxy fact-check study) with a legend.
 4. **`ghost-rewind-covid`** (7.3). A stained-glass window of 78 panes, each lit red and then green on real per-country arrival data. It is a nested structure organising chaos, and it stays grave without becoming horrific.
-5. **`the-rice-committee`** and **`the-department-of-later`** (6.7 and 6.9). People on the same level who can't hear each other, satirising the system rather than the people.
+5. **`the-committee-in-my-head`** (7.3). CLAUDE.md §5's "committee of tiny selves voting at once", shown literally. Three pieces of the truth already sit in one head, and the meeting runs on the wrong agenda. It is neuroscience as metaphor combined with incentive design. `the-rice-committee` and `the-department-of-later` are the system-scale versions of the same idea.
 
-Honourable mentions: `the-two-feeds`, where the people who can't hear each other share one couch, and `the-stacks` (7.3), a lonely librarian among separate libraries.
+Honourable mentions: `keep-the-lights` (7.6, the best overall; strings between puppeteers visibly tangle), `the-switchboard` (AI as a quiet connective board, with people deciding), `the-two-feeds`, where the people who can't hear each other share one couch, and `the-stacks` (7.3), a lonely librarian among separate libraries.
 
 ## What worked
 - **By structure:** Powers-of-Ten (7.4), ghost-rewind (7.15) and ticking-clock (7.03) scored highest. Man-in-a-hole, recipe-parody and wait-for-it (6.7) scored lowest.
