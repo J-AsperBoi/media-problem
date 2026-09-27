@@ -346,7 +346,7 @@ Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Structure:** seamless-loop · **Analog:** false-news-2018 · **First-guess virality:** 10%
 - **Logline (red / green):** A loop inside one mind: the claim, the scroll, the fact-check that arrives just as the loop restarts.
 - **Snap:** 13 vs 1 h (illustrative).
-- **Tags:** medium 8-bit; family game; scale mind; pace sprint; camera locked-off close-up with a single pull-out; emotion vertigo; protagonist one person
+- **Tags:** medium ink wash; family game; scale mind; pace sprint; camera locked-off close-up with a single pull-out; emotion vertigo; protagonist one person
 
 ## 58. the-storm-doc
 - **Structure:** nature-documentary · **Analog:** quebec-1989 · **First-guess virality:** 9%

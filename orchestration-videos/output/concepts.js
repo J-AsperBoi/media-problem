@@ -169,7 +169,7 @@ const C = [
 ['patch-tuesday','before-after','wannacry-2017','isometric','machine','organization','stop-start','locked-off close-up with a single pull-out','anger','an institution',9,
  'Before: the patch published. After: 59 days later, the ward goes red.',
  '1 week vs 1 h (illustrative).'],
-['the-truth-loop','seamless-loop','false-news-2018','8-bit','game','mind','sprint','locked-off close-up with a single pull-out','vertigo','one person',10,
+['the-truth-loop','seamless-loop','false-news-2018','ink wash','game','mind','sprint','locked-off close-up with a single pull-out','vertigo','one person',10,
  'A loop inside one mind: the claim, the scroll, the fact-check that arrives just as the loop restarts.',
  '13 vs 1 h (illustrative).'],
 ['the-storm-doc','nature-documentary','quebec-1989','particle/data','cosmos','multi-scale zoom','slow build','continuous zoom through scales','awe','the red itself',9,
