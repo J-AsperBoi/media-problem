@@ -64,3 +64,18 @@ Zoom cycles: Cycle 1: IN (3.2) 0-6.5 -> OUT (crane to 0.86) 6.5-14 -> IN+ (4.3-4
 ## Tags
 {"slug":"the-contagion-atlas","structure":"man-in-a-hole","medium":"stained glass","family":"market","scale":"between nations","pace":"accelerating","emotion":"awe","protagonist":"an institution","camera":"crane up and drop down","analog":"gfc-2008"}
 Diversity check: OK (nearest the-crash-call 0.67, seventeen-days 0.67).
+
+## Build log (resumed)
+- Preview 1: SC9 extreme close landed after the hero's illustrative arrival (day 770), so the shard and the second keeper's hand were already gone. Fixed: the day clock in SC9 runs 735 -> 757 (walk ends), then 757 -> 769 so the shard rises out of the shared hands under "This is the bottleneck." Moved the snap panel labels left (x 735) to stay inside the safe column.
+- Full render: 38.0 s (ffprobe), matches DUR.
+
+## Scores
+- Hook: 6 (red lancet, a worried face and a green shard in frame 1, plus a clear "LATER" flash-forward; the full rose window isn't in the thumbnail)
+- Speed accuracy: 8 (red is the monthly data pane by pane, including the rallies; green uses stratified lognormal quantiles; one linear mapping, 1 s = 40 days)
+- Snap impact: 6 (freeze, silence, hit; two same-red panels side by side; the counterfactual isn't inflated, so the difference between the pips is modest)
+- Emotion: 6 (the hero's worried face as red light falls on it, then green light rises on it too late)
+- Originality: 8 (a rose window as a contagion atlas, with lead lines as debts; no other film in the portfolio uses stained glass)
+- Craft: 6 (the wide shots read well; the cards over the chapels get busy and the snap panels leave the lower third empty)
+- Honesty: 9 (no numbers on screen, day 426 never shown, red identical in both lanes, labeled illustrative)
+- Overall: 7.0
+- Virality: 7% (a striking stained-glass look and a clean race, but the financial subject and abstract panes lower shareability for a small account)
