@@ -262,7 +262,7 @@ Analogs: {"covid-2020":5,"blackout-2003":6,"wannacry-2017":6,"false-news-2018":8
 - **Structure:** recipe-parody · **Analog:** wannacry-2017 · **First-guess virality:** 9%
 - **Logline (red / green):** Chalkboard recipe: "Take one unpatched machine. Leave out for 59 days."
 - **Snap:** 1 week vs 1 h (illustrative).
-- **Tags:** medium chalkboard; family cooking; scale organization; pace sprint; camera over-the-shoulder; emotion anger; protagonist an institution
+- **Tags:** medium 8-bit; family cooking; scale organization; pace sprint; camera over-the-shoulder; emotion anger; protagonist an institution
 
 ## 44. the-two-feeds
 - **Structure:** two-phones · **Analog:** false-news-2018 · **First-guess virality:** 12%

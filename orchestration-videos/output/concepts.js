@@ -127,7 +127,7 @@ const C = [
 ['recipe-for-a-crash','recipe-parody','gfc-2008','paper cutout','cooking','economy','stop-start','over-the-shoulder','anger','an institution',10,
  'A recipe parody for a financial crisis: ingredients already in the pantry, the chef can\'t find the drawer.',
  'Day 426 vs 220 (illustrative).'],
-['recipe-for-a-worm','recipe-parody','wannacry-2017','chalkboard','cooking','organization','sprint','over-the-shoulder','anger','an institution',9,
+['recipe-for-a-worm','recipe-parody','wannacry-2017','8-bit','cooking','organization','sprint','over-the-shoulder','anger','an institution',9,
  'Chalkboard recipe: "Take one unpatched machine. Leave out for 59 days."',
  '1 week vs 1 h (illustrative).'],
 ['the-two-feeds','two-phones','false-news-2018','text-only typography','language','family','sprint','over-the-shoulder','tenderness','one person',12,
