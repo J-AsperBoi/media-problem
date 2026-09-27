@@ -76,3 +76,24 @@ A real carved-print world: every surface is a flat relief block with visible woo
 
 ## Diversity check
 `node tools/diversity.js` -> OK: distinct enough (nearest two-days 0.67, the-cure-before-after 0.67, the-department-of-later 0.78). No changes needed.
+
+## Preview critique and fixes
+- Preview 1: the dolly-in (14.6-16.4) interpolated center and zoom linearly, so mid-move frames drifted across the facade instead of pushing into the room. Fixed with a log-zoom about the move's fixed point (camAt), used for the pull-out and push-in; now both read as one continuous move through the cutaway wall.
+- Snap: the "pieces meet" label collided with "illustrative" and "fit" in the lower lane and the green curve got lost on the red; moved labels onto paper tags, gave the green curve an ink outline, moved "fit".
+- Closest shot: head was cut by the card; reframed lower and set her mood to lonely for the ending.
+- Wide was slightly too tight (right-hand signs cropped); eased to zoom 1.04.
+- Known weak spots: the town wide is small on a phone (signs ~40 px); a ~0.1 s empty paper beat between the slow-down card and the reveal; the snap reuses the two-lane grammar of its sibling films; the dolly-in is fast (1.8 s).
+
+## Scores
+- Hook: 7 (frame 1: a worried librarian in profile, a glowing green volume, a wall of red slips, "The answer is already here.", stamped LATER)
+- Speed accuracy: 8 (drawer count = logistic share with the derived 0.56-yr doubling, identical drawers on the facade at the wide, lognormal loan links, one stated log mapping, post-data red hatched "fit")
+- Snap impact: 6 (freeze, hit, two carved lanes; small counterfactual not inflated, but a familiar grammar)
+- Emotion: 7 (loneliness lands: one person holding the warning in a room full of red while loan slips die between buildings)
+- Originality: 7 (woodblock print on paper, card catalog as the population, a town of libraries)
+- Craft: 7 (clean carved look, continuous camera through a cutaway; wide is small for phones)
+- Honesty: 9 (threat never named, 2.5 years shown only as position, "illustrative" and "coordination only" on screen, reveal says "timed from real records" rather than "every timing is real")
+- Overall: 7.3
+- Virality: 7% (a distinctive print look and a quiet, lonely character help it stand out, but the pacing is slow, the payoff is a chart, and it lacks a share-trigger beyond the "true story" reveal.)
+
+## Render
+output/the-stacks/the-stacks.mp4, ffprobe duration 40.0 s (DUR 40.0).
