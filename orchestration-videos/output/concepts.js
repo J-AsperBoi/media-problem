@@ -217,6 +217,9 @@ const C = [
 ['the-last-crate','ticking-clock','covid-2020','woodblock','traffic','between nations','sprint','handheld chase','grief','one person',9,
  'Handheld chase behind one courier carrying a green crate to the last village on the list. A ticking clock counts the days since the answer was designed in two. The crate is real, the road is real; the paperwork at every border is the clock.',
  'This village: real arrival late on the tail (p90 ~day 490) vs routed ~day 422 (illustrative); supply unchanged.'],
+['the-warning-memo','mockumentary','quebec-1989','constructivist poster','theater','organization','stop-start','handheld chase','anger','an institution',9,
+ 'Mockumentary in poster style: a warning memo (green) is passed desk to desk inside a vast utility at night, stamped, filed, routed to the wrong floor, while the red travels the grid in 90 seconds. Then the long rebuild: the lasting fix took 7 years.',
+ 'Warning routed before the red (illustrative) vs 9 h to 83% and ~7 years to harden; steel still takes years.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
