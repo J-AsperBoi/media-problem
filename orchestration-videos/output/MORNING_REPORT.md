@@ -53,6 +53,9 @@ Honourable mentions: `the-two-feeds`, where the people who can't hear each other
   - `the-two-feeds` shows an "hour N" clock as part of the time mapping. Strictly, that is a third number on screen.
 - **Blocked sources:** page fetches were blocked for most domains, so several sources were read through search snippets. Each file marks where that happened.
 
+## Needs your decision
+- **`the-green-screen` is unrendered.** The agent's shell commands were blocked by auto mode's safety check, so it wrote `scenes/the-green-screen.js` and its notes without ever running them. I didn't run the render on its behalf, because the check blocked it and that needs your go-ahead. If you're fine with it, run `node tools/render.js scenes/the-green-screen.js --preview` first; the scene has never been executed and may have runtime errors.
+
 ## Before posting anything
 - **The QR codes point to a placeholder.** `config.json` ctaUrl is still `https://YOUR-LANDING-PAGE.example`. Set the real URL, then re-render every scene except the `example_*` ones: `for s in scenes/*.js; do node tools/render.js $s; done`. Each film takes about 10–30 s on an idle machine.
 - **Text safe zone:** the research found that TikTok's right-hand UI column starts around x≈915–960. Every film since the first batch keeps its text inside x ≤ 900.
