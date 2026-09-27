@@ -49,7 +49,7 @@ const C = [
 ['the-heat-map','powers-of-ten-zoom','heatwave-2003','topographic map','weather/fluids','multi-scale zoom','slow build','continuous zoom through scales','dread','one person',9,
  'From one old man\'s fan on a sill, out through a block, a city, a nation of heat contours. Red isotherms rise 11°C above normal for 9 days. Green: forecasters, ER doctors, neighbors with keys, each a pin on the map.',
  'Hospital plan day 12 vs day 3 routed (illustrative).'],
-['the-worm','pov','wannacry-2017','neon arcade','city','organization','sprint','POV walk','dread','one person',10,
+['the-worm','pov','wannacry-2017','blueprint','city','organization','sprint','POV walk','dread','one person',10,
  'POV of a nurse: every screen on the ward turns red, one by one. Across town the green pieces: a patch, a researcher, an alert in an inbox.',
  'Kill switch 7.3 h; institutional ~1 week; routed ~1 h (illustrative).'],
 ['the-balcony','pov','heatwave-2003','shadow puppet','family','family','slow build','POV walk','loneliness','one person',9,

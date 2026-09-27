@@ -106,7 +106,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** pov · **Analog:** wannacry-2017 · **First-guess virality:** 10%
 - **Logline (red / green):** POV of a nurse: every screen on the ward turns red, one by one. Across town the green pieces: a patch, a researcher, an alert in an inbox.
 - **Snap:** Kill switch 7.3 h; institutional ~1 week; routed ~1 h (illustrative).
-- **Tags:** medium neon arcade; family city; scale organization; pace sprint; camera POV walk; emotion dread; protagonist one person
+- **Tags:** medium blueprint; family city; scale organization; pace sprint; camera POV walk; emotion dread; protagonist one person
 
 ## 18. the-balcony
 - **Structure:** pov · **Analog:** heatwave-2003 · **First-guess virality:** 9%
