@@ -8,15 +8,15 @@ Tier: animatic
 - **Analog:** cuban-missile-1962. Never named. No leaders, countries, flags, languages or party cues: two identical gray houses on two shores.
 - **Protagonist:** an institution (the two houses and their message machinery; the clerk is its hand).
 - **Medium:** ink wash on muted rice paper: black-ink washes, dry-brush water, misty mountains; only the red lamps and the green thread/letters are saturated. The ghost is a pale, soft, desaturated wash figure with a kind face (not scary).
-- **DUR:** 39 s, 1080x1920, 30 fps. Scene: scenes/ghost-hotline.js
+- **DUR:** 40.5 s, 1080x1920, 30 fps. Scene: scenes/ghost-hotline.js
 
 ## Time mapping (one mapping per section, stated)
 - **Race (t 2.8 to 17.4 s): 1 film second = 1 day** (days after the analog t0, Oct 16 1962). Pace is stop-start: the clock *freezes* (everything stops, no days pass) three times: at day 8 (0.8 s), day 10 (0.8 s), day 11 (1.0 s). Holds never stretch days.
   - day(t) = t - 2.8 for t < 10.8; 8 for 10.8-11.6; 8 + (t - 11.6) to day 10 at 13.6; hold to 14.4; to day 11 at 15.4; hold to 16.4; day 12 at 17.4.
   - On screen the clock is a row of ink tally strokes (one per day, no numerals).
 - **Cold open (0-1.6 s):** frozen flash-forward to day 11 (the closest point in the analog's sequence), then the ghost rewinds the ink to day 0 (1.6-2.8 s). Same timeline, visibly rewound (washes un-bleed, lamps go dark).
-- **Snap A, whole record to scale (t 20.6-23.2): 1 s = 100 days**, days 0 -> 260, uniform. The 12-day crisis is a sliver at the left; the direct line lands at day 247.
-- **Snap B, side by side (t 24.8-27.8): 1 s = 4 days**, days 0 -> 12, same rate in both panels.
+- **Snap A, whole record to scale (t 20.6-23.2): 1 s = 100 days**, days 0 -> 260, uniform (day 247 lands at t 23.07). The 12-day crisis is a sliver at the left; the direct line lands at day 247.
+- **Snap B, side by side (t 26.3-29.3): 1 s = 4 days**, days 0 -> 12, same rate in both panels.
 
 ## Speed math
 **Threat (red = alert level, ordinal, from analog threat.points).** extent: 0 at day 0, 0.5 at day 6, 0.75 at day 8 and still 0.75 at day 11. Each house has a column of 4 windows; lit red windows = extent / 0.25 as a step function (2 lit from day 6, 3 from day 8), identical in both houses (mutual escalation, no side is the villain). Day 11 (closest point) is a flicker of the lamps, no level change, as in the data. These dates are standard record but `verified: false` in the analog, so they **drive motion only; no alert numbers or dates on screen.** De-escalation date is unconfirmed, so the lamps never step down during the race; in the whole-record strip the red simply fades after day 12, without a date.
@@ -49,13 +49,13 @@ Boats move at constant speed across the water over their latency; at 1 s = 1 day
 | 9.0-13.6 | SC4 WIDE | hold, slow drift | stop at day 8 (red to 3); letters only by boat; "Every word crossed by boat." |
 | 13.6-17.4 | SC5 DROP DOWN | world zoom 0.62 -> 3.2 onto her window, full-frame fade into the window comp at scale 1.35 (closer than SC1) | f2 boat arrives, stop day 11 (lamp flicker, silence), f3, f4 lantern; knot at day 12 |
 | 17.4-20.2 | SC6 FREEZE | still | "We slowed it down so you could see it." |
-| 20.2-24.6 | SC7 SNAP A, whole record | flat scroll | hit; days 0-260 to scale; red sliver; green line at day 247; ghost walks back to day 0; "The direct line took 247 days." / "The ghost was hindsight." |
-| 24.6-28.8 | SC8 SNAP B | two stacked panels 960 px | as it happened vs illustrative (frontier AI carries and translates); knot on 12th vs 11th tally; "a day sooner" |
-| 28.8-31.6 | SC9 EXTREME CLOSE | window comp at 1.9, on hands | ghost hand guides her hand; she ties the green thread; it pulls taut across the water; "Build the line before you need it." |
-| 31.6-34.0 | SC9 hold | slow push | "This is the bottleneck." |
-| 34.0-39.0 | END | - | L.endCard 5 s ("The bottleneck is us.") |
+| 20.2-26.0 | SC7 SNAP A, whole record | flat scroll | hit; 0.4 s black; days 0-260 to scale; red sliver; green line at day 247 (t 23.07); ghost walks back to day 0 (24.2-25.6); "The direct line took 247 days." / "The ghost was hindsight." |
+| 26.0-30.2 | SC8 SNAP B | two stacked panels 960 px | as it happened vs "frontier AI carries + translates" / "people still decide"; knot on the 11th tally (t 29.05) vs 12th (t 29.3); "illustrative" 56 px, "a day sooner" |
+| 30.2-33.0 | SC9 EXTREME CLOSE | window comp 1.55 -> 1.9, on hands | back at day 0 (lanterns dark); ghost hand guides hers; she ties the thread, it turns green and taut across the water; "Build the line before you need it." |
+| 33.0-35.4 | SC9 hold | slow push to 2.0 | "This is the bottleneck." |
+| 35.4-40.5 | END | - | L.endCard 5.1 s ("The bottleneck is us.") |
 
-Zoom cycles: cycle 1 IN 0-5.2 -> OUT (crane up) 5.2-9.0, hold to 13.6 -> IN+ (drop down) 13.6-17.4 (1.35x vs 1.0x). Cycle 2: OUT (flat snap) 20.2-28.8 -> IN++ 28.8-31.6 (1.9x).
+Zoom cycles: cycle 1 IN 0-5.2 -> OUT (crane up) 5.2-9.0, hold to 13.6 -> IN+ (drop down) 13.6-17.4 (1.35x vs 1.0x). Cycle 2: OUT (flat snap) 20.2-30.2 -> IN++ 30.2-33.0 (1.9x, then 2.0x).
 
 ## 3D translation note
 A foggy night lake as a physical ink painting: two small gray timber houses on opposite shores, far shore under layered misty ridges. SC1 is an 50 mm eye-level shot from inside her room, window frame soft in the foreground, the far lamps blooming red on wet air with long reflections. The crane up is a slow 4 s vertical rise on a 24 mm through the roof into the mist until both shores fit, ending locked-off (a hanging-scroll composition); ink "bleeds" as volumetric fog. Paper boats are tiny practical models with wakes. The drop down is faster (3.8 s) and ends at 85 mm, closer than the opening. The ghost is a soft emissive volume with no hard edges and a kind face; its thread is a thin, barely visible filament catching light, and the real green thread is a taut emissive line. Richer in 3D: wet-ink diffusion on water, parallax between mist layers, the thread's catenary sag and tension when she ties it.
@@ -73,3 +73,16 @@ A foggy night lake as a physical ink painting: two small gray timber houses on o
 {"slug":"ghost-hotline","structure":"ghost-rewind","medium":"ink wash","family":"myth/ritual","scale":"between nations","pace":"stop-start","emotion":"awe","protagonist":"an institution","camera":"crane up and drop down","analog":"cuban-missile-1962"}
 
 Diversity check: with the assigned scale "history" it was TOO SIMILAR to ghost-rewind-covid (0.44). Changed scale to "between nations" (more literal: two houses across water). Result: OK (nearest ghost-rewind-covid, the-hold-music, the-contagion-atlas at 0.56).
+
+## Build notes
+- Rendered 40.5 s (ffprobe 40.500), matches DUR. Preview once, then fixed: the spool covered the clerk's eye in frame 1 (moved clerk and spool down); in SC9 her arms stretched across the frame (she now steps to the sill).
+- Debug: f2 arrives t 14.9, f3 t 16.65, deal t 17.4, direct line in snap A t 23.07.
+- Frame 1 (thumbnail): clerk's worried face (red rim light), green spool in her hands, three red lanterns with long red reflections across the water, the pale ghost beside her, "She held the line."
+- Crane up and drop down are full-frame crossfades between the window comp and the landscape world, during camera moves (no rectangular patches).
+- Only one numeral on screen ("247 days"). The day tallies are countable but carry no numerals; alert dates drive motion only.
+- Known weaknesses: the world wide is small for a phone (houses ~100-180 px, lanterns tiny, but the red reflections carry); the snap is quiet by design (a one-day, illustrative gain); IN++ returns to day 0, a mythic image that is a lesson, not a claim; the ghost's arm drawing is simple.
+
+## Scores
+Hook 7, Speed accuracy 7, Snap impact 5, Emotion 7, Originality 8, Craft 7, Honesty 9
+Overall: 7.1
+Virality: 6% - A handsome ink-wash myth with a clear red-lamp/green-thread thumbnail and an open-loop ghost, but a quiet, history-heavy piece with a deliberately modest snap from a small account will most likely stay well under 100k.
