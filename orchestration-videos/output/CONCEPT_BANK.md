@@ -1,10 +1,10 @@
-# Concept bank (74)
+# Concept bank (76)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":4,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":4,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":5,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":4,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":7,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
+Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":7,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":8,"heatwave-2003":9,"gfc-2008":9}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -449,4 +449,16 @@ Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** Powers of Ten from one empty bowl out to the world grain ledger: stock and need sit on the same blueprint, a sheet apart. Frontier AI appears only as a faint matching line drawn between two cells of the ledger; people sign the deal.
 - **Snap:** Deal week 31 vs ~28 routed (illustrative); prices fell >25% within ~4 weeks once connected.
 - **Tags:** medium blueprint; family market; scale economy; pace accelerating; camera continuous zoom through scales; emotion resolve; protagonist AI
+
+## 75. the-long-season
+- **Structure:** sports-play-by-play · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 9%
+- **Logline (red / green):** Two commentators call a thirteen-year season from a stained-glass press box: the red side scores every few months (odds doubling ~every 7 months, derived) while the green side has all its players on separate benches in separate stadiums. The equalizer comes in year 13, and is answered in year 15.
+- **Snap:** 13 years vs 2.5 years routed coordination (illustrative, position only; chemistry still takes years).
+- **Tags:** medium stained glass; family sport; scale history; pace slow build; camera crane up and drop down; emotion resolve; protagonist a crowd
+
+## 76. half-a-lifeline
+- **Structure:** two-phones · **Analog:** gfc-2008 · **First-guess virality:** 9%
+- **Logline (red / green):** Two phones in two dark offices on two continents, each held by an unnamed shadow figure holding half of the same lifeline. The red crosses the ocean on the real monthly market points; the call that joins the halves waits in a queue for months.
+- **Snap:** Coordinated response median 426 vs 220 days routed (illustrative, position only); red identical in both.
+- **Tags:** medium shadow puppet; family market; scale between nations; pace stop-start; camera over-the-shoulder; emotion loneliness; protagonist an institution
 

@@ -223,6 +223,12 @@ const C = [
 ['the-matchmaker','powers-of-ten-zoom','rice-2008','blueprint','market','economy','accelerating','continuous zoom through scales','resolve','AI',9,
  'Powers of Ten from one empty bowl out to the world grain ledger: stock and need sit on the same blueprint, a sheet apart. Frontier AI appears only as a faint matching line drawn between two cells of the ledger; people sign the deal.',
  'Deal week 31 vs ~28 routed (illustrative); prices fell >25% within ~4 weeks once connected.'],
+['the-long-season','sports-play-by-play','penicillin-resistance-1946','stained glass','sport','history','slow build','crane up and drop down','resolve','a crowd',9,
+ 'Two commentators call a thirteen-year season from a stained-glass press box: the red side scores every few months (odds doubling ~every 7 months, derived) while the green side has all its players on separate benches in separate stadiums. The equalizer comes in year 13, and is answered in year 15.',
+ '13 years vs 2.5 years routed coordination (illustrative, position only; chemistry still takes years).'],
+['half-a-lifeline','two-phones','gfc-2008','shadow puppet','market','between nations','stop-start','over-the-shoulder','loneliness','an institution',9,
+ 'Two phones in two dark offices on two continents, each held by an unnamed shadow figure holding half of the same lifeline. The red crosses the ocean on the real monthly market points; the call that joins the halves waits in a queue for months.',
+ 'Coordinated response median 426 vs 220 days routed (illustrative, position only); red identical in both.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
