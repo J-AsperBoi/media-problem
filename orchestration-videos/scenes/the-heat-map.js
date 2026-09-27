@@ -42,7 +42,7 @@ function makeScene(SERIF, HAND) {
     g += 0.14 * (n2(X / 220 + 3.1, Y / 220 + 1.7, 1) * 2 - 1);
     if (m <= 2) g += 0.07 * (n2(X / 22, Y / 22, 2) * 2 - 1) + 0.08 * Math.exp(-((X - HX) ** 2 + (Y - HY) ** 2) / (2 * 18 * 18));
     if (m <= 1) g += 0.05 * (n2(X / 2.2, Y / 2.2, 3) * 2 - 1);
-    if (m <= 0) g += 0.07 * (n2(X / 0.22, Y / 0.22, 4) * 2 - 1);
+    if (m <= 0) g += 0.1 * (n2(X / 0.22, Y / 0.22, 4) * 2 - 1) + 0.05 * (n2(X / 0.08, Y / 0.08, 6) * 2 - 1);
     return g;
   }
   const GN = Graw(HX, HY, 0), G = (X, Y, m) => Graw(X, Y, m) / GN;
@@ -109,7 +109,7 @@ function makeScene(SERIF, HAND) {
   function isotherms(c, gr, h, s, a = 1, range) {
     if (h < 0.05) return;
     const [i0, i1, j0, j1] = range || visRange(gr, s), thin = [], thick = [];
-    march(gr, h, 0.05, 0.05, 18, (x1, y1, x2, y2, k) => ((k + 1) % 4 === 0 ? thick : thin).push(x1, y1, x2, y2), i0, i1, j0, j1);
+    march(gr, h, 0.05, 0.05, 24, (x1, y1, x2, y2, k) => ((k + 1) % 4 === 0 ? thick : thin).push(x1, y1, x2, y2), i0, i1, j0, j1);
     const stroke = (arr, w, col) => { if (!arr.length) return; c.beginPath(); for (let i = 0; i < arr.length; i += 4) { c.moveTo(arr[i], arr[i + 1]); c.lineTo(arr[i + 2], arr[i + 3]); } c.lineWidth = w / s; c.strokeStyle = col; c.stroke(); };
     c.save(); c.globalAlpha *= a; c.lineCap = 'round';
     stroke(thick, 16, rgbaR(0.22)); stroke(thin, 3.2, rgbaR(0.85)); stroke(thick, 6.5, RED); c.restore();
@@ -125,7 +125,7 @@ function makeScene(SERIF, HAND) {
   const landPath = c => { c.beginPath(); LAND.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.closePath(); };
   const inLand = (x, y) => { const an = Math.atan2(y - 930, x - 560), i = Math.round(((an + Math.PI * 2) % (Math.PI * 2)) / (Math.PI * 2) * 120) % 120; return Math.hypot(x - 560, y - 930) < Math.hypot(LAND[i][0] - 560, LAND[i][1] - 930) - 30; };
   const rngK = L.rng(33); const TOWNS = []; while (TOWNS.length < 14) { const x = 220 + rngK() * 680, y = 580 + rngK() * 720; if (inLand(x, y) && Math.hypot(x - HX, y - HY) > 60) TOWNS.push([x, y, 3 + rngK() * 5]); }
-  function country(c, d, s) {
+  function country(c, d, t, s) {
     const h = rho(d);
     c.fillStyle = '#16191c'; c.fillRect(-9000, -9000, 20000, 20000);
     // sea hatching
@@ -288,7 +288,7 @@ function makeScene(SERIF, HAND) {
   const rngP = L.rng(71); const SMALLPINS = [];
   while (SMALLPINS.length < 8) { const x = 230 + rngP() * 640, y = 560 + rngP() * 760; if (inLand(x, y) && Math.hypot(x - HX, y - HY) > 110 && Math.hypot(x - 430, y - 690) > 80) SMALLPINS.push({ g: [x, y], arrive: hq((SMALLPINS.length + 0.5) / 8), seed: 4 + SMALLPINS.length }); }
   const g2s = (p, [X, Y]) => { const k = Math.pow(10, 3 - p); return [540 + (X - HX) * k, 960 + (Y - HY) * k]; };
-  const BOX = [100, 270, 880, 1470];
+  const BOX = [100, 480, 880, 1470];
   function edgePin(P) { const H = [540, 960];
     if (P[0] >= BOX[0] && P[0] <= BOX[2] && P[1] >= BOX[1] && P[1] <= BOX[3]) return [P[0], P[1], false];
     const dx = P[0] - H[0], dy = P[1] - H[1]; let s = 1;
@@ -356,7 +356,7 @@ function makeScene(SERIF, HAND) {
     const mx = x0 + 20, my = y0 + 150, MW = 380, MH = 390, sc = 0.44, cx = mx + MW / 2, cy = my + MH / 2;
     c.save(); rr(c, mx, my, MW, MH, 10); c.clip();
     c.translate(cx, cy); c.scale(sc, sc); c.translate(-560, -930);
-    country(c, clk, sc);
+    country(c, clk, 0, sc);
     c.restore();
     const Hs = [cx + (HX - 560) * sc, cy + (HY - 930) * sc];
     PANEL_PINS.forEach(([dx, dy], i) => { const Q = [Hs[0] + dx, Hs[1] + dy]; reach(c, Q, Hs, clk, arr[i], i + 1, 4, 1); pinShape(c, Q[0], Q[1], 0.55, 1); });
