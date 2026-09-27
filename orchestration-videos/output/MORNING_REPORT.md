@@ -5,8 +5,8 @@ _Updated 2026-09-27 ~14:30 UTC._
 Open `output/index.html` to see every film, sorted by virality. All 62 concepts, built or not, are in `output/CONCEPT_BANK.md`. The research is in `research/`.
 
 ## Numbers
-- **Finished films: 49.** All pass `tools/verify.js`, which checks the duration against DUR, that red and green are the only saturated colours, and that a QR code appears in the last 6 s.
-- **Unrendered: 1.** `the-green-screen` needs your decision; see "Needs your decision" below. **In progress: 1** (`cracks-in-the-map`).
+- **Finished films: 50.** All pass `tools/verify.js`, which checks the duration against DUR, that red and green are the only saturated colours, and that a QR code appears in the last 6 s.
+- **Unrendered: 1.** `the-green-screen` needs your decision; see "Needs your decision" below. **In progress: 2** (`the-interpreter`, `the-arms-race`).
 - **Diversity: 0.883** (mean pairwise distance).
   - Every one of the 18 structures and 10 analogs has at least 2 films. So does every medium except embroidery, which has 1, because its second film is `the-green-screen`, still unrendered.
   - 18 metaphor families are used, including dance and library.

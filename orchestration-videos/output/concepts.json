@@ -1033,5 +1033,35 @@
   "vir": 9,
   "log": "A hushed nature documentary of creatures living in the cracks of an old map: the rules were drawn for an older terrain, and red grows in the gaps between them, then floods out along the fault lines. Green surveyors each hold one corrected sheet of the map, in separate valleys.",
   "snap": "Coordinated response median 426 vs 220 days routed (illustrative); red identical in both."
+ },
+ {
+  "slug": "the-interpreter",
+  "structure": "game-hud-run",
+  "analog": "cuban-missile-1962",
+  "medium": "embroidery",
+  "family": "language",
+  "scale": "between nations",
+  "pace": "one long take",
+  "camera": "locked-off close-up with a single pull-out",
+  "emotion": "tenderness",
+  "protagonist": "AI",
+  "vir": 9,
+  "log": "Frontier AI as a patient interpreter stitching messages across a hoop: every thread between two identical houses takes 6 to 12 hours to cross by hand. A HUD tracks the only thing AI is credited with here, carrying and translating; people still write the words and decide.",
+  "snap": "Deal day 12 vs 11 (illustrative, transport and translation only); the direct line took 247 days."
+ },
+ {
+  "slug": "the-arms-race",
+  "structure": "split-screen-race",
+  "analog": "penicillin-resistance-1946",
+  "medium": "neon arcade",
+  "family": "game",
+  "scale": "history",
+  "pace": "accelerating",
+  "camera": "handheld chase",
+  "emotion": "anger",
+  "protagonist": "the red itself",
+  "vir": 9,
+  "log": "Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.",
+  "snap": "13 vs 2.5 years routed coordination (illustrative; chemistry still takes years)."
  }
 ]

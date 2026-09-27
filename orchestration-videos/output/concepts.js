@@ -208,6 +208,12 @@ const C = [
 ['cracks-in-the-map','nature-documentary','gfc-2008','topographic map','ecology','economy','slow build','continuous zoom through scales','awe','the red itself',9,
  'A hushed nature documentary of creatures living in the cracks of an old map: the rules were drawn for an older terrain, and red grows in the gaps between them, then floods out along the fault lines. Green surveyors each hold one corrected sheet of the map, in separate valleys.',
  'Coordinated response median 426 vs 220 days routed (illustrative); red identical in both.'],
+['the-interpreter','game-hud-run','cuban-missile-1962','embroidery','language','between nations','one long take','locked-off close-up with a single pull-out','tenderness','AI',9,
+ 'Frontier AI as a patient interpreter stitching messages across a hoop: every thread between two identical houses takes 6 to 12 hours to cross by hand. A HUD tracks the only thing AI is credited with here, carrying and translating; people still write the words and decide.',
+ 'Deal day 12 vs 11 (illustrative, transport and translation only); the direct line took 247 days.'],
+['the-arms-race','split-screen-race','penicillin-resistance-1946','neon arcade','game','history','accelerating','handheld chase','anger','the red itself',9,
+ 'Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.',
+ '13 vs 2.5 years routed coordination (illustrative; chemistry still takes years).'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

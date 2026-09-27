@@ -1,10 +1,10 @@
-# Concept bank (69)
+# Concept bank (71)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":9,"gfc-2008":8}
+Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":7,"quebec-1989":7,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -419,4 +419,16 @@ Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** A hushed nature documentary of creatures living in the cracks of an old map: the rules were drawn for an older terrain, and red grows in the gaps between them, then floods out along the fault lines. Green surveyors each hold one corrected sheet of the map, in separate valleys.
 - **Snap:** Coordinated response median 426 vs 220 days routed (illustrative); red identical in both.
 - **Tags:** medium topographic map; family ecology; scale economy; pace slow build; camera continuous zoom through scales; emotion awe; protagonist the red itself
+
+## 70. the-interpreter
+- **Structure:** game-hud-run · **Analog:** cuban-missile-1962 · **First-guess virality:** 9%
+- **Logline (red / green):** Frontier AI as a patient interpreter stitching messages across a hoop: every thread between two identical houses takes 6 to 12 hours to cross by hand. A HUD tracks the only thing AI is credited with here, carrying and translating; people still write the words and decide.
+- **Snap:** Deal day 12 vs 11 (illustrative, transport and translation only); the direct line took 247 days.
+- **Tags:** medium embroidery; family language; scale between nations; pace one long take; camera locked-off close-up with a single pull-out; emotion tenderness; protagonist AI
+
+## 71. the-arms-race
+- **Structure:** split-screen-race · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 9%
+- **Logline (red / green):** Split screen as a two-player race: top, the red learns the answer (1 in 8 at the start, odds doubling ~every 7 months, derived); bottom, the next answer is assembled by players who never share a controller. Player 2 needs 13 years.
+- **Snap:** 13 vs 2.5 years routed coordination (illustrative; chemistry still takes years).
+- **Tags:** medium neon arcade; family game; scale history; pace accelerating; camera handheld chase; emotion anger; protagonist the red itself
 

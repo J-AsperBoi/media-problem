@@ -66,3 +66,19 @@ Ratio: human median / AI median = 426/220 = 1.9x. Small, and not inflated; the s
 ## Tags
 Diversity check with the assigned emotion "awe" returned TOO SIMILAR to the-storm-doc (0.44). Changed emotion awe -> **loneliness** (surveyors each alone in separate valleys); re-check OK (nearest the-storm-doc 0.56).
 {"slug":"cracks-in-the-map","structure":"nature-documentary","medium":"topographic map","family":"ecology","scale":"economy","pace":"slow build","camera":"continuous zoom through scales","emotion":"loneliness","protagonist":"the red itself","analog":"gfc-2008"}
+
+## Build notes
+- Fault share of network length came out at 0.310 (stage A seams 0.412), so the faults flood over extent 0.412 -> 0.722, inside the Sep -> Oct 2008 jump (0.41 -> 0.73). The last 0.008 of that month spills into seams.
+- First preview: red bands swamped the close-ups (world width fixed across zoom). Fixed by capping red width on screen above zoom 5. The held sheet covered the hero's mouth, so it was moved lower.
+- Numbers on screen: only "1 second = 40 days" (the stated mapping). Day 426 and the other response dates never appear; they are shown by position only.
+
+## Scores
+- Hook: 7 (red-flooded crack, a face, a green sheet and one line in frame 1; the bean is small in the thumbnail)
+- Speed accuracy: 8 (red is the exact share of network length from monthly points; lognormal arrivals from the analog; the fault/seam ordering is a design choice)
+- Snap impact: 6 (the counterfactual is only 1.9x; the freeze and hit help, but the panels are dense)
+- Emotion: 6 (loneliness reads in the close-ups; the wide map is more diagram than feeling)
+- Originality: 7 (a topographic map where the rules are the cracks is a fresh image for this analog)
+- Craft: 6 (clean zoom through scales; the macro exchange is stiff; the wide map is busy)
+- Honesty: 9 (no names or institutions, illustrative labels, the red recedes where the data dips, no response numerals)
+Overall: 7.0
+Virality: 7% — a striking red-grid map and a clear zoom, but a slow, hushed nature-doc opening and an abstract finance analog make broad sharing from a small account unlikely.
