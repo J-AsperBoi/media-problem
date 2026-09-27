@@ -336,7 +336,7 @@ function makeScene(SERIF, HAND) {
       ctx.save();
       const [lx, ly] = P(400, 385, 200); const z = L.lerp(1.9, 2.25, zt);
       ctx.translate(540, 960); ctx.scale(z, z); ctx.translate(-L.lerp(500, lx - 20, zt), -L.lerp(1110, ly - 40, zt));
-      room(ctx, { h: AI, lit: 1, frag: 1, mood: 'flat', look: [0.3, 0.8], kind: 'A', detail: true, redOut: 0, arm: L.sm(30.2, 31.2, t), pull: L.sm(31.3, 32.0, t) });
+      room(ctx, { h: AI, lit: 1, frag: 1, mood: 'flat', look: [0.3, 0.8], kind: 'A', detail: true, redOut: 0, arm: 0, pull: L.sm(31.3, 32.0, t) });
       ctx.restore();
       if (t < SNAP1 + 0.3) { ctx.fillStyle = `rgba(14,19,25,${1 - L.sm(SNAP1, SNAP1 + 0.3, t)})`; ctx.fillRect(0, 0, 1080, 1920); }
       L.label(ctx, 'illustrative', 490, 1440, 46, { col: '#c8ced6', alpha: fade(t, SNAP1 + 0.2, 33.3) });
