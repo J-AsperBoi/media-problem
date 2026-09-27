@@ -84,7 +84,7 @@ function makeScene(SERIF, HAND) {
   function bean(ctx, x, y, s, { col = '#d9d4ca', mood = 'flat', look = [0, 0], arm = 0 } = {}) {
     const bw = 46 * s, bh = 60 * s; ctx.save(); ctx.lineCap = 'round';
     ctx.strokeStyle = col; ctx.lineWidth = 7 * s;
-    [-1, 1].forEach(sd => { const ax = x + sd * bw * 0.42, ay = y + bh * 0.02; const ang = sd === 1 && arm ? L.lerp(Math.PI / 2 + 0.25, 0.35, arm) : Math.PI / 2 + sd * 0.25;
+    [-1, 1].forEach(sd => { const ax = x + sd * bw * 0.42, ay = y + bh * 0.02; const ang = sd === 1 && arm ? L.lerp(Math.PI / 2 + 0.25, 0.95, arm) : Math.PI / 2 + sd * 0.25;
       ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ax + Math.cos(ang) * bw * 0.6, ay + Math.sin(ang) * bw * 0.6); ctx.stroke(); });
     ctx.fillStyle = col; rr(ctx, x - bw / 2, y - bh / 2, bw, bh, bw / 2); ctx.fill();
     const ey = y - bh * 0.14, er = bw * (mood === 'panic' ? 0.17 : 0.14);
