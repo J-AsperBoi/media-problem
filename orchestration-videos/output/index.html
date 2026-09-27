@@ -1,15 +1,169 @@
-<!doctype html><meta charset=utf-8><title>Overnight portfolio</title><style>body{font-family:system-ui;background:#111;color:#eee;margin:24px}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}.hero{grid-column:1/-1;display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;border:1px solid #4fe08a;border-radius:16px;padding:16px}video{width:100%;border-radius:12px;background:#000}pre{white-space:pre-wrap;font-size:12px;color:#bbb;max-height:260px;overflow:auto}</style><h1>Overnight portfolio (43)</h1><pre>Concepts: 43
-Structures used: {"based-on-a-true-story":3,"ticking-clock":3,"mockumentary":2,"wait-for-it":3,"reverse-chronology":2,"nature-documentary":3,"split-screen-race":3,"game-hud-run":2,"two-phones":2,"countdown-list":3,"before-after":2,"man-in-a-hole":2,"sports-play-by-play":2,"pov":3,"seamless-loop":2,"recipe-parody":1,"ghost-rewind":3,"powers-of-ten-zoom":2}
-Diversity (mean pairwise distance, 0-1): 0.887
-Average virality estimate: 6.9%
+<!doctype html><meta charset=utf-8><title>Overnight portfolio</title><style>body{font-family:system-ui;background:#111;color:#eee;margin:24px}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}.hero{grid-column:1/-1;display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;border:1px solid #4fe08a;border-radius:16px;padding:16px}video{width:100%;border-radius:12px;background:#000}pre{white-space:pre-wrap;font-size:12px;color:#bbb;max-height:260px;overflow:auto}</style><h1>Overnight portfolio (49)</h1><pre>Concepts: 49
+Structures used: {"based-on-a-true-story":3,"ticking-clock":3,"mockumentary":2,"wait-for-it":4,"reverse-chronology":3,"nature-documentary":3,"split-screen-race":3,"game-hud-run":2,"two-phones":2,"countdown-list":3,"before-after":3,"man-in-a-hole":3,"sports-play-by-play":2,"pov":4,"seamless-loop":2,"recipe-parody":2,"ghost-rewind":3,"powers-of-ten-zoom":2}
+Diversity (mean pairwise distance, 0-1): 0.883
+Average virality estimate: 7.1%
 Distinct values per dimension: {"structure":18,"medium":20,"family":18,"scale":10,"pace":5,"emotion":8,"protagonist":6,"camera":6,"analog":10}
 Closest pairs:
   two-days ~ the-storm-doc: 0.56
+  two-days ~ eight-billion-heads: 0.56
   the-last-thirteen-days ~ nineteen-days: 0.56
   the-last-thirteen-days ~ the-hold-music: 0.56
   the-last-thirteen-days ~ seven-minutes: 0.56
-  the-last-thirteen-days ~ six-to-twelve-hours: 0.56
-</pre><div class=g><div class=""><div><h3>the-storm-doc · 9% viral · 7.3/10</h3><video src="the-storm-doc/the-storm-doc.mp4" poster="the-storm-doc/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+</pre><div class=g><div class=""><div><h3>nine-people-forty-messages · 10% viral · 7/10</h3><video src="nine-people-forty-messages/nine-people-forty-messages.mp4" poster="nine-people-forty-messages/poster.png" controls loop playsinline></video></div><pre># Nine People, Forty Messages
+
+Tier: animatic
+Slug: nine-people-forty-messages
+Title: Nine People, Forty Messages
+Logline: POV: you are scrolling the family group chat through a heat wave. Nine people, forty messages, no plan. Four relatives each hold one green piece (the forecast, a doctor friend, a cooler flat, and you, the spare key, typed but not sent) and the pieces keep scrolling past each other instead of landing on Gran's door. Red is the heat in the chat header, rising.
+Structure: `pov` (VIRAL_STRUCTURES.md #6), sprint pace.
+Analog: `heatwave-2003` (France, August 2003).
+Medium: text-only typography. Everything is type: the chat, the city (street words: "river", "ring road", "market"...), Gran's door (a frame with a nameplate), your head and shoulder in the foreground as a silhouette filled with the word "you". Red = only the heat (the chat header fill and a city haze). Green = only the four pieces.
+Tender, not mocking: every message means well (lunch plans, "someone check on Gran?", "she hates being fussed"); the routing is what breaks.
+
+Diversity: assigned tags came back TOO SIMILAR to the-balcony (0.44: same analog, structure, family, scale, emotion). Changed the metaphor family from `family` to `traffic` (messages as traffic, pieces that never get routed); the analog, structure and everything else kept. Result: OK (nearest the-two-feeds 0.56, the-balcony 0.56).
+
+## Time mapping (one mapping)
+- Race: **1 s = 1 day**, day = t - 1.4 for t in [1.4, 15.4] (days 0 to 14; day 0 = Aug 1, 2003, never shown). The day is shown as the chat's own weekday dividers ("Saturday", "Sunday"...), not numbers; Aug 1, 2003 was a Friday, so day 11 = Tuesday, day 12 = Wednesday.
+- Cold open (0 to 1.4 s): flash-forward to day 11.4 (Tuesday) of the same timeline: header near its reddest, your unsent draft in the compose bar.
+- Snap: both lanes on one shared clock, days 0 to 19 swept in 4.5 s (1 s = 4.2 days), the same scale in both lanes.
+
+## Speed math
+**Threat (red).** Same fit as nineteen-days / the-heat-map / the-balcony. The analog sources only the endpoints (extent 0 on day 0; 1.0 = all ~14,800 excess deaths by day 19, s2) and the peak (daily excess &gt; 1,000 on days 11-12, s2). `L.logistic` fitted with its midpoint at day 11.5 and extent 0.99 at day 19: k = ln(99)/7.5 = 0.613/day, early doubling 1.13 days, s0 = 0.00086.
+- Heat curve rho(d) = 4 s(1-s) (s the raw logistic): d1 0.006, d3 0.022, d4.6 0.057, d8 0.38, d9.1 0.61, d11 0.98, d11.5 1.00, d12 0.98, d14 0.59. This is the "heat" on screen: the chat header's red fill and glow, and the red haze over the city, are rho(d). It is a fit to the sourced mortality peak (temperature peak day 11, heat wave days 1-14 bracket it), stated as such.
+
+**The forty messages (chat timestamps follow the heat curve).** Message rate r(d) = 0.25 + rho(d) (a baseline of ordinary family chatter plus chatter that rises with the heat; the baseline weight is a vibe, the shape is the fitted curve). The 40 messages sit at the quantiles (i + 0.5)/40 of the cumulative rate over days 0-12: 0.33, 0.99, 1.65, 2.29 ... 11.66, 11.79, 11.93. Seven messages in the first 4.6 days, then the chat accelerates to about six a day at the peak: the chat gets busier exactly as the heat rises, and the pieces scroll away faster.
+- Pieces posted: Joe's forecast is message 2 (day 0.99; the analog's forecast fragment is ready at day 1, f1). Maya's doctor friend is message 11 (day 6.2). Sami's cooler flat is message 17 (day 8.2). Your spare key is typed on day 2.6-3.2 and left unsent.
+- Gran posts messages 1, 4, 13, 22 (days 0.3, 2.3, 7.0, 9.3); her last is "staying in today. love you all x".
+
+**Human aggregation (green).** Analog aggregation median 12, p10 9.5, p90 305 (days). Two-sided lognormal (as in the-balcony): sigma_low = ln(12/9.5)/1.2816 = 0.182, sigma_high = ln(305/12)/1.2816 = 2.525. The day each piece is actually routed to Gran's door, at quantiles:
+- Maya's doctor friend q = 0.1: day **9.5**
+- Joe's forecast q = 0.3: day **10.9**
+- your spare key q = 0.5: day **12.0** (the median; the analog's Plan Blanc, Aug 13, verified)
+- Sami's cooler flat q = 0.9: day **305**: never within the film; its line keeps falling short.
+Before a piece's day, its green line reaches part way toward the door and falls back (attempt rhythm is a vibe; arrival days are data). The quantile each relative is assigned is illustrative; the spread is the analog's.
+
+**Loss as absence.** Gran's status "last seen today" stops updating when the heat curve peaks (day 11.5, E = 0.5, the same threshold the-balcony used for the neighbor's room): it freezes at "last seen Tuesday" while the chat moves on to Wednesday, and her name grays. That timing is the curve; it is symbolic, not a claim about any person. No bodies, no suffering. Your key reaches her door on day 12, half a day after.
+
+**AI counterfactual (illustrative).** `ai_counterfactual.aggregation_median` = 3 days (analog basis: joining a known forecast with the heat-mortality relationship and routing a warning is a short expert task, inside the ~17.4 h METR 50% time horizon in RATES.md; cost at fixed capability falls ~40x/year, Epoch, so watching every family chat's pieces is affordable). Same lognormal shape scaled by 3/12: 2.4 / 2.7 / 3.0 / 76 days. On day 3 the heat curve is 0.02 (well before the peak). On screen it is labeled illustrative, the red curve is drawn identically in both lanes, and the caveat line is "People still decide who goes." In the IN++ shot frontier AI is a neutral gray line ("suggested: key + doctor + cool room, you decide"), never green: it connects, people choose and go. Not a claim that any real death would have been prevented.
+
+## Numbers on screen (two)
+- "day 12" (median aggregation = Plan Blanc, Aug 13, verified in the analog) and "day 3" (AI counterfactual, labeled illustrative).
+- "Nine people. Forty messages." are counts of the on-screen objects (exactly nine chat members and forty rendered messages), not data claims. No dates on screen; weekdays are the chat's clock.
+
+## Shot list (DUR 36 s)
+| t | shot | camera | what happens |
+|---|---|---|---|
+| 0.0-1.4 | SC1 COLD OPEN | OTS CLOSE, your phone (flash-forward, Tuesday) | Header glowing red; chat busy; your green draft "I have Gran's spare key." unsent. Card: "POV: you have the missing piece." |
+| 1.4-6.0 | SC2 OTS | CLOSE, slow push | Day 0. Gray chatter; Joe's green forecast lands (day 1) and scrolls up; you type the key message and stop. Cards: "Nine people. Forty messages." / "No plan." |
+| 6.0-9.0 | SC3 PULL OUT | DOLLY OUT from your phone to the city of words | Nine phones scattered across a city spelled in type; gray message threads flash between them; four green lines reach toward Gran's door and fall short. Card: "Every piece is already here." |
+| 9.0-10.5 | SC4 WIDE | hold, slow drift | Chat traffic at the peak rate; the heat haze rising. |
+| 10.5-13.4 | SC5 DIVE | DOLLY IN to Gran's door, closer than SC2 | Doctor (9.5) and forecast (10.9) lines land at the door as green words; day 11.5 her status freezes, name grays; day 12 the key lands. Card: "Everyone means well." |
+| 13.4-15.4 | SC6 CLOSEST | slow push on the door | "Day 12. After the peak." |
+| 15.4-18.0 | SC7 FREEZE | locked | Dim, silence. "We slowed it down so you could see it." |
+| 18.0-25.5 | SC8 SNAP | flat, two lanes 920 px wide | One hit. Same clock sped up. Human lane: green at day 12, after the red peak. AI lane (illustrative): day 3. Caveat. |
+| 25.5-28.5 | SC9 IN++ | OTS CLOSEST on your phone, day 3 (illustrative) | The four pieces pinned together as one green plan; your key message sent; a neutral "suggested by frontier AI, you decide" line; Gran: "see you soon, love". Card: "Not them. The routing." |
+| 28.5-31.0 | SC10 | hold | "This is the bottleneck." |
+| 31.0-36.0 | END | | L.endCard, 5 s. |
+
+Zoom cycles: Cycle 1: IN (phone fills frame, zoom ~13) 0-6.0 -&gt; OUT 6.0-9.0 (to city, zoom 1) -&gt; IN+ 10.5-15.4 (Gran's door, zoom ~20-24). Cycle 2: SNAP flat 18-25.5 -&gt; IN++ 25.5-28.5 (your phone at 1.35x the first OTS).
+
+## 3D translation note
+- Key shots: the OTS (35 mm, just behind your right ear at seated height, shallow focus on the screen, the header's red light spilling onto the letters of your shoulder); the dolly out (one continuous pull up through the ceiling to an aerial of a city at dusk, nine phone screens the only lights, 3 s, eased, a hold at the top); the dive to Gran's door (slower, ending at 50 mm on the nameplate, closer than the first OTS).
+- Characters and props: people as volumetric letterforms of their names; the city as street names laid on the ground like road paint; green pieces as glowing words that travel along streets toward the door; the door solid and ordinary.
+- Richer in 3D: the red heat as shimmer and haze over the city (never flame), phone light on faces-of-type, the green lines routed along real streets and stopping at intersections.
+
+## Copy variants
+- "POV: you have the missing piece." (used) / "POV: you have Gran's spare key."
+- "Nine people. Forty messages." / "No plan." / "Every piece is already here." / "Everyone means well."
+- "Day 12. After the peak." / "Not them. The routing." / "People still decide who goes."
+- Unused: "Seen by eight." / "Typed. Not sent." / "Everyone assumed someone closer."
+
+## Tags
+{"structure":"pov","medium":"text-only typography","family":"traffic","scale":"family","pace":"sprint","emotion":"loneliness","protagonist":"a crowd","camera":"over-the-shoulder","analog":"heatwave-2003"}
+Diversity check: OK after changing family to traffic (nearest the-two-feeds 0.56, the-balcony 0.56).
+
+## Build log
+- Preview 1: the IN++ card covered the sent key message and the "illustrative" chip collided with the plan card; green glow bubbles rendered as solid green slabs (translucent fill plus shadow in @napi-rs/canvas), which hid their text. Fixed: IN++ reframed (phone content higher), chip moved to the right of Gran's reply, glows moved to the stroke with a dark fill. Cold open moved to day 11.4 so the chat shows the "Tuesday" divider it claims. Final render 36.0 s.
+- Known weaknesses: in SC2 the early chat is sparse (the data puts only seven messages in the first 4.6 days) and Joe's green forecast scrolls off under the "Nine people" card; the city phones are small at full width, so the names read only as texture; the dolly out passes a moment where only your phone and shoulder are in frame; the day-11.5 "last seen" freeze is small type above the door and may be missed without the card.
+
+## Scores
+- Hook: 7 (frame 1: big red chat header, green unsent "I have Gran's spare key.", your shoulder, "POV: you have the missing piece.")
+- Speed accuracy: 8 (logistic fit through sourced endpoints plus peak drives the header and haze; 40 message timestamps at quantiles of 0.25 + rho; two-sided lognormal arrivals 9.5 / 10.9 / 12 / 305; one 1 s = 1 day mapping; snap on one shared clock with the identical red in both lanes)
+- Snap impact: 6 (freeze, silence, one hit, full-width lanes; the green lines stacked on the red peak read clearly, but it is still a calm chart)
+- Emotion: 7 (the draft that never sends, "does anyone have a key?", Gran's "love you all x" and her status freezing while the chat moves to Wednesday; restrained)
+- Originality: 6 (a group chat is a familiar device and two-feeds already did phones-as-type; the city of nine phones and pieces pinned to a door are new)
+- Craft: 6 (clean typography and legible OTS; sparse early chat, small city labels, a thin transitional beat)
+- Honesty: 9 (threat never named, two numbers only, AI lane and IN++ labeled illustrative, AI shown gray and "you decide", Gran's status timing stated as symbolic; loss only as a status that stops updating)
+- Overall: 7.0
+- Virality: 10% — "POV: the family group chat" plus an unsent message to Gran is instantly recognizable and shareable in family chats, but it is a quiet, text-dense piece with a chart in the middle from a small account.
+</pre></div><div class=""><div><h3>eight-billion-heads · 9% viral · 7.4/10</h3><video src="eight-billion-heads/eight-billion-heads.mp4" poster="eight-billion-heads/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+
+# Eight Billion Heads
+
+**Logline.** One body. Eight billion heads. The planet as a single x-ray body whose organs are countries. Red crosses organ to organ at its real share-of-countries speed; the answer (green) exists in a few hands almost from the start, but reaches each organ on its own late day. The fall, the long dark bottom of the hole, then the long uneven rise.
+
+**Structure.** man-in-a-hole (research/VIRAL_STRUCTURES.md #3): warm close moment -&gt; fall (organs go red, their glow fades) -&gt; bottom (the answer exists, unrouted) -&gt; the climb (organs turn green one by one, the late ones absurdly late) -&gt; snap as the second, faster climb.
+
+**Analog.** covid-2020 (research/analogs/covid-2020.json). Threat never named; the product never named ("the answer").
+
+## Time mapping (one mapping)
+- Race clock: `day = 30 * (t - 2)` for film t in [2, 22] s, i.e. **1 s = 30 days**, linear, day 0 = 2019-12-31 (t0 in the analog). Clock frozen at day 600 after t = 22.
+- Cold open t 0-1.4 is a flash-forward to the same timeline at day 70 (red front at the frame edge), rewound to day 0 at t 1.4-2.0.
+- Snap replay: the same days at 1 s = 200 days (both panels identical mapping).
+
+## Speed math
+- **Organs = countries.** N = 96 organs, each 1/96 of the 234 countries/territories in the OWID file.
+- **Threat (red).** analog `threat.points` extent (share of countries with at least one confirmed case, s1), piecewise-linear between the 11 sourced weekly-to-monthly points (dense enough; no endpoint-only fit needed). Organs are ranked by distance from an origin organ plus seeded noise; organ k turns red on the first day extent(d) &gt;= (k+0.5)/96. Extent tops out at 0.936, so the last ~6 organs never turn red (as in the data). Inside one organ the red crosses as a front over 6 days (visual only, within the organ's day). After turning red an organ's glow decays (absence, not bodies).
+- **Human aggregation (green).** Per organ quantile q (evenly spaced, shuffled), green day = max(343, L.lognormalQuantile(q, 421, 490)); median 421, p90 490 from `solution.aggregation` (s2; p10 363 is reproduced by the same sigma: 421*exp(-1.2816*ln(490/421)/1.2816) = 361.7 ~ 363). Floor 343 = first dose outside trials (f7, s5). The hero organ gets q = 0.5 -&gt; day 421. Latest organ q=0.995 -&gt; ~day 571 (data's actual latest: day 658).
+- **Fragments that already existed** (green glints in single hands, not yet reaching organs): f2 platform day 0, f3 genome day 11, f4 design day 13, f5 first trial dose day 76, f6 authorization day 337, f7 first dose day 343. They connect by thin lines on their days.
+- **AI counterfactual (illustrative).** `ai_counterfactual.aggregation_median` = 363 (the fastest tenth's actual date becomes the median; ~58 days sooner). Same sigma, same floor, **same supply** (no extra doses assumed): aiDay = max(343, lognormalQuantile(q, 363, 363*490/421)). Labeled "illustrative" and "same supply" on screen.
+- **Numbers on screen (2):** 421 (median organ, as it happened; s2, verified) and 363 (median organ, routed; illustrative, analog ai_counterfactual).
+
+## Shot list / camera (zoom cycles)
+| t | shot | camera | beat |
+|---|---|---|---|
+| 0.0-1.4 | SC1 CLOSE | eye level on one x-ray face, zoom 60, slow push | HOOK (flash-forward, red front at the edge, green glint in hand). "One body." |
+| 1.4-2.0 | SC1 | hold | rewind day 70 -&gt; 0 |
+| 2.0-3.4 | SC1 CLOSE | hold, faint push | "Eight billion heads." |
+| 3.4-7.7 | SC2 CRANE UP | zoom 60 -&gt; 1 (log-eased), through the organ level (a crowd of x-ray people) to the whole body | RACE fall: red crosses the organs. "Each organ, a few countries." |
+| 7.8-13.5 | SC3 WIDE HOLD | locked, very slow drift | bottom of the hole: glow fading, green glints in a few hands. "The answer was already here." / "In pieces." |
+| 13.5-16.0 | SC4 DROP DOWN | zoom 1 -&gt; 90 onto the same person, closer than frame 1 | climb begins; the answer reaches the hero's organ on day 421 |
+| 16.0-17.6 | SC4 CLOSE | hold | "On its own late day." |
+| 17.6-21.8 | SC5 CRANE UP | zoom 90 -&gt; 1, faster than SC2 | stragglers turn green absurdly late. "Some waited months more." |
+| 21.8-22.8 | SC6 | freeze, silence | dead stop |
+| 22.8-25.4 | SC6 | hold | "We slowed it down" / "so you could see it." |
+| 25.4-33.2 | SC7 SNAP | two 920px panels stacked | top: as it happened (25.8-28.8); hit at 29.0; bottom: with AI routing, illustrative, same supply (29.0-32.0); 421 vs 363 |
+| 33.2-36.6 | SC8 DROP DOWN | zoom 1 -&gt; 330 on the hero's face (closest), hold | "This is the bottleneck." |
+| 36.6-40.6 | END | end card | 4 s |
+
+Zoom cycles: cycle 1 IN 0-3.4 -&gt; OUT 3.4-7.8 -&gt; IN+ 13.5-16; cycle 2 OUT 17.6-21.6 -&gt; (snap) -&gt; IN++ 33.2-35.0 (hold to 36.6). DUR 40.6 s.
+
+## 3D translation note
+A single continuous volumetric x-ray: the hero is a translucent skeleton bust lit from inside (subsurface bone glow), shot on a 50mm at eye level, shallow focus on the hand holding the glint. Crane up is a true dolly-zoom-free vertical rise of ~5 orders of magnitude (use a scale-space camera with log-speed easing): the person becomes one of hundreds of translucent figures packed like cells in an organ, the organ one of ~96 in a planet-sized body floating in black. Red is a volumetric fluid front moving tissue to tissue; loss is the organ's inner light dimming. Drop-downs should accelerate, the second one closer (85mm, inches from the skull). What gets richer in 3D: parallax between tissue layers, figures turning their heads toward the incoming green, the glint's light spilling onto finger bones.
+
+## Copy variants
+- "One body. Eight billion heads." (used)
+- "Each organ, a few countries." (used)
+- "The answer was already here. In pieces." (used)
+- "On its own late day." (used)
+- "Same supply. Better routing." (alt snap caption)
+- "The signal existed. The nerves were slow."
+- "Civilization has lag." (alt opener)
+
+## Tags
+structure man-in-a-hole; medium x-ray; family body/biology; scale multi-scale zoom; pace stop-start (changed from assigned "accelerating": diversity.js said TOO SIMILAR to vaccine-speedrun at 0.44; the film's freeze-hold-sprint rhythm fits stop-start); emotion awe; protagonist a crowd; camera crane up and drop down; analog covid-2020.
+
+## Scores (after preview + final render, 40.6 s confirmed by ffprobe)
+- Hook: 7 (frame 1 has an x-ray face, a green glint in cupped hand-bones, and a hard red front at the left edge, with "One body.")
+- Speed accuracy: 9 (red on sourced country-share points, green on the lognormal 421/490 with floor 343, one 1 s = 30 days mapping; organs are 1/96 bins of countries, disclosed)
+- Snap impact: 6 (a 58-day gain is honest but small; staging is freeze, silence, hit, then stacked panels, and the second body greens visibly sooner)
+- Emotion: 7 (the hero holds a piece from day 0 and still waits until day 421 in a dimmed red organ; the green bloom is a real release)
+- Originality: 7 (planet as one x-ray body, organs as crowds; zoom through three scales)
+- Craft: 7 (clean scale transitions, and the faces read; the bottom of the hole is a static 6 s hold that may lose some viewers, and the body-level organs are dense)
+- Honesty: 9 (threat and product unnamed, illustrative plus same-supply labels, loss shown only as dimming)
+Overall: 7.4
+Virality: 9% - the zoom from skull to planet-body is a strong, shareable image, but the static middle and a snap measured in weeks rather than a dramatic gap cap it at single digits from a small account.
+</pre></div><div class=""><div><h3>the-storm-doc · 9% viral · 7.3/10</h3><video src="the-storm-doc/the-storm-doc.mp4" poster="the-storm-doc/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
 
 # The Storm Doc
 
@@ -115,6 +269,86 @@ Diversity check: OK (nearest two-days and seventeen-days, 0.56; the-mold-strikes
 - Honesty: 9 (the threat is never named, the disc is gray and unlabeled with "sizes enlarged" on screen, the median is never shown, two sourced numbers, the AI warning appears only as "before" with "Operators still decide")
 Overall: 7.3
 Virality: 9% — a Powers-of-Ten zoom from a fridge to a star and back is a proven share format, and the doc voice is fresh, but the snap is abstract and the log ruler asks a lot of a cold scroller on a small account.
+</pre></div><div class=""><div><h3>recipe-for-a-worm · 9% viral · 6.9/10</h3><video src="recipe-for-a-worm/recipe-for-a-worm.mp4" poster="recipe-for-a-worm/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+
+# Recipe for a Worm (slug: recipe-for-a-worm)
+
+**Logline.** An 8-bit cooking show. A pixel chef in a pixel kitchen that is really a hospital IT closet reads today's recipe: "Take one unpatched machine. Leave out for 59 days." The green patch disk sits on the counter gathering dust while unread alerts pile up. At ~8 s the show freezes: "This recipe really happened." Over his shoulder the oven-server glows red; the camera pulls out to a grid of 81 kitchens all cooking the same dish; one stranger far away stops it, partly by luck; we drop back in, closer, to the chef, furious, the fix still on his counter. Then the snap: the same week at true proportions, and the same fix routed sooner (illustrative). A pixel hand puts the disk in.
+
+- Structure: `recipe-parody` (VIRAL_STRUCTURES.md #16): comedy as early contrast, then the grave turn at ~8 s.
+- Analog: `wannacry-2017`. Never named on screen; no company names; no "worm", "ransomware", "virus", "malware", "hack" on screen (the slug is internal).
+- Medium: 8-bit. Chunky grid-aligned pixels (1 art pixel = 30 local units), a gray palette; only red (#ff3b30, the threat) and green (#34d27b, the patch disk, routes, the stop) are saturated.
+- Protagonist: an institution. The chef is the hospital personified (a gray cross on his toque). The satire is the recipe (a fix left sitting for 59 days, alerts unread), i.e. the system, not the IT staff.
+- DUR 38 s, 1080x1920, 30 fps. Scene: `scenes/recipe-for-a-worm.js`.
+
+## Time mapping (one stated mapping per section)
+- **Cold open (0-1.8 s):** flash-forward to hour 6 of the same timeline (oven-server red, closet lights out), then a pixel REWIND (1.8-2.4 s) to 59 days before.
+- **Prep (2.4-7.8 s, comedy):** fast-forward, 59 days in 3.6 s (2.6-6.2 s, 1 s ≈ 16 days); the wall calendar flips once per 1.1 day (no digits). Hour 0 (07:45 UTC, May 12, 2017, a Friday) arrives at 7.4 s as a single red pixel in the oven.
+- **Freeze (8.0-9.6 s):** the clock stops.
+- **Race (9.6-18.6 s): log clock**, h = 10^(f·log10 169) − 1, f = (t − 9.6)/9, so 0 → 168 h (one week). A pixel kitchen timer shows it; a HUD label says "REAL HOURS, LOG CLOCK". Kill switch 7.3 h lands at t = 13.31 s; 20 h at 14.93 s; the hero kitchen's red (2.56 h) at 11.83 s, its route (44.5 h) at 16.30 s.
+- **Snap (21.8-28.2 s): linear, true proportions, 1 week in 3 s (1 s = 56 h)**, first "as it happened" alone (21.8-24.8), then both panels on the same clock (25.2-28.2).
+
+## Speed math
+**Threat (red): the-worm-rewind model.** extent(h) = (σ(h) − σ(0)) / (σ(7.3) − σ(0)), σ(h) = 1/(1 + e^(−1.16 (h − 4.0))), clamped to 1 after 7.3 h. Constraints: 0 at t0 (s1); saturated by the 7.3 h kill switch, when the initial variant stops encrypting new machines (s1); consistent with "&gt;230,000 systems in &gt;150 countries within 24 h" (s2). The direction (bulk before the stop) comes from Salim Neino's (Kryptos Logic) prepared testimony to the US House Science Committee, June 15, 2017 ("between 1-2 million systems may have been affected in the hours prior to activating the kill-switch"; congress.gov/115/meeting/house/106120/witnesses/HHRG-115-SY21-Wstate-NeinoS-20170615.pdf), used only for direction, never as a number (different unit: "affected" from sinkhole sampling). Peak rate check: 1.16/4 × 230,000 / 0.969 ≈ 69,000 systems/h, consistent with Kryptos Logic's "tens of thousands per hour at the peak" (s3). Midpoint and steepness are NOT sourced; no count is ever shown against time.
+- Each of the 81 kitchens = an equal slice of the systems hit. Kitchen i turns red at h_i = σ⁻¹(σ(0) + q_i (σ(7.3) − σ(0))), q_i = (rank + 0.5)/81, ranked by grid distance from the hero kitchen plus noise (L.rng). The hero is inserted at rank 12 (q = 0.154): red at 2.56 h (t = 11.83 s), so the red visibly comes from next door (red pixels at the closet's door edge follow the global extent) and fills the closet over his shoulder before the pull-out (12.4 s).
+- **Flat after.** Once a kitchen is red it stays red: a route that arrives later lights a green LED/frame but does not undo the damage (lights stay out). In the snap, a real-panel kitchen routed after its red hour stays red with a green outline.
+
+**Human aggregation (green, real).** Per kitchen, route (the fix reaches someone who applies it) at g_i = max(7.3, L.lognormalQuantile(u_i, 20, 168)) h: median 20 h (same-day emergency patch for old systems, hour unverified, s6), p90 168 h (end of the NHS disruption week, s4), floored at the 7.3 h kill switch (first documented stop, s1). σ = ln(168/20)/1.2816 = 1.66. u_i stratified (i + 0.5)/81, shuffled. The hero kitchen u = 55.5/81 = 0.685 (its own stratum, swapped in) → 44.5 h (day two, t = 16.30 s, on the close-up). The patch disk sits on every counter from 59 days before t0 (f1, s5, 1,416 h); green threads from a "patch" pantry to each kitchen show the routing, arriving at g_i. The unread-alert stack (f2) is `verified:false`: drawn as a gray memo pile, never dated or counted.
+
+**AI counterfactual (illustrative).** Analog `ai_counterfactual.aggregation_median` = 1 h; same spread, so p90 = 1 × 168/20 = 8.4 h; per kitchen a_i = L.lognormalQuantile(u_i, 1, 8.4) with the same u_i. Basis (analog): spotting the hard-coded domain is a few-hour expert task inside the ~17.4 h METR 50% time horizon (RATES.md); matching unpatched machines to a 59-day-old critical patch and routing the alert to whoever can apply it is inventory work made cheap by the ~40x/yr cost fall at fixed capability (Epoch, RATES.md). In the AI panel a kitchen turns green only if its route beats its red hour (64 of 81 in this draw); the rest still go red; the red timeline is identical in both panels. The hero kitchen's illustrative route is 2.23 h vs its red at 2.56 h, a thin margin: it is one of the saved ones, which is why the IN++ shot shows its hand putting the disk in with the red only next door. Rank 0 (the origin) is never saved in either panel. Humans still apply the patch (the last shot is the chef's own hand). Not a claim the event would certainly have been prevented.
+
+**Numbers on screen (two):** "59 days" (patch released March 14, 2017, 59 days before t0; s5) and "1 week" (the snap axis length = human p90, NHS week May 12-19; s4). Deviation from concept.json's "1 week vs 1 h": the brief caps numbers at two and 59 days is the recipe itself, so the AI p90 (8.4 h) is not printed; it is shown proportionally on the same "1 week" axis as green pips clustered at the left, labeled "illustrative". Both panels plot p90-comparable distributions, not a median against a p90.
+
+**The stop, honestly:** "One stranger stopped it. Partly luck." One independent researcher registered the hard-coded domain at 7.3 h (s1), to track it, not knowing it would stop it.
+
+## Shot list and camera (world = 9x9 grid of kitchens, each kitchen is the full closet drawn at 1/9 scale; one continuous camera, no crossfades)
+| t | shot | camera | beat |
+|---|---|---|---|
+| 0.0-1.8 | SC1 CLOSE OTS cold open, hour 6 | Z 11.2 → 11.9 push | chef profile (angry), green disk on counter, oven-server red, lights out. "Take one unpatched machine." |
+| 1.8-2.4 | REWIND | hold | pixel rewind bands to 59 days earlier |
+| 2.4-7.8 | SC2 OTS comedy | Z 10.8 → 11.7 slow push | disk drops in, dust gathers, calendar flips, memos pile. "Leave out for 59 days." / "Garnish with unread alerts." / "Serve warm on a Friday." One red pixel at 7.4 s. |
+| 8.0-9.6 | FREEZE | locked | dim, hit. "This recipe really happened." |
+| 9.6-12.4 | SC3 OTS | push Z 11.7 → 12.6 | red at the door edge, then enters at 11.83 s, oven glows, monitors go dark. "It spreads on its own." |
+| 12.4-15.4 | SC4 PULL OUT | Z 12.6 → 0.78 (1/Z-linear) | 81 kitchens, red by rank, green threads crawling; kill switch at 13.3 s from a lone figure above the grid. "Every kitchen, same recipe." / "One stranger stopped it. Partly luck." |
+| 15.4-18.6 | SC5 DROP IN, closer | Z 0.78 → 14.4 | the chef, angry, steam; his route arrives at 44.5 h (16.3 s), too late: the red stays. "The fix sat on the counter." |
+| 18.6-21.2 | SC6 | hold, dim | "We slowed it down so you could see it." |
+| 21.2-21.8 | freeze | - | silence |
+| 21.8-29.8 | SC7 SNAP | screen space, two 940 px panels | stamp; true speed alone, then both. "Same fix. Routed sooner." |
+| 29.8-32.8 | SC8 IN++ | Z 15.3 → 16.7 on the counter and slot | the chef's hand puts the disk in (routed version, labeled illustrative). "This is the bottleneck." |
+| 32.8-38.0 | END | - | L.endCard, 5.2 s |
+
+**Zoom cycles.** Cycle 1: IN 0-12 (Z 11-12.6) → OUT 12-15.4 (Z 0.78) → IN+ 15.4-18.6 (Z 14.4, face). Cycle 2: OUT to the snap panels 21.8-29.8 → IN++ 29.8-32.8 (Z 16.7 on the hand and disk, closer than the Z 14.4-15.2 face shot).
+
+## 3D translation note
+- SC1-SC3: 35 mm over the chef's right shoulder at his eye height, voxel/pixel-art closet (think chunky voxels), the toque soft in the foreground, the oven-server sharp; red light spills pixel by pixel along the floor cables.
+- SC4: a straight vertical pull through the ceiling (4 s, ease both ends) into a top-down grid of 81 identical voxel kitchens, like a cooking-game level select; red glows per kitchen; green threads are thin emissive lines from a pantry at the grid's edge. The stranger is a single lit window outside the grid.
+- SC5: a faster drop than the rise, ending at 85 mm on his face, closer than SC1.
+- SC8: 100 mm macro on the voxel hand and the green disk entering the slot.
+- Characters: one chef sprite with swappable brows, eye and mouth (deadpan, smug, stunned, angry, determined).
+
+## Copy variants
+- "Take one unpatched machine." / "Leave out for 59 days." / "Garnish with unread alerts." / "Serve warm on a Friday."
+- "This recipe really happened." / "It spreads on its own." / "Every kitchen, same recipe." / "One stranger stopped it. Partly luck."
+- "The fix sat on the counter." / "Same fix. Routed sooner."
+- Alternates: "Prep time: two months." / "Serves 150 countries." / "Best before: March." / "Chef's note: the fix was included."
+
+## Tags
+{"slug":"recipe-for-a-worm","structure":"recipe-parody","medium":"8-bit","family":"cooking","scale":"organization","pace":"sprint","camera":"over-the-shoulder","emotion":"anger","protagonist":"an institution","analog":"wannacry-2017"}
+Diversity check: OK (nearest the-department-of-later 0.56, recipe-for-a-shortage 0.56, fifty-nine-days 0.67).
+
+## Resume log (second agent)
+Previous agent was cut off after writing the scene. Preview found: (1) frame 1's green disk was buried under the red, so the disk is now drawn above the dark and the red; (2) a route arriving erased a kitchen's red, which broke the flat-after model, so red now stays; (3) the hero was the origin kitchen (red at 0.42 h, before even its illustrative route at 3.07 h), so the IN++ "routed sooner" shot overclaimed. The hero is now rank 12 with u = 0.685 (see speed math); (4) the IN++ framing put the disk at the screen edge, so it was reframed. Full render 38.0 s, 1080x1920, 30 fps.
+
+## Scores
+- Hook: 7 (the 8-bit cooking-show card plus the red oven and the green disk in frame 1 read at thumbnail size; the parody premise is a real scroll-stopper)
+- Speed accuracy: 7 (red fits the worm-rewind logistic, saturating at 7.3 h and flat after; the lognormal route and AI stratum are shared per kitchen; the median/p90 are documented-date proxies, and the logistic shape is unsourced)
+- Snap impact: 6 (freeze, stamp, true speed alone, then both panels on one "1 week" axis; the AI pips crowd the left edge, but the panels are small on screen and read as data, not a gut punch)
+- Emotion: 6 (the chef's smug-to-angry arc lands; the anger is at the recipe, not the staff)
+- Originality: 8 (a cooking show inside a hospital IT closet, with 81 identical kitchens as the level select)
+- Craft: 6 (consistent pixel art and one continuous camera; the hand sprite is crude, and the wide grid is busy during the pull-out)
+- Honesty: 8 (two numbers on screen, both sourced and like-with-like on the p90 axis; kill switch shown as one person, partly luck; flat red; saved-kitchen margin is thin and disclosed here)
+- Overall: 6.9
+- Virality: 9% (the recipe-parody hook and the retro look are shareable, but the turn to a data snap at 22 s asks a lot of a cold audience, and the grave half runs long for the comedic setup).
 </pre></div><div class=""><div><h3>keep-the-lights · 8% viral · 7.6/10</h3><video src="keep-the-lights/keep-the-lights.mp4" poster="keep-the-lights/poster.png" controls loop playsinline></video></div><pre># Keep the Lights (slug: keep-the-lights)
 
 Tier: animatic
@@ -820,6 +1054,105 @@ Diversity: OK (nearest the-warehouse 0.56).
 - Honesty: 9 (no countries or officials, unverified items off screen, and the migration noted as a metaphor since the announcement moved prices)
 - Overall: 7.0
 - Virality: 8% (a cute, shareable grain character and a clear "the food existed" twist, but the hushed slow build and the small snap will lose most swipers.)
+</pre></div><div class=""><div><h3>the-numb-hand · 8% viral · 7/10</h3><video src="the-numb-hand/the-numb-hand.mp4" poster="the-numb-hand/poster.png" controls loop playsinline></video></div><pre># The Numb Hand (slug: the-numb-hand)
+
+Tier: animatic
+
+**Title:** Why Didn't It Hurt?
+**Logline:** A bean-cartoon person has one hand resting on a burner and their eyes on a phone. We open on the moment the red arrives: the hand glowing, the face in alarm. Then we rewind. We zoom in through the skin to a nerve network that works like a power grid. Four nerves each carry a piece of the warning somewhere other than the reflex that could pull the hand away. The pain nerve, which is the alarm, went numb right at the start. The body is a metaphor for the grid, and it stays one: every time on screen comes from the blackout analog, and there are no neuroscience timings.
+
+**Structure:** `reverse-chronology` (research/VIRAL_STRUCTURES.md #13). We open on the aftermath, rewind to t0 (the nerve going numb), freeze, then play forward at both speeds in the snap.
+**Analog:** `blackout-2003`
+
+## Diversity check
+The first tags (emotion: dread) came back TOO SIMILAR to nineteen-days (distance 0.44: body/biology, body, accelerating, dread, one person). I kept the assigned structure and analog and changed **emotion from dread to vertigo**. The continuous zoom from a hand down into a whole grid of 50 million, and back out, is the emotional engine. Result: OK (nearest is nineteen-days at 0.56).
+
+Tags: {"structure":"reverse-chronology","medium":"bean cartoon","family":"body/biology","scale":"body","pace":"accelerating","camera":"continuous zoom through scales","emotion":"vertigo","protagonist":"one person","analog":"blackout-2003"}
+
+## Time mapping (one mapping, stated)
+Event hours h are counted from the analog's t0 (14:14, when the control-room alarms began failing silently, s2).
+- **Rewind: 1 film second = 15 minutes of event time** (0.25 h/s), linear and running backward. It runs from h = 2.0 at t = 4.5 to h = 0.85 at t = 9.1. Time then **freezes** for 1.2 s at the first verified line trip (h = 0.85). The rewind resumes from t = 10.3 and reaches h = 0 at t = 13.7. Freezes stop the clock and never change its rate.
+- t = 0 to 4.5 is the aftermath held at h = 2.0 (the cold open plus the dolly in through the skin). t = 13.7 to 19 is held at h = 0.
+- The on-screen clock (bottom left, no numerals) shows analog clock time 14:14 + h and spins backward during the rewind.
+- The snap panels use one shared linear axis for both lanes: 0 to 2 h across 820 px.
+
+## Speed math (reusing seven-minutes)
+- **Threat (red).** Only the verified first trip is drawn: at h = 0.85 (15:05, Harding-Chamberlin, s6), one grid line at the skin contact turns red and a small red heat spot appears under the hand. The 15:32 and 15:41 trips are verified:false and **not drawn**.
+  - The cascade is **L.logistic fitted through the analog's endpoints**: extent 0.01 at h = 1.87 and 0.99 at h = 1.98. From e^{r·0.11} = 9801 we get r = 83.6/h, so **doubling = 0.0083 h (about 30 s real time)**. Both endpoints are verified:false, so they drive **motion only** and never appear as numbers.
+  - Played backward at the mapping, the cascade un-spreads in 0.44 s (t = 4.5 to 4.94). Grid lights come back on in rank order of distance from the first trip, with seeded jitter. A node is dark when rank &lt; extent(h).
+  - In the body view, the red glow radius under the hand is 70 + 420·extent(h) px, and the red creeps up the arm in proportion to extent.
+- **Human aggregation (green).** Fragment ready times come from the analog's `solution.fragments` and map to nerves:
+  - f1 (IT knew the alarm servers were failing): ready at h = 0.1. It is a nerve that ends in a loop at the elbow, so the warning stays inside.
+  - f4 (neighbors saw the trips): ready at h = 0.85. Its nerve goes to the *other* hand, the one holding the phone. No exact time is shown because it is verified:false.
+  - f2 (operators realize): ready at h = 1.5. This is the hand's own nerve, and it lights only at h = 1.5.
+  - f3 (the state estimator, i.e. the map): ready at h = 1.83. Its nerve goes to the top of the head, where the map stays dark until 1.83.
+  - The reflex node ("pull away" = shed about 1,500 MW, f5) **never lights**, because the pieces never assembled (analog aggregation notes).
+  - Six brief links between fragments and the reflex connect at **L.lognormalQuantile((i+0.5)/6, median 1.5 h, p90 1.83 h)** = 1.210, 1.351, 1.452, 1.550, 1.665, 1.859 h. Each link grows over 0.05 h, holds for 0.12 h, then drops over 0.05 h (event-time durations, so they reverse correctly in the rewind). Pairs are assigned only once both ends are ready.
+- **AI counterfactual (snap).** `ai_counterfactual.aggregation_median` = 0.25 h against the human median of 1.5 h. Basis, from the analog: every fragment was a machine-readable signal already in the control rooms. Joining "alarm dead + lines tripping + shed load" is a sub-1-hour expert reading task, far inside the ~17.4 h METR 50% time horizon (RATES.md). The routed lane lands at h = 0.25, before the 0.85 h first trip. The lane is **labeled "illustrative"**. Its cascade box is dashed and holds a large "?" with "outcome unknown": people still decide, and we claim nothing about prevention.
+
+## On-screen numbers (max two)
+1. "50 million" (people affected, s3, confirmed by snippets per the analog notes).
+That is the only number. There is no "7 minutes" (unverified) and no clock numerals.
+
+## Shot list (DUR 35 s)
+| t | shot | camera | beat |
+|---|---|---|---|
+| 0.0-1.6 | SC0 CLOSE (aftermath) | z 1.6 on hand + face | Hand on the burner in a big red glow, face in alarm, four green glints under the skin. "Why didn't it hurt?" |
+| 1.6-4.5 | SC1 DOLLY IN through skin | log zoom 1.6 -&gt; 10 into the hand | The skin gives way to a nerve network that works like a grid: lights out, red front. "50 million people. Lights out." |
+| 4.5-9.1 | SC2 INSIDE (rewind) | hold z 10 -&gt; 10.8 | Rewind icon. Red recedes in 0.44 s and lights return. Green links flicker in reverse. "Rewind." / "The warning was there. In pieces." |
+| 9.1-10.3 | SC2 FREEZE | hold | First burn (h 0.85): one red line at the contact. "First burn. No pain." |
+| 10.3-13.7 | SC3 PULL OUT (zoom through scales) | 10.8 -&gt; 0.95 wide, x-ray body | The whole body as one grid: numb pain nerve, four green nerves ending in the wrong places, the head scrolling. "The head was scrolling." |
+| 13.7-16.5 | SC4 DOLLY IN, closer | 0.95 -&gt; 3.0 on the face | t0 freeze: the pain nerve flickers alive, then goes numb. "Here, the pain nerve went numb." |
+| 16.5-19.0 | SC4 HOLD | 3.0 -&gt; 3.3 | "We slowed it down so you could see it." |
+| 19.0-19.4 | dead stop | black | silence |
+| 19.4-27.4 | SC5 INSERT: TWO TIMELINES | flat | Hit. Forward: "As it happened", then "Routed (illustrative)" on the same axis. "?" on the routed cascade. |
+| 27.4-30.8 | SC6 CLOSEST | z 4.3 on the eyes | Routed (illustrative): a green signal arrives and the eyes leave the phone for the hand. "This is the bottleneck." |
+| 30.8-35.0 | END | - | L.endCard, 4.2 s |
+
+**Zoom cycles:** CLOSE 1.6 (0-1.6) -&gt; IN through scales to 10 (1.6-4.5), the population reveal -&gt; OUT to the whole body, 0.95 (10.3-13.7) -&gt; IN+ to the face at 3.0 (13.7-16.5) -&gt; [insert] -&gt; IN++ on the eyes at 4.3 (27.4).
+
+## 3D translation note
+- **SC0:** 50 mm at counter height. A soft vinyl bean character, a matte ceramic hob, and a hand resting on a glowing coil. The red is emissive light only, with no skin damage. The face is lit cool from below by the phone.
+- **SC1-SC2:** one unbroken macro push (an 8 s, eased, Powers-of-Ten style move). The skin turns translucent like wax, and inside is a luminous miniature grid of cell-towns with window lights and nerve cables that read as transmission lines. The rewind is a true reverse playback of particle flows.
+- **SC3:** the pull back out lands on a stylized x-ray body with glass skin and glowing nerve fibers, framed like a subway map of the body.
+- **SC4/SC6:** 85 mm, then a 100 mm macro on the eyes. The routed signal is a thin green filament climbing the arm. Depth of field carries the attention shift from the phone to the hand.
+- What gets richer in 3D: subsurface scattering for "through the skin", real light falloff for red versus phone light, and the vertigo of a continuous scale change.
+
+## Copy variants
+- "Why didn't it hurt?" (hook)
+- "50 million people. Lights out."
+- "Rewind."
+- "The warning was there. In pieces."
+- "First burn. No pain."
+- "The head was scrolling."
+- "Here, the pain nerve went numb."
+- Alternates: "Every nerve knew something." / "One body. No reflex." / "The signal took the scenic route." / "Pain is just routing."
+
+Tags: body/biology, reverse-chronology, bean cartoon, continuous zoom, vertigo
+
+## Build notes
+- Rendered at 35.0 s (confirmed with ffprobe), 1080x1920, 30 fps. The camera is one continuous log-zoom world. The grid lives inside the hand at scale 0.1. Moving between scales is a full-frame overlay fade plus soft per-node edge falloff, so no rectangular patches show.
+- Fixes after the first preview:
+  - Moved the reflex node and its label, and the "pain nerve" label, so they no longer collide with the cards or the rewind clock.
+  - Put dark backings behind the rewind and freeze indicators.
+  - Added a 1 s hold on the wide body shot (12.7-13.7).
+  - Reframed the face close so the phone stays in shot.
+  - The routed green signal in SC6 now stops at the shoulder instead of cutting across the face.
+- Known weak spots:
+  - The wide x-ray body shot is short, and there is no red in it: the rewind is already before the first trip by then, which is true to the data.
+  - A faint horizontal band from the counter is visible behind the grid at 97% overlay.
+  - The "?" box in the routed lane is narrow because the cascade really is only 0.11 h wide.
+
+## Scores
+- Hook: 7. Frame 1 has a big red glow, a panicked bean face, green glints, and the line "Why didn't it hurt?"
+- Speed accuracy: 8. One stated mapping (reversed), a logistic fit through the endpoints, lognormal links, and only the verified trip drawn.
+- Snap impact: 6. Two lanes on the same axis; the routed lane ends in "?". The freeze, silence and hit help, but the panels are still a chart.
+- Emotion: 6
+- Originality: 7. The body-as-grid rewind through the skin is fresh.
+- Craft: 6
+- Honesty: 9. Outcome unknown, labeled illustrative, one sourced number, no injury shown.
+Overall: 7.0
+Virality: 8%. The hand-on-stove hook and the rewind are shareable and legible without sound, but the middle is an abstract grid and the payoff is a timeline chart, which is typical small-account territory.
 </pre></div><div class=""><div><h3>the-two-feeds · 8% viral · 7/10</h3><video src="the-two-feeds/the-two-feeds.mp4" poster="the-two-feeds/poster.png" controls loop playsinline></video></div><pre># The Two Feeds
 
 Tier: animatic
@@ -1694,6 +2027,101 @@ Diversity check: OK, distinct enough (nearest fifty-nine-days / ghost-rewind-cov
 - Honesty: 9 (trials left unchanged, counterfactual floored at the first real dose, illustrative labels at 48 px, only two numbers)
 Overall: 7.1
 Virality: 7% (the speedrun framing is shareable and the thumbnail is legible, but the data-heavy middle and the small routed gain limit rewatch and share motive from a small account)
+</pre></div><div class=""><div><h3>before-the-price · 7% viral · 7/10</h3><video src="before-the-price/before-the-price.mp4" poster="before-the-price/poster.png" controls loop playsinline></video></div><pre>Tier: animatic
+
+# Before the Price
+
+**Logline.** One locked-off frame of a family table, like a page in a picture book. BEFORE: a grandmother ladles from a full pot while a child waits with a bowl. AFTER: the same frame, a smaller pot, and red creeping up the wall calendar. Week by week the pot shrinks, and one night the grandmother says she is not hungry and slides her bowl across. Then a single pull-out: the house sits on a shore, and across the sea an enormous warehouse of idle rice has been glowing green the whole time. The small green light in the kitchen window was it. Then the snap: the same people and the same stock, found about three weeks sooner (illustrative).
+
+- Structure: `before-after` (VIRAL_STRUCTURES.md #11). Played as a same-frame before/after: the cold open shows AFTER, then cuts to BEFORE and lets the audience watch the frame become AFTER. The snap is a second before/after: "As it happened" against "AI-assisted routing · illustrative", on the same clock.
+- Analog: `rice-2008`. The threat is never named. It is only red on a calendar and in windows. No countries, flags or officials on screen ("across the sea", "a warehouse").
+- Medium: children's-book flat. Soft rounded flat shapes with no outlines and no drop shadows. Warm grays only. Red and green are the only saturated colors.
+- DUR 40 s, 1080x1920, 30 fps. Scene: `scenes/before-the-price.js`.
+
+## Time mapping (one stated mapping, with stops)
+- **Running time: 1 second = 2 weeks.** The film is stop-start: at the stops, time freezes (the calendar stops flipping) and nothing about the data moves. It never runs at any other rate during the race.
+  - t 1.4 to 4.2: STOP at week 12 (BEFORE).
+  - t 4.2 to 8.2: run weeks 12 to 20.
+  - t 8.2 to 9.8: STOP at week 20 (the grandmother gives her bowl away).
+  - t 9.8 to 13.4: run weeks 20 to 27.2.
+  - t 13.4 to 17.4: STOP at week 27.2 during the single pull-out and the wide hold.
+  - t 17.4 to 19.45: run weeks 27.2 to 31.3 (the need lights at 27.3, and the deal thread lands at 31.3).
+  - t 19.45 to 20.2: STOP at week 31.3.
+  - t 20.2 to 22.4: run weeks 31.3 to 35.7 during the push back in.
+- Weeks 0 to 12 are skipped because the fitted red is under 5% of its climb there. BEFORE = week 12.
+- **Cold open (t 0 to 1.4):** a flash-forward to week 30.6 (the sourced peak), labeled AFTER. It is the same timeline and the same curve, and then it cuts back to BEFORE.
+- **Snap (t 28.2 to 34.2):** both lanes run on one clock at 1 s = 7 weeks, weeks 12 to 40. They freeze together at week 28.3 (the AI-lane deal) for 1.0 s, then run on.
+
+## Speed math
+**Threat (red) = price-climb extent**, extent = (price - 300)/800 (analog notes). This reuses the-warehouse's fit. Sourced points are 0.875 at week 29.1 (s2, April 2008, over $1,000/t) and 1.0 at week 30.6 (s3, the peak, over $1,100/t). The week 5.3 point is `verified:false`, so it is only a shape anchor (0.01) and never appears on screen. The climb is not linear, so a logistic K/(1+exp(-r(w-m))) is least-squares fitted through the three anchors: **K = 1.564, r = 0.222/week (early doubling about 3.1 weeks), m = 28.02**, with residuals under 1e-3. Extent = min(fit, 1) until the deal.
+- **Post-deal decay (sourced):** after the deal at week 31.3, extent decays exponentially toward the June point, 0.625 at week 35.7 (s3, about $800/t): k = ln(1/0.625)/4.4 = **0.107/week**. This is the analog's `deploy.median` of 4.4 weeks. Prices fall by more than a quarter (from over $1,100 to about $800) within about 4 weeks.
+- Values used: extent 0.04 (wk 12), 0.23 (wk 20), 0.71 (wk 27.2), 0.81 (wk 28.3), 1.0 (wk 30.6), 0.625 (wk 35.7).
+- **On screen:** the red fills the wall calendar's page from the bottom, with height = extent. In the wide shot every window on the shore holds the same red level, because rice is one market.
+- **Pot size = rice per fixed budget.** Quantity is proportional to 300/price (relative, and the $300 base is only used as a ratio). Pot area follows quantity, so its linear scale is sqrt(300/price): 0.95 at week 12 and 0.52 at the peak. The bowls fill the same way.
+
+**Human aggregation (green).** The analog gives median 31.3 (the Japan-Philippines deal, s1), p10 27.3 (the importer's failed tender, s1) and p90 205.3 (the G20 AMIS, `verified:false`, used only for the distribution's tail and never shown). The distribution is heavily skewed, so it is a two-sided lognormal: sigma_lo = ln(31.3/27.3)/1.2816 = 0.107 and sigma_hi = ln(205.3/31.3)/1.2816 = 1.468.
+- In the wide shot, five green threads reach from the warehouse across the sea to five ports. Thread i connects at quantile q = 0.1, 0.3, 0.5, 0.7, 0.9, which gives weeks 27.3, 29.6, 31.3, 67.0 and 205.3. Each thread grows linearly from week 0 to its arrival, so at the freeze (week 27.2) most dangle mid-sea, and the late ones barely left. Our family's port is the q = 0.5 thread, the deal at week 31.3.
+- The need (f2, week 27.3) lights our port green as time resumes. The economists' idea (f3) and AMIS (f5) are `verified:false` and stay off screen.
+- The warehouse (f1) is ready at week 0. Its light is green in the kitchen window from frame 1 ("there the whole time").
+
+**AI counterfactual (illustrative).** `ai_counterfactual.aggregation_median` = 28.3. Matching a public, stated shortage (the withdrawn tender, week 27.3) with a known idle stock and drafting terms is a short analysis-and-routing task well inside the ~17.4 h 50% task horizon in RATES.md (the METR entry). The assumption is that the match surfaces within 1 week of the need going public, and governments still negotiate and decide. Earlier detection is not assumed. In the AI lane the same decay law (k = 0.107/week) starts at week 28.3 from the fitted extent there (0.81). The pot stops shrinking at quantity 0.32 instead of 0.27 and recovers about 3 weeks sooner. The gain is modest and is not inflated. The snap lands through staging: a hard cut to black, silence, one stamp, the two panels side by side, and a freeze on the frame where only the AI lane has its green.
+
+**Numbers on screen (two, both sourced):** "1.5 million tonnes" (f1, s1) and "a quarter" (the post-deal fall, s3). No week numbers appear. The snap panels use the words "peak" and "deal".
+
+## Shot list and camera (L.camera keyframes, eased)
+| t | shot | camera |
+|---|---|---|
+| 0.0-1.4 | SC1 CLOSE, cold open AFTER (week 30.6): small pot, calendar full red, the grandmother's worried face, the child looking up, a green light in the window. Chip "AFTER". "Same table. Smaller pot." | locked |
+| 1.4-4.2 | SC2 CLOSE BEFORE (stop, wk 12): full pot, both smiling. Chip "BEFORE". "Before: a full pot." | locked |
+| 4.2-8.2 | SC2 run (wk 12-20): calendar leaves flip, pot shrinks. "Each week, a little less." | locked |
+| 8.2-9.8 | STOP (wk 20): the grandmother slides her bowl to the child. "Grandma says she's not hungry." | locked |
+| 9.8-13.4 | run (wk 20-27.2): red climbs fast, faces worried. "The red kept climbing." | locked |
+| 13.4-17.4 | SC3 THE PULL-OUT (stop, wk 27.2): one continuous eased dolly out from the kitchen, through the cut-away house, to the shore, the sea and the warehouse. "It was there the whole time." / "1.5 million tonnes. Idle." | zoom 8.3 to 1.0 |
+| 17.4-20.2 | SC3 WIDE (wk 27.2-31.3): the port lights (need), threads crawl, and ours lands at 31.3. | hold |
+| 20.2-22.4 | SC4 PUSH IN+ (wk 31.3-35.7): back into the kitchen, closer than SC1 on the child's face, pot growing, red falling. | zoom 1.0 to 10.5 |
+| 22.4-24.8 | hold: "The red fell a quarter in a month." | hold |
+| 24.8-27.6 | dim: "We slowed it down so you could see it." | hold |
+| 27.6-28.2 | Hard cut to black. Silence. Stamp. | cut |
+| 28.2-34.2 | SC5 SNAP: two 940 px panels, the same frame twice, "As it happened" against "AI-assisted routing · illustrative", one clock, and a freeze at the AI deal. "Same stock. Same people." / "Found sooner." | locked |
+| 34.2-36.6 | SC6 IN++: extreme close on the child's full bowl and the grandmother's hand, green glow. "This is the bottleneck." | push |
+| 36.6-40.0 | END: L.endCard("The bottleneck is us."), 3.4 s | hold |
+
+**Zoom cycle.** IN (locked close-up) 0 to 13.4, OUT (the single pull-out) 13.4 to 16.0 with a wide hold to 20.2, IN+ 20.2 to 22.4 (zoom 10.5, tighter than 8.3), IN++ 34.2 to 36.6 (the bowl and hands, the tightest).
+
+## 3D translation note
+- The close-up is a truly locked-off 40 mm at seated child height, across the table, like an illustrated page. Soft, flat, matte shading (toon ramp with two tones, no speculars), and steam as flat cut shapes.
+- The pull-out is one continuous camera move on a long jib: back through the missing front wall of the house (a dollhouse cutaway), rising to about 150 m over 2.6 s with a strong ease-out, then a slow drift as the sea opens. The window's green dot resolves into the warehouse in a single perspective shift. It should feel like a book page unfolding into a pop-up.
+- The warehouse is enormous (size = resources), with rows of sacks emitting soft green light. The threads are glowing ropes floating on the sea.
+- The push back in should be faster than the pull-out and end at 85 mm on the child's face.
+- The characters are soft vinyl-toy shapes with swap-in brows and mouths (replacement faces). The grandmother's hands are simple mitten shapes.
+
+## Copy variants
+- "Same table. Smaller pot." / "Before: a full pot." / "Each week, a little less."
+- "Grandma says she's not hungry." / "The red kept climbing."
+- "It was there the whole time." / "1.5 million tonnes. Idle."
+- "The red fell a quarter in a month."
+- "Same stock. Same people." / "Found sooner." / "Not less rice. Slower routing."
+
+## Tags
+{"structure":"before-after","medium":"children's-book flat","family":"cooking","scale":"family","pace":"stop-start","camera":"locked-off close-up with a single pull-out","emotion":"tenderness","protagonist":"one person","analog":"rice-2008"}
+
+Diversity check: OK: distinct enough (nearest the-warehouse 0.56, recipe-for-a-shortage 0.56).
+
+## Build log
+- Preview 1 had three problems, all fixed. The AI-lane "deal" marker was invisible during the snap freeze because its fade started at the deal week and the clock froze there. It now appears at full strength on the freeze. The composition sat too high and left the bottom third as empty tablecloth, so the whole page moved down 190 px and the cards no longer cover the calendar. The green light in the window was too small for the thumbnail, so the warehouse in the window is now larger and shows four green sacks.
+- The pull-out is one continuous log-zoom (8.3 to 1.0). The kitchen is drawn inside the cut-away house at scale 0.12, so there is no crossfade between zoom levels.
+- Render: 40.0 s (ffprobe), which matches DUR.
+
+## Scores
+- Hook: 7 (frame 1 has a full red calendar, a green-lit warehouse in the window, a sad child, a worried grandmother, the "AFTER" chip and "Same table. Smaller pot.")
+- Speed accuracy: 8 (the-warehouse's logistic fit through the sourced points, the sourced post-deal decay, 1 s = 2 weeks with frozen stops, lognormal thread quantiles, and the AI lane from the analog)
+- Snap impact: 5 (the honest gain is only about 3 weeks. The freeze on the frame where only the AI lane has its green helps, but the two lanes still look alike.)
+- Emotion: 7 (the grandmother sliding her bowl to the child is the tender beat, and the faces read clearly)
+- Originality: 6 (a new medium and a same-frame before/after, but it is the fifth rice film and shares the pot and warehouse metaphor with the-warehouse)
+- Craft: 7 (clean flat shapes, a truly continuous pull-out, and readable panels. The arms are simple and the snap panels are busy.)
+- Honesty: 9 (no countries or officials, unverified items off screen, the counterfactual labeled illustrative and not inflated)
+- Overall: 7.0
+- Virality: 7% (the grandma-gives-her-bowl beat and the "it was there the whole time" pull-out are shareable, but it is a quiet film with a small snap from a small account)
 </pre></div><div class=""><div><h3>the-balcony · 7% viral · 7/10</h3><video src="the-balcony/the-balcony.mp4" poster="the-balcony/poster.png" controls loop playsinline></video></div><pre># The Balcony
 
 Tier: animatic
@@ -3143,6 +3571,89 @@ Diversity check: OK: distinct enough (nearest two-days 0.89, the-last-thirteen-d
 - Honesty: 9 (symbolic dark-window count stated, unverified dates off screen, no survival claim)
 Overall: 6.9
 Virality: 6% + the empty-chair reversal is a genuine emotional hook, but a slow log-time rewind and an abstract "Day 305" opener will lose most scrollers before the payoff.
+</pre></div><div class=""><div><h3>the-orchestra · 6% viral · 6.9/10</h3><video src="the-orchestra/the-orchestra.mp4" poster="the-orchestra/poster.png" controls loop playsinline></video></div><pre># The Orchestra
+
+Tier: animatic
+
+**Logline.** A national orchestra plays the summer program in perfect sync, every bow on the same beat, and the beat is the red: its tempo is the fitted curve of the 2003 heat, speeding toward the peak and slowing after it. Scattered through the seats, a few players hold green pages (a doctor, a neighbor with a key, a forecaster): the pieces of the one score that matters. Their lines reach toward the podium and break. Wait for it: the doctor's page, the plan, reaches the podium on day 12, after the peak. The chair beside her is already empty.
+
+- Structure: `wait-for-it` (research/VIRAL_STRUCTURES.md #4). Promise in frame 1 ("Watch the green page."), payoff at day 12 (it arrives, and it is late), then the snap reveals how fast the pieces could have clicked.
+- Analog: `heatwave-2003` (France, Aug 1-20, 2003)
+- Medium: ink wash (gray paper, ink strokes and gray washes; only red heat and green pages saturated)
+- Differs from the other films on this analog (day-three-hundred-five reverse / children's-book; the-balcony POV / shadow puppet; nineteen-days x-ray heartbeat; the-heat-map topographic zoom): a crowd, not one person; music, not a body or map; the irony of perfect synchronization on the wrong thing. It satirizes the program nobody can interrupt, not the musicians.
+
+## Time mapping (one mapping, stated)
+- Race (t = 1.5 to 20.5 s): **1 film second = 1 day**, day d = t - 1.5, days 0 (Aug 1) to 19 (Aug 20). Linear.
+- Cold open (t 0 to 1.5): flash-forward to day 11.5 (the peak) on the same timeline, then a cut back to day 0.
+- Snap (t 24.4 to 28.9): the same 19 days in **4.5 s**, same red in both lanes.
+
+## Speed math
+**Threat (red).** Same fit as nineteen-days / the-heat-map / the-balcony, for consistency. The analog sources only endpoints (extent 0 on day 0; 1.0 = all ~14,800 excess deaths by day 19, s2) plus the peak (daily excess &gt; 1,000 on days 11-12, s2). No straight line: `L.logistic` fitted through them.
+- Midpoint at day 11.5 (sourced peak); extent 0.99 at day 19: k = ln(99)/7.5 = 0.613/day, early doubling ln2/k = **1.13 days**, s0 = 0.00086, normalized so E(0)=0, E(19)=1.
+- E(d): d3 0.005, d5 0.018, d8 0.105, d10 0.29, d11.5 0.505, d12 0.58, d13 0.72, d15 0.90.
+- Heat curve rho(d) = 4 s(1-s) (s the raw logistic): 0.003 d0, 0.07 d5, 0.38 d8, 0.82 d10, 1.0 d11.5, 0.82 d13, 0.38 d15, 0.04 d19.
+
+**What the red drives on screen.**
+- **The tempo.** Bow strokes per film second f(d) = 0.6 + 1.4 rho(d): 0.60 on day 0, 1.13 day 8, 2.0 at the peak, 1.13 day 15, 0.66 day 19. Stroke phase is the integral of f (about 20 strokes over the 19-day race). Every bow in the nation and the conductor's baton use that one phase; the pulse sound (bonk cues) sits on the same integer phases. The tempo is the fitted curve, not a real tempo of anything.
+- Red wash over the hall and the nation: alpha proportional to rho(d), the same field at every zoom level.
+- **Loss as absence.** 14 of the 93 chairs in the main hall (15%) empty when E(d) crosses thresholds spread evenly from 0.08 to 0.92: the player fades, the stand lamp goes out, the page goes dark. The chair beside the protagonist empties at E = 0.53 (day ~11.7, just after the peak). Other halls in the nation lose lamps at the same thresholds. The share is symbolic, not a death count; the timing is the curve. No bodies.
+
+**Human aggregation (green).** Analog aggregation median 12, p10 9.5, p90 305 (days). Two-sided lognormal (as in the-balcony / nineteen-days): sigma_low = ln(12/9.5)/1.2816 = 0.182, sigma_high = ln(305/12)/1.2816 = 2.525. Eight green pages in the hall at quantiles 0.06 / 0.2 / 0.35 / 0.5 / 0.65 / 0.8 / 0.9 / 0.95:
+- arrival days 9.0 / **10.3 (a neighbor with a key)** / 11.2 / **12.0 (a doctor: the protagonist violinist; the median = Plan Blanc, Aug 13, verified f4)** / 31.7 / **100.4 (a forecaster)** / 305 / 763.
+- Four reach the podium inside the film, all within three days of the peak; four never do. Before its day each page's line reaches part way toward the podium and breaks (attention elsewhere: the attempt rhythm is a vibe, the arrival days are data). On arrival the page flies down the line to the conductor's stand.
+- Labels are roles only. Unverified dates (the ER doctors' alarm ~day 9.5, the forecasts ~day 1, foreign warning systems) never appear on screen; the forecaster is placed by the lognormal quantile, not by an unverified date.
+- Other halls in the nation: two green pages each, arrival days drawn from the same lognormal (quantiles from the seeded RNG).
+
+**AI counterfactual (illustrative).** `ai_counterfactual.aggregation_median` = 3 days (basis in the analog: joining a known forecast with the heat-mortality relationship and routing a warning to hospitals and home care is a short expert task, inside the ~17.4 h METR 50% task horizon in RATES.md). Same lognormal shape scaled 3/12: 2.3 / 2.6 / 2.8 / **3.0** / 7.9 / 25.1 / 76 / 191 days. So in the AI lane five pages arrive within the 19 days (four before day 3.0, one at 7.9), three still never do. Day 3 is before the peak (rho(3) = 0.02). Labeled illustrative on screen; the red wash, tempo and emptied chairs are drawn **identically** in both lanes: only when the pieces meet changes, no outcome is claimed.
+
+**On-screen numbers (two):** "day 12" (the plan, verified: Plan Blanc Aug 13 = t 12) and "day 3" (illustrative).
+
+## Shot list and camera (crane up and drop down)
+World: one concert hall seen from behind the conductor, 93 players in six arcs, podium at the bottom center; the hall sits in a loose ink outline of a nation with 36 other halls.
+
+| t | shot | camera (center, zoom) | content |
+|---|---|---|---|
+| 0.0-1.5 | SC1 CLOSE, cold open (day 11.5) | her stand, zoom 7 | violinist at eye level, green page glowing on her stand, bows sawing at peak tempo, red wash. "Watch the green page." |
+| 1.5-6.5 | SC2 CLOSE | zoom 7 -&gt; 7.3 creep | day 0-5: slow bows, calm. "Every bow on the same beat." / "Her page can't reach the podium." (her line reaches out of frame and breaks) |
+| 6.5-8.5 | SC3 CRANE UP | 7.3 -&gt; 0.78 (whole hall) | reveal the orchestra, green pages scattered, lines breaking. |
+| 8.5-9.5 | SC3 WIDE HOLD | 0.78 | labels: a neighbor with a key / a doctor / a forecaster. "Perfect time. Wrong score." |
+| 9.5-10.7 | SC4 CRANE UP++ | 0.78 -&gt; 0.27 (the nation) | every hall on the same beat, red over all. |
+| 10.7-11.8 | SC4 NATION HOLD | 0.27 | "Every hall. The same beat." (days 9.2-10.3) |
+| 11.8-12.8 | SC5 DROP DOWN | 0.27 -&gt; 0.9 | back to the hall at the peak. |
+| 12.8-14.2 | SC5 HALL | 0.9 | "Wait for it." Day 12.0 (t 13.5): her page reaches the podium. Stamp: "Day 12. The plan arrives." |
+| 14.2-16.0 | SC6 DROP DOWN | 0.86 -&gt; 9.5 | down past her to the empty chair beside her, closer than SC2. |
+| 16.0-20.5 | SC6 CLOSE++ | 9.5 -&gt; 10 creep | the chair, lamp out; the tempo slows as the red recedes. "After the peak." / "Some lamps were already out." |
+| 20.5-23.0 | SLOW | hold, darken | "We slowed it down so you could see it." |
+| 23.0-23.6 | freeze, silence | | |
+| 23.6-31.0 | SC7 SNAP | two stacked 920 px panels | 19 days in 4.5 s each; same red, same chairs. People: day 12 (after the peak) / Frontier AI: day 3, illustrative. |
+| 31.0-36.0 | SC8 DOLLY IN+ | podium, zoom 1 -&gt; 5.5 | the conductor's stand: the pieces laid together as one green score over the gray program. "The score was already here." / "This is the bottleneck." |
+| 36.0-40.0 | END | | end card, 4 s. |
+
+Zoom cycles: IN 0-6.5 -&gt; OUT 6.5-8.5 (hall) -&gt; OUT++ 9.5-10.7 (nation) -&gt; IN 11.8-12.8 (hall) -&gt; IN++ 14.2-16.0 (zoom 9.5, closer than start 7); cycle 2: snap wide 23.6-31 -&gt; IN+ 31-36 (podium).
+
+## 3D translation note
+A real concert hall in sumi-e: ink-textured shaders on gray paper, volumetric red haze pooling under the ceiling. SC1-SC2: 50 mm at seated eye height inside the second desk of the violins, shallow depth so neighboring bows cross the frame as soft ink strokes in sync. SC3: a single slow crane (2 s) rising straight up and back over the conductor's shoulder to a 24 mm top-down wide of the hall, then (SC4) continuing up through the roof to a satellite-high ortho view of the nation where every hall is a pulsing ring of lamps on one beat. The drop (SC5-SC6) is faster and lands at 85 mm on the empty chair, a dark lamp and a closed page. Snap is flat 2D panels on black. Richer in 3D: bow shadows strobing in unison on the stage floor, parallax between tiers, the green page's glow on her face, lamps going out as small smoke curls.
+
+## Copy variants
+- Watch the green page. / Every bow on the same beat. / Her page can't reach the podium. / Perfect time. Wrong score. / Every hall. The same beat. / Wait for it. / Day 12. The plan arrives. / After the peak. / Some lamps were already out. / We slowed it down so you could see it. / Same days. Full speed. / The score was already here. / This is the bottleneck.
+- Alternates: "Nobody stops the program." / "In time. Out of time." / "The tempo is the red." / "Civilization plays in sync. Just not together."
+
+## Tags
+{"structure":"wait-for-it","medium":"ink wash","family":"music","scale":"nation","pace":"slow build","camera":"crane up and drop down","emotion":"grief","protagonist":"a crowd","analog":"heatwave-2003"}
+Diversity check: OK (nearest ninety-seconds / day-three-hundred-five at 0.56).
+
+## Scores (after render; 40.0 s confirmed by ffprobe)
+- Hook: 6 (frame 1: red-washed section of violinists, one glowing green page with its line reaching out of frame, "Watch the green page."; the faces are small stick faces, so it reads more as a pattern than a person)
+- Speed accuracy: 8 (same logistic fit as the sibling films; bow tempo, red wash and emptied chairs all run on the fitted curve; lognormal page arrivals; one stated mapping; the tempo is labeled in notes as a fitted curve, not a measurement)
+- Snap impact: 6 (black freeze and hit, two 920 px panels with identical red and a heat strip; the green tick lands before the hump in one lane and after it in the other; the difference is 9 days and is staged, not inflated)
+- Emotion: 6 (the empty chair beside her, her face turning to it, and lamps going dark on the beat carry the grief; the stick-figure look undercuts it a little)
+- Originality: 7 (the tempo of a whole nation's orchestra is the heat curve: perfect sync on the wrong score; crane up to a nation of halls pulsing on one beat)
+- Craft: 6 (ink-wash paper and washes work; the nation wide is legible; the figures are generic sticks and the snap halls are dense at phone size)
+- Honesty: 9 (two numbers: day 12, verified, and day 3, illustrative; roles only, no unverified dates; chairs emptying is symbolic and stated; same red in both lanes, no outcome claimed)
+- Overall: 6.9
+- Virality: 6% (the "wait for it" promise and the synchronized-bows irony are a good hook, but a stick-figure orchestra is slow to read at thumbnail size and the payoff, a nine-day gap, is subtle for a casual scroll.)
+
+Fix pass after the preview: brought the camera closer in both close shots (zoom 7 at the start, 9.5 on the empty chair) so faces read, fixed the "sad" brows (they read as angry), and moved the "SUMMER PROGRAM" title off the green slots.
 </pre></div><div class=""><div><h3>the-relay · 6% viral · 6.9/10</h3><video src="the-relay/the-relay.mp4" poster="the-relay/poster.png" controls loop playsinline></video></div><pre># The Relay
 
 Tier: animatic

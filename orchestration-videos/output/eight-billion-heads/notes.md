@@ -27,25 +27,25 @@ Tier: animatic
 | 0.0-1.4 | SC1 CLOSE | eye level on one x-ray face, zoom 60, slow push | HOOK (flash-forward, red front at the edge, green glint in hand). "One body." |
 | 1.4-2.0 | SC1 | hold | rewind day 70 -> 0 |
 | 2.0-3.4 | SC1 CLOSE | hold, faint push | "Eight billion heads." |
-| 3.4-7.8 | SC2 CRANE UP | zoom 60 -> 1 (log-eased), through the organ level (a crowd of x-ray people) to the whole body | RACE fall: red crosses the organs. "Every organ, a country." |
+| 3.4-7.7 | SC2 CRANE UP | zoom 60 -> 1 (log-eased), through the organ level (a crowd of x-ray people) to the whole body | RACE fall: red crosses the organs. "Each organ, a few countries." |
 | 7.8-13.5 | SC3 WIDE HOLD | locked, very slow drift | bottom of the hole: glow fading, green glints in a few hands. "The answer was already here." / "In pieces." |
 | 13.5-16.0 | SC4 DROP DOWN | zoom 1 -> 90 onto the same person, closer than frame 1 | climb begins; the answer reaches the hero's organ on day 421 |
 | 16.0-17.6 | SC4 CLOSE | hold | "On its own late day." |
 | 17.6-21.8 | SC5 CRANE UP | zoom 90 -> 1, faster than SC2 | stragglers turn green absurdly late. "Some waited months more." |
 | 21.8-22.8 | SC6 | freeze, silence | dead stop |
 | 22.8-25.4 | SC6 | hold | "We slowed it down" / "so you could see it." |
-| 25.4-32.0 | SC7 SNAP | two 920px panels stacked | true speed replay (top), hit, routed replay (bottom, illustrative, same supply); 421 vs 363 |
-| 32.0-35.2 | SC8 DROP DOWN | zoom to 140 on the hero's face | "This is the bottleneck." |
-| 35.2-39.2 | END | end card | 4 s |
+| 25.4-33.2 | SC7 SNAP | two 920px panels stacked | top: as it happened (25.8-28.8); hit at 29.0; bottom: with AI routing, illustrative, same supply (29.0-32.0); 421 vs 363 |
+| 33.2-36.6 | SC8 DROP DOWN | zoom 1 -> 330 on the hero's face (closest), hold | "This is the bottleneck." |
+| 36.6-40.6 | END | end card | 4 s |
 
-Zoom cycles: cycle 1 IN 0-3.4 -> OUT 3.4-7.8 -> IN+ 13.5-16; cycle 2 OUT 17.6-21.8 -> (snap) -> IN++ 32-35.2.
+Zoom cycles: cycle 1 IN 0-3.4 -> OUT 3.4-7.8 -> IN+ 13.5-16; cycle 2 OUT 17.6-21.6 -> (snap) -> IN++ 33.2-35.0 (hold to 36.6). DUR 40.6 s.
 
 ## 3D translation note
 A single continuous volumetric x-ray: the hero is a translucent skeleton bust lit from inside (subsurface bone glow), shot on a 50mm at eye level, shallow focus on the hand holding the glint. Crane up is a true dolly-zoom-free vertical rise of ~5 orders of magnitude (use a scale-space camera with log-speed easing): the person becomes one of hundreds of translucent figures packed like cells in an organ, the organ one of ~96 in a planet-sized body floating in black. Red is a volumetric fluid front moving tissue to tissue; loss is the organ's inner light dimming. Drop-downs should accelerate, the second one closer (85mm, inches from the skull). What gets richer in 3D: parallax between tissue layers, figures turning their heads toward the incoming green, the glint's light spilling onto finger bones.
 
 ## Copy variants
 - "One body. Eight billion heads." (used)
-- "Every organ, a country." (used)
+- "Each organ, a few countries." (used)
 - "The answer was already here. In pieces." (used)
 - "On its own late day." (used)
 - "Same supply. Better routing." (alt snap caption)
@@ -54,3 +54,14 @@ A single continuous volumetric x-ray: the hero is a translucent skeleton bust li
 
 ## Tags
 structure man-in-a-hole; medium x-ray; family body/biology; scale multi-scale zoom; pace stop-start (changed from assigned "accelerating": diversity.js said TOO SIMILAR to vaccine-speedrun at 0.44; the film's freeze-hold-sprint rhythm fits stop-start); emotion awe; protagonist a crowd; camera crane up and drop down; analog covid-2020.
+
+## Scores (after preview + final render, 40.6 s confirmed by ffprobe)
+- Hook: 7 (frame 1 has an x-ray face, a green glint in cupped hand-bones, and a hard red front at the left edge, with "One body.")
+- Speed accuracy: 9 (red on sourced country-share points, green on the lognormal 421/490 with floor 343, one 1 s = 30 days mapping; organs are 1/96 bins of countries, disclosed)
+- Snap impact: 6 (a 58-day gain is honest but small; staging is freeze, silence, hit, then stacked panels, and the second body greens visibly sooner)
+- Emotion: 7 (the hero holds a piece from day 0 and still waits until day 421 in a dimmed red organ; the green bloom is a real release)
+- Originality: 7 (planet as one x-ray body, organs as crowds; zoom through three scales)
+- Craft: 7 (clean scale transitions, and the faces read; the bottom of the hole is a static 6 s hold that may lose some viewers, and the body-level organs are dense)
+- Honesty: 9 (threat and product unnamed, illustrative plus same-supply labels, loss shown only as dimming)
+Overall: 7.4
+Virality: 9% - the zoom from skull to planet-body is a strong, shareable image, but the static middle and a snap measured in weeks rather than a dramatic gap cap it at single digits from a small account.
