@@ -62,3 +62,16 @@ Shoot it as a real volumetric x-ray: bones as emissive translucent meshes, soft 
 
 ## Tags
 {"structure":"ticking-clock","medium":"x-ray","family":"body/biology","scale":"body","pace":"accelerating","camera":"locked-off close-up with a single pull-out","emotion":"dread","protagonist":"one person","analog":"heatwave-2003"}
+
+## Scores (after render; 40.0 s confirmed by ffprobe)
+- Hook: 7 (frame 1: x-ray face with bright glasses, red haze and 12 red calendar cells, green glows at the edges, "Her heart is the clock.")
+- Speed accuracy: 8 (logistic fit through sourced endpoints plus peak; the heartbeat tempo, haze, calendar and dimming all run on the fitted curve; lognormal arrivals; one mapping)
+- Snap impact: 6 (black freeze, hit, stacked 920 px panels with identical red; the difference is only 9 days, staged rather than inflated)
+- Emotion: 7 (the accelerating heartbeat is a real dread engine; ribcages dimming in the wide shot is loss as absence)
+- Originality: 7 (heartbeat-as-clock, x-ray block of ribcages)
+- Craft: 6 (clean x-ray look; mini figures in the wide shot are generic; the close+ shot is busy with lines)
+- Honesty: 9 (two numbers, 12 verified and 3 illustrative; tempo stated as a fitted curve, not a heart rate; she is never shown dimming)
+- Overall: 7.1
+- Virality: 7% (an x-ray skull with a racing heartbeat stops the scroll, but the payoff is an abstract chart and the text-heavy middle stretch will lose casual viewers).
+
+Fix pass: moved the snap's "after/before the peak" labels under their own panels and removed a duplicate "illustrative" tag that sat in the right-hand UI column.
