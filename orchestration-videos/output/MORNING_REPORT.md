@@ -8,7 +8,7 @@ Open `output/index.html` to see every film, sorted by virality. All 62 concepts,
 - **Finished films: 49.** All pass `tools/verify.js`, which checks the duration against DUR, that red and green are the only saturated colours, and that a QR code appears in the last 6 s.
 - **Unrendered: 1.** `the-green-screen` needs your decision; see "Needs your decision" below. **In progress: 1** (`cracks-in-the-map`).
 - **Diversity: 0.883** (mean pairwise distance).
-  - Every one of the 18 structures, 20 media and 10 analogs has at least 2 films.
+  - Every one of the 18 structures and 10 analogs has at least 2 films. So does every medium except embroidery, which has 1, because its second film is `the-green-screen`, still unrendered.
   - 18 metaphor families are used, including dance and library.
   - The "mind" scale has two films, and so does AI as protagonist.
   - After the first 18 films, I wrote the late films as new concepts aimed at gaps. They were not repeats from the bank.
