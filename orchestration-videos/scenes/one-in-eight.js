@@ -223,7 +223,7 @@ function makeScene(SERIF, HAND) {
       ctx.save(); L.camera(ctx, t >= 33.4 ? CAM_END : CAM, t); world(ctx, yr, t, { chemMood, labMood: t >= 33.4 ? 'resolve' : 'up' }); ctx.restore();
       if (t < 26.4) ruler(ctx, yr, running(t), 1, t);
       // cards
-      if (t < 1.5) { block(ctx, ['It started', { text: 'at 1 in 8.', col: RED, size: 150 }], 470, 118, 1); slate(ctx, 'SC1  CLOSE  (FLASH-FORWARD, YEAR 2.5)'); }
+      if (t < 1.5) { block(ctx, ['It started', { text: 'at 1 in 8.', col: RED, size: 150 }], 470, 118, 1); slate(ctx, 'SC1  CLOSE  (FLASH-FORWARD)'); }
       else if (t < 6.5) { block(ctx, ['The answer existed.', { text: 'In pieces.', col: GREEN }], 470, 100, fade(t, 1.6, 4.4)); countCard(ctx, 3, 'THE WARNING', GREEN, fade(t, 4.5, 6.5, 0.2), 'a hospital lab saw it'); slate(ctx, 'SC2  CLOSE  EYE LEVEL'); }
       else if (t < 15.5) { block(ctx, ['Every piece', 'in a different hand.'], 470, 92, fade(t, 10.4, 12.6)); block(ctx, ['Nobody routing', 'them together.'], 470, 92, fade(t, 13.0, 15.4)); slate(ctx, t < 10 ? 'SC3  CRANE UP' : 'SC3  WIDE'); }
       else if (t < 26.4) {

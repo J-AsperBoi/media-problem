@@ -68,3 +68,19 @@ A real wall of layered printed posters, shot like a documentary crane in a vast 
 ## Tags
 structure countdown-list, medium constructivist poster, family machine, scale history, pace stop-start, camera crane up and drop down, emotion resolve, protagonist a crowd, analog penicillin-resistance-1946.
 Diversity check: OK (nearest the-relay / ghost-rewind-covid at 0.56).
+
+## Build log
+- Preview reviewed (contact_sheet.png): hook, crane-up/drop-down cycles, 3-2-1 cards, stop, snap panels (920 px, labels 56/48 px), end card all read correctly.
+- Fix after preview: the SC1 slate read "FLASH-FORWARD, YEAR 2.5", which put a 2.5 numeral (and a third number) on screen. Changed it to "FLASH-FORWARD". Now the only numbers on screen are "1 in 8" and "13 years"; 3/2/1/0 are list indices.
+- Full render: output/one-in-eight/one-in-eight.mp4, ffprobe duration 40.000 s (DUR 40).
+
+## Scores
+- Hook: 7 (big red disc and wedge, a face, a green gear, "It started at 1 in 8." in frame 1)
+- Speed accuracy: 8 (logistic fit through verified endpoints, lognormal sockets from the verified p10, one stop-start mapping; the extrapolation past 1948 is labeled "derived fit")
+- Snap impact: 6 (freeze, silence, one hit; the machine runs visibly earlier in the lower panel, but the panels are small-detail on a phone)
+- Emotion: 6 (the chemist's gear draining red is the beat that lands; the rest is poster-cool rather than moving)
+- Originality: 8 (constructivist red-wedge poster plus a countdown that ends on the red's own move)
+- Craft: 7 (clean flat style, readable cards; the wide shot is busy, and a few holders get cropped by the ruler at close zooms)
+- Honesty: 9 (unverified fragments and the 59% figure dropped, red identical in both panels, counterfactual labeled illustrative with no numeral)
+- Overall: 7.3
+- Virality: 7% (strong poster look and a clear countdown, but the snap is subtle and the payoff depends on reading two small gear diagrams, so it is unlikely to break out from a small account)

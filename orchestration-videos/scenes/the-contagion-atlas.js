@@ -231,8 +231,8 @@ function makeScene(SERIF, HAND) {
       ctx.fillStyle = on ? GREEN : '#2b2e35'; ctx.fill(); ctx.strokeStyle = on ? GREEN : '#5a5e66'; ctx.lineWidth = 2; ctx.stroke(); });
     ctx.fillStyle = '#f4f1ea'; ctx.fillRect(xOf(d) - 2, ay - 64, 4, 96);
     ctx.restore();
-    L.label(ctx, title, 775, top + 150, 50, { alpha: a, col: '#e8e4da' });
-    if (sub) L.label(ctx, sub, 775, top + 212, 48, { alpha: a, col: '#e8e4da' });
+    L.label(ctx, title, 735, top + 150, 50, { alpha: a, col: '#e8e4da' });
+    if (sub) L.label(ctx, sub, 735, top + 212, 48, { alpha: a, col: '#e8e4da' });
   }
   function snap(ctx, t) {
     ctx.fillStyle = '#0d0e11'; ctx.fillRect(0, 0, 1080, 1920);
@@ -278,7 +278,7 @@ function makeScene(SERIF, HAND) {
       snap(ctx, t); slate(ctx, 'SC8  SNAP  FLAT');
     } else {
       // IN++: routed lane, held tableau at the hero's (illustrative) arrival
-      const d = L.lerp(752, 772, L.sm(30.6, 32.8, t));
+      const d = t < 32.4 ? L.lerp(735, 757, L.sm(30.6, 32.4, t)) : L.lerp(757, 769, L.sm(32.4, 33.6, t));
       ctx.save(); applyCam(ctx, camAt(CK2, t)); nave(ctx, d, 'ai', t);
       // a second keeper's hand on the same shard
       const nb = keepers[NK - 2], st = keeperState(HERO, d, 'ai');
