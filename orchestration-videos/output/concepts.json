@@ -928,5 +928,35 @@
   "vir": 8,
   "log": "Over a librarian's shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.",
   "snap": "13 vs 2.5 yr (illustrative, coordination only)."
+ },
+ {
+  "slug": "the-committee-in-my-head",
+  "structure": "countdown-list",
+  "analog": "false-news-2018",
+  "medium": "bean cartoon",
+  "family": "theater",
+  "scale": "mind",
+  "pace": "stop-start",
+  "camera": "over-the-shoulder",
+  "emotion": "anger",
+  "protagonist": "one person",
+  "vir": 11,
+  "log": "Inside one skull, a committee of tiny selves votes on a red claim that just arrived. Three of them already hold pieces of the truth (a memory, a friend who knows, a doubt), but the meeting runs on the wrong agenda. Countdown: three pieces I already had.",
+  "snap": "Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief."
+ },
+ {
+  "slug": "the-switchboard",
+  "structure": "pov",
+  "analog": "blackout-2003",
+  "medium": "stick-figure animatic",
+  "family": "machine",
+  "scale": "organization",
+  "pace": "sprint",
+  "camera": "POV walk",
+  "emotion": "resolve",
+  "protagonist": "AI",
+  "vir": 9,
+  "log": "POV of a quiet switchboard (frontier AI as an operator board, never a face): four control rooms each hold one piece; the board sees the lines that should connect and lights them, and the people on each end decide whether to pick up. First we see the real night, where no board existed.",
+  "snap": "1.5 h to notice vs 0.25 h routed (illustrative); people still decide."
  }
 ]

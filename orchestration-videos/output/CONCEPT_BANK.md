@@ -1,10 +1,10 @@
-# Concept bank (62)
+# Concept bank (64)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":4,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":3,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":3,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":4,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":4,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":7,"gfc-2008":7}
+Analogs: {"covid-2020":5,"blackout-2003":6,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":7,"gfc-2008":7}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -377,4 +377,16 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Logline (red / green):** Over a librarian's shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.
 - **Snap:** 13 vs 2.5 yr (illustrative, coordination only).
 - **Tags:** medium woodblock; family library; scale organization; pace slow build; camera over-the-shoulder; emotion loneliness; protagonist a green fragment
+
+## 63. the-committee-in-my-head
+- **Structure:** countdown-list · **Analog:** false-news-2018 · **First-guess virality:** 11%
+- **Logline (red / green):** Inside one skull, a committee of tiny selves votes on a red claim that just arrived. Three of them already hold pieces of the truth (a memory, a friend who knows, a doubt), but the meeting runs on the wrong agenda. Countdown: three pieces I already had.
+- **Snap:** Correction lag 13 h vs ~1 h routed (illustrative); speed is not belief.
+- **Tags:** medium bean cartoon; family theater; scale mind; pace stop-start; camera over-the-shoulder; emotion anger; protagonist one person
+
+## 64. the-switchboard
+- **Structure:** pov · **Analog:** blackout-2003 · **First-guess virality:** 9%
+- **Logline (red / green):** POV of a quiet switchboard (frontier AI as an operator board, never a face): four control rooms each hold one piece; the board sees the lines that should connect and lights them, and the people on each end decide whether to pick up. First we see the real night, where no board existed.
+- **Snap:** 1.5 h to notice vs 0.25 h routed (illustrative); people still decide.
+- **Tags:** medium stick-figure animatic; family machine; scale organization; pace sprint; camera POV walk; emotion resolve; protagonist AI
 
