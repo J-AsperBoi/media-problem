@@ -193,6 +193,9 @@ const C = [
 ['the-switchboard','pov','blackout-2003','stick-figure animatic','machine','organization','sprint','POV walk','resolve','AI',9,
  'POV of a quiet switchboard (frontier AI as an operator board, never a face): four control rooms each hold one piece; the board sees the lines that should connect and lights them, and the people on each end decide whether to pick up. First we see the real night, where no board existed.',
  '1.5 h to notice vs 0.25 h routed (illustrative); people still decide.'],
+['the-orchestra','wait-for-it','heatwave-2003','ink wash','music','nation','slow build','crane up and drop down','grief','a crowd',10,
+ 'A national orchestra plays the summer program in perfect sync, every bow on the same beat, while the hall heats (red). Scattered through the seats, a few players hold the one score that matters (green: a doctor, a neighbor with a key, a forecaster) and cannot get it to the podium. Wait for it: the plan arrives on day 12, after the peak.',
+ 'Day 12 (after the peak) vs day 3 routed (illustrative); same red in both.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
