@@ -1,10 +1,10 @@
-# Concept bank (68)
+# Concept bank (69)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":4,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":9,"gfc-2008":7}
+Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":9,"gfc-2008":8}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -413,4 +413,10 @@ Analogs: {"covid-2020":6,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** One body. Eight billion heads. The planet as a single x-ray body whose organs are countries: red spreads organ to organ at its real share of countries; the immune answer (green) exists early but reaches each organ on its own late day. Fall, then the long uneven rise.
 - **Snap:** Median organ day 421 vs 363 routed (illustrative); supply unchanged.
 - **Tags:** medium x-ray; family body/biology; scale multi-scale zoom; pace accelerating; camera crane up and drop down; emotion awe; protagonist a crowd
+
+## 69. cracks-in-the-map
+- **Structure:** nature-documentary · **Analog:** gfc-2008 · **First-guess virality:** 9%
+- **Logline (red / green):** A hushed nature documentary of creatures living in the cracks of an old map: the rules were drawn for an older terrain, and red grows in the gaps between them, then floods out along the fault lines. Green surveyors each hold one corrected sheet of the map, in separate valleys.
+- **Snap:** Coordinated response median 426 vs 220 days routed (illustrative); red identical in both.
+- **Tags:** medium topographic map; family ecology; scale economy; pace slow build; camera continuous zoom through scales; emotion awe; protagonist the red itself
 

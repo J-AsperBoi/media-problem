@@ -205,6 +205,9 @@ const C = [
 ['eight-billion-heads','man-in-a-hole','covid-2020','x-ray','body/biology','multi-scale zoom','accelerating','crane up and drop down','awe','a crowd',11,
  'One body. Eight billion heads. The planet as a single x-ray body whose organs are countries: red spreads organ to organ at its real share of countries; the immune answer (green) exists early but reaches each organ on its own late day. Fall, then the long uneven rise.',
  'Median organ day 421 vs 363 routed (illustrative); supply unchanged.'],
+['cracks-in-the-map','nature-documentary','gfc-2008','topographic map','ecology','economy','slow build','continuous zoom through scales','awe','the red itself',9,
+ 'A hushed nature documentary of creatures living in the cracks of an old map: the rules were drawn for an older terrain, and red grows in the gaps between them, then floods out along the fault lines. Green surveyors each hold one corrected sheet of the map, in separate valleys.',
+ 'Coordinated response median 426 vs 220 days routed (illustrative); red identical in both.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
