@@ -196,6 +196,9 @@ const C = [
 ['the-orchestra','wait-for-it','heatwave-2003','ink wash','music','nation','slow build','crane up and drop down','grief','a crowd',10,
  'A national orchestra plays the summer program in perfect sync, every bow on the same beat, while the hall heats (red). Scattered through the seats, a few players hold the one score that matters (green: a doctor, a neighbor with a key, a forecaster) and cannot get it to the podium. Wait for it: the plan arrives on day 12, after the peak.',
  'Day 12 (after the peak) vs day 3 routed (illustrative); same red in both.'],
+['nine-people-forty-messages','pov','heatwave-2003','text-only typography','family','family','sprint','over-the-shoulder','loneliness','a crowd',11,
+ 'POV scrolling a family group chat through a heat wave: nine people, forty messages, no plan. Each relative holds one green piece (a spare key, a doctor friend, a cooler flat, the forecast) and none of them lands on grandma\'s door. Red is the heat in the chat header, rising.',
+ 'Day 12 (after the peak) vs day 3 routed (illustrative); people still decide who goes.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

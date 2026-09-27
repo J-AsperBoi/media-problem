@@ -77,3 +77,19 @@ Tier: animatic
 {"structure":"before-after","medium":"children's-book flat","family":"cooking","scale":"family","pace":"stop-start","camera":"locked-off close-up with a single pull-out","emotion":"tenderness","protagonist":"one person","analog":"rice-2008"}
 
 Diversity check: OK: distinct enough (nearest the-warehouse 0.56, recipe-for-a-shortage 0.56).
+
+## Build log
+- Preview 1 had three problems, all fixed. The AI-lane "deal" marker was invisible during the snap freeze because its fade started at the deal week and the clock froze there. It now appears at full strength on the freeze. The composition sat too high and left the bottom third as empty tablecloth, so the whole page moved down 190 px and the cards no longer cover the calendar. The green light in the window was too small for the thumbnail, so the warehouse in the window is now larger and shows four green sacks.
+- The pull-out is one continuous log-zoom (8.3 to 1.0). The kitchen is drawn inside the cut-away house at scale 0.12, so there is no crossfade between zoom levels.
+- Render: 40.0 s (ffprobe), which matches DUR.
+
+## Scores
+- Hook: 7 (frame 1 has a full red calendar, a green-lit warehouse in the window, a sad child, a worried grandmother, the "AFTER" chip and "Same table. Smaller pot.")
+- Speed accuracy: 8 (the-warehouse's logistic fit through the sourced points, the sourced post-deal decay, 1 s = 2 weeks with frozen stops, lognormal thread quantiles, and the AI lane from the analog)
+- Snap impact: 5 (the honest gain is only about 3 weeks. The freeze on the frame where only the AI lane has its green helps, but the two lanes still look alike.)
+- Emotion: 7 (the grandmother sliding her bowl to the child is the tender beat, and the faces read clearly)
+- Originality: 6 (a new medium and a same-frame before/after, but it is the fifth rice film and shares the pot and warehouse metaphor with the-warehouse)
+- Craft: 7 (clean flat shapes, a truly continuous pull-out, and readable panels. The arms are simple and the snap panels are busy.)
+- Honesty: 9 (no countries or officials, unverified items off screen, the counterfactual labeled illustrative and not inflated)
+- Overall: 7.0
+- Virality: 7% (the grandma-gives-her-bowl beat and the "it was there the whole time" pull-out are shareable, but it is a quiet film with a small snap from a small account)

@@ -1,10 +1,10 @@
-# Concept bank (65)
+# Concept bank (66)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":5,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":4,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":5,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":5,"blackout-2003":6,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":8,"gfc-2008":7}
+Analogs: {"covid-2020":5,"blackout-2003":6,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":9,"gfc-2008":7}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -395,4 +395,10 @@ Analogs: {"covid-2020":5,"blackout-2003":6,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** A national orchestra plays the summer program in perfect sync, every bow on the same beat, while the hall heats (red). Scattered through the seats, a few players hold the one score that matters (green: a doctor, a neighbor with a key, a forecaster) and cannot get it to the podium. Wait for it: the plan arrives on day 12, after the peak.
 - **Snap:** Day 12 (after the peak) vs day 3 routed (illustrative); same red in both.
 - **Tags:** medium ink wash; family music; scale nation; pace slow build; camera crane up and drop down; emotion grief; protagonist a crowd
+
+## 66. nine-people-forty-messages
+- **Structure:** pov · **Analog:** heatwave-2003 · **First-guess virality:** 11%
+- **Logline (red / green):** POV scrolling a family group chat through a heat wave: nine people, forty messages, no plan. Each relative holds one green piece (a spare key, a doctor friend, a cooler flat, the forecast) and none of them lands on grandma's door. Red is the heat in the chat header, rising.
+- **Snap:** Day 12 (after the peak) vs day 3 routed (illustrative); people still decide who goes.
+- **Tags:** medium text-only typography; family family; scale family; pace sprint; camera over-the-shoulder; emotion loneliness; protagonist a crowd
 
