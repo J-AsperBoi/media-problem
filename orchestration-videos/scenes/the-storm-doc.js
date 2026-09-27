@@ -230,7 +230,7 @@ function makeScene(SERIF, HAND) {
         const f = t >= POST ? 0 : L.ease.out(L.clamp((t - (ln.t - 0.6)) / 0.6, 0, 1));
         if (f > 0) { const n = Math.round(40 * f); ctx.strokeStyle = rgbaG(0.3); ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.beginPath(); for (let i = 0; i <= n; i++) i ? ctx.lineTo(pts[i][0], pts[i][1]) : ctx.moveTo(pts[i][0], pts[i][1]); ctx.stroke(); ctx.strokeStyle = GREEN; ctx.lineWidth = 5; ctx.stroke(); }
         // failed reach: a dot runs out and dies (visual rhythm, not data)
-        if (t > TA && t < ln.t - 0.6) { const q = ((t - TA) * 0.8 + ln.a0) % 1; const idx = Math.floor(q * 18); ctx.fillStyle = rgbaG(0.9 * (1 - q)); ctx.beginPath(); ctx.arc(pts[idx][0], pts[idx][1], 5, 0, 7); ctx.fill(); } });
+        if (t > TA && t < ln.t - 0.6) { const q = (((t - TA) * 0.8 + ln.a0) % 1 + 1) % 1; const idx = Math.floor(q * 18); ctx.fillStyle = rgbaG(0.9 * (1 - q)); ctx.beginPath(); ctx.arc(pts[idx][0], pts[idx][1], 5, 0, 7); ctx.fill(); } });
       ring.forEach((n, i) => { const [x, y] = toS(c, n.x, n.y); const pulse = 0.85 + 0.15 * Math.sin(t * 2.2 + i * 1.3);
         glow(ctx, x, y, 44 * pulse, GC, 1); ctx.fillStyle = GREEN; ctx.beginPath(); ctx.arc(x, y, 10 * pulse, 0, 7); ctx.fill();
         const la = L.sm(5.8, 6.1, c.lev) * (1 - L.sm(6.9, 7.2, c.lev)); if (la > 0) { const lx = L.clamp(x, 170, 800), ly = y + (n.y < PC.y ? -26 : 58);
