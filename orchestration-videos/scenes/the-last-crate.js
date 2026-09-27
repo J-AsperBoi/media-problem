@@ -157,12 +157,14 @@ function makeScene(SERIF, HAND) {
   const origin = nearest(320, 470), hub = nearest(520, 900, [origin]);
   nodes.map(n => ({ n, k: Math.hypot(n.x - origin.x, n.y - origin.y) + mr() * 280 })).sort((a, b) => a.k - b.k).forEach((o, r) => { o.n.redDay = dayForShare((r + 0.5) / N); });
   // road tree (Prim from the approval hub)
-  { const inT = new Set([hub]); hub.parent = null; while (inT.size < N) { let best = null, bd = 1e9, bp = null; nodes.forEach(n => { if (inT.has(n)) return; inT.forEach(m => { const d = Math.hypot(n.x - m.x, n.y - m.y); if (d < bd) { bd = d; best = n; bp = m; } }); }); best.parent = bp; inT.add(best); } }
+  // each country routes toward the hub through a nearer neighbour (short hops, every hop crosses a border)
+  const dh = n => Math.hypot(n.x - hub.x, n.y - hub.y); hub.parent = null;
+  nodes.forEach(n => { if (n === hub) return; let best = hub, bc = 1e9; nodes.forEach(m => { if (m === n || dh(m) > dh(n) - 40) return; const c = Math.hypot(n.x - m.x, n.y - m.y) + 0.3 * dh(m); if (c < bc) { bc = c; best = m; } }); n.parent = best; });
   nodes.forEach(n => { const p = []; let c = n; while (c) { p.unshift(c); c = c.parent; } n.path = p; });
   const edges = nodes.filter(n => n.parent).map(n => ({ a: n.parent, b: n, mx: (n.x + n.parent.x) / 2, my: (n.y + n.parent.y) / 2, ang: Math.atan2(n.y - n.parent.y, n.x - n.parent.x) }));
   // arrival quantiles (shuffled); the village is the far node forced to q = 0.90
   const qs = nodes.map((_, i) => (i + 0.5) / N); for (let i = qs.length - 1; i > 0; i--) { const j = Math.floor(mr() * (i + 1)); [qs[i], qs[j]] = [qs[j], qs[i]]; }
-  const vil = nodes.filter(n => n !== hub && n !== origin).reduce((b, n) => (n.path.length * 1000 + n.y) > (b.path.length * 1000 + b.y) ? n : b);
+  const vil = nodes.filter(n => n !== hub && n !== origin && n.x > 300 && n.x < 760).reduce((b, n) => n.y > b.y ? n : b);
   nodes.forEach((n, i) => { n.q = n === vil ? VQ : qs[i]; n.gDay = Math.max(FIRST, L.lognormalQuantile(n.q, MED, P90)); n.aiDay = Math.max(FIRST, L.lognormalQuantile(n.q, AIMED, AIP90)); });
   hub.gDay = FIRST; hub.aiDay = FIRST;
   const vilPathSet = new Set(vil.path);
