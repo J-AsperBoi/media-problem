@@ -40,9 +40,9 @@ function makeScene(SERIF, HAND) {
     if (t < 5) return L.key([[0, 0], [2, 0], [5, -0.04]], t);
     if (t < 14) { const f = (t - 5) / 9; return -0.04 + (UMAX + 0.04) * Math.pow(f, 1.7); }
     if (t < 22.3) return L.key([[14, UMAX], [22.3, UMAX - 0.06]], t);
-    if (t < 25.7) return L.key([[22.3, UMAX - 0.06], [25.7, -0.35]], t);
-    if (t < 36.8) return -0.35;
-    return L.key([[36.8, -0.35], [39.5, -0.55]], t);
+    if (t < 25.7) return L.key([[22.3, UMAX - 0.06], [25.7, -0.2]], t);
+    if (t < 36.8) return -0.2;
+    return L.key([[36.8, -0.2], [39.5, -0.45]], t);
   };
   const NAMES = ['ONE BOWL', 'KITCHEN', 'STREET', 'COUNTRY', 'WORLD GRAIN LEDGER'];
 
@@ -305,7 +305,7 @@ function makeScene(SERIF, HAND) {
       const w = weekAt(t);
       bgGrid(ctx, u);
       world(ctx, t, u, w, { callout: 1 - L.sm(4.4, 5.4, t) });
-      titleBlock(ctx, u, 1 - L.sm(26.6, 27.0, t));
+      titleBlock(ctx, u, (1 - L.sm(26.6, 27.0, t)) * (t > 22 ? 1 - L.sm(0.02, 0.15, -u) : 1));
       // ledger labels (screen space, only while the ledger is on screen)
       const la = L.sm(13.4, 14.2, t) * (1 - L.sm(22.3, 22.9, t));
       if (la > 0) { const Sk = Math.pow(10, UMAX - u), P = ([x, y]) => [540 + (x - 540) * Sk, 960 + (y - 960) * Sk];
@@ -336,7 +336,7 @@ function makeScene(SERIF, HAND) {
       L.slate(ctx, 'SC6  WIDE  THE SNAP  one clock');
     } else if (t < 39.5) {
       bgGrid(ctx, u); world(ctx, t, u, W_JUNE, { extraRelief: L.sm(36.8, 38.2, t) });
-      card(ctx, ['This is the bottleneck.'], 300, t, 37.2, 39.6, 96);
+      card(ctx, ['This is the bottleneck.'], 1300, t, 37.2, 39.6, 96);
       L.slate(ctx, 'SC7  EXTREME CLOSE');
     }
     if (t >= 39.5) { ctx.fillStyle = '#0d1118'; ctx.fillRect(0, 0, 1080, 1920); L.endCard(ctx, L.sm(39.5, 39.9, t), { line: 'The bottleneck is us.' }); }

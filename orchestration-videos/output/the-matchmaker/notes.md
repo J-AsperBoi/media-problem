@@ -39,11 +39,11 @@ Levels (each a blueprint sheet nested at the center of the next): BOWL x10 KITCH
 | 2.0-5.0 | SC2 CLOSE (wk 12-15). "One bowl." | slow push u 0 -> -0.04 |
 | 5.0-14.0 | SC3 CONTINUOUS ZOOM OUT (wk 15-24): kitchen, street, country, ledger. Accelerating (u ~ f^1.7), hard stop at 14. | OUT |
 | 14.0-22.3 | SC4 WIDE, the ledger (wk 24-32.3). "1.5 million tonnes." "Idle. Two cells over." need rings (17.3), routes crawl, deal signed (21.3). | slow push u 4.38 -> 4.32 |
-| 22.3-25.7 | SC5 DIVE IN (wk 32.3-35.7) to the bowl, closer than SC1. Red recedes, rice rises. | IN+ u 4.32 -> -0.35 |
+| 22.3-25.7 | SC5 DIVE IN (wk 32.3-35.7) to the bowl, closer than SC1. Red recedes, rice rises. | IN+ u 4.32 -> -0.2 |
 | 25.7-27.0 | hold wk 35.7. "Prices fell a quarter." | hold |
 | 27.0-29.6 | Freeze, dim: "We slowed it down so you could see it." | hold |
 | 29.6-36.8 | SC6 THE SNAP: stamp, two 940 px panels on one clock: "As it happened" vs "Frontier AI drafts the match / illustrative · people still sign". "Same stock. Same people." | locked |
-| 36.8-39.5 | SC7 EXTREME CLOSE on the bowl, full. "This is the bottleneck." | IN++ u -0.35 -> -0.55 |
+| 36.8-39.5 | SC7 EXTREME CLOSE on the bowl, full. "This is the bottleneck." | IN++ u -0.2 -> -0.45 |
 | 39.5-43.0 | End card "The bottleneck is us." (3.5 s) | |
 Zoom cycles: IN 0-5, OUT 5-14, hold 14-22.3, IN+ 22.3-25.7, IN++ 36.8-39.5.
 
@@ -56,3 +56,19 @@ One unbroken dolly on a single optical axis, like the Eames film: start with a 1
 ## Tags
 {"structure":"powers-of-ten-zoom","medium":"blueprint","family":"market","scale":"economy","pace":"accelerating","emotion":"resolve","protagonist":"AI","camera":"continuous zoom through scales","analog":"rice-2008"}
 Diversity: OK (nearest the-fact-check 0.67, the-warehouse 0.78).
+
+## Build log (resumed session)
+- Scene found complete; preview 1 showed the SC5 dive (u -0.35) framing the eyes under the cards and cropping the bowl. Fixed: dive ends at u -0.2 (face and bowl both in frame), SC7 pushes -0.2 -> -0.45, "This is the bottleneck." moved to y 1300 (blank torso), sheet title block fades out on close shots. Preview 2 clean.
+- Final render 43.0 s (ffprobe), matches DUR.
+- Note: at the end the bowl is still ~62% red hatch (sourced June point, extent 0.625); relief is shown in the face and the receding red, not a full bowl.
+
+## Scores
+Hook: 7 (cold open face over red-hatched bowl with a green stock callout, legible; the blueprint palette is a little muted for a thumbnail)
+Speed accuracy: 8 (logistic fit through sourced points, sourced decay, lognormal quantile routes, one 1 s = 1 week clock; weeks 0-12 skipped as stated)
+Snap impact: 6 (honest ~3-week gap, staged with freeze/stamp/one clock, but inherently modest)
+Emotion: 6 (the child's worry and relief read; the ledger middle is cerebral)
+Originality: 8 (true powers-of-ten zoom through blueprint sheets into a world grain ledger)
+Craft: 7 (clean nested sheets and crossfades; ledger is busy at phone size)
+Honesty: 9 (two sourced numbers, AI only drafts a candidate line, people sign, illustrative label, no countries or names)
+Overall: 7.3
+Virality: 7% — the continuous zoom is a strong retention device, but a dense ledger and a small snap gap make it more admired than shared.
