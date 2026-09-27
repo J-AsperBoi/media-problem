@@ -1,10 +1,10 @@
-# Concept bank (73)
+# Concept bank (74)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":4,"game-hud-run":4,"split-screen-race":4,"man-in-a-hole":4,"two-phones":3,"wait-for-it":5,"nature-documentary":5,"reverse-chronology":4,"sports-play-by-play":4,"countdown-list":4,"seamless-loop":5,"powers-of-ten-zoom":4,"pov":5,"mockumentary":4,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":6,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
+Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8,"rice-2008":7,"cuban-missile-1962":7,"quebec-1989":8,"penicillin-resistance-1946":7,"heatwave-2003":9,"gfc-2008":8}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -443,4 +443,10 @@ Analogs: {"covid-2020":7,"blackout-2003":7,"wannacry-2017":6,"false-news-2018":8
 - **Logline (red / green):** Mockumentary in poster style: a warning memo (green) is passed desk to desk inside a vast utility at night, stamped, filed, routed to the wrong floor, while the red travels the grid in 90 seconds. Then the long rebuild: the lasting fix took 7 years.
 - **Snap:** Warning routed before the red (illustrative) vs 9 h to 83% and ~7 years to harden; steel still takes years.
 - **Tags:** medium constructivist poster; family theater; scale organization; pace stop-start; camera handheld chase; emotion anger; protagonist an institution
+
+## 74. the-matchmaker
+- **Structure:** powers-of-ten-zoom · **Analog:** rice-2008 · **First-guess virality:** 9%
+- **Logline (red / green):** Powers of Ten from one empty bowl out to the world grain ledger: stock and need sit on the same blueprint, a sheet apart. Frontier AI appears only as a faint matching line drawn between two cells of the ledger; people sign the deal.
+- **Snap:** Deal week 31 vs ~28 routed (illustrative); prices fell >25% within ~4 weeks once connected.
+- **Tags:** medium blueprint; family market; scale economy; pace accelerating; camera continuous zoom through scales; emotion resolve; protagonist AI
 

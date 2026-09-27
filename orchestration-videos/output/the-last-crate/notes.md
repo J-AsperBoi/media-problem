@@ -61,3 +61,20 @@ Tier: animatic
 {"slug":"the-last-crate","structure":"ticking-clock","medium":"woodblock","family":"traffic","scale":"between nations","pace":"sprint","emotion":"grief","protagonist":"one person","camera":"handheld chase","analog":"covid-2020"}
 
 Diversity check: OK, distinct enough (nearest the-last-thirteen-days / fifteen-hundred / fifty-nine-days, distance 0.67).
+
+## Build notes
+- Road tree: each country routes to a nearer neighbour toward the "approval" hub (cost = hop length + 0.3 x neighbour's distance to hub), so every hop crosses one border. The village is the southernmost central node: 7 borders, travel window day 337 (authorization) to day 490. First preview used an MST (26 hops, snaking); replaced.
+- The village's hills turn red on day ~111 (its rank in the country-share curve). Nodes past the curve's 93.6% plateau never turn red, as in the data.
+- Snap: the "Routed" village lights at day 422.5 (ding at 29.2 s), the as-it-happened village at 490 (bonk at 29.6 s). One shared clock above both panels.
+- Rendered 38.0 s (ffprobe 38.000000).
+
+## Scores
+- Hook: 7 (frame 1: DAY 490, red hills, green crate on a running back, "Designed in 2 days.")
+- Speed accuracy: 8 (country-share points, lognormal per country, p90 village, AI same sigma, supply floor)
+- Snap impact: 6 (a 68-day gap is honest but small; staged with freeze + hit, the panels read as grids)
+- Emotion: 6 (empty chairs and the crate on the empty chair land; the courier is faceless until the end)
+- Originality: 6 (sixth covid film; the courier/border-queue framing is new)
+- Craft: 6 (woodblock look holds; crane crossfade is busy for a second; map labels small)
+- Honesty: 8 (floor at first dose, supply unchanged, labeled illustrative; "Some chairs were already empty" implies loss without claiming a number)
+Overall: 6.7
+Virality: 6% - strong thumbnail and a clear ticking clock, but the payoff is a modest counterfactual on a crowded pandemic topic, which caps shares from a small account.

@@ -220,6 +220,9 @@ const C = [
 ['the-warning-memo','mockumentary','quebec-1989','constructivist poster','theater','organization','stop-start','handheld chase','anger','an institution',9,
  'Mockumentary in poster style: a warning memo (green) is passed desk to desk inside a vast utility at night, stamped, filed, routed to the wrong floor, while the red travels the grid in 90 seconds. Then the long rebuild: the lasting fix took 7 years.',
  'Warning routed before the red (illustrative) vs 9 h to 83% and ~7 years to harden; steel still takes years.'],
+['the-matchmaker','powers-of-ten-zoom','rice-2008','blueprint','market','economy','accelerating','continuous zoom through scales','resolve','AI',9,
+ 'Powers of Ten from one empty bowl out to the world grain ledger: stock and need sit on the same blueprint, a sheet apart. Frontier AI appears only as a faint matching line drawn between two cells of the ledger; people sign the deal.',
+ 'Deal week 31 vs ~28 routed (illustrative); prices fell >25% within ~4 weeks once connected.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
