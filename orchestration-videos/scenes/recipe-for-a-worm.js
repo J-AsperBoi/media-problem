@@ -19,6 +19,7 @@ function makeScene(SERIF, HAND) {
   const MED = A.solution.aggregation.median, P90 = A.solution.aggregation.p90;   // 20, 168
   const AIMED = A.ai_counterfactual.aggregation_median, AIP90 = AIMED * P90 / MED; // 1, 8.4
   const K = 1.16, MID = 4.0, sig = h => 1 / (1 + Math.exp(-K * (h - MID))), S0 = sig(0), SK = sig(KS);
+  const extent = h => h <= 0 ? 0 : h >= KS ? 1 : (sig(h) - S0) / (SK - S0);   // saturates at the kill switch, flat after
   const redHourOfQ = q => { const v = S0 + q * (SK - S0); return MID - Math.log(1 / v - 1) / K; };
 
   // ---------- clocks ----------
@@ -38,14 +39,16 @@ function makeScene(SERIF, HAND) {
   const R = L.rng(2017);
   const cells = [];
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) cells.push({ c, r, x: c * CW, y: r * CH, hero: c === HC && r === HR, noise: R() * 2.2 });
-  const byRed = cells.slice().sort((a, b) => (a.hero ? -1 : b.hero ? 1 : 0) || (Math.hypot(a.c - HC, (a.r - HR) * 1.1) + a.noise) - (Math.hypot(b.c - HC, (b.r - HR) * 1.1) + b.noise));
+  // red ranked by grid distance from the hero kitchen (+noise); the hero itself is inserted at rank 12 of 81 (q = 0.154):
+  //   the red comes from next door, and the hero is a kitchen the illustrative routing would have reached first.
+  const byRed = cells.filter(n => !n.hero).sort((a, b) => (Math.hypot(a.c - HC, (a.r - HR) * 1.1) + a.noise) - (Math.hypot(b.c - HC, (b.r - HR) * 1.1) + b.noise));
+  byRed.splice(12, 0, cells.find(n => n.hero));
   byRed.forEach((n, i) => { n.rank = i; n.rh = redHourOfQ((i + 0.5) / byRed.length); n.tr = tOfHour(n.rh); });
   const us = cells.map((_, i) => (i + 0.5) / cells.length);
   for (let i = us.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [us[i], us[j]] = [us[j], us[i]]; }
   cells.forEach((n, i) => { n.u = us[i]; });
   const HERO = cells.find(n => n.hero);
-  { const k = cells.reduce((b, n) => Math.abs(n.u - 0.75) < Math.abs(b.u - 0.75) ? n : b, cells[0]); const tmp = k.u; k.u = HERO.u; HERO.u = tmp; }
-  HERO.u = 0.75;
+  { const k = cells.reduce((b, n) => Math.abs(n.u - 0.685) < Math.abs(b.u - 0.685) ? n : b, cells[0]); const tmp = k.u; k.u = HERO.u; HERO.u = tmp; }  // stratum 55/81
   cells.forEach(n => { n.gh = Math.max(KS, L.lognormalQuantile(n.u, MED, P90)); n.ga = L.lognormalQuantile(n.u, AIMED, AIP90); n.tg = tOfHour(n.gh); n.saved = n.ga < n.rh; });
   const tKS = tOfHour(KS);
   const PANTRY = { x: 150, y: -190 }, STRANGER = { x: 930, y: -190 };
@@ -100,12 +103,15 @@ function makeScene(SERIF, HAND) {
   const SPILL = [];
   { const r2 = L.rng(59); for (let i = 0; i < 170; i++) { const gx = Math.floor(r2() * 34) + 1, gy = 26 + Math.floor(r2() * 37); const d = Math.hypot(gx - 25, (gy - 38) * 0.8) + r2() * 5;
       if (gx >= 20 && gx <= 32 && gy >= 14 && gy <= 44) continue; SPILL.push({ gx, gy, d }); } SPILL.sort((a, b) => a.d - b.d); SPILL.forEach((s, i) => { s.q = i / SPILL.length; }); }
+  const EDGE = [];                                   // red outside the closet door (left wall), filled by the global extent
+  { const r4 = L.rng(512); for (let i = 0; i < 70; i++) { const gx = Math.floor(r4() * 4), gy = 24 + Math.floor(r4() * 40); EDGE.push({ gx, gy, d: gx + r4() * 2.5 }); }
+    EDGE.sort((a, b) => a.d - b.d); EDGE.forEach((e, i) => { e.q = i / EDGE.length; }); }
   const CABLE = []; for (let x = 20; x >= 6; x--) CABLE.push([x, 45]); for (let y = 44; y >= 28; y--) CABLE.push([6, y]);
 
   // ---------- the closet (local 1080x1920), full detail ----------
   // st: {rp: red progress 0..1, fix: 0..1, dust, memos, disk: 'counter'|'none'|{x,y,s}, cal, timer, seed, chef, mood, steam, t, thread}
   function drawCloset(c, st) {
-    const lights = 1 - 0.75 * L.sm(0.25, 0.6, st.rp) * (1 - 0.6 * st.fix);
+    const lights = 1 - 0.75 * L.sm(0.25, 0.6, st.rp);   // a patch does not undo what is already hit
     pr(c, 0, 0, 36, 44, G2); pr(c, 0, 44, 36, 20, G1);
     for (let x = 0; x < 36; x += 4) pr(c, x, 44, 2, 1, G2);                                 // floor tiles
     for (let y = 46; y < 64; y += 4) for (let x = (y / 4) % 2 ? 0 : 2; x < 36; x += 4) pr(c, x, y, 2, 2, '#202227');
@@ -131,7 +137,7 @@ function makeScene(SERIF, HAND) {
       pr(c, mx + 2.5, my + 5, 1, 1, G4);
     });
     // cable from oven to the monitors
-    CABLE.forEach(([x, y], i) => { const on = st.rp * 1.4 * CABLE.length > i && st.fix < 0.5; pr(c, x, y, 1, 1, on ? RED : G3); });
+    CABLE.forEach(([x, y], i) => { const on = st.rp * 1.4 * CABLE.length > i; pr(c, x, y, 1, 1, on ? RED : G3); });
     // counter
     pr(c, 1, 34, 18, 2, G5); pr(c, 1, 36, 18, 10, G3); pr(c, 9.5, 36, 0.5, 10, G2);
     pr(c, 7.5, 39, 1, 2, G5); pr(c, 11, 39, 1, 2, G5);
@@ -140,10 +146,6 @@ function makeScene(SERIF, HAND) {
     // the patch disk
     const drawDisk = (x, y, s = 1, hs = 1) => { c.save(); c.translate(x, y); c.scale(s, s * hs);
       pr(c, 0, 0, 5, 5, GREEN); pr(c, 1, 0, 3, 1.6, '#146b3c'); pr(c, 2.6, 0.2, 0.8, 1.2, GREEN); pr(c, 1, 3, 3, 2, '#d8f5e4'); c.restore(); };
-    if (st.disk === 'counter') {
-      drawDisk(12 * P, 29 * P);
-      if (st.dust > 0) { const r3 = L.rng(7); for (let k = 0; k < 26; k++) { const dx = r3() * 5, dy = r3() * 2.2, th = r3(); if (th < st.dust) { c.fillStyle = th < st.dust - 0.3 ? G5 : G4; c.fillRect((12 + dx) * P, (29 + dy) * P, P * 0.5, P * 0.5); } } }
-    } else if (st.disk && st.disk.x !== undefined) drawDisk(st.disk.x, st.disk.y, 1, st.disk.hs ?? 1);
     // oven-server
     pr(c, 20, 14, 13, 31, G1); pr(c, 20.5, 14.5, 12, 30, G3);
     for (let k = 0; k < 4; k++) pr(c, 22 + k * 2.5, 15.5, 1.5, 0.5, G2);                     // vents
@@ -155,7 +157,8 @@ function makeScene(SERIF, HAND) {
     if (st.seed > 0 && st.rp <= 0) { pr(c, 26, 35, 1, 1, RED); glow(c, 26.5 * P, 35.5 * P, 120, RED, 0.5 * st.seed); }
     // darkness (lights out), then red on top
     if (lights < 1) { c.fillStyle = `rgba(6,7,9,${(1 - lights) * 0.85})`; c.fillRect(0, 0, 1080, 1920); }
-    const redA = st.rp * (1 - st.fix);
+    const redA = st.rp;
+    if (st.edge > 0) EDGE.forEach(e => { if (e.q < st.edge * 0.9) pr(c, e.gx, e.gy, 1, 1, RED); });
     if (redA > 0) {
       const fl = st.t ? 0.85 + 0.15 * L.noise(st.t * 6, 3) : 1;
       glow(c, 26.5 * P, 35 * P, 760, RED, 0.42 * redA * fl);
@@ -163,9 +166,13 @@ function makeScene(SERIF, HAND) {
         if (v < 0.35 + 0.65 * redA) { c.fillStyle = v < 0.3 ? RED : '#b3261f'; c.fillRect((22.5 + i) * P, (30 + j) * P, P, P); } }
       SPILL.forEach(s => { if (s.q < redA * 0.9 - 0.05) pr(c, s.gx, s.gy, 1, 1, RED); });
       CABLE.forEach(([x, y], i) => { if (redA * 1.4 * CABLE.length > i) pr(c, x, y, 1, 1, RED); });
-    } else if (st.fix > 0 && st.rp > 0) {                                                   // after the fix: window dark, monitors stay out
-      pr(c, 22.5, 30, 8, 10, G0);
     }
+    // the patch disk, drawn above the dark and the red: it is always there, in plain sight
+    if (st.disk === 'counter') {
+      drawDisk(12 * P, 29 * P);
+      if (st.dust > 0) { const r3 = L.rng(7); for (let k = 0; k < 26; k++) { const dx = r3() * 5, dy = r3() * 2.2, th = r3(); if (th < st.dust) { c.fillStyle = th < st.dust - 0.3 ? G5 : G4; c.fillRect((12 + dx) * P, (29 + dy) * P, P * 0.5, P * 0.5); } } }
+    } else if (st.disk && st.disk.x !== undefined) drawDisk(st.disk.x, st.disk.y, 1, st.disk.hs ?? 1);
+    if (st.fix > 0) { c.save(); c.globalAlpha = st.fix; pr(c, 30, 18, 1, 0.8, GREEN); glow(c, 30.5 * P, 18.4 * P, 160, GREEN, 0.5); c.restore(); }
     // green routing thread arriving from above (drawn in local units)
     if (st.thread > 0) { const n = 34, m = Math.floor(n * st.thread); c.fillStyle = GREEN;
       for (let k = 0; k < m; k++) { const f = k / n; const x = L.lerp(14.5, 14.5, f), y = L.lerp(-2, 28.5, f); if (k % 2 === 0) c.fillRect(x * P, y * P, P * 0.7, P * 0.7); }
@@ -182,12 +189,12 @@ function makeScene(SERIF, HAND) {
   }
   // simplified kitchen for the grid
   function drawMini(c, n, red, fix) {
-    const lightsOut = red * (1 - 0.6 * fix);
+    const lightsOut = red;
     pr(c, 0, 0, 36, 44, lightsOut > 0.5 ? G1 : G2); pr(c, 0, 44, 36, 20, G0);
     pr(c, 2, 6, 16, 12, G3); pr(c, 1, 34, 18, 12, G4);
     pr(c, 12, 29, 5, 5, GREEN);                                                              // the patch, on every counter
     pr(c, 20, 14, 13, 31, G3); pr(c, 22.5, 30, 8, 10, G0);
-    const ra = red * (1 - fix);
+    const ra = red;                                                                          // flat after: routing arrives too late to undo it
     if (ra > 0) { pr(c, 22.5, 30, 8, 10, RED); c.save(); c.globalAlpha = ra; pr(c, 0, 44, 36, 2, RED); c.restore(); }
     if (fix > 0) { c.save(); c.globalAlpha = fix; pr(c, 30, 18, 2, 2, GREEN); c.restore(); }
     pr(c, 1, 44, 7, 3, '#e6e6e2'); pr(c, 2, 47, 5, 4, '#a39b92'); pr(c, 0, 51, 9, 13, '#cfd1d5');   // chef
@@ -197,7 +204,7 @@ function makeScene(SERIF, HAND) {
   const W = (lx, ly) => [HERO.x + lx * SC, HERO.y + ly * SC];
   const CAM = [
     [0, ...W(560, 1120), 11.2], [1.8, ...W(560, 1120), 11.9], [2.4, ...W(540, 1090), 10.8], [7.8, ...W(540, 1090), 11.7],
-    [R0, ...W(540, 1090), 11.7], [12.0, ...W(560, 1070), 12.6], [15.4, 540, 880, 0.78], [16.6, ...W(420, 1380), 14.4],
+    [R0, ...W(540, 1090), 11.7], [12.4, ...W(560, 1070), 12.6], [15.4, 540, 880, 0.78], [16.6, ...W(420, 1380), 14.4],
     [18.6, ...W(420, 1400), 15.2], [21.8, ...W(420, 1400), 15.2]];
   function camAt(t) {
     if (t <= CAM[0][0]) return CAM[0].slice(1);
@@ -211,7 +218,7 @@ function makeScene(SERIF, HAND) {
   // hero state by film time
   function heroState(t) {
     const H = hourAt(t), tt = t < 8 ? t : (t < R0 ? 8 : t);
-    const st = { rp: 0, fix: 0, dust: 0, memos: 0, disk: 'counter', cal: 0, timer: 0, seed: 0, chef: true, mood: 'set', steam: 0, t, thread: 0, fri: false };
+    const st = { edge: H > 0 ? extent(H) : 0, rp: 0, fix: 0, dust: 0, memos: 0, disk: 'counter', cal: 0, timer: 0, seed: 0, chef: true, mood: 'set', steam: 0, t, thread: 0, fri: false };
     if (t < 1.8) { Object.assign(st, { rp: 1, dust: 1, memos: 4, timer: Math.log10(H + 1) / LOGS, mood: 'angry', seed: 0, fri: true }); return st; }
     if (t < R0) {
       st.disk = tt < 2.6 ? 'none' : (tt < 2.8 ? { x: 12 * P, y: L.lerp(-6, 29, L.ease.in((tt - 2.6) / 0.2)) * P } : 'counter');
@@ -222,7 +229,7 @@ function makeScene(SERIF, HAND) {
     st.dust = 1; st.memos = 4; st.fri = true; st.timer = Math.log10(H + 1) / LOGS;
     st.rp = L.clamp((H - HERO.rh) / 1.5, 0, 1); st.seed = 1;
     st.thread = L.clamp(Math.log(1 + H) / Math.log(1 + HERO.gh), 0, 1);
-    st.fix = L.sm(HERO.tg, HERO.tg + 0.35, t); if (st.fix > 0.5) st.disk = 'none';
+    st.fix = L.sm(HERO.tg, HERO.tg + 0.35, t);
     st.mood = t < 15 ? 'stunned' : 'angry'; st.steam = L.sm(15.8, 16.4, t);
     return st;
   }
@@ -235,7 +242,7 @@ function makeScene(SERIF, HAND) {
     const wideA = L.clamp((6 - Z) / 3, 0, 1);
     // red halos behind infected kitchens (thumbnail legibility at wide scale)
     if (wideA > 0) cells.forEach(n => { const red = H >= n.rh ? (t >= R0 ? L.sm(n.tr, n.tr + 0.2, t) : 1) : 0; const fix = H >= n.gh ? L.sm(n.tg, n.tg + 0.3, t) : 0;
-      if (red * (1 - fix) > 0) glow(ctx, n.x + CW / 2, n.y + CH * 0.6, 150, RED, 0.28 * red * (1 - fix) * wideA); });
+      if (red > 0) glow(ctx, n.x + CW / 2, n.y + CH * 0.6, 150, RED, 0.3 * red * wideA); });
     cells.forEach(n => {
       if (n.x + CW < vx0 || n.x > vx1 || n.y + CH < vy0 || n.y > vy1) return;
       ctx.save(); ctx.translate(n.x, n.y); ctx.scale(SC, SC);
@@ -292,7 +299,7 @@ function makeScene(SERIF, HAND) {
     const sx = 100, sy = y + 100, cw = 28, chh = 40, gap = 3;
     cells.forEach((n, i) => { const col = i % 27, row = Math.floor(i / 27); const x = sx + col * (cw + gap), yy = sy + row * (chh + 4);
       const route = mode === 'ai' ? n.ga : n.gh; const routed = H >= route, wasRed = n.rh < route, red = H >= n.rh && !routed && wasRed;
-      let fill = G3; if (red) fill = RED; else if (routed && !wasRed) fill = GREEN; else if (routed) fill = G2;
+      const hit = H >= n.rh && wasRed; let fill = G3; if (hit) fill = RED; else if (routed) fill = GREEN;
       ctx.fillStyle = fill; ctx.fillRect(x, yy, cw, chh);
       if (routed && wasRed) { ctx.strokeStyle = GREEN; ctx.lineWidth = 3; ctx.strokeRect(x + 1.5, yy + 1.5, cw - 3, chh - 3); }
       if (n.hero) { ctx.strokeStyle = G7; ctx.lineWidth = 3; ctx.strokeRect(x - 3, yy - 3, cw + 6, chh + 6); } });
@@ -330,14 +337,14 @@ function makeScene(SERIF, HAND) {
       card(ctx, t, 4.45, 6.05, ['Garnish with', 'unread alerts.'], 470, 100);
       card(ctx, t, 6.1, 7.9, ['Serve warm', 'on a Friday.'], 470, 100);
       card(ctx, t, 8.05, R0, ['This recipe', 'really happened.'], 880, 108, false);
-      card(ctx, t, 9.8, 11.9, ['It spreads', 'on its own.'], 470, 96);
-      card(ctx, t, 12.3, 13.5, ['Every kitchen,', 'same recipe.'], 1330, 92);
-      card(ctx, t, 13.55, 15.7, ['One stranger stopped it.', 'Partly luck.'], 1330, 88);
+      card(ctx, t, 10.4, 12.4, ['It spreads', 'on its own.'], 470, 96);
+      card(ctx, t, 12.5, 13.7, ['Every kitchen,', 'same recipe.'], 1330, 92);
+      card(ctx, t, 13.75, 15.7, ['One stranger stopped it.', 'Partly luck.'], 1330, 88);
       card(ctx, t, 16.2, 18.5, ['The fix sat', 'on the counter.'], 440, 100);
       if (t >= 18.6) { const d = L.sm(18.6, 19.0, t); ctx.fillStyle = `rgba(0,0,0,${0.55 * d})`; ctx.fillRect(0, 0, 1080, 1920); }
       card(ctx, t, 18.8, 21.2, ['We slowed it down', 'so you could see it.'], 900, 92, false);
       if (t >= 21.2) { ctx.fillStyle = G0; ctx.fillRect(0, 0, 1080, 1920); }
-      const shot = t < 1.8 ? 'SC1 CLOSE OTS  COLD OPEN' : t < 2.4 ? 'REWIND' : t < 8 ? 'SC2 OTS  PREP' : t < R0 ? 'FREEZE' : t < 12 ? 'SC3 OTS' : t < 15.4 ? 'SC4 PULL OUT' : t < 18.6 ? 'SC5 DROP IN' : 'SC6 HOLD';
+      const shot = t < 1.8 ? 'SC1 CLOSE OTS  COLD OPEN' : t < 2.4 ? 'REWIND' : t < 8 ? 'SC2 OTS  PREP' : t < R0 ? 'FREEZE' : t < 12.4 ? 'SC3 OTS' : t < 15.4 ? 'SC4 PULL OUT' : t < 18.6 ? 'SC5 DROP IN' : 'SC6 HOLD';
       scanlines(ctx); L.slate(ctx, shot);
       return;
     }
@@ -366,12 +373,13 @@ function makeScene(SERIF, HAND) {
       else if (lt < 1.95) { const f = (lt - 1.7) / 0.25; disk = { x: SX, y: SY + 30 * f, hs: 1 - f }; hand = { x: SX + 60, y: SY + 180 }; }
       else { disk = 'none'; const f = L.ease.inOut(L.clamp((lt - 2.1) / 0.6, 0, 1)); hand = { x: L.lerp(SX + 60, 300, f), y: L.lerp(SY + 180, 1700, f) }; }
       fix = L.sm(1.95, 2.3, lt);
-      const st = { rp: 1, fix, dust: 0, memos: 0, disk, cal: 0, timer: 0.2, seed: 1, chef: false, mood: 'set', steam: 0, t, thread: thread * (1 - L.sm(1.9, 2.3, lt)), fri: true, hand };
-      const Z = L.lerp(17.5, 19.8, L.ease.out(L.clamp(lt / 3, 0, 1)));
-      ctx.save(); ctx.translate(540, 960); ctx.scale(Z * SC, Z * SC); ctx.translate(-600, -820);
+      // illustrative: this kitchen's route (a_i = HERO.ga h) beats its red hour (HERO.rh h); red is only next door (global extent at a_i)
+      const st = { edge: extent(HERO.ga), rp: 0, fix, dust: 0, memos: 0, disk, cal: 0, timer: Math.log10(HERO.ga + 1) / LOGS, seed: 0, chef: false, mood: 'set', steam: 0, t, thread: thread * (1 - L.sm(1.9, 2.3, lt)), fri: true, hand };
+      const Z = L.lerp(15.3, 16.7, L.ease.out(L.clamp(lt / 3, 0, 1)));
+      ctx.save(); ctx.translate(540, 960); ctx.scale(Z * SC, Z * SC); ctx.translate(-600, -760);
       ctx.fillStyle = G0; ctx.fillRect(-2000, -2000, 5000, 6000); drawCloset(ctx, st); ctx.restore();
       if (lt < 0.3) { ctx.fillStyle = `rgba(12,13,16,${1 - lt / 0.3})`; ctx.fillRect(0, 0, 1080, 1920); }
-      card(ctx, t, 30.2, 32.8, ['This is', 'the bottleneck.'], 380, 104);
+      card(ctx, t, 30.2, 32.8, ['This is', 'the bottleneck.'], 330, 104);
       ctx.save(); ctx.globalAlpha = L.sm(30.0, 30.3, t) * (1 - L.sm(32.6, 32.8, t)); ctx.fillStyle = 'rgba(12,13,16,0.75)'; ctx.fillRect(70, 1410, 840, 80);
       ctx.font = `48px "${HAND}"`; ctx.textAlign = 'center'; ctx.fillStyle = '#d9f3e4'; ctx.fillText('routed sooner · illustrative', 490, 1466); ctx.restore();
       scanlines(ctx); L.slate(ctx, 'SC8 IN++  HAND, CLOSEST'); return;
@@ -381,7 +389,7 @@ function makeScene(SERIF, HAND) {
 
   const cues = [
     { t: 0.05, type: 'pop' }, { t: 1.8, type: 'whoosh' }, { t: 2.8, type: 'ding' }, { t: 4.5, type: 'pop' }, { t: 4.9, type: 'pop' }, { t: 5.3, type: 'pop' }, { t: 5.7, type: 'pop' },
-    { t: 7.4, type: 'pop' }, { t: 8.0, type: 'hit' }, { t: 12.0, type: 'whoosh' }, { t: tKS, type: 'ding' }, { t: 15.4, type: 'whoosh' }, { t: HERO.tg, type: 'ding' },
+    { t: 7.4, type: 'pop' }, { t: 8.0, type: 'hit' }, { t: HERO.tr, type: 'pop' }, { t: 12.4, type: 'whoosh' }, { t: tKS, type: 'ding' }, { t: 15.4, type: 'whoosh' }, { t: HERO.tg, type: 'bonk' },
     { t: SNAP_A, type: 'stamp' }, { t: SNAP_B + 0.15, type: 'ding' }, { t: 29.8, type: 'whoosh' }, { t: 31.75, type: 'pop' },
   ];
   return {
