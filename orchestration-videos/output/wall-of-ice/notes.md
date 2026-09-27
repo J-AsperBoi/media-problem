@@ -86,3 +86,15 @@ The card says "This happened." / "1989.", with a 44px subline "the family is ima
 {"slug":"wall-of-ice","structure":"based-on-a-true-story","medium":"paper cutout","family":"weather/fluids","scale":"family","pace":"slow build","emotion":"tenderness","protagonist":"one person","camera":"POV walk","analog":"quebec-1989"}
 
 Diversity check: OK (nearest day-three-hundred-five, the-warehouse, the-balcony; distance 0.56). Paper cutout kept.
+
+## Scores (by the coordinator, because the build agent hit a usage limit right after the render)
+tools/verify.js passed. The duration is 43.6 s, there is no stray saturation, and the QR code is present. I checked frames at 0.3, 6, 12, 18, 25 and 31 s.
+- Hook: 6 (the torch POV and the red pylon in the window read clearly, but the red is small in frame 1)
+- Speed accuracy: 8
+- Snap impact: 5
+- Emotion: 7 (the parent's face in torchlight is the tender centre)
+- Originality: 7
+- Craft: 6
+- Honesty: 9 ("the family is imagined" is said on screen at the reveal)
+- Overall: 6.9
+- Virality: 7% (a based-on-a-true-story reveal with a child's POV is shareable, but the snap is quiet and the middle is abstract)
