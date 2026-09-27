@@ -1,27 +1,27 @@
 # Morning report
 
-_Updated 2026-09-27 ~01:45 UTC. The overnight run is still going, and this file is rewritten every few batches._
+_Updated 2026-09-27 ~12:30 UTC. Rounds continue._
 
 Open `output/index.html` to see every film, sorted by virality. All 62 concepts, built or not, are in `output/CONCEPT_BANK.md`. The research is in `research/`.
 
 ## Numbers
-- **Finished films: 31.** All pass `tools/verify.js`, which checks three things: the duration matches DUR, no colour other than red and green is saturated, and a QR code appears in the last 6 s.
-- **In progress: 2** (`the-heat-map`, `one-in-eight`).
-- **Diversity: 0.891** (mean pairwise distance). Every one of the 18 structures has at least one film. So do all 20 media and all 10 analogs. 18 of the 17 listed families appear (the extra is "family"), including dance and library, which were added mid-run. No two films are closer than 0.56.
-- **Average virality estimate: 6.7%** (range 4–8%). The agents were told to be harsh, and none claims more than 8%.
+- **Finished films: 43.** All pass `tools/verify.js` (duration matches DUR, no saturated colour other than red and green, a QR code in the last 6 s).
+- **Unrendered: 1** (`the-green-screen`, see "Needs your decision" below). **In progress: 2** (`recipe-for-a-worm`, `before-the-price`).
+- **Diversity: 0.887** (mean pairwise distance). Every structure (18/18), medium (20/20) and analog (10/10) has at least one film. So do 18 metaphor families, including dance and library. The "mind" scale and an AI protagonist now have two films each.
+- **Average virality estimate: 6.9%** (range 4–9%).
 
 ## Top 5 by virality
-Ties are broken by the overall score.
+Ties are broken by overall score.
 
 | Film | Virality | Overall | Why | 3D translation |
 |---|---|---|---|---|
-| `the-fact-check` | 8% | 7.4 | One unbroken particle zoom: from one typed word out to a nation of cascades, then back to one face that already knew. "Speed is not belief" is on screen. | A continuous Powers-of-Ten camera through volumetric particles, with parallax at every scale. It dives back to a 100 mm macro on her face. |
-| `the-crash-call` | 8% | 7.1 | A sports play-by-play on isometric pitches. Players can't pass across pitch walls while red floods the grid on real monthly data. The handheld shake follows the red's speed. | Tilt-shift isometric pitches under glass. The camera cranes up from a handheld chase to a god's-eye view of the grid. |
-| `the-ballroom` | 8% | 7.1 | The grid as a ballroom dancing in perfect sync. One missed step cascades across it in 90 s. It is a true seamless loop: 37 s is exactly 20 dance turns. | Paper-cutout dancers as layered cards with real depth. A slow orbital crane over the ballroom-province. |
-| `the-two-feeds` | 8% | 7.0 | Two phones on one couch, an arm's length apart. It is all typography, and it treats the person who believed the claim with tenderness. | Bodies built as volumetric letterforms of their own names. The phones are the only light. |
-| `the-migration` | 8% | 7.0 | A hushed ink-wash nature documentary: idle grain as a sleeping green herd that can't find its route. A child's bowl anchors it. | Ink-wash fog layers and one long crane from the bowl up to the valley. The grain creature becomes a hero character. |
+| `the-storm-doc` | 9% | 7.3 | A hushed particle nature documentary where the red is "observed" like an animal. It is one zoom from a kitchen fridge out to a gray sun and back, and the fridge goes quiet. | One continuous volumetric zoom across scales. The kitchen gets a single practical light, and the phone glows green. |
+| `keep-the-lights` | 8% | **7.6** | A shadow-puppet theater. The lamp behind the screen is the grid, and four puppeteers hold pieces while their strings tangle. It has the best overall score in the set. | A real puppet stage with one practical lamp. The camera does one dolly back from an audience face to reveal the backstage. |
+| `the-fact-check` | 8% | 7.4 | An unbroken particle zoom from one typed word out to a nation of cascades and back. "Speed is not belief" is on screen. | A continuous Powers-of-Ten camera through volumetric particles. |
+| `the-heat-map` | 8% | 7.4 | A Powers-of-Ten zoom over topographic heat contours. The same heat field is true at every scale. It has the best honest gap: people act on day 12, after the peak, against an illustrative day 3 before it. | Relief terrain with isotherm contour shaders, and a macro on an old man's fan. |
+| `six-to-twelve-hours` | 8% | 7.3 | The 1962 messages as a modern chat, where "delivered" takes 6–12 hours and read receipts never come. The anachronism is the hook. | Two phones across a dark gulf, lit only by their screens. |
 
-`recipe-for-a-shortage` (8%, overall 6.7) just misses the list. It is a chalkboard cooking-show parody that turns grave at 10 s.
+Also at 8%: `the-committee-in-my-head`, `the-crash-call`, `the-ballroom`, `the-two-feeds`, `the-migration`, `recipe-for-a-shortage`.
 
 ## Top 5 by Jiji's taste (CLAUDE.md §10)
 1. **`the-mind-grid`** (7.1). An x-ray of one engineer's neurons over the grid, drawn as the same network: signals that don't reach the part that can act. It combines neuroscience with networks visibly connecting and breaking. In 3D: a split frame of a glass-brain render over a glowing grid model that share one graph.
