@@ -69,7 +69,7 @@ Tags: {"slug":"the-relay","structure":"sports-play-by-play","medium":"constructi
 
 ## Scores
 - Hook: 7 (frame 1: resolved face, lit green baton, wall of red seats, "AND WE'RE LIVE."; strong poster read, but the sports frame isn't obvious until the stands register)
-- Speed accuracy: 7 (logistic fit through sourced endpoints, cross-checked against the "tens of thousands per hour" peak; lognormal lanes from the analog; the fit's before/after-kill-switch split is unsourced and stated as such)
+- Speed accuracy: 7 (red now saturates by the 7.3 h kill switch, matching the direction of the only sourced timing evidence (Kryptos Logic House testimony); peak ~69,000/h fits "tens of thousands per hour"; lognormal lanes from the analog; the shape inside 0-7.3 h is unsourced and stated as such. See "Data fix (red curve)".)
 - Snap impact: 6 (freeze, silence, hit, then two 940 px panels on one axis; but the human stack at 7.3 h looks a lot like the AI stack at a glance)
 - Emotion: 6 (the search face at the empty exchange line works; the hands shot is abstract)
 - Originality: 7 (stadium as world, fan-on-the-track as the lone researcher, constructivist poster look)
@@ -77,3 +77,18 @@ Tags: {"slug":"the-relay","structure":"sports-play-by-play","medium":"constructi
 - Honesty: 9 (fan framed as one person, partly luck; "Illustrative. Not a promise."; no threat or company names; two numbers, both sourced)
 Overall: 6.9
 Virality: 6% — distinctive poster look and a legible sports-commentary hook, but the story needs two viewings to decode (two kinds of baton, a snap chart), which caps shares from a small account.
+
+## Data fix (red curve)
+*2026-09-27.* The original red was a logistic from one machine (s0 = 1/230,000) fitted to 99% of 230,000 at 24 h (D = 0.982 h). It put only 0.08% of the day's infections before the 7.3 h kill switch and the rest after, which implied the stop did nothing. That split was unsourced, and the only sourced timing evidence points the other way:
+
+- **Salim Neino (CEO, Kryptos Logic), prepared testimony to the US House Committee on Science, Space & Technology, June 15, 2017:** "between 1-2 million systems may have been affected in the hours prior to activating the kill-switch", and the attack "propagated freely for hours" before the kill switch was activated. Sources: https://www.congress.gov/115/meeting/house/106120/witnesses/HHRG-115-SY21-Wstate-NeinoS-20170615.pdf ; hearing record https://www.govinfo.gov/content/pkg/CHRG-115hhrg26234/html/CHRG-115hhrg26234.htm . I read these through search-engine snippets of the testimony, not a full re-read, because direct fetch is blocked by the sandbox proxy.
+
+"Affected" is a different unit from the 230,000 "infected" (s2), so the 1-2 million figure is not fitted and not shown. It is used only for direction: most of the spread came **before** 7.3 h. This is the same treatment as output/the-worm-rewind/notes.md.
+
+**New red model (the-worm-rewind's parameters, reused unchanged):** share(h) = (σ(h) − σ(0)) / (σ(7.3) − σ(0)), σ(h) = 1/(1+e^(−1.16 (h − 4.0))), 0 at the gun, 1 from 7.3 h on (flat: the initial variant stops at the kill switch, s1; still consistent with ">230,000 within 24 h", s2). Values: 1 h 2%, 2 h 8%, 3 h 24%, 4 h 51%, 5 h 78%, 6 h 93%, 7 h 99%, 7.3 h 100%. Peak rate = 1.16/4 × 230,000 / 0.969 ≈ 69,000 systems/hour, consistent with Kryptos Logic's "tens of thousands per hour" at the peak (s3). The midpoint and steepness are **not** sourced; they are an illustrative shape that meets the sourced constraints.
+
+**What changed on screen:** only the red. The seats (same ranks, same 1,440 seats) now fill during the 2.3-5.95 s trackside dolly and are fully red at the "HOUR 7.3" freeze. The fan's green baton arrives after the damage, not before it. The crane-up shows a fully red stadium while the lanes light, and the snap panels' red area rises within 0-7.3 h and stays flat to 24 h. Lanes, AI counterfactual, time mapping, camera, captions and the two on-screen numbers are unchanged. Superseded text above: the "Threat (red)" fit, its values, and the "Caveat" paragraph in Speed math.
+
+**Caption check:** none contradicts the curve. "Hour zero. Red's off the line." (0 h), "HE'S ON THE TRACK!" / "HOUR 7.3" (stands already red), "One person. Partly luck.", "Nobody to hand it to." make no claim that red kept spreading after the fan, or that he stopped it. The "one fan" tick on the snap panel now sits where the red has already plateaued, which matches the data.
+
+**Render:** preview contact sheet and frames at 4.0 / 6.2 / 23.0 s inspected; full render output/the-relay/the-relay.mp4, ffprobe 36.0 s (= DUR). Speed accuracy stays 7: the curve now agrees with the sourced direction, but the shape inside 0-7.3 h is still illustrative (the same score the-worm-rewind got for this model). Overall unchanged at 6.9 ((7+7+6+6+7+6+9)/7 = 6.86).

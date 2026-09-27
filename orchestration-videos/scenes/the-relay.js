@@ -1,6 +1,7 @@
 // the-relay: sports-play-by-play, constructivist poster, sport. Analog: wannacry-2017.
 // Race mapping: film t 2.3..5.95 s <-> hours 0..7.3 (1 s = 2 h); freeze 5.95..6.95 (hour 7.3 held); then 1 s = 2 h again to hour 24 at t 15.3.
-// Red = L.logistic fit through the sourced endpoints (1 machine at 0 h, 99% of 230,000 at 24 h -> doubling 0.982 h).
+// Red = the-worm-rewind's model: logistic (mid 4.0 h, k 1.16/h) pinned to 0 at the gun and saturated by the 7.3 h kill switch
+//   (s1; Neino/Kryptos Logic House testimony 2017-06-15: the bulk was hit before the stop), flat after. Shape inside 0-7.3 h is not sourced.
 // Green lanes: max(7.3, L.lognormalQuantile(q, 20, 168)) h. AI snap: median 1 h, p90 8.4 h (illustrative). See output/the-relay/notes.md.
 function makeScene(SERIF, HAND) {
   const L = require('../tools/lib.js')(SERIF, HAND);
@@ -11,11 +12,11 @@ function makeScene(SERIF, HAND) {
   const SKIN = '#c9bea9', SKIN_SH = '#8e8577', TRACK = '#b3a994';
 
   // ---------- data ----------
-  const K = 230000, S0 = 1 / K, END = A.threat.points[A.threat.points.length - 1].t; // 24 h
-  const DBL = END * Math.LN2 / Math.log(99 * (K - 1));                                 // 0.982 h
-  const share = h => h <= 0 ? 0 : L.logistic(h, DBL, S0);
+  const END = A.threat.points[A.threat.points.length - 1].t;                          // 24 h
   const F = {}; A.solution.fragments.forEach(f => F[f.id] = f.ready_at);
   const KILL = F.f3;                                                                   // 7.3 h
+  const RK = 1.16, RMID = 4.0, sig = h => 1 / (1 + Math.exp(-RK * (h - RMID))), SG0 = sig(0), SGK = sig(KILL);
+  const share = h => h <= 0 ? 0 : h >= KILL ? 1 : (sig(h) - SG0) / (SGK - SG0);        // 0 at the gun, 1 by 7.3 h, flat after
   const MED = A.solution.aggregation.median, P90 = A.solution.aggregation.p90;
   const AIMED = A.ai_counterfactual.aggregation_median, AIP90 = AIMED * P90 / MED;
   const T0 = 2.3, HPS = 2, TK = T0 + KILL / HPS, FREEZE = 1.0, TEND = TK + FREEZE + (END - KILL) / HPS; // 5.95, 15.3

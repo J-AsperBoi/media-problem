@@ -69,7 +69,7 @@ Diversity check: OK: distinct enough (nearest the-last-thirteen-days 0.78).
 
 ## Scores
 - Hook: 7 (red hallway, green disk in hand, "59 days" in frame 1)
-- Speed accuracy: 7 (endpoints, 7.3 h, lognormal per org are real; linear meter shape is a labeled placeholder)
+- Speed accuracy: 7 (endpoints, 7.3 h, lognormal per org are real; the meter now saturates by the 7.3 h kill switch, matching the direction of the Kryptos Logic House testimony, but its shape inside 0-7.3 h is illustrative. See "Data fix (red curve)".)
 - Snap impact: 6
 - Emotion: 5
 - Originality: 7
@@ -77,3 +77,22 @@ Diversity check: OK: distinct enough (nearest the-last-thirteen-days 0.78).
 - Honesty: 8
 Overall: 6.6
 Virality: 7% — the 8-bit HUD and "patch shipped 59 days ago" are native to gaming feeds and legible sound-off, but the snap is abstract and the film has no strong character payoff to drive shares.
+
+## Data fix (red curve)
+*2026-09-27.* The original SPREAD meter rose in a **straight line** from 0 at 0 h to 230,000 at 24 h. That put 70% of the day's infections after the 7.3 h kill switch, implied the stop did nothing, and turned the hospital red at hour 20.4. The split was unsourced, and the only sourced timing evidence points the other way:
+
+- **Salim Neino (CEO, Kryptos Logic), prepared testimony to the US House Committee on Science, Space & Technology, June 15, 2017:** "between 1-2 million systems may have been affected in the hours prior to activating the kill-switch", and the attack "propagated freely for hours" before the kill switch was activated. Sources: https://www.congress.gov/115/meeting/house/106120/witnesses/HHRG-115-SY21-Wstate-NeinoS-20170615.pdf ; hearing record https://www.govinfo.gov/content/pkg/CHRG-115hhrg26234/html/CHRG-115hhrg26234.htm . I read these through search-engine snippets of the testimony, not a full re-read, because direct fetch is blocked by the sandbox proxy.
+
+"Affected" is a different unit from the 230,000 "infected" (s2), so the 1-2 million figure is not fitted and not shown. It is used only for direction: most of the spread came **before** 7.3 h. This is the same treatment as output/the-worm-rewind/notes.md.
+
+**New red model (the-worm-rewind's parameters, reused unchanged):** meter(h) = (σ(h) − σ(0)) / (σ(7.3) − σ(0)), σ(h) = 1/(1+e^(−1.16 (h − 4.0))), 0 at t0, full from 7.3 h on (flat: the initial variant stops at the kill switch, s1; still consistent with ">230,000 within 24 h", s2). Values: 1 h 2%, 2 h 8%, 3 h 24%, 4 h 51%, 5 h 78%, 6 h 93%, 7 h 99%, 7.3 h 100%. Peak ≈ 69,000 systems/hour, consistent with "tens of thousands per hour" (s3). The midpoint and steepness are **not** sourced. The meter keeps its "REPORTED" label, and the only numeral is still 230,000.
+
+**Knock-on changes (all required by the curve, nothing else touched):**
+- **Hospital timing.** The hospital cell's rank is an unsourced choice. The old rank (0.85) was placed on the linear curve and gave hour 20.4, which is impossible under a curve that is flat after 7.3 h. The in-building spread (corridor monitors, then the terminal) takes 1.6 s = 3.2 h, and all of it has to finish before the kill switch. So I set the rank to 0.5. The hospital now turns red at hour 3.98 (t = 3.99 s), and the red reaches his terminal at t = 5.59 s, just before OFF SWITCH FOUND at 5.65 s. This happens during the SC2 walk, under "The fix is in an inbox." The terminal flood, his face in the screen reflection and the map worker's mood now key off that same red time instead of the hard-coded 13.8 s / 13.55 s / 9 s.
+- **SC4 terminal close-up (hour 22-24).** The close-up now opens on a screen that is already red. That screen was hit hours earlier, so the "ALERT UNREAD" inbox is no longer visible in the close-up. It stays on the HUD item rows through SC2 and SC4a. The lights still go out at 14.25 s, and the meter still shows 230,000 at 14.0 s.
+- **Snap panel.** The red bar in AS IT HAPPENED / ROUTED now spans 0-7.3 h (when the spread happened) instead of 0-24 h. At true proportions on the 168 h axis it is a short block that ends at the off-switch marker.
+- Time mapping, fragments, human and AI lognormals, camera, captions and on-screen numbers are unchanged. Superseded text above: the "Threat (red)" paragraph and "Red arrives down the corridor (t = 12.2)" in the shot list.
+
+**Caption check:** none contradicts the curve. "Friday morning." (hours 1-4), "The fix is in an inbox." (red enters the corridor), "One stranger. Partly luck." (off switch found, red already saturated), "Every piece already existed." / "Nobody routed them." (world already red), "At true proportions.", "Same pieces. Faster routing." None claims red kept spreading after the off switch, or that the off switch undid the damage.
+
+**Render:** preview contact sheet and frames at 3.5 / 4.8 / 6.2 / 12.5 / 13.8 / 22 s inspected; full render output/fifty-nine-days/fifty-nine-days.mp4, ffprobe 35.0 s (= DUR). Speed accuracy stays 7: the old straight line was a labeled placeholder, and the new curve fixes its direction, but the shape inside 0-7.3 h is still illustrative. Overall unchanged at 6.6 ((7+7+6+5+7+6+8)/7 = 6.57).

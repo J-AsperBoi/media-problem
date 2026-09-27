@@ -1,6 +1,7 @@
 // fifty-nine-days: game-hud-run, 8-bit, game. Analog: wannacry-2017.
 // Race mapping: film t 2..14 s <-> hours 0..24 (1 s = 2 h, linear). hours(t) = 2 (t - 2).
-// Red = SPREAD meter, linear between the two sourced endpoints (0 at 0 h, 230,000 at 24 h; shape unsourced, labeled REPORTED).
+// Red = SPREAD meter, the-worm-rewind's model: logistic (mid 4.0 h, k 1.16/h) pinned to 0 at 0 h and saturated (230,000, s2) by the
+//   7.3 h kill switch (s1; Neino/Kryptos Logic House testimony 2017-06-15: the bulk was hit before the stop), flat after. Shape inside 0-7.3 h unsourced.
 // Green = analog fragments (patch -1416 h, alert, off switch 7.3 h, emergency patch ~20 h).
 // Human aggregation per organisation: max(7.3, L.lognormalQuantile(q, 20, 168)). AI snap: median 1 h, p90 8.4 h (illustrative).
 // See output/fifty-nine-days/notes.md.
@@ -17,14 +18,16 @@ function makeScene(SERIF, HAND) {
   const hoursAt = t => Math.max(0, HPS * (Math.min(t, 14) - T0));
   const tOfHour = h => T0 + h / HPS;
   const P24 = A.threat.points[A.threat.points.length - 1].t; // 24
-  const meter = h => L.clamp(h / P24, 0, 1);                   // linear placeholder between sourced endpoints
   const F = {}; A.solution.fragments.forEach(f => F[f.id] = f.ready_at);
   const KILL = F.f3, EPATCH = F.f4;                             // 7.3 h, ~20 h
+  const RK = 1.16, RMID = 4.0, sig = h => 1 / (1 + Math.exp(-RK * (h - RMID))), SG0 = sig(0), SGK = sig(KILL);
+  const meter = h => h <= 0 ? 0 : h >= KILL ? 1 : (sig(h) - SG0) / (SGK - SG0);   // 0 at t0, full by 7.3 h, flat after
+  const hourOfMeter = m => RMID - Math.log(1 / (SG0 + m * (SGK - SG0)) - 1) / RK;
   const MED = A.solution.aggregation.median, P90 = A.solution.aggregation.p90;
   const AIMED = A.ai_counterfactual.aggregation_median, AIP90 = AIMED * P90 / MED;
   const tKill = tOfHour(KILL);                                  // 5.65
-  const HOSP_RED = 0.85;                                        // hospital cell flips when meter crosses this rank
-  const tHospRed = tOfHour(HOSP_RED * P24);                     // 12.2
+  const HOSP_RED = 0.5;                                         // hospital cell flips when meter crosses this rank
+  const tHospRed = tOfHour(hourOfMeter(HOSP_RED));              // 3.99 (hour 3.98); corridor red done by 5.59 < tKill 5.65
 
   // ---------- pixel font (3x5) ----------
   const GL = {
@@ -136,7 +139,7 @@ function makeScene(SERIF, HAND) {
     const off = mode === 'human' && t >= 14.25;
     if (off) { px(c, sx, sy, sw, sh, '#0e0f11'); const k = L.clamp((t - 14.25) / 0.25, 0, 1); if (k < 1) px(c, sx, sy + sh / 2 - 1, sw * (1 - k), 2, G6); return; }
     // reflection of his face
-    const mood = mode === 'routed' ? 'resolve' : (t < 13.55 ? 'tired' : 'alarm');
+    const mood = mode === 'routed' ? 'resolve' : (t < monFlip(END) ? 'tired' : 'alarm');
     face(c, 64, 112, 5, mood, mode === 'routed' ? 0.14 : 0.22);
     ptext(c, 'INBOX', sx + 6, sy + 6, 2, G5);
     px(c, sx + 6, sy + 22, 128, 1, G3);
@@ -147,8 +150,8 @@ function makeScene(SERIF, HAND) {
       ptext(c, 'RE: RE: RE:', sx + 6, sy + 49, 2, G4);
       ptext(c, 'LUNCH?', sx + 6, sy + 69, 2, G4);
       ptext(c, 'MEETING', sx + 6, sy + 89, 2, G4);
-      // red flood from the edges (13.8 -> 14.2)
-      const f = L.clamp((t - 13.8) / 0.4, 0, 1) * 1.4;
+      // red flood from the edges, when the red reaches this terminal (monFlip(END), before the kill switch)
+      const f = L.clamp((t - monFlip(END)) / 0.4, 0, 1) * 1.4;
       if (f > 0) for (let y = 0; y < 27; y++) for (let x = 0; x < 34; x++) if (floodKey[y * 34 + x] < f) px(c, sx + 2 + x * 4, sy + 1 + y * 4, 4, 4, RED);
     } else {
       const applied = t >= 26.5;
@@ -215,7 +218,7 @@ function makeScene(SERIF, HAND) {
     for (let i = 0; i < 4; i++) { px2(ctx, x0 + 1 + i * 7, y0 + 1, 0.6, 10, G4); px2(ctx, x0 + 1 + i * 7, y0 + 20, 0.6, 9, G4); }
     px2(ctx, x0 + 1, y0 + 10.4, 28, 0.6, G4); px2(ctx, x0 + 1, y0 + 20, 28, 0.6, G4);
     for (let i = 0; i < 4; i++) { px2(ctx, x0 + 3 + i * 7, y0 + 4, 3, 2, G5); px2(ctx, x0 + 3.5 + i * 7, y0 + 4.5, 2, 1, t >= tHospRed ? RED : '#22262a'); }
-    worker(ctx, WK.x, WK.y, 0.42, t < 9 ? 'tired' : 'alarm');
+    worker(ctx, WK.x, WK.y, 0.42, t < tHospRed ? 'tired' : 'alarm');
     ctx.restore(); }
   const px2 = (c, x, y, w, h, col) => { c.fillStyle = col; c.fillRect(x, y, w, h); };
   const WK = { x: HOSP.x + 12.9, y: HOSP.y + 11.4 };   // sprite top-left; face center ~ +2.1,+2.1
@@ -255,8 +258,8 @@ function makeScene(SERIF, HAND) {
     // day ticks (suns)
     for (let d = 0; d <= 7; d++) { const x = sxOf(d * 24); px(ctx, x - 3, y + 360, 6, 20, G4); if (d < 7) { px(ctx, x + 55, y + 398, 14, 14, G4); px(ctx, x + 58, y + 392, 8, 26, G4); px(ctx, x + 49, y + 401, 26, 8, G4); } }
     px(ctx, SX0, y + 368, SX1 - SX0, 4, G4);
-    // same red: 0..24 h
-    const rEnd = Math.min(cursorH, P24); if (rEnd > 0) px(ctx, SX0, y + 320, sxOf(rEnd) - SX0, 36, RED);
+    // same red: 0..7.3 h (spread saturated by the kill switch, flat after)
+    const rEnd = Math.min(cursorH, KILL); if (rEnd > 0) px(ctx, SX0, y + 320, sxOf(rEnd) - SX0, 36, RED);
     // green pips (organisations) stacked by arrival
     orgs.forEach((o, i) => { const h = o[key]; if (h > cursorH) return; const x = Math.round((sxOf(h) - 8) / 6) * 6, yy = y + 200 + (i % 5) * 20; px(ctx, x, yy, 16, 16, GREEN); if (i === 0) { ctx.strokeStyle = G7; ctx.lineWidth = 4; ctx.strokeRect(x - 5, yy - 5, 26, 26); ptext(ctx, 'HIS', x + 30, yy - 12, 9, G7); } });
     // cursor
