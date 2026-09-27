@@ -87,3 +87,20 @@ The analog says its 759 h median is the geometric mean of p10 and p90, a modelli
 {"slug":"the-storm-doc","structure":"nature-documentary","medium":"particle/data","family":"cosmos","scale":"multi-scale zoom","pace":"slow build","emotion":"awe","protagonist":"the red itself","camera":"continuous zoom through scales","analog":"quebec-1989"}
 
 Diversity check: OK (nearest two-days and seventeen-days, 0.56; the-mold-strikes-back, 0.67). No changes needed.
+
+## Build notes
+- Preview 1: the town scale (t ≈ 4.5–5.5) was nearly empty, because 1,100 houses were spread over ~26 km² and only a few fell inside a 370 m frame. I rebuilt the town as houses every 28 m along a street grid, with density falling off as exp(−r/900 m) from the origin, so each scale reads as a field of lights. I checked t = 0, 4.2, 5.0 and 5.8 as stills. Fixed a negative-modulo crash in the green "failed reach" dots.
+- Measured: fit doubling 6.79 s; kitchen fall rank 0.867 (the fridge goes quiet at t = 16.88); hum returns at t = 21.19; ring closes at t = 27.38.
+- tools/verify.js: PASS (dur 44.00, stray 0%, QR found). ffprobe 44.000000.
+- Known weak spots: the stick figure is line-drawn rather than particles; the lower-third captions overlap the "engineers" label and the person's legs; the red is in flight before t0 and its approach is staged, not timed (stated in the notes); the fridge goes quiet off-camera (at the province scale), so the kitchen shows the silence after, not the moment itself.
+
+## Scores
+- Hook: 7 (a window full of red particles, a green phone lighting a face, and "Observe the red." in frame 1; clean and legible)
+- Speed accuracy: 8 (logistic fit through the sourced 90 s endpoints, 83% at 9 h, lognormal ring between the sourced p10 and p90, one stated log clock; the approach before t0 is staged and says so)
+- Snap impact: 6 (honest, small counterfactual; the freeze, hairline and two rulers carry it)
+- Emotion: 7 (the Powers-of-Ten pull to a gray disc and the fall back into a silent kitchen give real awe)
+- Originality: 8 (a nature-doc voice observing the red as an animal across 11 decades of scale)
+- Craft: 6 (the continuous zoom is smooth with full-frame fades; the stick figure and some caption collisions are rough)
+- Honesty: 9 (the threat is never named, the disc is gray and unlabeled with "sizes enlarged" on screen, the median is never shown, two sourced numbers, the AI warning appears only as "before" with "Operators still decide")
+Overall: 7.3
+Virality: 9% — a Powers-of-Ten zoom from a fridge to a star and back is a proven share format, and the doc voice is fresh, but the snap is abstract and the log ruler asks a lot of a cold scroller on a small account.
