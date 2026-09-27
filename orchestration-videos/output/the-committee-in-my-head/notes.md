@@ -22,7 +22,7 @@ This analog's fifth film (after fifteen-hundred, the-two-feeds, the-fact-check, 
 **Threat (red), the committee's vote.** The red a person feels is social proof: how much of their feed already carries the claim. The analog sources only endpoints (1 person at 0 h, 1,500 people at ~10 h, s2), so per the director's notes the path is **L.logistic fitted through the endpoints** (same fit as the-fact-check): s0 = 1/1500, share(10 h) = 0.99, r = ln(99 x 1499)/10 = 1.19 /h, **doubling 0.58 h (a fit, not a sourced number)**. Shares: 0.7% at 2 h, 7% at 4 h, 20% at 5 h, 46% at 6 h, 74% at 7 h, 90% at 8 h, 99% at 10 h.
 The 9 voting selves raise red paddles one by one: voter k turns red when share(h) passes (k + 0.5)/9 (inverse logistic). So the vote is barely red during #3 (h 2-4.5: 0-1 paddle), tilting during #2 (h 4.5-5.7: 1-3 paddles), and all red when the camera drops back in (h 10.4). The tally bar under the eye-windows is share(h) directly.
 
-**City of skulls (the cascade).** 300 heads, each standing for 5 of the 1,500-person audience. Head rank = distance from our head plus noise; head i turns red at inverse logistic of (i + 0.5)/300. The friend (f2, people who already knew the true version) is green from h 0. Other people who knew turn green on the truth curve: same logistic stretched 6x (s1: truth takes ~6x longer), doubling 3.49 h; at h 9 that is about 1 head in 300 besides the friend. The line from our head to the friend is attention: it flickers and breaks while the red volume rises.
+**City of skulls (the cascade).** 300 heads, each standing for 5 of the 1,500-person audience. Head rank = distance from our head plus noise; head i turns red at inverse logistic of (i + 0.5)/300. The friend (f2, people who already knew the true version) is green from h 0. Other people who knew turn green on the truth curve: same logistic stretched 6x (s1: truth takes ~6x longer), doubling 3.49 h; by h 9.3 (end of the city shot) no head besides the friend has it yet (the next one is due at ~10 h). The line from our head to the friend is attention: it flickers and breaks while the red volume rises.
 
 **Human aggregation (green from outside, f1).** Hoaxy: fact-check sharing lags misinformation by ~13 h, typical 10-20 h (s3). L.lognormalQuantile with median 13, p90 20. This person's correction lands at the median, h = 13 (t 21.53). In the snap, a strip of 19 faint green ticks shows other cascades' lags at quantiles 0.05..0.95: 7.8 h to 25 h (q = 0.1 gives 8.5 h, a bit under the authors' 10 h; stated).
 
@@ -69,3 +69,18 @@ Over-the-shoulder 50 mm at 40 cm behind a person on a couch at night, the phone 
 ## Tags
 {"structure":"countdown-list","medium":"bean cartoon","family":"body/biology","scale":"mind","pace":"stop-start","emotion":"anger","protagonist":"one person","camera":"over-the-shoulder","analog":"false-news-2018"}
 Diversity check: first TOO SIMILAR with family "theater" (nearest the-department-of-later 0.44: same medium, family, pace, emotion, camera). Changed family to body/biology (the whole film lives inside a skull, and the city is made of heads). Now OK (nearest the-department-of-later 0.56).
+
+## Build notes
+- Preview 1 fixed: countdown numeral was not flying to its badge (overlapped the item text); "later" label moved inside the phone; #1 close reframed (z 2.1-2.2) with the doubt-self enlarged and the MOTION CARRIES stamp moved onto the floor so it stays in frame.
+- Rendered 41.0 s (ffprobe), matches DUR.
+
+## Scores
+- Hook: 6 (over-the-shoulder red phone plus an x-ray skull with a tiny red committee reads; the three green glows in frame 1 are small on a phone)
+- Speed accuracy: 8 (logistic fit through sourced endpoints drives both the paddles and the city, Hoaxy lognormal for the correction and the tick strip, AI lane from the analog; "person reached at h 0" and the city layout are stated staging)
+- Snap impact: 6 (two 920 px panels, the green at ~1 h next to a flat red line vs 13 h after the red saturates reads; but it is a chart after a cartoon, and the panels are sparse)
+- Emotion: 7 (the angry little doubt-self jumping with its "?" while the gavel falls is the strongest beat; the anger is aimed at the routing, not the person)
+- Originality: 8 (a hearing-room committee inside a skull looking out through the eyes at the phone; the city made of heads)
+- Craft: 7 (matched-scale crossfades skull to city and back, no patches; the room is dense and the wide city shot is wallpaper-like)
+- Honesty: 9 (threat never named, AI labeled illustrative, "Speed is not belief." with the same red curve in both lanes, neuroscience kept metaphorical)
+Overall: 7.3
+Virality: 8% - the committee-in-the-head bit is relatable and shareable, but the payoff is a chart and the film asks viewers to track three pieces plus a city in 41 s, which most will not finish.
