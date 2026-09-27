@@ -32,22 +32,23 @@ Before the break: 10 of 13 tied (vs 6). Basis (analog + RATES.md): the missing f
 
 **Numbers on screen:** none. The fall is shown as dark windows; the gap as knot positions; copy uses the word "half" only as the ratio 220/426 = 0.52 inside the illustrative panel caption.
 
-## Shot list and camera (DUR 35 s)
+## Shot list and camera (DUR 36 s, as built)
 | t (s) | slate | camera | beat / caption |
 |---|---|---|---|
-| 0.0-1.8 | SC1 OTS (flash-forward) | over figure A's shoulder, close | day 433: phone glowing ON HOLD, green half-rope in hand running out the window, red filling the window, skyline lights out. "Half a lifeline. On hold." tag "LATER" |
+| 0.0-1.8 | SC1 OTS (flash-forward) | over figure A's shoulder, close | day 433 held: phone ON HOLD, green half-rope in hand running out the window, red filling the window, skyline lights out. "Half a lifeline. / On hold." tag "LATER" |
 | 1.8-2.2 | wipe | | "REWIND" |
-| 2.2-6.6 | SC2 OTS A | close, slow push | days 0-176. Queue satire on screen: "Your call is important." hold notes rise. Captions: "One office. Half a lifeline." / "The other half: an ocean away." |
-| 6.6-10.4 | SC3 PULL OUT | dolly out through the window, crane up to the ocean map | days 176-328. Both coasts, 13 office pairs, rope halves reaching, gaps between. "Thirteen calls. One queue." -> "Two continents. Same red." |
-| 10.4-13.4 | SC4 WIDE | locked, slow drift | days 328-448. The break (403): red crosses the ocean, windows go dark. Hero knot ties at 426. "Then it broke. Both shores." |
-| 13.4-15.2 | SC5 DROP IN | fast dolly to figure B's office | days 448-520 |
-| 15.2-17.2 | SC6 OTS B CLOSE+ | over B's shoulder, closer than SC1 | "CONNECTED" on the phone, the knot tied, windows dark. "Connected. After the dark." At 16.8 last lights out. |
-| 17.2-19.8 | SC7 FREEZE | locked, dim | "We slowed it down / so you could see it." |
-| 19.8-27.4 | SC8 SNAP | flat, two 920 px panels | 0.5 s silence, hit. AS IT HAPPENED vs ROUTED - ILLUSTRATIVE; same red; knots; playhead sweep at true proportional speed. "Same red. Half the wait." / "Illustrative. People still decide." |
-| 27.4-30.4 | SC9 IN++ | extreme close on the two hands and the knot | two silhouette hands (A from top, B from bottom) pull the knot tight. "Nobody was careless. The queue was." then "This is the bottleneck." |
-| 30.4-35.0 | END | | L.endCard, 4.6 s |
+| 2.2-6.6 | SC2 OTS A | close, slow push (zoom 1.0 -> 1.12) | days 0-176 in monthly lurches. Phone: "ON HOLD / Your call is important to us.", queue dots fill with day/426, hold notes rise. "One office. / Half a lifeline." / "The other half: / an ocean away." |
+| 6.6-8.4 | SC3 PULL OUT | push through the window (zoom 2.8), full-frame crossfade 7.7-8.4 to the map at zoom 9 on A's office | |
+| 8.4-10.2 | SC3 CRANE UP | map zoom 9 -> 1 | both coasts, 13 office pairs, rope halves with a gap mid-ocean and hold notes. "Every call. / One queue." |
+| 10.2-14.4 | SC4 WIDE | locked, slight drift | red wash spreads from the lower continent, windows go dark; at the day-403 and day-433 ticks (12.3, 13.0 s) the red crosses to the upper shore; the hero knot ties at the 433 tick. "Two continents. / Same red." / "Then it broke. / Both shores." |
+| 14.4-15.8 | SC5 DROP IN | map zoom 1 -> 9 on B's office, crossfade to room B | |
+| 15.8-18.4 | SC6 OTS B CLOSE+ | over B's (mirrored, identical) shoulder, zoom 2.8 -> 1.28 -> 1.34 (closer than SC2) | phone "CONNECTED", rope taut with a knot at the horizon, window red and dark. "Connected. / After the dark." Race ends 16.8. |
+| 18.4-21.0 | SC7 FREEZE | locked, dimmed | "We slowed it down / so you could see it." |
+| 21.0-28.6 | SC8 SNAP | flat, two 920 px panels | 0.5 s black silence, hit at 21.5. AS IT HAPPENED vs ROUTED - ILLUSTRATIVE (48 px); identical red; knots at arrival days; one playhead sweeps both 22.1-25.1. "Same red. Half the wait." / "Illustrative. People still decide." |
+| 28.6-31.6 | SC9 IN++ | extreme close, push 1.0 -> 1.12 | two identical rod-puppet hands pull the knot tight. "Nobody was careless. / The queue was." / "This is the bottleneck." |
+| 31.6-36.0 | END | | L.endCard, 4.4 s |
 
-Zoom cycles: Cycle 1: IN (OTS A, zoom 1.0 -> 1.12) 0-6.6 -> OUT (through window to ocean, map zoom 9 -> 1) 6.6-13.4 -> IN+ (to B's office, closer than A: 1.3) 13.4-17.2. Cycle 2: OUT (snap axis, three years) 19.8-27.4 -> IN++ (hands at the knot, scale 2.2) 27.4-30.4.
+Zoom cycles: Cycle 1: IN (OTS A) 0-6.6 -> OUT (through the window to the ocean map, zoom 9 -> 1) 6.6-14.4 -> IN+ (to B's office, closer than A) 14.4-18.4. Cycle 2: OUT (snap axis, three years) 21-28.6 -> IN++ (hands at the knot) 28.6-31.6.
 
 ## 3D translation note
 - Keep it as a real shadow theatre in 3D: flat cut-out puppets (thin card with rivets and rods) pressed against a backlit muslin screen, one practical lamp behind. Camera on the audience side at eye level, 35 mm for the OTS shots; the puppets' edges soften slightly as they leave the screen (real penumbra).
@@ -57,7 +58,7 @@ Zoom cycles: Cycle 1: IN (OTS A, zoom 1.0 -> 1.12) 0-6.6 -> OUT (through window 
 
 ## Copy variants
 - "Half a lifeline. On hold." (hook) / "Your call is important." (phone) / "One office. Half a lifeline." / "The other half: an ocean away."
-- "Thirteen calls. One queue." (spelled out; not a data number: it is the count of drawn pairs) / "Two continents. Same red." / "Then it broke. Both shores."
+- "Every call. One queue." (alt "Thirteen calls. One queue." unused, to keep numbers off screen) / "Two continents. Same red." / "Then it broke. Both shores."
 - "Connected. After the dark." / "Nobody was careless. The queue was."
 - Snap: "Same red. Half the wait." / "Illustrative. People still decide."
 - Unused: "Please hold. The red won't." / "Estimated wait: one crisis." / "Ping across the ocean: months."
@@ -65,3 +66,19 @@ Zoom cycles: Cycle 1: IN (OTS A, zoom 1.0 -> 1.12) 0-6.6 -> OUT (through window 
 ## Tags
 {"slug":"half-a-lifeline","structure":"two-phones","medium":"shadow puppet","family":"market","scale":"between nations","pace":"stop-start","emotion":"loneliness","protagonist":"a green fragment","camera":"over-the-shoulder","analog":"gfc-2008"}
 Diversity check: first try with protagonist "an institution" was TOO SIMILAR (six-to-twelve-hours 0.44). Changed protagonist to "a green fragment" (the lifeline itself is the character; the two figures are its two ends): OK (nearest ten-things-in-the-drawer 0.56, six-to-twelve-hours 0.56).
+
+## Build log
+- Preview 1: the figures vanished (black silhouettes against a black wall). Wall changed to a dim lamp-lit gray gradient with a black window frame; "the break" label moved under the snap axis (it collided with the knots); freeze caption moved up off the phone. Preview 2 clean. Final render 36.0 s (ffprobe).
+- Arrivals are shown at the first monthly tick on or after them (the clock steps at the data points), so the hero knot (426) ties at the 433 tick, in the same lurch as the biggest drop. Stated here; no number on screen.
+- Known weaknesses: in the wide map the offices are small and the hero pair is only slightly larger; the drop-in frame at zoom 9 on B is a red blur for ~0.5 s; figures are backs of heads, so emotion rides on posture and the phone, not a face.
+
+## Scores
+- Hook: 7 (frame 1: big red window, glowing ON HOLD phone, green rope in a silhouette hand, "Half a lifeline. On hold."; legible and strange)
+- Speed accuracy: 8 (monthly data verbatim including rallies, one mapping with honest monthly steps, lognormal knots from the analog; zero numbers on screen)
+- Snap impact: 6 (silence, hit, two full-width panels with identical red and the knot cluster shifting left of the break; calm chart after a tactile world)
+- Emotion: 7 (two identical figures alone in dark offices, hold music, "Connected. After the dark." lands the loneliness)
+- Originality: 7 (shadow theatre, a rope cut by an ocean, the hold queue as the villain)
+- Craft: 6 (strong silhouettes and rope; wide map is busy and the offices small; drop-in blur)
+- Honesty: 9 (no names/flags/numbers, day 426 only as a knot position, same red in both panels, "Illustrative. People still decide.")
+Overall: 7.1
+Virality: 8% - the ON HOLD phone with "Your call is important to us" while the window burns red is an instantly relatable joke and a strong thumbnail, but it is finance, wordless data and a chart in the middle, which caps reach from a small account.

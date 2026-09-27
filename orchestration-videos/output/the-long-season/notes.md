@@ -59,3 +59,18 @@ A real stained-glass stadium: a vaulted nave whose floor is a football pitch, li
 
 ## Tags
 {"structure":"sports-play-by-play","medium":"stained glass","family":"sport","scale":"history","pace":"slow build","emotion":"tenderness","protagonist":"a crowd","camera":"crane up and drop down","analog":"penicillin-resistance-1946"}
+
+## Build notes
+- Preview 1: board-label collided with the top stadium in the wide; neighbors' scarves competed with the hero's; final close put the "bottleneck" card over faces. Fixed (board moved up/smaller, league ring flattened, neighbor scarves dimmed until tied, IN++ reframed, card raised). Preview 2 clean. Rendered 39.0 s (ffprobe).
+- Known weaknesses: the board is ~95% red by year 4 (true to the fit, but it reads as "static red" for most of the race); the fan's raised arms are blocky; snap panels' league networks are small on a phone (panels are 940 px wide, labels 44-48 px).
+
+## Scores
+Hook: 7
+Speed accuracy: 8
+Snap impact: 6
+Emotion: 7
+Originality: 6
+Craft: 7
+Honesty: 9
+Overall: 7.1
+Virality: 7% — the stained-glass fan under a blazing red rose window is a strong thumbnail and the play-by-play captions give sound-off viewers a reason to stay, but it is the seventh film on this analog and a second sports-commentary film, and the snap's difference (more green lines) is subtle on a phone.
