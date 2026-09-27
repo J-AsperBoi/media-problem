@@ -1,10 +1,10 @@
-# Concept bank (60)
+# Concept bank (62)
 
 Generated from output/concepts.js. Built films are marked in output/LEDGER.jsonl. Virality is a first guess.
 
-Structures: {"based-on-a-true-story":3,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":4,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":3,"seamless-loop":4,"powers-of-ten-zoom":3,"pov":3,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
+Structures: {"based-on-a-true-story":4,"ticking-clock":3,"game-hud-run":3,"split-screen-race":3,"man-in-a-hole":3,"two-phones":3,"wait-for-it":4,"nature-documentary":4,"reverse-chronology":3,"sports-play-by-play":4,"countdown-list":3,"seamless-loop":5,"powers-of-ten-zoom":3,"pov":3,"mockumentary":3,"before-after":4,"recipe-parody":3,"ghost-rewind":4}
 
-Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":6,"penicillin-resistance-1946":5,"heatwave-2003":7,"gfc-2008":7}
+Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7,"rice-2008":6,"cuban-missile-1962":6,"quebec-1989":7,"penicillin-resistance-1946":6,"heatwave-2003":7,"gfc-2008":7}
 
 ## 1. two-days
 - **Structure:** based-on-a-true-story · **Analog:** covid-2020 · **First-guess virality:** 6%
@@ -365,4 +365,16 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Logline (red / green):** Rewind the worm through a subway map of networks; AI as the connecting line between the patch and the ward, people still decide.
 - **Snap:** 1 week vs 1 h (illustrative).
 - **Tags:** medium subway map; family traffic; scale city; pace sprint; camera crane up and drop down; emotion resolve; protagonist AI
+
+## 61. the-ballroom
+- **Structure:** seamless-loop · **Analog:** quebec-1989 · **First-guess virality:** 10%
+- **Logline (red / green):** A grid is a ballroom: millions of dancers turning in perfect sync, every step on the same beat. One missed step at the edge, and the whole floor falls out of time in 90 seconds. Green: dancers who know the recovery step, scattered across the room, never close enough to lead.
+- **Snap:** 9 h to 83% back vs ~1 h routing of the warning (illustrative); the loop returns to the dancing floor.
+- **Tags:** medium paper cutout; family dance; scale nation; pace one long take; camera crane up and drop down; emotion tenderness; protagonist a crowd
+
+## 62. the-stacks
+- **Structure:** based-on-a-true-story · **Analog:** penicillin-resistance-1946 · **First-guess virality:** 8%
+- **Logline (red / green):** Over a librarian's shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.
+- **Snap:** 13 vs 2.5 yr (illustrative, coordination only).
+- **Tags:** medium woodblock; family library; scale organization; pace slow build; camera over-the-shoulder; emotion loneliness; protagonist a green fragment
 

@@ -181,6 +181,12 @@ const C = [
 ['the-worm-rewind','ghost-rewind','wannacry-2017','subway map','traffic','city','sprint','crane up and drop down','resolve','AI',9,
  'Rewind the worm through a subway map of networks; AI as the connecting line between the patch and the ward, people still decide.',
  '1 week vs 1 h (illustrative).'],
+['the-ballroom','seamless-loop','quebec-1989','paper cutout','dance','nation','one long take','crane up and drop down','tenderness','a crowd',10,
+ 'A grid is a ballroom: millions of dancers turning in perfect sync, every step on the same beat. One missed step at the edge, and the whole floor falls out of time in 90 seconds. Green: dancers who know the recovery step, scattered across the room, never close enough to lead.',
+ '9 h to 83% back vs ~1 h routing of the warning (illustrative); the loop returns to the dancing floor.'],
+['the-stacks','based-on-a-true-story','penicillin-resistance-1946','woodblock','library','organization','slow build','over-the-shoulder','loneliness','a green fragment',8,
+ 'Over a librarian\'s shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.',
+ '13 vs 2.5 yr (illustrative, coordination only).'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));

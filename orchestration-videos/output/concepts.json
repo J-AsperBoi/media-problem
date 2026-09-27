@@ -898,5 +898,35 @@
   "vir": 9,
   "log": "Rewind the worm through a subway map of networks; AI as the connecting line between the patch and the ward, people still decide.",
   "snap": "1 week vs 1 h (illustrative)."
+ },
+ {
+  "slug": "the-ballroom",
+  "structure": "seamless-loop",
+  "analog": "quebec-1989",
+  "medium": "paper cutout",
+  "family": "dance",
+  "scale": "nation",
+  "pace": "one long take",
+  "camera": "crane up and drop down",
+  "emotion": "tenderness",
+  "protagonist": "a crowd",
+  "vir": 10,
+  "log": "A grid is a ballroom: millions of dancers turning in perfect sync, every step on the same beat. One missed step at the edge, and the whole floor falls out of time in 90 seconds. Green: dancers who know the recovery step, scattered across the room, never close enough to lead.",
+  "snap": "9 h to 83% back vs ~1 h routing of the warning (illustrative); the loop returns to the dancing floor."
+ },
+ {
+  "slug": "the-stacks",
+  "structure": "based-on-a-true-story",
+  "analog": "penicillin-resistance-1946",
+  "medium": "woodblock",
+  "family": "library",
+  "scale": "organization",
+  "pace": "slow build",
+  "camera": "over-the-shoulder",
+  "emotion": "loneliness",
+  "protagonist": "a green fragment",
+  "vir": 8,
+  "log": "Over a librarian's shoulder: the next answer already exists, as separate volumes on separate shelves in separate libraries. Red slips spread through the card catalog faster than anyone can check the books out together.",
+  "snap": "13 vs 2.5 yr (illustrative, coordination only)."
  }
 ]
