@@ -50,3 +50,15 @@ Real night lake with a mirror surface; each country a star at true positions sca
 ## Tags
 {"slug":"seventeen-days","structure":"split-screen-race","analog":"covid-2020","medium":"particle/data","family":"cosmos","scale":"between nations","pace":"accelerating","camera":"continuous zoom through scales","emotion":"awe","protagonist":"a crowd"}
 Diversity check: OK (nearest two-days 0.67).
+
+## Scores (by the coordinator; the build agent hit a usage limit after the render)
+Verified with tools/verify.js: duration 37.0 s = DUR, no stray saturation, QR present. Frames checked at 0.3, 7, 14, 18.5, 27 and 29.5 s.
+- Hook: 6. The face under a red sky with green eyes reads well, but the "day 421" line on frame 1 is a spoiler without context.
+- Speed accuracy: 8. Red follows the country-share points; green follows the real per-country lognormal with the first-dose floor.
+- Snap impact: 5. At the half-lit moment the two lakes differ visibly, but the gain is modest (363 vs 421).
+- Emotion: 6
+- Originality: 7
+- Craft: 6. The faces are simple, and the snap panels are clean and legible.
+- Honesty: 9
+- Overall: 6.7
+- Virality: 7%. A star sky split into spread and answer is a striking thumbnail, but the abstract middle and the small snap gain cap it.
