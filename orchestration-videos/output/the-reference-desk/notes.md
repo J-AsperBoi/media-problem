@@ -47,10 +47,10 @@ No other numerals appear: the wall clock has no numbers, and "1,500" and "10 hou
 ## Shot list (one take, one camera)
 | t | shot | camera |
 |---|---|---|
-| 0-1.2 | COLD OPEN, hour 10. CLOSE on the librarian at the desk, green book open, window behind her full of red. Card: "Watch the notice board." | locked, zoom 2.4 on the desk |
+| 0-1.2 | COLD OPEN, hour 10. CLOSE on the librarian at the desk, green book open, window behind her full of red. Card: "Watch the notice board." | locked, zoom 2.55 on the desk |
 | 1.2-2.0 | REWIND to hour 0 (the clock spins back, the red drains). | locked |
 | 2.0-5.5 | CLOSE. She writes the card and drops it in the tube (1 h). The first pamphlets pass through the window. "She already has the right book." / "Her card takes the long way." | locked |
-| 5.5-9.5 | PULL OUT (the only pull-out): through the cutaway library to the hill town. The tube loops around every street, and red runs hand to hand. | zoom 2.4 -> 0.3, ease in-out |
+| 5.5-9.5 | PULL OUT (the only pull-out): through the cutaway library to the hill town. The tube loops around every street, and red runs hand to hand. | zoom 2.55 -> 0.3, ease in-out |
 | 9.5-11.4 | WIDE HOLD (hours 7.5-9.4). One branch library lights up at 8.45 h. "Hand to hand, the whole town." | locked wide |
 | 11.4-14.0 | PUSH IN, closer than the start, onto the notice board. She walks over. | 0.3 -> 3.6 |
 | 14.0-16.0 | CLOSE+: the card drops out of the tube and is pinned at 13 h. "Pinned. 13 hours in." | locked |
@@ -75,3 +75,18 @@ Shoot it as a single locked-off shot on a 50mm lens at desk height, about 1.2 m,
 
 ## Diversity
 `node tools/diversity.js` -> OK: distinct enough (nearest before-the-price 0.56, the-truth-loop 0.56).
+
+## Render
+output/the-reference-desk/the-reference-desk.mp4, 35.0 s (ffprobe), 1080x1920, 30 fps.
+Preview fixes: tightened the opening close (2.2 -> 2.55) and moved the notice board inside frame 1 so the hook's promise is visible. I also moved the wall clock so it no longer collides with the two-line cards.
+
+## Scores
+- Hook: 7 (frame 1 is a tender, worried face, a glowing green book, and a window full of red pamphlets, with an explicit promise on screen. It is warm and readable but quiet for a cold scroll.)
+- Speed accuracy: 8 (logistic fit through the sourced endpoints, the Hoaxy lognormal lag across six libraries (8.45 / 10.9 / 13 h in-race), f2 at 6x slower, AI lane from the analog; 1 s = 1 h stated)
+- Snap impact: 6 (the AI lane goes green right behind the red wave, while the top lane is solid red until the 13 h sweep. The contrast is clear, but the dot grids are small on a phone.)
+- Emotion: 7 (her brows rise and her smile fades hour by hour. Pinning the card two metres from her desk while everyone outside already holds the red is quietly sad, without mocking anyone.)
+- Originality: 7 (a pneumatic tube looping the whole town as the image of routing lag is a fresh gag. It is the seventh film on this analog.)
+- Craft: 6 (the flat picture-book look holds up and the one-take camera is smooth. The wide shot is a dense wall of rows, the town people are simple, and her arms are mostly hidden.)
+- Honesty: 9 (the pamphlet has no topic, the readers are ordinary, the AI lane is labeled illustrative, "Speed is not belief." is on screen with red cores kept inside green rings, and only two numbers appear)
+Overall: 7.1
+Virality: 7% - a likable character and a clear wait-for-it payoff help, but the payoff is a quiet sad beat rather than a surprise, and it is the seventh take on the same analog.
