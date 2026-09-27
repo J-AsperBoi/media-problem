@@ -13,7 +13,7 @@ Diversity: assigned tags came back TOO SIMILAR to the-balcony (0.44: same analog
 
 ## Time mapping (one mapping)
 - Race: **1 s = 1 day**, day = t - 1.4 for t in [1.4, 15.4] (days 0 to 14; day 0 = Aug 1, 2003, never shown). The day is shown as the chat's own weekday dividers ("Saturday", "Sunday"...), not numbers; Aug 1, 2003 was a Friday, so day 11 = Tuesday, day 12 = Wednesday.
-- Cold open (0 to 1.4 s): flash-forward to day 11 (Tuesday) of the same timeline: header near its reddest, your unsent draft in the compose bar.
+- Cold open (0 to 1.4 s): flash-forward to day 11.4 (Tuesday) of the same timeline: header near its reddest, your unsent draft in the compose bar.
 - Snap: both lanes on one shared clock, days 0 to 19 swept in 4.5 s (1 s = 4.2 days), the same scale in both lanes.
 
 ## Speed math
@@ -70,3 +70,18 @@ Zoom cycles: Cycle 1: IN (phone fills frame, zoom ~13) 0-6.0 -> OUT 6.0-9.0 (to 
 ## Tags
 {"structure":"pov","medium":"text-only typography","family":"traffic","scale":"family","pace":"sprint","emotion":"loneliness","protagonist":"a crowd","camera":"over-the-shoulder","analog":"heatwave-2003"}
 Diversity check: OK after changing family to traffic (nearest the-two-feeds 0.56, the-balcony 0.56).
+
+## Build log
+- Preview 1: the IN++ card covered the sent key message and the "illustrative" chip collided with the plan card; green glow bubbles rendered as solid green slabs (translucent fill plus shadow in @napi-rs/canvas), which hid their text. Fixed: IN++ reframed (phone content higher), chip moved to the right of Gran's reply, glows moved to the stroke with a dark fill. Cold open moved to day 11.4 so the chat shows the "Tuesday" divider it claims. Final render 36.0 s.
+- Known weaknesses: in SC2 the early chat is sparse (the data puts only seven messages in the first 4.6 days) and Joe's green forecast scrolls off under the "Nine people" card; the city phones are small at full width, so the names read only as texture; the dolly out passes a moment where only your phone and shoulder are in frame; the day-11.5 "last seen" freeze is small type above the door and may be missed without the card.
+
+## Scores
+- Hook: 7 (frame 1: big red chat header, green unsent "I have Gran's spare key.", your shoulder, "POV: you have the missing piece.")
+- Speed accuracy: 8 (logistic fit through sourced endpoints plus peak drives the header and haze; 40 message timestamps at quantiles of 0.25 + rho; two-sided lognormal arrivals 9.5 / 10.9 / 12 / 305; one 1 s = 1 day mapping; snap on one shared clock with the identical red in both lanes)
+- Snap impact: 6 (freeze, silence, one hit, full-width lanes; the green lines stacked on the red peak read clearly, but it is still a calm chart)
+- Emotion: 7 (the draft that never sends, "does anyone have a key?", Gran's "love you all x" and her status freezing while the chat moves to Wednesday; restrained)
+- Originality: 6 (a group chat is a familiar device and two-feeds already did phones-as-type; the city of nine phones and pieces pinned to a door are new)
+- Craft: 6 (clean typography and legible OTS; sparse early chat, small city labels, a thin transitional beat)
+- Honesty: 9 (threat never named, two numbers only, AI lane and IN++ labeled illustrative, AI shown gray and "you decide", Gran's status timing stated as symbolic; loss only as a status that stops updating)
+- Overall: 7.0
+- Virality: 10% — "POV: the family group chat" plus an unsent message to Gran is instantly recognizable and shareable in family chats, but it is a quiet, text-dense piece with a chart in the middle from a small account.

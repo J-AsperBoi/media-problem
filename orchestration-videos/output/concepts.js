@@ -202,6 +202,9 @@ const C = [
 ['the-numb-hand','reverse-chronology','blackout-2003','bean cartoon','body/biology','body','accelerating','continuous zoom through scales','dread','one person',10,
  'A hand on a hot stove while the head scrolls: the grid as one body whose pain nerve (the alarm) went numb. Run backward from the burn to the moment the nerve failed, 1.9 hours earlier, while four other nerves each carried a piece of the warning to the wrong place.',
  '1.5 h to notice vs 0.25 h routed (illustrative); outcome uncertain.'],
+['eight-billion-heads','man-in-a-hole','covid-2020','x-ray','body/biology','multi-scale zoom','accelerating','crane up and drop down','awe','a crowd',11,
+ 'One body. Eight billion heads. The planet as a single x-ray body whose organs are countries: red spreads organ to organ at its real share of countries; the immune answer (green) exists early but reaches each organ on its own late day. Fall, then the long uneven rise.',
+ 'Median organ day 421 vs 363 routed (illustrative); supply unchanged.'],
 ];
 const K = ['slug','structure','analog','medium','family','scale','pace','camera','emotion','protagonist','vir','log','snap'];
 const rows = C.map(a => Object.fromEntries(K.map((k, i) => [k, a[i]])));
