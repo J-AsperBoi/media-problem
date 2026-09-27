@@ -67,3 +67,18 @@ Tier: animatic
 ## Tags
 {"structure":"nature-documentary","medium":"ink wash","family":"ecology","scale":"between nations","pace":"slow build","camera":"crane up and drop down","emotion":"tenderness","protagonist":"a green fragment","analog":"rice-2008"}
 Diversity: OK (nearest the-warehouse 0.56).
+
+## Build log
+- Preview 1: the structure worked. Fixes: the family's home in the world layer blew up into a dark rectangle during the crane crossfade, so it is now a tiny soft mark and the close layer fades out sooner. The "Week" labels in the snap overlapped the grain marker, so the labels moved under the axis and the grain moved to the top of the route line.
+- Render: 44.0 s (ffprobe).
+
+## Scores
+- Hook: 7 (frame 1 shows a worried child's face over a small bowl, a big red wash across the land, and a green herd glowing on the horizon, with "Enough grain existed. Just not here.")
+- Speed accuracy: 8 (the-warehouse's logistic fit through sourced points, 1 s = 1 week, the sourced 4.4-week decay, lognormal route trails, the AI lane from the analog)
+- Snap impact: 5 (the honest gap is ~3 weeks. The bracket and the before-the-peak green line help, but the two panels still look alike at a glance.)
+- Emotion: 7 (the sleeping-grain close-up waking as the route opens, and the grain arriving at the bowl, are genuinely tender)
+- Originality: 7 (nature-doc captions plus a grain "herd" is a fresh metaphor, though the analog is now used four times)
+- Craft: 6 (the ink-wash ridges and mist read well and the grain character is appealing. The humans are simple and the crane is a crossfade, not one continuous move.)
+- Honesty: 9 (no countries or officials, unverified items off screen, and the migration noted as a metaphor since the announcement moved prices)
+- Overall: 7.0
+- Virality: 8% (a cute, shareable grain character and a clear "the food existed" twist, but the hushed slow build and the small snap will lose most swipers.)
