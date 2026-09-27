@@ -238,7 +238,7 @@ Analogs: {"covid-2020":5,"blackout-2003":5,"wannacry-2017":6,"false-news-2018":7
 - **Structure:** seamless-loop · **Analog:** covid-2020 · **First-guess virality:** 10%
 - **Logline (red / green):** A subway map of airports: red rides the lines. The green train has to stop at every station for paperwork. The loop ends where it began.
 - **Snap:** 421 vs 363 (illustrative).
-- **Tags:** medium subway map; family traffic; scale between nations; pace one long take; camera continuous zoom through scales; emotion awe; protagonist a green fragment
+- **Tags:** medium embroidery; family traffic; scale between nations; pace one long take; camera continuous zoom through scales; emotion awe; protagonist a green fragment
 
 ## 40. quebec-loop
 - **Structure:** seamless-loop · **Analog:** quebec-1989 · **First-guess virality:** 9%

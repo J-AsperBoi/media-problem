@@ -115,7 +115,7 @@ const C = [
 ['the-final','sports-play-by-play','gfc-2008','neon arcade','sport','between nations','sprint','handheld chase','resolve','a crowd',9,
  'A stadium scoreboard market. Commentators call each bailout like a goal that arrives after the whistle.',
  'Day 426 vs 220 (illustrative).'],
-['the-green-screen','seamless-loop','covid-2020','subway map','traffic','between nations','one long take','continuous zoom through scales','awe','a green fragment',10,
+['the-green-screen','seamless-loop','covid-2020','embroidery','traffic','between nations','one long take','continuous zoom through scales','awe','a green fragment',10,
  'A subway map of airports: red rides the lines. The green train has to stop at every station for paperwork. The loop ends where it began.',
  '421 vs 363 (illustrative).'],
 ['quebec-loop','seamless-loop','quebec-1989','neon arcade','cosmos','nation','one long take','locked-off close-up with a single pull-out','awe','the red itself',9,
