@@ -231,9 +231,9 @@ function makeScene(SERIF, HAND) {
   function ruler(ctx, E, paused, a = 1) { if (a <= 0.01) return; ctx.save(); ctx.globalAlpha = a;
     paper(ctx, jag(rect(70, 1336, 910, 1488), 51, 2), 'rgba(18,21,27,0.92)', 1);
     L.label(ctx, 'log time', 90, 1382, 44, { col: '#9aa0aa', align: 'left' });
-    if (paused) L.label(ctx, 'paused', 890, 1382, 44, { col: CREAM, align: 'right' });
+    if (paused === true) L.label(ctx, 'paused', 890, 1382, 44, { col: CREAM, align: 'right' });
     const y = 1408; ctx.strokeStyle = '#6b7380'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(90, y); ctx.lineTo(890, y); ctx.stroke();
-    [['second', 1, 'left'], ['minute', 60], ['hour', 3600], ['day', 86400], ['month', 2.63e6], ['year', 3.156e7]].forEach(([w, e, al]) => { const x = logX(e);
+    [['sec', 1, 'left'], ['minute', 60], ['hour', 3600], ['day', 86400], ['month', 2.63e6], ['year', 3.156e7]].forEach(([w, e, al]) => { const x = logX(e);
       ctx.fillStyle = '#6b7380'; ctx.fillRect(x - 2, y - 12, 4, 24); L.label(ctx, w, al ? x - 4 : x, 1466, 44, { col: '#b9bec6', align: al || 'center' }); });
     if (E > 0) { ctx.strokeStyle = RED; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(90, y); ctx.lineTo(logX(Math.min(E, FALL_S)), y); ctx.stroke(); }
     LINK_H.forEach(hh => { if (E >= hh * 3600) { ctx.fillStyle = GREEN; ctx.beginPath(); ctx.arc(logX(hh * 3600), y, 10, 0, 7); ctx.fill(); } });
@@ -301,7 +301,7 @@ function makeScene(SERIF, HAND) {
     ctx.restore();
     // torch beam on her face
     const lens = handTorch(ctx, 760, 1980, -0.34, true, 1.0);
-    beam(ctx, lens, [560 + Math.sin(lt * 1.3) * 10, 880], 190, L.sm(0.1, 0.5, lt));
+    beam(ctx, lens, [560 + Math.sin(lt * 1.3) * 10, 880], 190, 0.55 * L.sm(0.1, 0.5, lt));
     snow(ctx, t, 0.0);
   }
 
@@ -321,15 +321,15 @@ function makeScene(SERIF, HAND) {
       const lane = (y, title, sub, ai) => {
         L.label(ctx, title, 90, y - 80, 52, { col: CREAM, align: 'left' });
         if (sub) L.label(ctx, sub, 90, y - 28, 46, { col: '#8fe8b4', align: 'left' });
-        const x0 = 190; paper(ctx, jag(rect(80, y - 4, 990, y + 110), 92 + y, 2), '#161a21', 1);
+        const x0 = 250; paper(ctx, jag(rect(80, y - 4, 990, y + 110), 92 + y, 2), '#161a21', 1);
         ctx.strokeStyle = '#6b7380'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x0, y + 50); ctx.lineTo(980, y + 50); ctx.stroke();
         const lx = e => logX(e, x0, 700, 8.6);
         [['sec', 1], ['hour', 3600], ['year', 3.156e7]].forEach(([w, e]) => { ctx.fillStyle = '#6b7380'; ctx.fillRect(lx(e) - 2, y + 40, 4, 20); L.label(ctx, w, lx(e), y + 100, 44, { col: '#9aa0aa' }); });
         L.label(ctx, 'before', 88, y + 100, 44, { col: '#9aa0aa', align: 'left' });
         ctx.strokeStyle = RED; ctx.lineWidth = 14; ctx.beginPath(); ctx.moveTo(x0, y + 50); ctx.lineTo(lx(FALL_S), y + 50); ctx.stroke();
         LINK_H.forEach((hh, i) => { if (ai && i === 0) return; ctx.fillStyle = GREEN; ctx.beginPath(); ctx.arc(lx(hh * 3600), y + 50, 11, 0, 7); ctx.fill(); });
-        if (ai) { const p = L.sm(34.9, 35.4, t); ctx.fillStyle = GREEN; glow(ctx, 130, y + 50, 50 * p, rgbaG, 0.6); ctx.beginPath(); ctx.arc(130, y + 50, 16 * p, 0, 7); ctx.fill();
-          ctx.strokeStyle = GREEN; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(146, y + 50); ctx.lineTo(L.lerp(146, x0 - 6, p), y + 50); ctx.stroke(); }
+        if (ai) { const p = L.sm(34.9, 35.4, t); ctx.fillStyle = GREEN; glow(ctx, 160, y + 50, 50 * p, rgbaG, 0.6); ctx.beginPath(); ctx.arc(160, y + 50, 16 * p, 0, 7); ctx.fill();
+          ctx.strokeStyle = GREEN; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(176, y + 50); ctx.lineTo(L.lerp(176, x0 - 6, p), y + 50); ctx.stroke(); }
       };
       lane(640, 'As it happened', null, false);
       lane(1000, 'Warning routed first', 'illustrative', true);
@@ -345,7 +345,7 @@ function makeScene(SERIF, HAND) {
     // SC1 cold open: flash-forward at the doorway
     if (t < 1.4) {
       const flick = 0.55 + 0.35 * L.noise(t * 22, 3);
-      hall(ctx, t, 5.05 + 0.15 * L.ease.out(t / 1.4), flick, { E });
+      hall(ctx, t, 5.45 + 0.12 * L.ease.out(t / 1.4), flick, { E });
       handTorch(ctx, 780, 1960, -0.3, false, 1.0);
       card(ctx, ['The answer', 'was already here.'], 330, 1, 96);
       L.grain(ctx, t, { alpha: 0.05 }); L.slate(ctx, 'SC1  COLD OPEN  CLOSE POV');
@@ -395,7 +395,7 @@ function makeScene(SERIF, HAND) {
       const ring = L.sm(LINK_T[4], LINK_T[4] + 0.6, t);
       map(ctx, t, cam, E, { clockLive: true, labels: win(t, 18.4, 26.2, 0.4), ringGlow: ring });
       snow(ctx, t, 0.2);
-      ruler(ctx, E, t >= TEND, L.sm(17.0, 17.5, t) * (1 - L.sm(28.2, 28.6, t)));
+      ruler(ctx, E, false, L.sm(17.0, 17.5, t) * (1 - L.sm(28.2, 28.6, t)));
       card(ctx, ['The light came back', 'in hours.'], 300, win(t, LINK_T[0] - 0.2, 22.3), 88);
       card(ctx, ['The lasting fix', 'took 7 years.'], 300, win(t, 22.7, 26.1), 96);
       card(ctx, ['We slowed it down', 'so you could see it.'], 300, win(t, 26.1, 28.6), 92);
