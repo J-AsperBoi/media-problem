@@ -344,12 +344,12 @@ function makeScene(SERIF, HAND) {
     }
     if (t >= 34.4) {                                                // loop tail: dissolve into frame 1
       hookShot(ctx, t - DUR);
-      card(ctx, HOOK_CARD, 330, L.sm(35.1, 35.7, t), 100);
+      card(ctx, HOOK_CARD, 330, L.sm(35.1, 35.7, t), 92);
       L.grain(ctx, t, { alpha: 0.05 });
     }
     const ea = 1 - L.sm(34.4, 35.1, t);
     if (ea > 0) L.endCard(ctx, ea, { line: 'Help close the gap.' });
-    L.slate(ctx, t < 34.4 ? 'END' : 'SC1  CLOSE (loop)');
+    L.slate(ctx, t < 34.4 ? 'END' : 'SC1  CLOSE (eye level)');   // same slate as frame 1 so the loop matches
   }
 
   const tOfDay = d => T0 + d / DPS;

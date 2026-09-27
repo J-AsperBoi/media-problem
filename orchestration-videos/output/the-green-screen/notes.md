@@ -62,3 +62,19 @@ One unbroken take over a real embroidery hoop. Open on a macro lens (100 mm macr
 
 ## Status
 Bash (and so node, ffmpeg and ffprobe) was blocked for this agent session by the auto-mode safety check. The scene was written but NOT previewed, rendered, diversity-checked or verified. Scores below are provisional estimates from the design, not from footage.
+
+Before scoring for real, whoever renders this should check:
+- `node tools/diversity.js '<tags above>'` (not run).
+- `node tools/render.js scenes/the-green-screen.js --preview`, and look at: the satin-stitch continents at the wide shot (moire?), the stitcher's face and needle at z 46/58/78, the legibility of the red thread in frame 1, and the snap panel labels.
+- Full render, then ffprobe (expect 36.00 s) and `node tools/verify.js the-green-screen` (the end card is fully opaque from 29.9 to 34.4 s, so the QR check in the last 6 s should pass; the tail from 34.4 to 36 s redraws the frame-1 shot).
+
+## Scores (PROVISIONAL, unrendered)
+- Hook: 6
+- Speed accuracy: 8
+- Snap impact: 5
+- Emotion: 6
+- Originality: 7
+- Craft: 5 (unseen)
+- Honesty: 9
+Overall: 6.6
+Virality: 6% (provisional). An embroidered world map is thumbnail-pretty and the loop helps rewatch, but the modest 58-day snap and a fifth film on the same analog cap its reach.
