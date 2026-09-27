@@ -74,3 +74,20 @@ The snap panels use their own shared linear axis (0 to 2 h across 840 px). Both 
 - "The window: one hour."
 - "50 million people. In minutes."
 - Alternates: "Silence looked like safety." / "Everyone had a piece. No one had the picture." / "The grid had lag." / "Nobody was asleep. The routing was."
+
+## Build notes
+- Rendered 38.0 s (ffprobe), 1080x1920, 30 fps. There is one continuous camera for everything except the snap insert: each control room is an iso cutaway authored at full frame and placed in the world at scale 0.11, so the pull-out is a single zoom from 11.6 to 1.1 with log-zoom interpolation. The only crossfades are full-frame dips into and out of the insert.
+- Fixes after preview: the ground-clock hands were drawn over the close shot (moved under the rooms); I tightened the wide from zoom 1.0 to 1.1; I removed an arm reach in SC6 that read as a stray bar.
+- Known weak spots: the operator's panic at h = 1.5 happens while we are wide, so it is tiny on screen. The rooms are small at wide zoom. Frame 1's red lives in the window and the wall glow, not across the whole frame.
+
+## Scores
+- Hook: 7. Face, red window, green lever and "The alarm never rang." are all in frame 1; the red could be bigger.
+- Speed accuracy: 8. One linear mapping; only the verified trip is drawn; the cascade is a logistic fitted through the endpoints; the calls use the lognormal quantiles; the AI figure comes from the analog.
+- Snap impact: 6. Both timelines are clean and share one axis, but it is a chart insert rather than a return to the world.
+- Emotion: 7. The lonely operator under a dead panel, and the sad face lit only by red, both land.
+- Originality: 7. The iso dollhouse region sits on a clock dial, and the "silent alarm" framing is fresh.
+- Craft: 7
+- Honesty: 9. No names and no unverified times. "In minutes" replaces "7 minutes". The AI panel keeps the cascade as a dashed "?" with "People still decide."
+
+Overall: 7.3
+Virality: 7% — it has a strong cold open and a clean true-story premise, but the slow middle is a wide shot of small rooms and there is no human-scale payoff after the cascade, so it most likely stalls well short of 100k.
