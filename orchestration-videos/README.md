@@ -1,3 +1,5 @@
+> **What this folder is:** the studio. Everything for the films lives here. The top of the repo has a [beginner's project map](../README.md). This file covers *running* the studio on your own Mac. It is a standard "getting started" README, the kind nearly every project has.
+
 # Overnight film studio
 
 ## One-time setup (Mac)
