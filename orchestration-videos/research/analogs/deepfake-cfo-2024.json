@@ -1,0 +1,59 @@
+{
+  "id": "deepfake-cfo-2024",
+  "threat_internal_label": "people using deepfaked colleagues to steal (never shown on screen)",
+  "analog": "Deepfake video-conference fraud against the Hong Kong office of a multinational engineering firm (later named as Arup), January 2024: HK$200 million (~US$25.6M) sent in 15 transfers",
+  "actors_note": "The red is people's choices: fraudsters took public videos of real executives and chose to fake a meeting to steal money. The software is not the actor. On screen: a gray video grid where every face but one is hollow, a hand behind the curtain pressing 'play'. The employee is not the fool: he was suspicious, and the routing to the one person who could confirm was missing.",
+  "time_unit": "days",
+  "t0": "the day of the fake video call, 'mid-January' 2024; exact date not published. Working assumption t0 = 2024-01-22 (police report Jan 29 minus the ~1 week the ordeal lasted); every t below depends on it and is marked where so.",
+  "sources": [
+    {"key": "s1", "title": "CNN: Finance worker pays out $25 million after video call with deepfake 'chief financial officer' (Feb 4, 2024) - initially suspected a phishing email about a 'secret transaction'; realised after checking with head office", "url": "https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk", "accessed": "2026-09-28"},
+    {"key": "s2", "title": "Hong Kong Free Press: Multinational loses HK$200 million to deepfake video conference scam, Hong Kong police say (Feb 5, 2024) - police received the report Jan 29; 15 transfers to 5 local accounts; pre-recorded deepfakes built from public video", "url": "https://hongkongfp.com/2024/02/05/multinational-loses-hk200-million-to-deepfake-video-conference-scam-hong-kong-police-say/", "accessed": "2026-09-28"},
+    {"key": "s3", "title": "CNN Business: Arup revealed as victim of $25 million deepfake scam involving Hong Kong employee (May 16, 2024) - the ordeal lasted a week from first contact to the company looking into it; Arup notified police in January", "url": "https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk", "accessed": "2026-09-28"},
+    {"key": "s4", "title": "Hong Kong Free Press: In first, Hong Kong police arrest 6 over finance scams involving deepfake technology (Aug 25, 2023) - face-swap used to defeat bank facial checks on loan applications", "url": "https://hongkongfp.com/2023/08/25/in-first-hong-kong-police-arrest-6-over-finance-scams-involving-deepfake-technology/", "accessed": "2026-09-28"},
+    {"key": "s5", "title": "HKSAR Government, LCQ9: Combating frauds involving deepfake (Jun 26, 2024) - Anti-Deception Coordination Centre advice: verify with a phone call when asked to remit via video or audio; Scameter; Anti-Scam Helpline 18222", "url": "https://www.info.gov.hk/gia/general/202406/26/P2024062600192.htm", "accessed": "2026-09-28"},
+    {"key": "s6", "title": "HKSAR Government: Police launch Anti-Deception Coordination Centre website (Apr 1, 2021)", "url": "https://www.info.gov.hk/gia/general/202104/01/P2021033100816.htm", "accessed": "2026-09-28"},
+    {"key": "s7", "title": "Sumsub (identity-verification VENDOR): Global Deepfake Incidents Surge Tenfold from 2022 to 2023 (Nov 2023) - 10x globally; 1,740% North America, 1,530% APAC, 780% Europe; crypto+fintech 96% of cases. Vendor sells deepfake detection: bias flagged.", "url": "https://sumsub.com/newsroom/sumsub-research-global-deepfake-incidents-surge-tenfold-from-2022-to-2023/", "accessed": "2026-09-28"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0, "extent": 0,   "src": "s2", "event": "fake video call; transfers begin"},
+      {"t": 7, "extent": 1.0, "src": "s3", "verified": false, "event": "all 15 transfers (HK$200M) made before the employee checks with head office, ~1 week after first contact", "notes": "s3 says the ordeal lasted about a week; how the 15 transfers were spread inside that week was not found (some secondary sources say a single day; unconfirmed)"}
+    ],
+    "growth_context": {
+      "src": "s7",
+      "verified": false,
+      "notes": "Background growth only, not this event's timeline: an identity-verification vendor reports detected deepfakes rose ~10x worldwide from 2022 to 2023 (APAC +1,530%). Vendor data from its own customers, sold alongside its detection product; not independent, not a population rate. Don't put on screen without that caveat. Hong Kong police first found deepfakes used in finance fraud in Aug 2023 (s4)."
+    },
+    "notes": "extent = share of the HK$200M sent. Endpoints only. The funds were not reported recovered."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "the employee himself", "had": "the right suspicion: he first thought the 'secret transaction' email was phishing", "ready_at": 0, "src": "s1", "notes": "the fragment existed before the call; the fake meeting talked him out of it"},
+      {"id": "f2", "who": "the real CFO and head office in the UK", "had": "the truth: no such meeting, no such transaction", "ready_at": 0, "src": "s1", "notes": "one call to a known number would have connected f1 and f2; it happened ~1 week later"},
+      {"id": "f3", "who": "Hong Kong police", "had": "prior cases of deepfakes used in fraud (Aug 2023 arrests)", "ready_at": -150, "src": "s4", "verified": false, "notes": "Aug 25, 2023 is 150 days before the assumed t0"},
+      {"id": "f4", "who": "Hong Kong's Anti-Deception Coordination Centre", "had": "a scam hotline and the standard advice: verify a remittance request by phone", "ready_at": -1026, "src": "s6", "verified": false, "notes": "website launched Apr 1, 2021 (1,026 days before the assumed t0); the centre itself is older (not verified). The 'verify with a phone call' wording is documented in Jun 2024 (s5); whether it was published in the same words before t0 was not checked"}
+    ],
+    "aggregation": {
+      "median": 11, "p10": 7, "p90": 115,
+      "src": "s3",
+      "verified": false,
+      "notes": "Derived from documented dates, not a measured distribution, all relative to the assumed t0 = Jan 22, 2024: p10 = employee checks with head office, ~1 week (t=7, s3), police report Jan 29 (s2); median = police go public with the method, Feb 2 briefing reported Feb 4-5 (t~11, s1/s2); p90 = the firm publicly confirms it was the victim so others can learn, May 16 (t=115, s3). Government written answer with formal advice Jun 26 (t=156, s5)."
+    },
+    "deploy": {
+      "median": 11, "src": "s2",
+      "notes": "Deployment here is the warning reaching other companies (police briefing). Nothing was deployed in time for this victim; the money had already gone."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 0.05,
+    "basis": "Illustrative. The fraudsters used AI to fake faces; the counterfactual is the company using AI for routing, not for spotting fake faces. A payment assistant sees a first-time payee, 'secret' and urgency in the request (classic business-email-compromise signs) and automatically asks the real CFO, on a number already on file, to confirm before release: connecting f1 (suspicion) to f2 (the truth). That is a minutes-scale routing task inside the ~17.4 h 50% task horizon in RATES.md (METR entry), and cheap to run on every payment given RATES.md's ~40x/yr cost fall (Epoch). Assumed ~0.05 days (~1 h) versus ~7 days. A human still confirms or refuses the payment. No claim that detection of the deepfake itself would work.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "The money was gone within about a week of one fake meeting; the one fragment that could stop it, a call to the real CFO, sat in the same company from day 0 and connected only after ~7 days."
+}

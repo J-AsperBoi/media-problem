@@ -1,0 +1,155 @@
+WARN  before-the-dark
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "the fix" x90–189 y1622 @28s · "This is the bottleneck." x158–922 y520 @34.75s
+WARN  before-the-price
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "Same stock. Same people." x176–904 y300 @28.75s · "This is the bottleneck." x173–907 y400 @34.75s
+WARN  cracks-in-the-map
+   ! TEXT TOO SMALL (<44px on a phone): "later" 40px @0s · "1 second = 40 days" 40px @2.75s
+WARN  day-three-hundred-five
+   ! TEXT TOO SMALL (<44px on a phone): "first morning" 40px @3.25s · "log time" 40px @3.25s · "H" 39px @10s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "H" x981–1008 y589 @9.75s
+   ! MORE THAN 2 NUMBERS ON SCREEN (3): 305 ("Day 305."), 12 ("Day 12."), 12, ("Day 12, after the pe")
+WARN  eight-billion-heads
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @37s
+OK    fifteen-hundred
+FAIL  fifty-nine-days
+   ✗ AI-SPEED VERSION SHOWN WITHOUT AN "illustrative" LABEL
+WARN  ghost-hotline
+   ! TEXT TOO SMALL (<44px on a phone): "each stroke: one day" 32px @6s · "the crisis" 42px @21s · "the direct line" 42px @23.5s · "people still decide" 40px @26s
+WARN  ghost-rewind-covid
+   ! TEXT TOO SMALL (<44px on a phone): "platform" 42px @7.25s · "genome" 42px @7.25s · "design" 42px @7.25s · "trial" 42px @7.25s
+WARN  half-a-lifeline
+   ! TEXT TOO SMALL (<44px on a phone): "Your call is" 38px @0s · "important to us." 38px @0s · "please hold" 34px @0s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "please hold" x572–837 y1626 @7.5s · "important to us." x451–963 y1542 @7.75s · "ON HOLD" x462–951 y1459 @8s · "Your call is" x531–915 y1639 @8s · "CONNECTED" x-78–669 y1655 @15.25s · +4 more
+WARN  keep-the-lights
+   ! TEXT TOO SMALL (<44px on a phone): "operators" 30px @9.25s · "IT staff" 30px @9.25s · "coordinator" 30px @9.25s · "neighbors" 30px @9.25s
+WARN  lights-of-ontario
+   ! TEXT TOO SMALL (<44px on a phone): "knows the alarms are dead" 42px @6.75s · "saw lines trip" 42px @6.75s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "can cut the load" x709–960 y1402 @8.5s
+WARN  nine-people-forty-messages
+   ! TEXT TOO SMALL (<44px on a phone): "Gran" 28px @0s · ", Joe, Maya, Sami, Leo, Ana," 28px @0s · "Maya" 29px @0s · "my friend says keep her cool" 35px @0s · "Tom" 29px @0s · "I'm stuck at work" 35px @0s · +68 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "r i v e r   r i v e r   " x-994–1383 y215 @7.25s · "bridge" x970–1167 y871 @7.5s · "Maya" x1044–1133 y603 @7.75s · "Leo" x21–78 y225 @7.75s · "ring road   ring road   " x-167–565 y51 @8s · +5 more
+OK    nineteen-days
+WARN  ninety-seconds
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "second" x47–153 y1474 @2.75s · "forecasters" x477–663 y44 @4.75s
+WARN  one-in-eight
+   ! TEXT TOO SMALL (<44px on a phone): "years" 36px @0s · "red share: derived fit" 41px @9.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "ONE HOSPITAL'S SAMPLES" x-48–569 y14 @8.75s · "red share: derived fit" x-43–319 y81 @8.75s · "This is the bottleneck." x158–922 y520 @36.25s
+   ! MORE THAN 2 NUMBERS ON SCREEN (6): 1 ("at 1 in 8."), 8 ("at 1 in 8."), 3 ("3"), 2 ("2"), 13 ("13 years"), 0 ("0")
+WARN  recipe-for-a-shortage
+   ! TEXT TOO SMALL (<44px on a phone): "price" 42px @13s · "- Have enough rice." 41px @13.5s · "- Don't tell anyone." 41px @13.5s · "- Lock every kitchen door." 41px @13.5s · "- Let it simmer." 41px @13.5s · "TODAY'S RECIPE" 42px @14.25s · +3 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "price" x850–955 y902 @0s · "- Lock every kitchen doo" x436–1038 y1201 @0s · "- Someone finally asks." x436–963 y1431 @0s · "TODAY'S RECIPE" x78–598 y491 @0.75s · "- Have enough rice." x443–903 y961 @1.75s · +3 more
+WARN  recipe-for-a-worm
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "1 week" x833–937 y694 @22s · "This is the bottleneck." x158–922 y520 @33.25s
+WARN  seven-minutes
+   ! TEXT TOO SMALL (<44px on a phone): "ALARMS" 40px @0s · "his room" 36px @9.25s · "IT staff" 36px @9.25s · "coordinator" 36px @9.25s · "neighbors" 36px @9.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "ALARMS" x842–970 y420 @19s
+WARN  seventeen-days
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "as it happened" x76–322 y310 @24.5s · "faster routing (illustra" x76–529 y1090 @24.5s · "half lit" x465–575 y1648 @27.5s · "This is the bottleneck." x158–922 y520 @33.5s
+WARN  six-to-twelve-hours
+   ! TEXT TOO SMALL (<44px on a phone): "Stand down." 37px @0s · "You first." 37px @0s · "We both step back," 37px @0s · "sites yours yours one both l" 23px @0s · "down blinked down too ships " 23px @0s · "leave yours one and ships an" 23px @0s · +20 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "Stand down." x-20–190 y116 @30.5s · "We both step back," x-20–313 y346 @30.5s · "Ours out. Yours out too." x-23–383 y765 @30.5s · "private line: yes, quiet" x-28–375 y99 @30.5s · "Message" x-17–125 y1275 @30.5s · +3 more
+WARN  ten-things-in-the-drawer
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @32s
+   ! MORE THAN 2 NUMBERS ON SCREEN (4): 3 ("3 things"), 2 ("2"), 1 ("1"), 0 ("0")
+WARN  the-arms-race
+   ! TEXT TOO SMALL (<44px on a phone): "derived fit" 42px @7.5s · "one hospital's samples" 33px @8s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "EVERYONE ELSE" x1029–1530 y1002 @0s · "THE RED" x190–343 y117 @8s
+   ! MORE THAN 2 NUMBERS ON SCREEN (3): 1 ("1 in 8."), 8 ("1 in 8."), 13 ("13 years.")
+OK    the-balcony
+WARN  the-ballroom
+   ! TEXT TOO SMALL (<44px on a phone): "second" 36px @6.25s · "minute" 36px @6.25s · "hour" 36px @6.25s · "day" 36px @6.25s · "month" 36px @6.25s · "year" 36px @6.25s · +2 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "decade" x824–927 y638 @22.5s
+WARN  the-committee-in-my-head
+   ! TEXT TOO SMALL (<44px on a phone): "AGENDA" 14px @0s · "1. React" 13px @0s · "2. React" 13px @0s · "?" 13px @0s · "z" 17px @4s · "a friend who knew" 38px @14s · +2 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "AGENDA" x57–187 y256 @9.25s · "a friend who knew" x719–1218 y205 @13.5s · "MOTION CARRIES" x266–1084 y671 @20.5s · "This is the bottleneck." x158–922 y520 @37.25s
+   ! MORE THAN 2 NUMBERS ON SCREEN (6): 1. ("1. React"), 2. ("2. React"), 3 ("3"), 2 ("2"), 1 ("1"), 13 ("The correction: 13 h")
+OK    the-contagion-atlas
+WARN  the-crash-call
+   ! TEXT TOO SMALL (<44px on a phone): "RED" 40px @0s · "PASSES" 40px @0s · "SEASON" 30px @0s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @32s
+WARN  the-cure-before-after
+   ! TEXT TOO SMALL (<44px on a phone): "log time" 41px @11.25s · "the ward" 38px @11.5s · "a hospital lab" 38px @11.5s · "biochemists" 38px @11.5s · "chemists" 38px @11.5s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "chemists" x506–693 y1853 @11s · "AFTER" x517–712 y214 @11s · "log time" x778–929 y144 @11s · "BEFORE" x-60–97 y392 @11.5s · "coordination only. Chemi" x173–907 y1400 @25s
+WARN  the-department-of-later
+   ! TEXT TOO SMALL (<44px on a phone): "sync?" 32px @0s · "blah" 32px @0s · "who owes" 36px @0s · "whom?" 36px @0s · "holds a piece nobody has rea" 30px @0s · "REC" 36px @5.25s · +5 more
+OK    the-fact-check
+OK    the-heat-map
+OK    the-hold-music
+WARN  the-hum
+   ! TEXT TOO SMALL (<44px on a phone): "operators" 36px @7.75s · "coordinator" 36px @7.75s · "neighbors" 36px @7.75s · "IT desk" 36px @7.75s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "?" x883–907 y1074 @27.5s
+WARN  the-interpreter
+   ! TEXT TOO SMALL (<44px on a phone): "alert" 34px @0s · "pieces" 34px @0s · "days" 34px @0s · "thread crossing" 34px @0s · "waiting" 34px @1.5s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @34.5s
+   ! MORE THAN 2 NUMBERS ON SCREEN (4): 1 ("RUN 1 · BY HAND"), 12 ("Nearly 12 hours"), 2 ("RUN 2 · FRONTIER AI "), 247 ("took 247 days.")
+WARN  the-last-crate
+   ! TEXT TOO SMALL (<44px on a phone): "the last village" 27px @0s · "trials" 28px @2s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "the village" x336–498 y1785 @9s
+   ! MORE THAN 2 NUMBERS ON SCREEN (89): 490 ("490"), 2 ("Designed in 2 days."), 18 ("18"), 25 ("25"), 32 ("32"), 39 ("39"), 46 ("46"), 53 ("53")
+WARN  the-last-thirteen-days
+   ! TEXT TOO SMALL (<44px on a phone): "desk" 42px @7.5s · "alert" 39px @7.5s · "encode" 39px @7.75s · "wire" 39px @7.75s · "decode" 39px @7.75s · "translate" 39px @7.75s · +8 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "translate" x357–619 y55 @0s · "alert" x72–193 y565 @0s · "decode" x-93–67 y111 @6.5s · "wire" x592–683 y18 @6.75s · "desk" x553–627 y86 @7.25s · +3 more
+WARN  the-long-season
+   ! TEXT TOO SMALL (<44px on a phone): "PLAY-BY-PLAY" 34px @0s · "COLOR" 34px @3.25s
+   ! MORE THAN 2 NUMBERS ON SCREEN (3): 13. ("YEAR 13. THE EQUALIZ"), 15. ("Year 15. Answered."), 13 ("13")
+WARN  the-matchmaker
+   ! TEXT TOO SMALL (<44px on a phone): "empty" 42px @0s · "SHEET" 34px @0s · "kitchen" 40px @8.25s · "street" 40px @9.75s · "country" 40px @12.5s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "stock:" x803–902 y942 @2.5s · "other sheet" x713–902 y990 @2.5s · "Same stock. Same people." x176–904 y290 @34.75s
+WARN  the-migration
+   ! TEXT TOO SMALL (<44px on a phone): "T H E   D R Y   S E A S O N" 36px @0s · "T H E   E D G E   O F   T H " 36px @3.25s · "A C R O S S   T H E   R I D " 36px @12.25s
+WARN  the-mind-grid
+   ! TEXT TOO SMALL (<44px on a phone): "second" 40px @5.25s · "minute" 40px @5.25s · "hour" 40px @5.25s · "day" 40px @5.25s · "month" 40px @5.25s · "year" 40px @5.25s · +12 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "hour" x253–385 y1889 @3.75s · "day" x624–723 y1889 @3.75s · "month" x960–1149 y1889 @3.75s · "minute" x-170–16 y1752 @4s · "forecast" x80–316 y1680 @4.5s · +8 more
+WARN  the-mold-strikes-back
+   ! TEXT TOO SMALL (<44px on a phone): "later" 40px @0s · "one hospital" 34px @2s · "the lab" 38px @8.5s · "wards" 35px @8.75s · "biochemists" 38px @8.75s · "chemists" 38px @8.75s · +4 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "wards" x-164–2 y29 @8s · "the lab" x-164–8 y1529 @8s · "another hospital" x-120–262 y220 @8.25s · "biochemists" x125–328 y36 @13.5s
+WARN  the-numb-hand
+   ! TEXT TOO SMALL (<44px on a phone): "reflex: pull away" 14px @2.75s · "pain nerve: numb" 23px @3.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "?" x916–945 y1222 @25s
+WARN  the-orchestra
+   ! TEXT TOO SMALL (<44px on a phone): "SUMMER PROGRAM" 32px @7.5s · "a neighbor with a key" 38px @8.25s · "a doctor" 38px @8.25s · "a forecaster" 38px @8.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "same red in both" x409–671 y1560 @29.5s
+WARN  the-reference-desk
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @31s
+WARN  the-relay
+   ! TEXT TOO SMALL (<44px on a phone): "hour 0 to one week, same axi" 42px @18.5s · "the gun" 40px @18.5s · "one week" 40px @18.5s · "baton sat 59 days" 42px @18.5s · "baton routed before the gun" 42px @18.5s · "one fan" 40px @19s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "59 DAYS" x261–429 y1739 @4.25s · "ILLUSTRATIVE" x740–985 y952 @18.5s · "This is the bottleneck." x158–922 y520 @32.25s
+   ! MORE THAN 2 NUMBERS ON SCREEN (3): 59 ("59 DAYS"), 7.3 ("HOUR 7.3"), 0 ("hour 0 to one week, ")
+WARN  the-rice-committee
+   ! TEXT TOO SMALL (<44px on a phone): "A" 36px @15s · "B" 8px @16.5s · "C" 8px @16.5s · "the stock" 41px @17s · "the need" 41px @17s · "the sign-off" 41px @17s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "A" x525–560 y1745 @0s · "B" x520–556 y1763 @6s · "C" x528–565 y1749 @9s · "the need" x1031–1218 y1332 @16.25s · "the sign-off" x262–479 y1820 @16.5s · +2 more
+WARN  the-rumor-rewound
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @32s
+WARN  the-stacks
+   ! TEXT TOO SMALL (<44px on a phone): "chemists" 41px @11s · "biochemists" 41px @11s · "the world" 41px @11s · "her library" 41px @11s · "log time" 32px @11s · "years" 36px @24.25s · +1 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "The answer is already he" x155–925 y330 @0s · "chemists" x135–349 y5 @10.25s · "the world" x987–1206 y773 @10.25s · "biochemists" x826–1054 y198 @10.5s
+WARN  the-storm-doc
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "second" x47–153 y1476 @13.75s · "This is the bottleneck." x158–922 y520 @40.25s
+WARN  the-switchboard
+   ! TEXT TOO SMALL (<44px on a phone): "no board" 35px @9.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "no board" x160–464 y204 @5.25s · "People still decide." x292–688 y1568 @23.25s
+OK    the-truth-loop
+WARN  the-two-feeds
+   ! TEXT TOO SMALL (<44px on a phone): "Family" 30px @0s · "Joe: who has the blue dish?" 22px @0s · "Ana: running late, save soup" 22px @0s · "Forwarded many times" 19px @0s · "sharing, just in case." 22px @0s · "love you all" 22px @0s · +22 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "Nana Nana Nana Nana Nana" x-772–953 y1060 @0s · "Sam Sam Sam Sam Sam Sam " x456–1934 y1020 @0s · "Family" x539–661 y218 @4.25s · "lamp" x-52–86 y612 @5.5s · "c   o   u   c   h" x377–908 y1842 @5.5s · +15 more
+   ! MORE THAN 2 NUMBERS ON SCREEN (16): 13 ("hour 13"), 0 ("hour 0"), 1 ("hour 1"), 2 ("hour 2"), 3 ("hour 3"), 4 ("hour 4"), 5 ("hour 5"), 6 ("hour 6")
+WARN  the-warehouse
+   ! TEXT TOO SMALL (<44px on a phone): "peak" 40px @30.25s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "There was enough rice." x152–928 y300 @0s · "Same stock. Same people." x168–912 y300 @31.25s · "This is the bottleneck." x173–907 y400 @37.75s
+WARN  the-warning-memo
+   ! TEXT TOO SMALL (<44px on a phone): "— intake, night shift" 42px @2.5s · "— routing" 42px @4.75s · "— the other floor" 42px @7.5s · "— records" 42px @9.75s · "second" 32px @13.25s · "minute" 32px @13.25s · +9 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "CONTROL" x138–587 y123 @12s · "engineers" x943–1268 y1277 @14.75s · "forecasters" x-253–135 y276 @14.75s · "planners" x809–1021 y154 @15s · "line crews" x751–939 y1795 @15.25s · +3 more
+WARN  the-worm-rewind
+   ! TEXT TOO SMALL (<44px on a phone): "the fix" 33px @0s · "ward" 33px @0s · "real hours, log clock" 36px @0s · "rewinding" 36px @1s · "one person" 38px @8.5s · "same red. same week. 1 s = 4" 40px @18.75s
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "the fix" x143–271 y75 @8s · "one person" x951–1154 y75 @8s · "ward" x66–143 y364 @26.5s · "This is the bottleneck." x158–922 y520 @31.5s
+   ! MORE THAN 2 NUMBERS ON SCREEN (3): 1 ("same red. same week."), 42 ("same red. same week."), 8 ("8 h")
+WARN  the-worm
+   ! TEXT TOO SMALL (<44px on a phone): "real hours, log clock" 36px @0s · "winding back" 36px @1.5s · "her ward" 42px @9s · "a patch" 42px @9.75s · "a researcher" 42px @9.75s · "an alert, unread" 42px @10s · +1 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "This is the bottleneck." x158–922 y520 @31.25s
+WARN  two-days
+   ! TEXT TOO SMALL (<44px on a phone): "TGGGTCTCAGTCCTCACGTCCG" 34px @0s · "ACACCATAAGCCTAGCGAAGGC" 34px @0s · "TGAAAACAGACTTCTAAGTTGT" 34px @0s · "CGCGCCTGCATCGACGCTGGTA" 34px @0s · "TCGATGCGCGGACTCATCTTCG" 34px @0s · "AACTTAAGCTACTCAACGTCTG" 34px @0s · +13 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "regulators" x180–390 y1781 @9.75s · "clinics" x551–656 y1746 @10s · "designers" x529–727 y173 @15.75s · "platform" x704–891 y43 @15.75s · "ACACCATAAGCCTAGCGAAGGC" x30–595 y33 @29.25s · +10 more
+WARN  vaccine-speedrun
+   ! TEXT TOO SMALL (<44px on a phone): "ANY%  RUN" 40px @0s · "REPLAY" 34px @0s · "RED ZONE" 34px @0s · "DESIGN" 34px @0s · "WR" 34px @0s · "world record" 32px @0s · +8 more
+   ! OUTSIDE SAFE ZONE (may be hidden by app buttons): "Then: the escort mission" x162–918 y690 @6s · "Trials take what they ta" x169–911 y1420 @10.25s · "Then: country by country" x171–909 y1420 @12.75s
+OK    wall-of-ice

@@ -1,0 +1,60 @@
+{
+  "id": "pentagon-image-2023",
+  "threat_internal_label": "people using AI to fabricate breaking news (never shown on screen)",
+  "analog": "Fake AI-generated image of an 'explosion near the Pentagon', shared by paid-verified accounts on May 22, 2023; brief US stock-market dip",
+  "actors_note": "The red is people's choices: someone generated a fake photo and posted it as news, and accounts posing as news outlets (one impersonating a financial news brand) chose to amplify it without checking. The image tool is not the actor. On screen, a human hand types the prompt and presses 'post'.",
+  "time_unit": "minutes",
+  "t0": "2023-05-22 08:42 ET, first known share of the image on Twitter (per NPR). Other outlets say the first share was 'just after 9 a.m.' by a different account; the first-post time is contested.",
+  "sources": [
+    {"key": "s1", "title": "NPR: Fake viral images of an explosion at the Pentagon were probably created by AI (May 22, 2023) - first share by @CBKNews121 at 8:42 a.m. ET; Arlington fire department tweet around 10:27 a.m. ET", "url": "https://www.npr.org/2023/05/22/1177590231/fake-viral-images-of-an-explosion-at-the-pentagon-were-probably-created-by-ai", "accessed": "2026-09-28"},
+    {"key": "s2", "title": "AP FACT FOCUS: Fake image of Pentagon explosion briefly sends jitters through stock market (May 22, 2023) - Dow fell ~80 points 10:06-10:10, recovered by 10:13; S&P 500 from +0.02% at 10:06 to -0.15% at 10:09, positive again by 10:11", "url": "https://finance.yahoo.com/news/fact-focus-fake-image-pentagon-212249277.html", "accessed": "2026-09-28"},
+    {"key": "s3", "title": "ABC News: How verified accounts helped make fake images of a Pentagon explosion go viral (May 2023) - 8:42 a.m. share; Cyabra found ~3,785 accounts mentioned the falsehood, dozens verified", "url": "https://abcnews.go.com/US/verified-accounts-helped-make-fake-images-pentagon-explosion/story?id=99541361", "accessed": "2026-09-28"},
+    {"key": "s4", "title": "Al Jazeera: Fake Pentagon explosion photo goes viral: How to spot an AI image (May 23, 2023) - first shared by OSINTdefender 'just after 9 a.m.'; 'Bloomberg Feed' (650,000+ followers) posted at 10:06 a.m.; Bellingcat's Nick Waters flagged flaws", "url": "https://www.aljazeera.com/news/2023/5/23/fake-pentagon-explosion-photo-goes-viral-how-to-spot-an-ai-image", "accessed": "2026-09-28"},
+    {"key": "s5", "title": "CNN Business: 'Verified' Twitter accounts share fake image of 'explosion' near Pentagon, causing confusion (May 22, 2023) - RT (3M+ followers) shared then deleted; Arlington County Fire Department statement", "url": "https://www.cnn.com/2023/05/22/tech/twitter-fake-image-pentagon-explosion/index.html", "accessed": "2026-09-28"},
+    {"key": "s6", "title": "WUNC/NPR syndication: Nick Waters (Bellingcat) tweeted he was confident the image was AI-generated, citing the fence melding into barriers and no first-hand witness posts", "url": "https://www.wunc.org/2023-05-22/fake-viral-images-of-an-explosion-at-the-pentagon-were-probably-created-by-ai", "accessed": "2026-09-28"},
+    {"key": "s7", "title": "Bloomberg: Fake AI Photo of Pentagon Blast Goes Viral and Trips Stocks Briefly (May 22, 2023)", "url": "https://www.bloomberg.com/news/articles/2023-05-22/fake-ai-photo-of-pentagon-blast-goes-viral-trips-stocks-briefly", "accessed": "2026-09-28"},
+    {"key": "s8", "title": "TheStreet: S&P Sheds $500 Billion from Fake Pentagon Explosion (headline only seen; not checked)", "url": "https://www.thestreet.com/technology/s-p-sheds-500-billion-from-fake-pentagon-explosion", "accessed": "2026-09-28", "verified": false}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0,  "extent": 0,   "src": "s1", "event": "08:42 ET first known share of the fabricated image"},
+      {"t": 84, "extent": 0.1, "src": "s2", "event": "10:06 ET: account posing as a financial news feed posts it (s4); S&P 500 at +0.02%", "notes": "extent 0.1 is a drawing aid for 'reaching the market', not a measured share"},
+      {"t": 87, "extent": 1.0, "src": "s2", "event": "10:09 ET: S&P 500 at -0.15%, the low of the dip"}
+    ],
+    "events": [
+      {"t": 18, "src": "s4", "verified": false, "event": "'just after 9 a.m.' an OSINT-branded account shares it (s4 calls this the original share; conflicts with s1)"},
+      {"t": 89, "src": "s2", "event": "10:11 ET: S&P 500 positive again (Dow recovered by 10:13, t=91)"},
+      {"t": 105, "src": "s1", "event": "~10:27 ET: Arlington County Fire Department: no explosion or incident at or near the Pentagon"}
+    ],
+    "notes": "extent = fraction of the peak market reaction (S&P 500 move from +0.02% to -0.15%, i.e. 0.17 percentage points in 3 minutes), the only time-resolved measure of the red's reach found. Total spread: ~3,785 accounts mentioned it (Cyabra via s3), but no time series or window was given, so no doubling time. Media reported a ~$500B paper swing in S&P market value (s8, headline only); not independently checked, don't show. The fire department's statement at t=105 came after the market had already self-corrected at t=89."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "Arlington County Fire Department and Pentagon Force Protection Agency", "had": "the ground truth: nothing had happened", "ready_at": 0, "src": "s5", "notes": "the truth existed on the ground from t0; the public statement came at ~t=105 (s1)"},
+      {"id": "f2", "who": "open-source investigators (e.g. a Bellingcat researcher)", "had": "the verification skill: spotted the melting fence and the absence of any eyewitness photos from a busy location", "ready_at": 0, "src": "s6", "verified": false, "notes": "the exact time of the debunking post was not found; it was the same morning"},
+      {"id": "f3", "who": "people nearby and traders who checked for corroboration", "had": "the missing second source: no one on the ground saw anything", "ready_at": 89, "src": "s2", "notes": "the market recovered within ~3-5 minutes of the dip, before any official statement"},
+      {"id": "f4", "who": "image-forensics experts quoted by media", "had": "the visual tells (e.g. a streetlamp both in front of and behind a barrier; a building that doesn't match)", "ready_at": 0, "src": "s3", "verified": false, "notes": "analysis published later the same day; hour not found"}
+    ],
+    "aggregation": {
+      "median": 105, "p10": 89, "p90": 520,
+      "src": "s1",
+      "notes": "Derived from documented moments after t0, not a measured distribution: p10 = market self-corrects at 10:11 ET (t=89, s2); median = official 'no explosion' statement ~10:27 ET (t=105, s1); p90 = AP's published fact check, ~17:22 ET (t=520), read from the timestamp embedded in the AP/Yahoo URL (212249 = 21:22:49 UTC), verified: false. The debunk arrived ~21 minutes after the market hit, but ~105 minutes after the first post, while the people who knew the truth (f1) had it from t0."
+    },
+    "deploy": {
+      "median": 105, "src": "s1",
+      "notes": "The official statement is the deployment: once public it ended the confusion. RT deleted its post; the impersonating account was suspended (times not found)."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 30,
+    "basis": "Illustrative. Here one person used an image generator to fabricate news; the counterfactual is other people using AI to check it. Two steps, both short: (1) for a claimed explosion in a busy, heavily photographed location, check whether any independent eyewitness posts, images or scanner reports exist (the test the open-source investigator applied by hand), and (2) route the rising claim to the local authority that holds the ground truth (f1) so they can confirm in public. Each is a minutes-scale task, far inside the ~17.4 h 50% task horizon in RATES.md (METR entry), and RATES.md's falling cost at fixed capability (~40x/yr, Epoch) makes screening every fast-rising breaking-news claim affordable. Assumed ~30 min from first post to a routed question to the fire department, i.e. before the 10:06 amplification. Deliberately NOT based on pixel-level 'AI image detection', which is unreliable; it relies on corroboration and routing. People still confirm and publish. Not a claim the dip would certainly have been avoided.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "One person's fabricated photo sat for ~84 min, then moved the market in 3 min; people on the ground knew the truth from minute 0, but the official 'nothing happened' landed at ~105 min, after traders had already corrected on their own."
+}

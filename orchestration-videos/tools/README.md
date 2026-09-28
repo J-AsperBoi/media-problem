@@ -3,7 +3,8 @@
 **What this is:** The shared machinery that every film uses:
 - `lib.js`: the toolkit of building blocks (camera moves, stick figures, text, growth curves, the QR end card).
 - `render.js`: turns a recipe into a video.
-- `verify.js`: an automatic quality check (length, colours, QR code).
+- `verify.js`: an automatic quality check on the finished video (length, colours, QR code).
+- `lint.js`: an automatic check that runs *before* rendering. It watches every word a film draws and flags text that is too small for a phone (under 44 px), text outside the safe zone (it could be hidden by app buttons), more than two numbers, banned words that name the threat, and an AI-speed version missing its "illustrative" label. Run `node tools/lint.js --all`. The latest results are in `../output/LINT_REPORT.txt`. **Known blind spot:** text drawn as shapes (like the 8-bit pixel font) can't be read, so `fifty-nine-days` shows a false "missing illustrative" failure.
 - `diversity.js`: scores how different the films are from each other.
 - `pick.js`: chooses which idea to build next.
 - `gallery.js`: builds the viewing page `output/index.html`.

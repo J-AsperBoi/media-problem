@@ -134,3 +134,51 @@ Research method: direct page fetches were blocked for most domains in this envir
 - `cuban-missile-1962`: the DEFCON dates, the U-2 shoot-down date, the back-channel timing, and the Jupiter fragment.
 - `penicillin-resistance-1946`: the month of the 59% figure, the 1940 penicillinase date, and the 2015 WHO plan.
 - `rice-2008`: the ~$300 Nov 2007 baseline, the day of India's ban (month confirmed), the timing of the CGD proposal, and AMIS 2011.
+
+## People misusing AI (added 2026-09-28)
+
+Researched 2026-09-28 under the new honesty rule: **AI is never the villain; the red is people's choices in how they use it** (fabricating news, cloning a voice to mislead, faking a meeting to steal, mass-producing junk for ad money). Each file has an `actors_note` naming the human choice to show on screen, and in every counterfactual the green side is *other people using the same class of tool well* (for checking and routing, not for "AI detecting AI", which is unreliable). Same method as above: search snippets cited to the underlying page, and aggregation spreads derived from documented dates (p10 = first connection, median = main response, p90 = lasting fix). Every file is `"verified": false` at top level because at least one key time is inferred.
+
+| # | Internal label | Analog id | Unit | Threat to peak | Human aggregation median (p10–p90) | Lands | Gap ratio | AI counterfactual (illustrative) |
+|---|---|---|---|---|---|---|---|---|
+| 11 | fabricated breaking news | `pentagon-image-2023` | minutes | fake photo posted 08:42; market hit at 84 min, S&P +0.02% → −0.15% in 3 min | **105** (89–520) | official "no explosion" 21 min after the market hit; traders self-corrected first (t=89) | 1.2x to the market hit | 30 |
+| 12 | cloned voice misleading voters | `voice-clone-robocall-2024` | days | 9,581 calls in one day, 2 days before the vote | **16** (1–123) | warning before the vote (t=1); source traced 14 days after it | 8x to the vote | 1 |
+| 13 | deepfaked colleagues used to steal | `deepfake-cfo-2024` | days | HK$200M in 15 transfers within ~1 week of one fake call | **11** (7–115) | after all the money was gone | 1.6x (p10 1.0x) | 0.05 (~1 h) |
+| 14 | junk AI news sites for ad money | `ai-content-farms-2023` | months | counted sites 49 → ~600 in 7.5 months (doubling ~2.1 months), 3,006 by month 34 (doubling ~11 months late) | **10.2** (1.8–34.4) | first platform policy at ~700 sites; the count kept growing after | 1.4x to the ~600 mark | 2 |
+
+### 11. Fabricated breaking news → `pentagon-image-2023`
+- **Analog:** a fake image of an "explosion near the Pentagon", May 22, 2023, amplified by paid-verified accounts, one of them posing as a financial news feed.
+- **Threat speed:** first known share 08:42 ET (NPR; another outlet says "just after 9", so the time is contested). The impersonating account posted at 10:06. The S&P 500 went from +0.02% to −0.15% by 10:09 and was positive again by 10:11. About 3,785 accounts mentioned it (Cyabra), with no time series.
+- **Human aggregation:** the fire department and the Pentagon police had the truth from minute 0. Open-source investigators spotted the melted fence and the lack of eyewitnesses the same morning (hour not found). Traders self-corrected at t=89. The official "no explosion" came at ~10:27 (t=105). AP's fact check came at ~t=520 (hour read from the URL timestamp, unverified).
+- **AI counterfactual:** ~30 min. Checking for any corroborating eyewitness posts and routing the question to the local authority before the 10:06 amplification. It deliberately does not rely on pixel-level fake-image detection.
+- **Why it's a good film:** a minutes-scale ticking clock with a real market chart as a legend. The green is literally the people standing next to the building, whom nobody asked. The two-hands rule is easy to show: one hand fabricates, another hand checks.
+
+### 12. Cloned voice misleading voters → `voice-clone-robocall-2024`
+- **Analog:** the Jan 21, 2024 robocalls that used a cloned voice to tell New Hampshire voters not to vote in the Jan 23 primary. **On screen: no real politician, voice or party cue.**
+- **Threat speed:** 9,581 calls placed in one day (FCC NAL).
+- **Human aggregation:** the FCC had opened an inquiry into AI robocalls, election risk included, 66 days earlier. Caller-authentication (STIR/SHAKEN) already existed, but the carrier signed the calls with its highest trust level anyway. The AG warned the public on day 1, before the vote. A detector confirmed the voice was synthetic on day 4. The call was traced via the industry traceback group and a cease-and-desist issued on day 16. The FCC ruling came on day 18. Charges and a $6M proposed fine came on day 123, and the carrier settled on day 213.
+- **AI counterfactual:** ~1 day to trace the source and stop the carrier, which is before the vote. Legal steps stay human, and it makes no claim about any vote outcome.
+- **Why it's a good film:** a phone ringing in thousands of gray kitchens. Every tracing tool already existed; the routing between them was the lag. It is a clean "nation" scale story, provided it stays strictly nonpartisan.
+
+### 13. Deepfaked colleagues used to steal → `deepfake-cfo-2024`
+- **Analog:** Jan 2024. A Hong Kong finance employee of a multinational engineering firm (named by CNN in May 2024) joined a video call in which every other participant was a pre-recorded deepfake. He then sent HK$200M (~US$25.6M) in 15 transfers.
+- **Threat speed:** all transfers were made within ~1 week of first contact (CNN). The exact date of the call was never published, so t0 is assumed to be Jan 22 (the police report was Jan 29). Background growth: an identity-verification **vendor** (Sumsub) reports that detected deepfakes rose 10x from 2022 to 2023, and +1,530% in APAC. This is biased vendor data; don't put it on screen without the caveat.
+- **Human aggregation:** the employee's own suspicion (he first thought the email was phishing) and the real CFO's knowledge both existed at t0. One call connected them after ~7 days. The police briefing came at ~t=11, the firm confirmed publicly at t=115, and the government's "verify by phone" answer at t=156. Hong Kong police had already seen deepfake fraud in Aug 2023.
+- **AI counterfactual:** ~1 h. A payment assistant spots the classic signs (first-time payee, "secret", urgency) and asks the real CFO on a number already on file. It uses AI for routing, not for detecting fakes, and a human still approves.
+- **Why it's a good film:** the smallest, most intimate gap in the set: two fragments in one company, one phone call apart. The camera can go POV into the video grid. The employee is not stupid, since he suspected it; the routing was missing.
+
+### 14. Junk AI news sites for ad money → `ai-content-farms-2023`
+- **Analog:** NewsGuard's count of AI-generated "news" content farms, May 2023 to June 2026.
+- **Threat speed:** 49 (May 2023) → 125 (May 19) → 217 (June) → 600+ (Dec 2023) → 700+ (Feb 2024) → 1,121 (Nov 2024) → 3,006 (Mar 2026) → 3,749 (tracker, ~June 2026, date unverified). The derived doubling time is ~2.1 months early and ~11 months late. **Caveat:** these are one organization's detections, not a census, and the definitions and methods changed, so treat the numbers as "counted", not "exist".
+- **Human aggregation:** the brands funding the sites were told at month 1.8 (141 brands; more than 90% of the ads came through one ad platform). A search engine's "scaled content abuse" policy came at month 10.2, rolled out in 1.5 months, with a reported 45% cut in low-quality results. A real-time detector-plus-human-review feed came at month 34.4. Whether the brands pulled their ads was not found.
+- **AI counterfactual:** ~2 months, by connecting the detection-plus-review loop (which did eventually exist) to ad buyers and search at the first count. Humans still decide what to defund.
+- **Why it's a good film:** it has a true exponential with a real doubling time, which suits `L.logistic`, plus an "economy" metaphor: gray money pipes feeding a red printing press while the brands paying for it don't know. It is also the clearest "same tool, two hands" story, because the detection that finally helped used the same class of AI.
+
+### Considered but not filed
+- **AI-assisted phishing volume:** the most-cited figure, "+1,265% malicious phishing emails since Q4 2022" ([SlashNext State of Phishing 2023](https://www.prnewswire.com/news-releases/slashnexts-2023-state-of-phishing-report-reveals-a-1-265-increase-in-phishing-emails-since-the-launch-of-chatgpt-in-november-2022--signaling-a-new-era-of-cybercrime-fueled-by-generative-ai-301971557.html)), comes from a vendor that sells email protection. It links the rise to generative AI by timing, not by measurement, and has been critiqued by an analyst firm ([Osterman Research](https://ostermanresearch.com/2023/11/15/slashnext-phishing/)). There was no independent time series and no dated green response, so no file was written. It could be revisited with FBI IC3 annual data.
+
+### Unverified items (people-misusing-AI files)
+- `pentagon-image-2023`: the first-post time (08:42 per NPR vs "just after 9" per Al Jazeera); the hours of the Bellingcat and expert debunks; the AP fact-check time (p90, taken from the URL timestamp); the "$500B" market-value swing (headline only).
+- `voice-clone-robocall-2024`: the STIR/SHAKEN June 2021 date, the ITG founding and its "~1 hour" traceback claim, and the date of the Jan 31 FCC proposal.
+- `deepfake-cfo-2024`: **t0 itself** (the date of the call was never published, so Jan 22 is assumed and every t shifts with it), the spacing of the 15 transfers, the ADCC dates, and the vendor growth figure.
+- `ai-content-farms-2023`: the exact dates behind "600+" and "700+", the date of the 3,749 count, and the Nov 11, 2024 count's post URL.

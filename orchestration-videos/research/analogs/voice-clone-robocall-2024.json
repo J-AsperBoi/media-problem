@@ -1,0 +1,61 @@
+{
+  "id": "voice-clone-robocall-2024",
+  "threat_internal_label": "people using a cloned voice to mislead voters (never shown on screen)",
+  "analog": "AI voice-clone robocalls telling New Hampshire voters not to vote, Jan 21, 2024, two days before the state's presidential primary",
+  "actors_note": "The red is people's choices: a political consultant commissioned a cloned voice and paid a robocall firm to send it; a carrier signed the calls as trustworthy without checking. The voice tool is not the actor. On screen: no real politician's likeness or voice, no party cues; a gray phone rings, a hand chose to send it.",
+  "time_unit": "days",
+  "t0": "2024-01-21 (calls placed; primary on 2024-01-23 = t2)",
+  "sources": [
+    {"key": "s1", "title": "FCC 24-59, Notice of Apparent Liability against Steve Kramer (May 2024) - Voice Broadcasting 'initiated 9,581 calls on January 21, 2024'; two days before the primary; proposed $6,000,000", "url": "https://docs.fcc.gov/public/attachments/FCC-24-59A1.pdf", "accessed": "2026-09-28"},
+    {"key": "s2", "title": "NPR: New Hampshire is investigating a robocall that was made to sound like Biden (Jan 22, 2024) - AG: message 'appears to be artificially generated', an 'unlawful attempt to disrupt' the primary", "url": "https://www.npr.org/2024/01/22/1226129926/nh-primary-biden-ai-robocall", "accessed": "2026-09-28"},
+    {"key": "s3", "title": "New Hampshire DOJ: Voter Suppression AI Robocall Investigation Update (Feb 6, 2024) - tracebacks via the Industry Traceback Group identified Life Corporation and originating provider Lingo Telecom; cease-and-desist issued; Anti-Robocall Multistate Litigation Task Force (50 AGs) and FCC Enforcement Bureau", "url": "https://www.doj.nh.gov/news-and-media/voter-suppression-ai-robocall-investigation-update", "accessed": "2026-09-28"},
+    {"key": "s4", "title": "FCC: FCC Makes AI-Generated Voices in Robocalls Illegal (declaratory ruling, Feb 8, 2024, effective immediately)", "url": "https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal", "accessed": "2026-09-28"},
+    {"key": "s5", "title": "Wiley: FCC and FTC Launch Inquiries on AI and Voice Cloning - FCC Notice of Inquiry on AI and robocalls released Nov 16, 2023 (FCC 23-101), including whether AI calls could disrupt elections", "url": "https://www.wiley.law/alert-FCC-and-FTC-Launch-Inquiries-on-AI-and-Voice-Cloning", "accessed": "2026-09-28"},
+    {"key": "s6", "title": "Pindrop: Pindrop Reveals TTS Engine Behind Biden AI Robocall (analysis published Jan 25, 2024; 39-second clip scored in 155 segments of 250 ms)", "url": "https://www.pindrop.com/article/pindrop-reveals-tts-engine-behind-biden-ai-robocall/", "accessed": "2026-09-28"},
+    {"key": "s7", "title": "NPR: Criminal charges and FCC fines issued for deepfake Biden robocalls (May 23, 2024)", "url": "https://www.npr.org/2024/05/23/nx-s1-4977582/fcc-ai-deepfake-robocall-biden-new-hampshire-political-operative", "accessed": "2026-09-28"},
+    {"key": "s8", "title": "CyberScoop: FCC wants major telecoms to step up rules around AI-generated robocalls - Lingo signed the calls with an 'A-level' STIR/SHAKEN attestation, the highest trust level", "url": "https://cyberscoop.com/fcc-wants-major-telecoms-to-step-up-rules-around-ai-generated-robocalls/", "accessed": "2026-09-28"},
+    {"key": "s9", "title": "FCC: Lingo Telecom settlement, $1 million (announced Aug 21, 2024), via Slashdot/FCC reporting", "url": "https://news.slashdot.org/story/24/08/22/2325253/telecom-behind-ai-biden-robocall-settles-with-fcc-for-1-million", "accessed": "2026-09-28"},
+    {"key": "s10", "title": "Fortune: FCC bans AI-generated robocalls (Feb 8, 2024); FCC chair proposed the ruling Jan 31, 2024 (per law-firm summaries)", "url": "https://fortune.com/2024/02/08/fcc-bans-ai-generated-robocalls-joe-biden-deepfake/", "accessed": "2026-09-28"}
+  ],
+
+  "threat": {
+    "model": "timeline",
+    "points": [
+      {"t": 0, "extent": 0,   "src": "s1", "event": "Jan 21: calls begin"},
+      {"t": 1, "extent": 1.0, "src": "s1", "event": "9,581 calls initiated on Jan 21 (all within day 0)"}
+    ],
+    "events": [
+      {"t": 2, "src": "s1", "event": "Jan 23: primary election; the red's window closes"}
+    ],
+    "notes": "extent = share of the 9,581 calls counted by the FCC (s1). All were placed on one day; the hour-by-hour spread was not found, so draw them as a single-day burst. Some reports give higher estimates of call volume; the FCC's count is used. Measurable effect on turnout was not established by any source found; don't imply one."
+  },
+
+  "solution": {
+    "fragments": [
+      {"id": "f1", "who": "FCC", "had": "an open inquiry into AI voices in robocalls, including the election risk", "ready_at": -66, "src": "s5", "notes": "Notice of Inquiry released Nov 16, 2023, 66 days before t0"},
+      {"id": "f2", "who": "the phone network's caller-authentication system (STIR/SHAKEN)", "had": "a way to vouch for or flag who is really calling", "ready_at": -935, "src": "s8", "verified": false, "notes": "the June 30, 2021 compliance deadline (935 days before t0) is well known but was not seen in a snippet. The originating carrier signed these calls 'A-level' anyway (s8): the check existed and was not applied."},
+      {"id": "f3", "who": "the Industry Traceback Group (telecom industry)", "had": "the ability to trace a call back hop by hop to its source", "ready_at": 0, "src": "s3", "verified": false, "notes": "existed before t0 (founding date not verified); in other cases it has traced calls in about an hour (congressional testimony, not verified here)"},
+      {"id": "f4", "who": "voters who got the call, and the state attorney general's election unit", "had": "the recordings and the authority to warn the public", "ready_at": 1, "src": "s2", "notes": "public warning on Jan 22, the day before the vote"},
+      {"id": "f5", "who": "a voice-security firm's deepfake audio detector", "had": "proof the voice was synthetic, and which engine made it", "ready_at": 4, "src": "s6"},
+      {"id": "f6", "who": "FCC commissioners", "had": "the legal lever: declare AI voices 'artificial' under existing robocall law", "ready_at": 10, "src": "s10", "verified": false, "notes": "proposed Jan 31 (t=10), adopted unanimously Feb 8 (t=18, s4)"}
+    ],
+    "aggregation": {
+      "median": 16, "p10": 1, "p90": 123,
+      "src": "s3",
+      "notes": "Derived from documented dates, not a measured distribution: p10 = AG's public warning Jan 22 (t=1, s2), which did land before the vote; median = source traced and cease-and-desist issued Feb 6 (t=16, s3); p90 = criminal charges and the $6M proposed fine, May 23 (t=123, s1/s7). The carrier settlement came Aug 21, 2024 (t=213, s9)."
+    },
+    "deploy": {
+      "median": 18, "src": "s4",
+      "notes": "Feb 8, 2024: declaratory ruling effective immediately, making cloned-voice robocalls without consent illegal nationwide."
+    }
+  },
+
+  "ai_counterfactual": {
+    "aggregation_median": 1,
+    "basis": "Illustrative. One person used a cloned voice to mislead; the counterfactual is defenders using AI to connect what they already held. (1) Scoring a 39-second clip as synthetic is a seconds-to-minutes machine task (a detector did it, published at t=4, s6); (2) sorting incoming voter complaints, matching them to the same spoofed number, and opening a traceback request is routing work well inside the ~17.4 h 50% task horizon in RATES.md (METR entry), cheap to run continuously given RATES.md's ~40x/yr cost fall (Epoch). Assumed ~1 day to source traced and carrier told to stop, i.e. before the primary at t=2, versus the human 16 days. Subpoenas, charges and rulings stay human and are not sped up. The public warning already landed at t=1 by human effort, so the gain is in tracing and stopping, not warning. Not a claim any vote would have changed.",
+    "label": "illustrative"
+  },
+
+  "verified": false,
+  "gap_summary": "9,581 cloned-voice calls went out in one day, two days before the vote; a warning came next day, but tracing the sender took 16 days and charges 123, though the tracing network, call authentication and an FCC inquiry all existed beforehand."
+}
