@@ -1,0 +1,2 @@
+{"slug":"hook-eyes-ecu","feature":"extreme close-up","group":"shot","feel":"who is this, what's wrong? instantly","params":{"zoom":5.0,"drift":0.03,"driftEase":"inOut","expression":"notice","glow":1.6,"hold":true},"dur":3.0}
+{"slug":"red-at-the-edge","feature":"saturation isolation / edge colour","group":"colour","feel":"eye jumps to the red at once; unease","params":{"zoom":1.0,"redEnter":0.5,"creepPxPerS":20,"redYRange":[760,1920],"maxFrameShare":0.042,"expression":"calm","look":[-0.35,0.1],"green":false},"dur":4.0}
