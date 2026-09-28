@@ -2,6 +2,8 @@
 
 This project is an overnight animation studio. An AI (Claude) researched real historical crises, wrote 78 film ideas and built **60 short vertical animatics** from them. An animatic is a rough draft of an animated film. Every film shows the same race: a red threat spreads while the green pieces of the answer fail to find each other in time.
 
+**What happens next?** See [`ROADMAP.md`](ROADMAP.md).
+
 **Just want to watch the films?** Open [`orchestration-videos/output/MORNING_REPORT.md`](orchestration-videos/output/MORNING_REPORT.md) for the summary and top picks. Each film lives in its own folder under [`orchestration-videos/output/`](orchestration-videos/output/) as a `.mp4` video file.
 
 This page is also a beginner's map of how software projects are organised, so the rest of the project is easier to read.

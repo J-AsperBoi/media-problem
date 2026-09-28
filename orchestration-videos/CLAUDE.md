@@ -29,6 +29,7 @@ Every film shows the same green fragments aggregating at two speeds: human coord
 - Argue in the open, with clarity and truth. No covert fear tactics; never exaggerate how likely a threat is.
 - The AI-speed version is a counterfactual. Label it illustrative, show its basis in notes.md, and never claim AI would certainly have prevented a real event.
 - Don't claim AI is harmless, don't argue against human oversight of AI, and don't show AI taking control.
+- **AI is never the villain or an entity to fear.** The danger shown is always *people's choices* in how they use AI (e.g. mass-producing false claims, scams, careless automation). Whenever AI appears on screen, a human hand is visibly choosing what it does. Where the same AI speed appears twice, one person uses it to connect the green, another uses it to speed the red: the tool is not the problem, the choice is. (Added 2026-09-28 at Jiji's direction.)
 - Individuals aren't stupid; the routing is broken. Satirize systems, not groups of people.
 - Loss is shown only as absence: lights going out, color draining. Never bodies, gore, or suffering. No explicit content (engagement bait is blurred gray tiles). No real named politicians or celebrities, no partisan cues, no AI company or model names on screen ("frontier AI").
 
