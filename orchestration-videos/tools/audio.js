@@ -1,11 +1,12 @@
 // Tempo-matched scratch soundtrack: kick on beats, hat on offbeats, per-act BPM, plus sound-effect cues.
 // It exists so pacing can be judged; real music gets added in an editor.
+// Drone acts accept optional {cut:true} (hard start/stop, no fades) and {gain:0..1} (volume, e.g. 0.15 for near-silence).
 const fs=require('fs');
 module.exports=function(scene,out){
   const SR=44100,DUR=scene.DUR,N=Math.round(SR*DUR),buf=new Float32Array(N);
   const acts=scene.acts||[{start:0,end:DUR,bpm:110}];let seed=1;const rnd=()=>((seed=(seed*16807)%2147483647)/2147483647)*2-1;
   const add=(t0,len,fn)=>{const s=Math.floor(t0*SR);for(let i=0;i<len*SR&&s+i<N;i++)buf[s+i]+=fn(i/SR);};
-  acts.forEach(a=>{if(!a.drone)return;const len=a.end-a.start;add(a.start,len,x=>{const sw=Math.min(1,x/2)*Math.min(1,(len-x)/1.5);return sw*0.22*(Math.sin(2*Math.PI*41*x)+0.6*Math.sin(2*Math.PI*61.5*x)+0.3*Math.sin(2*Math.PI*82*x+Math.sin(x*0.7)));});});
+  acts.forEach(a=>{if(!a.drone)return;const len=a.end-a.start;add(a.start,len,x=>{const sw=a.cut?Math.min(1,x/0.01)*Math.min(1,(len-x)/0.01):Math.min(1,x/2)*Math.min(1,(len-x)/1.5);return sw*0.22*(a.gain??1)*(Math.sin(2*Math.PI*41*x)+0.6*Math.sin(2*Math.PI*61.5*x)+0.3*Math.sin(2*Math.PI*82*x+Math.sin(x*0.7)));});});
   acts.forEach(a=>{if(!a.bpm)return;const b=60/a.bpm;for(let t=a.start;t<a.end-0.01;t+=b){
     add(t,0.25,x=>Math.sin(2*Math.PI*(55+90*Math.exp(-x*30))*x)*Math.exp(-x*14)*0.7);
     add(t+b/2,0.06,x=>rnd()*Math.exp(-x*60)*0.18);}});
